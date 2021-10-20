@@ -1,2 +1,3 @@
-console.log("Hola Mundo")
-let prueba = proceso;
+const express = require('express');
+const app = express();
+

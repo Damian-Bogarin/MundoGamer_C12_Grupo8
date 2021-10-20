@@ -1,0 +1,22 @@
+{
+  "name": "grupo_8_mundo_gamer_c12",
+  "version": "1.0.0",
+  "description": "![logotipo](design/logo.png)\r ## Integrantes:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeD2020/grupo_8_mundo_gamer_C12.git"
+  },
+  "author": "mundoGamer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeD2020/grupo_8_mundo_gamer_C12/issues"
+  },
+  "homepage": "https://github.com/NeD2020/grupo_8_mundo_gamer_C12#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
