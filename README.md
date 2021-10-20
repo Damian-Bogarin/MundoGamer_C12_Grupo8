@@ -32,3 +32,6 @@ En nuestro e-commerce hemos tomado como referencia algunos sitios web para orien
 - [Mercado Libre](https://www.mercadolibre.com.ar)
 - [Frávega](https://www.fravega.com)
 
+## Enlace al tablero de trabajo: 
+
+- [Trello](https://trello.com/b/fbcDp5NK/grupo-8)
