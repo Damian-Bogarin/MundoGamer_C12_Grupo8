@@ -8,11 +8,14 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "/views/index.html")) /*es la pagina de inicio: home*/
 })
 
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/login.html")) 
+})
+
 /*
 productDetail.html
 productCart.html
 register.html
-login.html
 */
 
 app.listen(PORT, () => 
