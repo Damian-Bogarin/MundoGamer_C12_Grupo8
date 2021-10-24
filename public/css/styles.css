@@ -1,1 +1,7 @@
-/*aqui van todos los links de los css para importar*/
+/*Aqui van todos los links de los css para importar*/
+
+@import url('general.css');
+@import url('variables.css');
+
+@import url('header.css');
+@import url('footer.css');

@@ -2,5 +2,7 @@
 
 :root {
     --ligth_violet: rgba(28, 13, 197, 0.5); /*color entre azul y violeta*/
-    /**/
+    /*font-family*/
+    --font-quicksand: 'Quicksand', sans-serif;
 }
+
