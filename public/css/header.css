@@ -3,11 +3,11 @@
 * {
     box-sizing: border-box;
     margin: 0 auto;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .main-header .header {
     position: absolute;
-    border: solid 1px red;
     display: block;
     /*max-width: 100%;
     height: auto;*/
