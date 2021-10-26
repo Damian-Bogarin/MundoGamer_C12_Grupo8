@@ -47,25 +47,31 @@
 
     <main class="main-login">
         <form action="" method="GET">
-           <!--poner cada label y input dentro de una p o un div?-->
-           <label for="nombre">Nombre</label>
-           <input type="text" name="nombre" id="nombre" required>
+            <!--poner cada label y input dentro de una p o un div?-->
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" required>
+            </div>
 
-           <label for="email">E-mail</label>
-           <input type="email" name="email" id="email" required>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" required>
+            </div>
 
-           <label for="pass">Contraseña</label>
-           <input type="password" name="pass" id="pass" required>
+            <div>
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" id="pass" required>
+            </div>
 
-           <a href="">¿Olvidaste tu contraseña?</a>
+            <a href="">¿Olvidaste tu contraseña?</a>
 
-           <input type="checkbox" checked><label for="">Recordarme</label>
+            <input type="checkbox" checked><label for="">Recordarme</label>
 
-           <button type="submit">Iniciar sesión</button>
+            <button type="submit">Iniciar sesión</button>
 
-           <p>¿No tenés cuenta?</p>
-           <!--el enlace todavia no lleva al la vista registro-->
-           <a href="/views/register.html">Registrarme en Mundo Gamer</a>
+            <p>¿No tenés cuenta?</p>
+            <!--el enlace todavia no lleva al la vista registro-->
+            <a href="localhost:3008/register.html">Registrarme en "Mundo Gamer"</a>
 
 
         </form>
