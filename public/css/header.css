@@ -6,10 +6,39 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-.main-header .header {
-    position: absolute;
-    display: block;
-    /*max-width: 100%;
+.main-header {
+    display: flex;
+    height: auto;
+
+    /*position: relative;
+    max-width: 100%;
     height: auto;*/
 }
+
+/* => donde esta la foto tiene que tener una position relative
+y el resto de cosas que queremos que vayan sobre la foto tiene que tener position absolute*/
+
+.main-header .fondo-header {
+    position: relative; 
+    width: 100%;
+}
+
+.main-header .header {
+    position: absolute;
+    
+}
+
+.main-header .header .logo {
+    width: 80px;
+    height: 80px;
+    padding-left: 5px;
+}
+
+.main-header .header-top {
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
 
