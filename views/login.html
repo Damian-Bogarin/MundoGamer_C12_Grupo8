@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login</title>
     <!--link de fontawesome(iconos)-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -49,33 +49,39 @@
 
 
     <main class="main-login">
+
+        <h2>Log-in</h2>
+
         <form action="" method="GET">
-            <!--poner cada label y input dentro de una p o un div?-->
-            <div>
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" required>
+
+            <div class="formulario">
+
+                <div class="input-datos">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email">
+                    <!--como propiedad de input podemos agregar un required (por defecto saldra un aviso) o mejor podemos hacer un span-->
+                    <span class="error-msj">Debes ingresar tu e-mail</span>
+                </div>
+
+                <div class="input-datos">
+                    <label for="pass">Contraseña</label>
+                    <input type="password" name="pass" id="pass">
+                    <span class="error-msj">Debes ingresar tu contraseña</span>
+                </div>
+
+                <div class="check">
+                    <input type="checkbox" checked><label for="">Recordarme</label>
+                </div>
+
+                <div class="button">
+                    <span class="error-msj">Credenciales inválidas</span>
+                    <button type="submit">Iniciar sesión</button>
+                </div>
+
+                <span><a href="">¿Olvidaste tu contraseña?</a></span>
+                <!--el enlace todavia no lleva a vista de registro-->
+                <span><a href="register.html">¿No tenés cuenta? Registrarme</a></span>
             </div>
-
-            <div>
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" required>
-            </div>
-
-            <div>
-                <label for="pass">Contraseña</label>
-                <input type="password" name="pass" id="pass" required>
-            </div>
-
-            <a href="">¿Olvidaste tu contraseña?</a>
-
-            <input type="checkbox" checked><label for="">Recordarme</label>
-
-            <button type="submit">Iniciar sesión</button>
-
-            <p>¿No tenés cuenta?</p>
-            <!--el enlace todavia no lleva al la vista registro-->
-            <a href="localhost:3008/register.html">Registrarme en "Mundo Gamer"</a>
-
 
         </form>
     </main>
