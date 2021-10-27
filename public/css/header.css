@@ -12,7 +12,7 @@
 
     /*position: relative;
     max-width: 100%;
-    height: auto;*/
+    */
 }
 
 /* => donde esta la foto tiene que tener una position relative
@@ -20,16 +20,23 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 .main-header .fondo-header {
     position: relative; 
-    width: 100%;
+    max-width: 100%;
 }
 
 .main-header .header {
+    display: flex;
     position: absolute;
-    flex-direction: row;
+    
+    padding: 1px 5px; /*franja verde*/
 }
 
 .main-header .header-top {
     display: inline-block;
+}
+
+.main-header .header-bottom {
+    flex-direction: row;
+    /*list-style: none;*/
 }
 
 .main-header .header .logo {
