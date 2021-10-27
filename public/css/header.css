@@ -25,19 +25,19 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 .main-header .header {
     position: absolute;
-    
+    flex-direction: row;
+}
+
+.main-header .header-top {
+    display: inline-block;
 }
 
 .main-header .header .logo {
     width: 80px;
     height: 80px;
-    padding-left: 5px;
 }
 
-.main-header .header-top {
-    display: inline-flex;
-    align-items: center;
-}
+
 
 
 
