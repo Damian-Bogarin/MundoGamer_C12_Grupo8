@@ -13,38 +13,35 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     max-width: 100%;
 }
 
-.main-header .header {
+.main-header .header,
+.header-bottom {
     display: flex;
     position: absolute;
-    /*padding: 1px 5px; franja verde*/
+    
 }
 
-/*.main-header .header .header-top {
-    flex-direction: column;
-    align-items: flex-start;
-}*/
-
-.main-header .header-bottom {
-    display: inline-flex;
-}
-
-.main-header .header-bottom ul {
-    padding: 0;
-    display: inline-block;
-}
-
-.main-header .header-bottom ul li {
-    /*flex-direction: start;*/
-    list-style: none;
-}
-
-.main-header .header-bottom ul li a {
-    flex-direction: row;
-}
-
-.main-header .header .logo {
+.header .logo {
     width: 80px;
     height: 80px;
+}
+
+.header .header-top .input, a, i {
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.header-bottom ul li {
+    list-style: none;
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.header-bottom ul li a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0 2px;
+    /*bajar estas "a" y agregar display: none*/
 }
 
 /*****************/
