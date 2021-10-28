@@ -9,10 +9,6 @@
 .main-header {
     display: flex;
     height: auto;
-
-    /*position: relative;
-    max-width: 100%;
-    */
 }
 
 /* => donde esta la foto tiene que tener una position relative
@@ -26,17 +22,31 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 .main-header .header {
     display: flex;
     position: absolute;
-    
     padding: 1px 5px; /*franja verde*/
 }
 
-.main-header .header-top {
-    display: inline-block;
+.main-header .header-top input, a{
+    display: inline-flex;
+    justify-content: center;
+    
 }
 
 .main-header .header-bottom {
-    flex-direction: row;
-    /*list-style: none;*/
+    display: inline-flex;
+}
+
+.main-header .header-bottom ul {
+    padding: 0;
+    display: inline-block;
+}
+
+.main-header .header-bottom ul li {
+    /*flex-direction: start;*/
+    list-style: none;
+}
+
+.main-header .header-bottom ul li a {
+    justify-content: flex-start;
 }
 
 .main-header .header .logo {
