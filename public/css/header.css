@@ -1,9 +1,10 @@
 /*Header*/
 
 * {
+    font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
     margin: 0 auto;
-    font-family: 'Quicksand', sans-serif;
+    padding: 0;
 }
 
 .main-header {
@@ -22,14 +23,13 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 .main-header .header {
     display: flex;
     position: absolute;
-    padding: 1px 5px; /*franja verde*/
+    /*padding: 1px 5px; franja verde*/
 }
 
-.main-header .header-top input, a{
-    display: inline-flex;
-    justify-content: center;
-    
-}
+/*.main-header .header .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+}*/
 
 .main-header .header-bottom {
     display: inline-flex;
@@ -46,7 +46,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 }
 
 .main-header .header-bottom ul li a {
-    justify-content: flex-start;
+    flex-direction: row;
 }
 
 .main-header .header .logo {
@@ -54,8 +54,21 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     height: 80px;
 }
 
+/*****************/
+/*cuerpo de login*/
+/*****************/
 
+.main-login .titulo {
+    font-size: 18px;
+    text-align: center;
+}
 
+.main-login .formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
