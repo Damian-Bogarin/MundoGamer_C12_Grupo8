@@ -1,2 +1,53 @@
 /*main-login*/
 
+.main-login {
+    /*fondo abstracto aqui*/
+    font-family: var(--font-quicksand);
+    font-size: 20px;
+    height: 400px;
+}
+
+.formulario {
+    /*border: solid 1px black;*/
+    border-radius: 12px;
+    background-color: var(--ligth_violet);
+    height: 250px;
+    margin: auto;
+}
+
+.main-login .titulo {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.main-login .formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /*ancho del contenedor*/
+    
+}
+
+.formulario .check {
+    font-size: 15px;
+}
+
+.formulario span a {
+    color: blue;
+    font-size: 15px;
+    text-decoration: none;
+    
+}
+
+.formulario .error-msj {
+    display: none;
+}
+
+.formulario input {
+    border-radius: 8px;
+    font-size: 20px;
+    
+}

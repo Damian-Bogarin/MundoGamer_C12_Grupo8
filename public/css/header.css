@@ -44,21 +44,4 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     /*bajar estas "a" y agregar display: none*/
 }
 
-/*****************/
-/*cuerpo de login*/
-/*****************/
-
-.main-login .titulo {
-    font-size: 18px;
-    text-align: center;
-}
-
-.main-login .formulario {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
+/*el alto de la imagen del header definirlo*/
