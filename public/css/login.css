@@ -11,14 +11,14 @@
     border-radius: 12px;
     background-color: lightgray;
     /*background-color: var(--ligth_violet);*/
-    height: 300px; /*altura estaba en 250*/
-    margin: auto;
+    height: 350px; 
+    margin: 40px auto;
 }
 
 .main-login .titulo {
     font-size: 25px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+   /* margin-top: 20px;
+    margin-bottom: 30px;*/
     text-align: center;
 }
 
@@ -59,14 +59,27 @@
 }
 
 .formulario .button {
-    
+    margin: 5px 5px;
 }
 
 .formulario .button button {
     font-size: 20px;
     border: none;
     border-radius: 8px;
-    padding: 6px;
+    padding: 8px;
     background-color: var(--ligth_violet);
-    color: white;
+    color: rgb(44, 44, 44);
+    cursor: pointer; /*manito*/
+    font-weight: bold; /*grosor*/
+   
+    
 }
+
+/*Efecto hover solo en desktop(media queries)*/
+@media (min-width: 1200px) {
+    .formulario .button button {
+        background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
+        transition: all 0.3s;
+    }
+}
+/*buttom tendra transition-segundos para cambiar el color que le asignamos*/
