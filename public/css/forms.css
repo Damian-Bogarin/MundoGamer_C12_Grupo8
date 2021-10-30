@@ -13,12 +13,13 @@
 .main-login {
     height: 500px; 
    justify-content: center;
+   flex-direction: column;
 }
 
 .main-login .formulario {
-    border-radius: 12px;
+    border-radius: 14px;
     background-color: lightgray;
-    margin: 110px auto;
+    margin: 55px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,7 +57,7 @@
 
 .formulario .input-datos .input-estilo {
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 22px;/**/
     border: none;
 }
 
@@ -77,13 +78,29 @@
     height: 50px;
 }
 
-/*Efecto hover solo en desktop(media queries)*/
-@media (min-width: 1200px) {
+
+/*Media queries-tablet*/
+
+@media (min-width: 768px) {
+
+    .main-login .formulario {
+        max-width: 550px; 
+        height: 450px;/**/
+    }
+    .formulario .input-datos .input-estilo {
+        font-size: 32px;
+    }
+}
+
+
+/*Media queries-desktop*/
+
+@media (min-width: 1180px) {
+
     .button button:hover {
         color: rgb(78, 78, 78);
         background:  linear-gradient(100deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
         transition: all 0.4ms ease-out;
-    
+        /*buttom tendra transition-segundos para cambiar el color que le asignamos*/
     }
 }
-/*buttom tendra transition-segundos para cambiar el color que le asignamos*/

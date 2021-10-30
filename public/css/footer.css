@@ -46,7 +46,8 @@
     font-size: 12px;
 }
 
-/*Media-queries-tablet*/
+
+/*Media queries-tablet*/
 
 @media (min-width: 768px) {
     .enlaces-footer ul li a {
@@ -62,7 +63,8 @@
      }
 }
 
-/*Media-queries-desktop*/
+
+/*Media queries-desktop*/
 
 @media (min-width: 1180px) {
      .enlaces-footer ul li {
