@@ -10,28 +10,26 @@
     height: 400px;
 }
 
-.formulario {
-    border-radius: 12px;
-    background-color: lightgray;
-    /*background-color: var(--ligth_violet);*/
-    height: 350px; 
-    margin: 40px auto;
-}
-
-.main-login .titulo {
-    font-size: 25px;
-   /* margin-top: 20px;
-    margin-bottom: 30px;*/
-    text-align: center;
+.main-login {
+    height: 500px; 
+   justify-content: center;
 }
 
 .main-login .formulario {
+    border-radius: 12px;
+    background-color: lightgray;
+    margin: 110px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%; /*ancho del contenedor*/
-    
+    height: 430px; /*altura del cuadro gris*/
+}
+
+.main-login .titulo {
+    font-size: 25px;
+    text-align: center;
 }
 
 .formulario .check {
