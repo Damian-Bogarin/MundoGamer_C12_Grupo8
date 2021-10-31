@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+    font-family: Quicksand ;
+ }
+
+ #titulo-categoria{
+     display: flex;
+     justify-content: center;
+     margin-top: 10px;
+ }
+
+ body{
+    background-image:url('../img/Fondo.png') ;
+    background-repeat: repeat; 
+}
+
+.category-container-all{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+    width: 90vw;
+   
+    margin-right: 5vw ;
+    margin-left: 5vw ;
+    margin-top: 30px ;
+
+}
+
+.category-container {
+    display: flex;
+    height: 150px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    margin-right:10px ;
+
+
+}
+
+.category-container div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    background-image: url(../img/NocheDegrade.png);
+    box-shadow:5px 4px 20px;
+    margin-bottom: 8px;
+
+}
+.category-container h3{
+    font-size: 20px;
+   
+}
+
+
+.choise{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 90vw;
+    
+    margin-right: 5vw ;
+    margin-left: 5vw ;
+    margin-top: 30px ;
+
+}
+.choise-selected{
+background-image: url('../img/NocheDegrade.png');
+width: 80px;
+height: 80px;
+border-radius: 8px;display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:5px 4px 20px;
+    margin-bottom: 8px;
+}
+.choise h3{
+    margin-bottom: 15px;
+}
+
+.choise nav{
+    display: flex;
+    flex-direction: column;
+   
+    align-self: flex-start;
+}
+
+.choise nav div{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+/* MEDIA PARA TABLET */
+
+
+@media (min-width: 426px){
+
+    .choise nav{
+        flex-direction: row;
+        align-self: center;
+        justify-content: space-evenly;
+
+        
+        
+            
+
+    }
+
+
+
+
+
+
+}
+
