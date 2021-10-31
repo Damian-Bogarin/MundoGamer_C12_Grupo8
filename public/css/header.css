@@ -44,25 +44,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 .header .header-top input {
     /*barra-nav: si la resolucion de mobile es de 320 px*/
     width: 130px;
-}
-
-.header nav.header-bottom {
-    display: flex;
-    height: 40px;/**/
-    align-items: flex-end;
-    margin-top: 10px;
-}
-
-.main-header nav.header-bottom ul{
-    display: inline-flex;
-    /*flex-direction: row;*/
-    align-items: flex-end;
-    justify-content: space-between;
-    max-height: 50px;
-}
-
-.header-bottom a {
-    display: none;
+    border-radius: 1rem;
 }
 
 .header .header-top .input, a, i {
@@ -70,18 +52,8 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     justify-content: space-between;
 }
 
-.header-bottom ul li {
-    list-style: none;
-    display: inline-block;
-    justify-content: space-between;
-}
-
-.header-bottom ul li a {
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    margin: 0 2px;
-    /*bajar estas "a" y agregar display: none*/
+.header nav.header-bottom {
+    display: none;
 }
 
 
@@ -112,10 +84,11 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     }
 }
 
+
 /*Media queries-tablet*/
 
 @media (min-width: 768px) {
-
+    /*top*/
     .header .header-top {
         justify-content: space-around;
         margin-top: 5px;
@@ -131,14 +104,46 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
         height: 30px;
     }
 
-    .header-bottom {
-        /**/
+    .header .header-top a {
+        font-size: 30px;
+    }
+
+    /*bottom*/
+    .header nav.header-bottom {
+        display: flex;
+        height: 40px;
+        align-items: flex-end;
+        margin-top: 25px;
+        font-size: 50px;
+    }
+    /*de aqui para abajo acomodar todo el codigo*/
+
+    .main-header nav.header-bottom ul{
+        /*display: inline-flex; ?*/
+        align-items: flex-end;
+        justify-content: space-between;
+        max-height: 50px;
         width: 100%;
     }
 
-    .header-bottom ul {
-        width: 100%;
-        justify-content:space-evenly;
+    .header-bottom ul li {
+        list-style: none;
+        display: inline-block;
+        justify-content: space-between;
+    }
+
+    .header-bottom ul li a {
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        margin: 0 2px;
+        /*bajar estas "a" y agregar display: none*/
+    }
+    .header-bottom {
+        /*de su contenedor*/
+        width: 90%;
+        /*justify-content: space-evenly;*/
+        justify-content: center;
     }
 
     .header-bottom a {
