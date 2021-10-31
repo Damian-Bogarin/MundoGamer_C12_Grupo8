@@ -17,7 +17,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 .main-header .header {
     position: absolute;
-    width: 100%;
+    width: 100%;/**/
     height: auto; /*220*/
     display: flex;
     flex-direction: column;/**/
@@ -27,11 +27,23 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     display: flex;
     align-items: center;
     height: 130px;
-    justify-content: space-evenly;/**/
+    /**/
+    justify-content: center;/**/
 }
 
-.header .header-top a {
+.header .logo {
+    width: 110px;
+    height: 110px;
+}
+
+.header .header-top input, a {
     color: white;
+    margin: 0 3px;
+}
+
+.header .header-top input {
+    /*barra-nav: si la resolucion de mobile es de 320 px*/
+    width: 130px;
 }
 
 .header nav.header-bottom {
@@ -51,11 +63,6 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 .header-bottom a {
     display: none;
-}
-
-.header .logo {
-    width: 120px;
-    height: 120px;
 }
 
 .header .header-top .input, a, i {
@@ -78,9 +85,51 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 }
 
 
+/*Media queries-mobile*/
+
+@media (min-width: 375px) {
+
+    .header .header-top input {
+        width: 170px;
+        margin-left: 6px;
+        font-size: 20px;
+    }
+
+    .header .header-top a {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 425px) {
+
+    .header .header-top {
+        justify-content: space-evenly;
+    }
+
+    .header .header-top input {
+        width: 210px;
+        margin-left: 8px;
+    }
+}
+
 /*Media queries-tablet*/
 
 @media (min-width: 768px) {
+
+    .header .header-top {
+        justify-content: space-around;
+        margin-top: 5px;
+    }
+
+    .header .header-top .logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .header .header-top input {
+        width: 360px;
+        height: 30px;
+    }
 
     .header-bottom {
         /**/
