@@ -17,18 +17,17 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 .main-header .header {
     position: absolute;
-    width: 100%;/**/
+    width: 100%;
     height: auto; /*220*/
     display: flex;
-    flex-direction: column;/**/
+    flex-direction: column;
 }
 
 .header .header-top {
     display: flex;
     align-items: center;
     height: 130px;
-    /**/
-    justify-content: center;/**/
+    justify-content: center;
 }
 
 .header .logo {
@@ -112,51 +111,34 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     .header nav.header-bottom {
         display: flex;
         height: 40px;
-        align-items: flex-end;
+        align-items: center;
         margin-top: 25px;
         font-size: 50px;
+        width: 100%;
+        
     }
-    /*de aqui para abajo acomodar todo el codigo*/
+    /*de aqui para abajo acomodar el codigo*/
+    /*falta centrar mejor las "a"*/
 
     .main-header nav.header-bottom ul{
-        /*display: inline-flex; ?*/
-        align-items: flex-end;
-        justify-content: space-between;
         max-height: 50px;
         width: 100%;
+        
     }
 
     .header-bottom ul li {
-        list-style: none;
         display: inline-block;
-        justify-content: space-between;
+        
     }
 
     .header-bottom ul li a {
-        color: white;
-        font-size: 16px;
+        color: black;
+        text-shadow: 3px 0 0 white;
         text-decoration: none;
-        margin: 0 2px;
-        /*bajar estas "a" y agregar display: none*/
-    }
-    .header-bottom {
-        /*de su contenedor*/
-        width: 90%;
-        /*justify-content: space-evenly;*/
-        justify-content: center;
-    }
-
-    .header-bottom a {
-        display: block;
-        text-shadow: 2px 0 0 black;
-        margin: 0 50px;
-        
-    }
-
-    .header-bottom ul li a {
         font-family: var(--font-quicksand);
-        font-size: 25px;
-        
+        font-weight: 800;
+        font-size: 24px; 
+        margin: 0 5px;/**/
     }
 }
 
