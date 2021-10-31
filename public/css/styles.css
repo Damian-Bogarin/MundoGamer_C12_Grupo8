@@ -3,7 +3,8 @@
 @import url('general.css');
 @import url('variables.css');
 
-@import url('login.css');
-
 @import url('header.css');
 @import url('footer.css'); 
+
+/*En el documento forms.css estarán todos los estilos para el login.html y register.html*/
+@import url('forms.css');

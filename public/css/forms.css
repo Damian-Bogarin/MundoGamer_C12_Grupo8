@@ -1,8 +1,3 @@
-/*Importamos solo body de login y register*/
-
-@import url('login.css');
-@import url('register.css');
-
 .main-login {
     /*fondo abstracto aqui*/
     font-family: var(--font-quicksand);
@@ -35,7 +30,6 @@
 
 .formulario .check {
     font-size: 12px;
-    color: blue;
     margin-top: 2px;
     margin-bottom: 15px;
 }
@@ -44,7 +38,8 @@
     color: blue;
     font-size: 12px;
     text-decoration: none;
-    
+    /*login, etiqueta span y a arreglar*/
+    /*En register a terminos y condiciones falta el text decorection none*/
 }
 
 .formulario .error-msj {
@@ -57,7 +52,7 @@
 
 .formulario .input-datos .input-estilo {
     border-radius: 8px;
-    font-size: 22px;/**/
+    font-size: 22px;
     border: none;
 }
 
@@ -85,7 +80,7 @@
 
     .main-login .formulario {
         max-width: 550px; 
-        height: 450px;/**/
+        height: 450px;
     }
     .formulario .input-datos .input-estilo {
         font-size: 32px;
@@ -101,6 +96,6 @@
         color: rgb(78, 78, 78);
         background:  linear-gradient(100deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
         transition: all 0.4ms ease-out;
-        /*buttom tendra transition-segundos para cambiar el color que le asignamos*/
+        /*buttom tendra transition (segundos) para cambiar el color que le asignamos*/
     }
 }
