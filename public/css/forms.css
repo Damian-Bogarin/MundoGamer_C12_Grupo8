@@ -1,17 +1,17 @@
-.main-login {
+.form-main {
     /*fondo abstracto aqui*/
     font-family: var(--font-quicksand);
     font-size: 20px;
     height: 400px;
 }
 
-.main-login {
+.form-main {
     height: 500px; 
    justify-content: center;
    flex-direction: column;
 }
 
-.main-login .formulario {
+.form-main .formulario {
     border-radius: 14px;
     background-color: lightgray;
     margin: 55px auto;
@@ -23,7 +23,7 @@
     height: 430px; /*altura del cuadro gris*/
 }
 
-.main-login .titulo {
+.form-main .titulo {
     font-size: 25px;
     text-align: center;
 }
@@ -32,6 +32,15 @@
     font-size: 12px;
     margin-top: 2px;
     margin-bottom: 15px;
+}
+
+.formulario .check-1 label {
+    font-size: 12px;
+}
+
+.formulario .check-1 a {
+    color: blue;
+    text-decoration: none;
 }
 
 .formulario span a {
@@ -61,14 +70,15 @@
 }
 
 .formulario .button button {
-    font-size: 21px;
+    font-family: var(--font-quicksand);
+    font-weight: bold; /*grosor de letra*/
+    font-size: 23px;
     border: none;
     border-radius: 25px;
     padding: 8px;
     background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
     color: rgb(44, 44, 44);
     cursor: pointer; /*manito*/
-    font-weight: bold; /*grosor*/
     width: 190px;
     height: 50px;
 }
@@ -78,7 +88,7 @@
 
 @media (min-width: 768px) {
 
-    .main-login .formulario {
+    .form-main .formulario {
         max-width: 550px; 
         height: 450px;
     }
