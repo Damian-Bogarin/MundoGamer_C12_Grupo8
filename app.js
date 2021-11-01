@@ -1,13 +1,38 @@
 const express = require('express');
 const app = express();
-let path = require('path')
+
+
+
+
+
+const path = require('path');
+const PORT = 3008; /* en el puerto 3008 porque somos grupo 8 :) */
+app.use(express.static('public'));
+
 app.get("/home",(req,res) => {
     res.sendFile(path.join(__dirname, '/views/home.html'))
     })
 app.get("/categoria",(req,res) => {
     res.sendFile(path.join(__dirname, '/views/categorias.html'))
      })
-app.use(express.static('design'));
 
-app.listen(3030, () => console.log("Servidor Levantado"))
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/login.html")) /*página log-in*/
+})
 
+app.get('/productDetail', (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/productDetail.html")) /*página detalle de producto*/
+})
+
+app.get('/productCart', (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/productCart.html")) /*página: carrito de compras*/
+})
+
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/register.html")) /*página de registro*/
+})
+
+
+
+app.listen(PORT, () => 
+console.log(`Servidor levantado en el puerto ${PORT} http://localhost:${PORT}`))

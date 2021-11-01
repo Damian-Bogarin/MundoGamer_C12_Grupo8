@@ -26,7 +26,7 @@ Nuestro sitio web está destinado a la "venta" de productos, tanto videojuegos c
 
 En nuestro e-commerce hemos tomado como referencia algunos sitios web para orientarnos en cuanto a su diseño y estética, experiencia de usuario y funcionalidades.
 
-- [Argengamestore](https://argengamestore.com)
+- [Planeta Games](https://planetagames.com.ar)
 - [Steam](https://store.steampowered.com)
 - [Bna Tienda](https://tiendabna.com.ar)
 - [Mercado Libre](https://www.mercadolibre.com.ar)

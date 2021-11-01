@@ -1,0 +1,101 @@
+.main-login {
+    /*fondo abstracto aqui*/
+    font-family: var(--font-quicksand);
+    font-size: 20px;
+    height: 400px;
+}
+
+.main-login {
+    height: 500px; 
+   justify-content: center;
+   flex-direction: column;
+}
+
+.main-login .formulario {
+    border-radius: 14px;
+    background-color: lightgray;
+    margin: 55px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /*ancho del contenedor*/
+    height: 430px; /*altura del cuadro gris*/
+}
+
+.main-login .titulo {
+    font-size: 25px;
+    text-align: center;
+}
+
+.formulario .check {
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+
+.formulario span a {
+    color: blue;
+    font-size: 12px;
+    text-decoration: none;
+    /*login, etiqueta span y a arreglar*/
+    /*En register a terminos y condiciones falta el text decorection none*/
+}
+
+.formulario .error-msj {
+    display: none;
+}
+
+.formulario .input-datos {
+    margin: 10px 0;
+}
+
+.formulario .input-datos .input-estilo {
+    border-radius: 8px;
+    font-size: 22px;
+    border: none;
+}
+
+.formulario .button {
+    margin: 5px 5px;
+}
+
+.formulario .button button {
+    font-size: 21px;
+    border: none;
+    border-radius: 25px;
+    padding: 8px;
+    background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
+    color: rgb(44, 44, 44);
+    cursor: pointer; /*manito*/
+    font-weight: bold; /*grosor*/
+    width: 190px;
+    height: 50px;
+}
+
+
+/*Media queries-tablet*/
+
+@media (min-width: 768px) {
+
+    .main-login .formulario {
+        max-width: 550px; 
+        height: 450px;
+    }
+    .formulario .input-datos .input-estilo {
+        font-size: 32px;
+    }
+}
+
+
+/*Media queries-desktop*/
+
+@media (min-width: 1180px) {
+
+    .button button:hover {
+        color: rgb(78, 78, 78);
+        background:  linear-gradient(100deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
+        transition: all 0.4ms ease-out;
+        /*buttom tendra transition (segundos) para cambiar el color que le asignamos*/
+    }
+}
