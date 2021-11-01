@@ -44,6 +44,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     /*barra-nav: si la resolucion de mobile es de 320 px*/
     width: 130px;
     border-radius: 1rem;
+    font-family: var(--font-quicksand);
 }
 
 .header .header-top .input, a, i {
@@ -128,7 +129,6 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
     .header-bottom ul li {
         display: inline-block;
-        
     }
 
     .header-bottom ul li a {
@@ -138,7 +138,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
         font-family: var(--font-quicksand);
         font-weight: 800;
         font-size: 24px; 
-        margin: 0 5px;/**/
+        margin: 0 7px;/**/
     }
 }
 
