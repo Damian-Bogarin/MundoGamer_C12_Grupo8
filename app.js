@@ -9,10 +9,10 @@ const path = require('path');
 const PORT = 3008; /* en el puerto 3008 porque somos grupo 8 :) */
 app.use(express.static('public'));
 
-app.get("/home",(req,res) => {
+app.get("/",(req,res) => {
     res.sendFile(path.join(__dirname, '/views/home.html'))
     })
-app.get("/categoria",(req,res) => {
+app.get("/categorias",(req,res) => {
     res.sendFile(path.join(__dirname, '/views/categorias.html'))
      })
 

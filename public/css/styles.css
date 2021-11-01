@@ -6,5 +6,7 @@
 @import url('header.css');
 @import url('footer.css'); 
 
+@import url('home.css');
+@import url('categoria.css');
 /*En el documento forms.css estarán todos los estilos para el login.html y register.html*/
 @import url('forms.css');
