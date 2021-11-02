@@ -274,6 +274,12 @@ color: red;
         display:none;
     }
 
+    .titulo-decompra{
+        display: flex;
+        justify-content: center;
+    }
+
+
     .articulos{
         flex-direction: row;
         margin-left: 5vw;
