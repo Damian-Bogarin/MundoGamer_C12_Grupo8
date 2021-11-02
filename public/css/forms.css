@@ -2,13 +2,6 @@
     /*fondo abstracto aqui*/
     font-family: var(--font-quicksand);
     font-size: 20px;
-    height: 400px;
-}
-
-.form-main {
-    height: 500px; 
-   justify-content: center;
-   flex-direction: column;
 }
 
 .form-main .formulario {
