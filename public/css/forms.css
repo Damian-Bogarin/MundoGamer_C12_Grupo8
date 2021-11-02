@@ -1,5 +1,4 @@
 .form-main {
-    /*fondo abstracto aqui*/
     font-family: var(--font-quicksand);
     font-size: 20px;
 }
@@ -40,8 +39,6 @@
     color: blue;
     font-size: 12px;
     text-decoration: none;
-    /*login, etiqueta span y a arreglar*/
-    /*En register a terminos y condiciones falta el text decorection none*/
 }
 
 .formulario .error-msj {
@@ -98,7 +95,7 @@
     .button button:hover {
         color: rgb(78, 78, 78);
         background:  linear-gradient(100deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
-        transition: all 0.4ms ease-out;
+        transition: all 0.4ms ease-in-out;
         /*buttom tendra transition (segundos) para cambiar el color que le asignamos*/
     }
 }
