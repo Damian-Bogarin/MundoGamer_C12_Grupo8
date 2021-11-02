@@ -11,3 +11,5 @@
 /*En el documento forms.css estarán todos los estilos para el login.html y register.html*/
 @import url('forms.css');
 @import url('productDetail.css');
+
+@import url('productCart.css');
