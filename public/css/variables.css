@@ -1,7 +1,8 @@
 /*Variables utilizadas*/
 
 :root {
-    --ligth_violet: rgba(28, 13, 197, 0.5); /*color entre azul y violeta*/
+    /*color entre azul y violeta*/
+    --ligth_violet: rgba(28, 13, 197, 0.5); 
     /*font-family*/
     --font-quicksand: 'Quicksand', sans-serif;
 }
