@@ -1,9 +1,5 @@
-.form-main {
-    font-family: var(--font-quicksand);
-    font-size: 20px;
-}
-
 .form-main .formulario {
+    font-family: var(--font-quicksand);
     border-radius: 14px;
     background-color: lightgray;
     margin: 55px auto;
@@ -22,11 +18,11 @@
 
 .formulario .check {
     font-size: 12px;
-    margin-top: 2px;
-    margin-bottom: 15px;
+    margin: 2px 0 15px 0;
 }
 
 .formulario .check-1 label {
+    /*clase check-1: solo en register*/
     font-size: 12px;
 }
 
@@ -56,21 +52,19 @@
 }
 
 .formulario .button {
-    margin: 5px 5px;
+    margin-bottom: 12px;
 }
 
 .formulario .button button {
-    font-family: var(--font-quicksand);
     font-weight: bold; /*grosor de letra*/
     font-size: 23px;
     border: none;
     border-radius: 25px;
-    padding: 8px;
     background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
     color: rgb(44, 44, 44);
     cursor: pointer; /*manito*/
-    width: 190px;
-    height: 50px;
+    width: 180px;
+    height: 40px;
 }
 
 
