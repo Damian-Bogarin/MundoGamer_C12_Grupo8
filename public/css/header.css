@@ -31,18 +31,22 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 }
 
 .header .logo {
-     width: 110px;
-     height: 110px;
+     width: 105px;
+     height: 105px;
 }
 
 .header .header-top input, a {
+     margin: 0 3px; 
+}
+
+.header .header-top a {
      color: white;
-     margin: 0 3px;
 }
 
 .header .header-top input {
     /*barra-nav: si la resolucion de mobile es de 320 px*/
      width: 130px;
+     border: none;
      border-radius: 1rem;
      font-family: var(--font-quicksand);
 }
