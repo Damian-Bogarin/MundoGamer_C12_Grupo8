@@ -3,7 +3,6 @@
 .main-header {
      display: flex;
      width: 100%;
-     height: 220px;
 }
 
 /* => donde esta la foto tiene que tener una position relative
@@ -12,27 +11,27 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 .main-header .fondo-header {
      object-fit: cover;
      position: relative; 
-     width: 100%;
+     width: 100%; 
+     height: 140px; 
 }
 
 .main-header .header {
      position: absolute;
-     width: 100%;
-     height: auto; /*220*/
-     display: flex;
-     flex-direction: column;
+     width: 100%; 
+     flex-direction: row; 
+     /*  la amburguesa se pega mucho pero no aplica margin */
 }
 
 .header .header-top {
-     display: flex;
-     align-items: center;
-     height: 130px;
-     justify-content: center;
+     display: flex; 
+     align-items: center; 
+     height: 85px;
 }
 
 .header .logo {
-     width: 105px;
-     height: 105px;
+     width: 100px;
+     height: 100px;
+     margin-left: 3px;
 }
 
 .header .header-top input, a {
@@ -45,15 +44,14 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 .header .header-top input {
     /*barra-nav: si la resolucion de mobile es de 320 px*/
-     width: 130px;
+     width: 100%;
      border: none;
-     border-radius: 1rem;
+     border-radius: 1rem; 
      font-family: var(--font-quicksand);
 }
 
 .header .header-top .input, a, i {
      display: inline-block;
-     justify-content: space-between;
 }
 
 .header nav.header-bottom {
@@ -66,9 +64,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 @media (min-width: 375px) {
 
     .header .header-top input {
-         width: 170px;
-         margin-left: 6px;
-         font-size: 20px;
+         font-size: 18px; 
     }
 
     .header .header-top a {
@@ -83,107 +79,82 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     }
 
     .header .header-top input {
-         width: 210px;
-         margin-left: 8px;
-    }
+        max-width: 50%;
+    } 
 }
 
 
 /*Media queries-tablet*/
 
 @media (min-width: 768px) {
-    /*top*/
-    .header .header-top {
-         justify-content: space-around;
+    /*header-top*/
+
+    .header .header-top .logo {
+         width: 110px; 
+         height: 110px;
          margin-top: 5px;
     }
 
-    .header .header-top .logo {
-         width: 150px;
-         height: 150px;
-    }
-
     .header .header-top input {
-         width: 360px;
-         height: 30px;
+         height: 28px;
     }
 
     .header .header-top a {
-         font-size: 30px;
+         font-size: 28px;
     }
 
-    /*bottom*/
+    .header .header-top a.hamburguer {
+         display: none;
+    }
+
+    /*header-bottom*/ 
+
     .header nav.header-bottom {
-         display: flex;
-         height: 40px;
+         display: block; 
+         height: 35px; 
          align-items: center;
-         margin-top: 25px;
-         font-size: 50px;
-         width: 100%;
+         margin-top: 18px; 
     }
 
     .main-header nav.header-bottom ul {
          display: flex;
-         justify-content: space-evenly;
-         width: 100%;
+         justify-content: space-evenly; 
+         width: 100%; 
+         
     }
 
-    .header-bottom ul li {
-         display: inline-block;
+    .header-bottom ul li { 
+         display: inline-block; 
+         background-color: white; 
+         border-radius: 1rem;
+         padding: 1px;
     }
 
     .header-bottom ul li a {
          color: black;
-         text-shadow: 3px 0 0 white;
          text-decoration: none;
          font-family: var(--font-quicksand);
-         font-weight: 800;
-         font-size: 25px;
+         font-weight: 800; 
+         font-size: 18px;
     }
 }
+
 
 /*Media queries-desktop*/
 
 @media (min-width: 1200px) {
-    /*top*/
+    /*header-top*/
     .header .header-top {
-         justify-content: space-around;
-         margin-top: 18px;
-    }
-
-    .header .header-top .logo {
-         width: 180px;
-         height: 180px;
-    }
-
-    .header .header-top input {
-         width: 600px;
-         height: 40px;
-    }
+         justify-content: space-around; 
+         margin-top: 10px;
+    } 
 
     .header .header-top a {
-         font-size: 40px;
+         font-size: 35px; 
     }
 
-    /*bottom*/
-    .header nav.header-bottom {
-         display: flex;
-         height: 40px;
-         align-items: center;
-         margin-top: 25px;
-         font-size: 0px;
-         width: 100%;
-    }
-
-    .header nav.header-bottom ul {
-         display: flex;
-         justify-content: space-around;
-        
-    }
-
-    .header nav.header-bottom ul li a {
-         font-size: 28px;
-         color: white;
-         text-shadow: 3px 0 0 black;
-    }
+    /*header-bottom*/
+     .header nav.header-bottom {
+         margin-top: 10px; 
+     }
 }
