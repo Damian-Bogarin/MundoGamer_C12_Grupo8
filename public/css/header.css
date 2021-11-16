@@ -29,29 +29,35 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 }
 
 .header .logo {
-     width: 100px;
-     height: 100px;
+     width: 80px;
+     height: 80px;
      margin-left: 3px;
 }
 
-.header .header-top input, a {
-     margin: 0 3px; 
+.header-top .search-bar {
+     width: 60%;
+     border-radius: 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 4px 8px;
+     background-color: white;
 }
 
-.header .header-top a {
-     color: white;
-}
-
-.header .header-top input {
-    /*barra-nav: si la resolucion de mobile es de 320 px*/
+.search-bar input {
      width: 100%;
      border: none;
-     border-radius: 1rem; 
-     font-family: var(--font-quicksand);
+     flex-grow: 1;
 }
+ 
+.search-bar input:focus {
+/*sacamos el borde que hace al hacer click*/
+     outline: none;
+} 
 
-.header .header-top .input, a, i {
-     display: inline-block;
+.header-top a {
+     color: white;
+     margin: 0px 4px;
 }
 
 .header nav.header-bottom {
@@ -62,6 +68,12 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 /*Media queries-mobile*/
 
 @media (min-width: 375px) {
+
+     .header .logo {
+          width: 90px;
+          height: 90px;
+          margin-left: 3px;
+     }
 
     .header .header-top input {
          font-size: 18px; 
@@ -77,10 +89,6 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     .header .header-top {
          justify-content: space-evenly;
     }
-
-    .header .header-top input {
-        max-width: 50%;
-    } 
 }
 
 
@@ -95,12 +103,8 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
          margin-top: 5px;
     }
 
-    .header .header-top input {
-         height: 28px;
-    }
-
     .header .header-top a {
-         font-size: 28px;
+         font-size: 25px;
     }
 
     .header .header-top a.hamburguer {
@@ -127,7 +131,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
          display: inline-block; 
          background-color: white; 
          border-radius: 1rem;
-         padding: 1px;
+         padding: 4px;
     }
 
     .header-bottom ul li a {
