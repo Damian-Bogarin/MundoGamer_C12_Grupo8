@@ -48,6 +48,10 @@
     width: 90%;
 }
 
+.input-datos input:focus {
+         outline: none;
+} 
+
 .formulario .input-datos .input-estilo {
     border-radius: 8px;
     width: 100%;

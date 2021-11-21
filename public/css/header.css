@@ -19,19 +19,19 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      position: absolute;
      width: 100%; 
      flex-direction: row; 
-     /*  la amburguesa se pega mucho pero no aplica margin */
 }
 
 .header .header-top {
      display: flex; 
      align-items: center; 
      height: 85px;
+     padding: 1px;
 }
 
 .header .logo {
      width: 80px;
      height: 80px;
-     margin-left: 3px;
+     cursor: pointer;
 }
 
 .header-top .search-bar {
@@ -72,7 +72,6 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      .header .logo {
           width: 90px;
           height: 90px;
-          margin-left: 3px;
      }
 
     .header .header-top input {
