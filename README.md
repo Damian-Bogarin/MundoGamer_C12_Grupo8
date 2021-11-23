@@ -35,3 +35,7 @@ En nuestro e-commerce hemos tomado como referencia algunos sitios web para orien
 ## Enlace al tablero de trabajo: 
 
 - [Trello](https://trello.com/b/fbcDp5NK/grupo-8)
+
+## Enlace a la retrospectiva:
+
+- [Retro](/retro.md)

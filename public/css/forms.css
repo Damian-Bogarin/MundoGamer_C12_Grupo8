@@ -1,9 +1,5 @@
-.form-main {
-    font-family: var(--font-quicksand);
-    font-size: 20px;
-}
-
 .form-main .formulario {
+    font-family: var(--font-quicksand);
     border-radius: 14px;
     background-color: lightgray;
     margin: 55px auto;
@@ -22,11 +18,11 @@
 
 .formulario .check {
     font-size: 12px;
-    margin-top: 2px;
-    margin-bottom: 15px;
+    margin: 2px 0 15px 0;
 }
 
 .formulario .check-1 label {
+    /*clase check-1: solo en register*/
     font-size: 12px;
 }
 
@@ -42,35 +38,41 @@
 }
 
 .formulario .error-msj {
+    font-size: 12px;
+    color: rgb(255, 51, 51);
     display: none;
 }
 
 .formulario .input-datos {
-    margin: 10px 0;
+    margin: 8px 0;
+    width: 90%;
 }
+
+.input-datos input:focus {
+         outline: none;
+} 
 
 .formulario .input-datos .input-estilo {
     border-radius: 8px;
-    font-size: 22px;
+    width: 100%;
+    height: 22px; 
     border: none;
 }
 
 .formulario .button {
-    margin: 5px 5px;
+    margin-bottom: 12px;
 }
 
 .formulario .button button {
-    font-family: var(--font-quicksand);
     font-weight: bold; /*grosor de letra*/
     font-size: 23px;
     border: none;
     border-radius: 25px;
-    padding: 8px;
     background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
     color: rgb(44, 44, 44);
     cursor: pointer; /*manito*/
-    width: 190px;
-    height: 50px;
+    width: 180px;
+    height: 40px;
 }
 
 
@@ -82,15 +84,20 @@
         max-width: 550px; 
         height: 450px;
     }
+
+    .formulario .input-datos {
+        width: 75%;
+    }
+
     .formulario .input-datos .input-estilo {
-        font-size: 32px;
+        max-width: 100%;
     }
 }
 
 
 /*Media queries-desktop*/
 
-@media (min-width: 1180px) {
+@media (min-width: 1200px) {
 
     .button button:hover {
         color: rgb(78, 78, 78);
