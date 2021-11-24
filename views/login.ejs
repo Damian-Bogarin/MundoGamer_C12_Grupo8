@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+
+        <%- include('./partials/header.ejs') %>
+
+            <main class="form-main">
+
+                <form action="" method="GET">
+
+                    <div class="formulario">
+
+                        <h2 class="titulo">Mi sesión</h2>
+
+                        <div class="input-datos">
+                            <label for="email">E-mail</label><br>
+                            <input class="input-estilo" type="email" name="email" id="email">
+                            <!--como propiedad de input podemos agregar un required (por defecto saldra un aviso) o mejor podemos hacer un span-->
+                            <span class="error-msj">Debes ingresar tu e-mail</span>
+                        </div>
+
+                        <div class="input-datos">
+                            <label for="pass">Contraseña</label><br>
+                            <input class="input-estilo" type="password" name="pass" id="pass">
+                            <span class="error-msj">Debes ingresar tu contraseña</span>
+                        </div>
+
+                        <div class="check">
+                            <input type="checkbox" checked><label for="">Recordarme</label>
+                        </div>
+
+                        <div class="button">
+                            <button type="submit" onclick="alert('Estamos trabajando en ello')">INICIAR SESIÓN</button>
+                            <span class="error-msj">Credenciales inválidas</span>
+                        </div>
+
+                        <span><a href="">¿Olvidaste tu contraseña?</a></span>
+
+                        <span><a href="/register">¿No tenés cuenta? Registrarme</a></span>
+                    </div>
+
+                </form>
+            </main>
+
+            <%- include('./partials/footer.ejs') %>
+
+                <script src='/js/header.js'></script>
+
+    </body>
+
+</html>

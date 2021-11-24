@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+
+        <%- include('./partials/header.ejs') %>
+
+            <main class="form-main">
+
+                <form action="" method="GET">
+
+                    <div class="formulario">
+
+                        <h2 class="titulo">Registro</h2>
+
+                        <div class="input-datos">
+                            <label for="nombre">Nombre</label><br>
+                            <input class="input-estilo" type="text" name="nombre" id="nombre">
+                            <span class="error-msj">Debes ingresar tu nombre</span>
+                        </div>
+
+                        <div class="input-datos">
+                            <label for="email">E-mail</label><br>
+                            <input class="input-estilo" type="email" name="email" id="email">
+                            <!--Tambien dentro del input podemos agregar un required (saldra un aviso standar) pero mejor hacer un span-->
+                            <span class="error-msj">Debes ingresar tu e-mail</span>
+                        </div>
+
+                        <div class="input-datos">
+                            <label for="pass">Contraseña</label><br>
+                            <input class="input-estilo" type="password" name="pass" id="pass">
+                            <span class="error-msj">Debes ingresar tu contraseña</span>
+                        </div>
+
+                        <div class="check">
+                            <input type="checkbox" checked><label for="">Recordarme</label>
+                        </div>
+
+                        <div class="check-1">
+                            <!--cambie a check1 por q hay 2 elementos cn la misma clase-->
+                            <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
+                            <input type="checkbox" name="terms" id="terms" checked>
+                            <span class="error-msj">Debes aceptar los términos y condiciones</span>
+                        </div><br>
+
+                        <div class="button">
+                            <button type="submit" onclick="alert('Estamos trabajando en ello')">REGISTRARME</button>
+                            <span class="error-msj">Hubo errores en tu envio</span>
+                        </div>
+
+                        <span><a href="/login">Ya tengo mi cuenta</a></span>
+                    </div>
+
+                </form>
+            </main>
+
+            <%- include('./partials/footer.ejs') %>
+
+                <script src='/js/header.js'></script>
+
+    </body>
+
+</html>

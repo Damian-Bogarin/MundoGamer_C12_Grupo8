@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+
+        <%- include('./partials/header.ejs') %>
+
+            <main class="cart">
+                <div class="title-cart">
+                    <h2>Carrito</h2>
+                    <h4>4 elementos en tu carrito</h4>
+                </div>
+                <hr>
+
+                <div class="product">
+
+                    <div class="product-1">
+                        <img src="/img/auris.jpg" alt="">
+
+                        <div class="product-container">
+                            <p>Auriculares inalámbricos Sony <br>
+                                $3.699
+                            </p>
+                            <div class="icon-cart">
+                                <i class="fas fa-minus"></i>
+                                <i class="fas fa-plus"></i>
+                                <i class="far fa-trash-alt"></i>
+                            </div>
+                        </div>
+                    </div><br>
+                    <hr>
+                    <div class="product-2">
+                        <img src="/img/consola.png" alt="">
+
+                        <div class="product-container">
+                            <p>Joystick inalámbrico Sony PlayStation <br>
+                                $13.300
+                            </p>
+                            <div class="icon-cart">
+                                <i class="fas fa-minus"></i>
+                                <i class="fas fa-plus"></i>
+                                <i class="far fa-trash-alt"></i>
+                            </div>
+                        </div>
+                    </div><br>
+                    <hr>
+                    <div class="product-3">
+                        <img src="/img/auto-mario.png" alt="">
+
+                        <div class="product-container">
+                            <p>Muñeco Super Mario Bros Juguete<br>
+                                $2.900
+                            </p>
+                            <div class="icon-cart">
+                                <i class="fas fa-minus"></i>
+                                <i class="fas fa-plus"></i>
+                                <i class="far fa-trash-alt"></i>
+                            </div>
+                        </div>
+                    </div><br>
+                    <hr>
+                    <div class="product-4">
+                        <img src="/img/mouse.png" alt="">
+
+                        <div class="product-container">
+                            <p>Mouse inalámbrico recargable Tedge <br>
+                                $399
+                            </p>
+                            <div class="icon-cart">
+                                <i class="fas fa-minus"></i>
+                                <i class="fas fa-plus"></i>
+                                <i class="far fa-trash-alt"></i>
+                            </div>
+                        </div>
+                    </div><br>
+                    <hr>
+
+                </div>
+
+                <div class="total-and-buttom">
+                    <p>TOTAL $20.298</p><br>
+                    <button type="submit">Realizar pedido</button> <br>
+                    <button type="submit">Seguir comprando</button>
+                </div>
+
+            </main>
+
+            <%- include('./partials/footer.ejs') %>
+
+    </body>
+
+</html>
