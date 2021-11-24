@@ -29,6 +29,10 @@ app.get('/register', (req, res) => {
 })
 
 
+//EJS
+app.set("view engine", "ejs") // Setea el template engine
+app.set('views', path.join(__dirname, 'views')) // Indica la ubicación de la carpeta views
+
 
 app.listen(PORT, () => 
 console.log(`Servidor levantado en el puerto ${PORT} http://localhost:${PORT}`))
