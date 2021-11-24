@@ -4,29 +4,32 @@ const path = require('path');
 const PORT = 3008; /* en el puerto 3008 porque somos grupo 8 :) */
 app.use(express.static('public'));
 
+
 app.get("/",(req,res) => {
-    res.sendFile(path.join(__dirname, '/views/home.html'))
-    })
-    
+        res.render('home')
+        })
 app.get("/categorias",(req,res) => {
-    res.sendFile(path.join(__dirname, '/views/categorias.html'))
+    res.render('categorias')
 })
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/login.html")) 
+    res.render('login')
 })
 
 app.get('/productDetail', (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/productDetail.html")) 
+    res.render('productDetail')
 })
 
 app.get('/productCart', (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/productCart.html")) 
+    res.render('productCart') 
 })
 
 app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/register.html")) 
+    res.render('register') 
 })
+
+
+app.set('view engine' , 'ejs')
 
 
 
