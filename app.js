@@ -29,8 +29,9 @@ app.get('/register', (req, res) => {
 })
 
 
-app.set('view engine' , 'ejs')
-
+//EJS
+app.set("view engine", "ejs") // Setea el template engine
+app.set('views', path.join(__dirname, 'views')) // Indica la ubicación de la carpeta views
 
 
 app.listen(PORT, () => 
