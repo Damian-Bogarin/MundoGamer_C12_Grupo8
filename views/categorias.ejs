@@ -1,53 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorias</title>
-    <!--link de fontawesome(iconos)-->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <!--link de font-family--->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-    <!--link de styles contiene los url-->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />
+    <%- include('./partials/head.ejs') %>
 </head>
 
 <body>
 
-    <header class="main-header">
-
-        <img class="fondo-header" src="/img/header.png" alt="">
-
-        <div class="header">
-
-            <div class="header-top">
-
-                <img class="logo" src="img/logo.png" alt="">
-
-                <input type="text" placeholder="  ¿Qué estás buscando?">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-bars"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-
-            <nav class="header-bottom">
-                <ul>
-                    <li><a href="#">CATEGORIAS</a></li>
-                    <li><a href="#">OFERTAS</a></li>
-                    <li><a href="#">MI CUENTA</a></li>
-                    <li><a href="#">CREA TU CUENTA</a></li>
-                    <li><a href="#">AYUDA</a></li>
-                </ul>
-            </nav>
-        </div>
-
-    </header>
+    <%- include('./partials/header.ejs') %>
 
     <h1 id="titulo-categoria">Categorias</h1>
     <section class="category-container-all">
