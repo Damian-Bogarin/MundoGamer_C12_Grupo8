@@ -7,7 +7,8 @@ app.use(express.static('public'));
 
 app.get("/",(req,res) => {
         res.render('home')
-        })
+})
+
 app.get("/categorias",(req,res) => {
     res.render('categorias')
 })
