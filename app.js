@@ -3,15 +3,29 @@ const app = express();
 const path = require('path');
 const PORT = 3008; /* en el puerto 3008 porque somos grupo 8 :) */
 app.use(express.static('public'));
+ 
+
+/* RUTEO */
+let rutasCategorias = require('./routes/categorias.js')
+let rutasProductos = require('./routes/productos.js')
+let rutasHome = require('./routes/home.js')
+let rutasLogin = require('./routes/login.js')
+let rutasRegister = require('./routes/register.js')
 
 
-app.get("/",(req,res) => {
+app.use('/categorias', rutasCategorias)
+app.use('/productos', rutasProductos)
+app.use('/home', rutasHome)
+app.use('/login', rutasLogin)
+app.use('/register', rutasRegister)
+
+
+
+
+/* app.get("/",(req,res) => {
         res.render('home')
 })
 
-app.get("/categorias",(req,res) => {
-    res.render('categorias')
-})
 
 app.get('/login', (req, res) => {
     res.render('login')
@@ -27,7 +41,7 @@ app.get('/productCart', (req, res) => {
 
 app.get('/register', (req, res) => {
     res.render('register') 
-})
+}) */
 
 
 //EJS
