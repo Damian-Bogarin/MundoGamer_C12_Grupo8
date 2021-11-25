@@ -1,194 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />
-    <!--link de fontawesome(iconos)-->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <!--link de font-family--->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-    <!--link de styles contiene los url-->
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
+<%- include('./partials/head.ejs') %>
 
-<body>
-    <header class="main-header">
+    <body>
 
-        <img class="fondo-header" src="/img/header.png" alt="">
+        <%- include('./partials/header.ejs') %>
 
-        <div class="header">
+            <section>
 
-            <div class="header-top">
-
-                <img class="logo" src="img/logo.png" alt="">
-
-                <input type="text" placeholder="  ¿Qué estás buscando?">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-bars"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-
-            <nav class="header-bottom">
-                <ul>
-                    <li><a href="#">CATEGORIAS</a></li>
-                    <li><a href="#">OFERTAS</a></li>
-                    <li><a href="#">MI CUENTA</a></li>
-                    <li><a href="#">CREA TU CUENTA</a></li>
-                    <li><a href="#">AYUDA</a></li>
-                </ul>
-            </nav>
-        </div>
-
-    </header>
-    <section>
-
-        <article class="carrusel-container">
-            <div id="button-left"></div>
+                <article class="carrusel-container">
+                    <div id="button-left"></div>
+                    <div>
+                        <img src="https://phantom-elmundo.unidadeditorial.es/6736bc692f59a08ed2f74709c7254b59/resize/746/f/jpg/assets/multimedia/imagenes/2020/11/30/16066910612983.jpg"
+                            alt="" class="imagen-oferta">
+                    </div>
+                    <div id="button-right"></div>
+                </article>
+                <div class="guia-carrusel">
+                    <div class="guia-carrusel-div"></div>
+                    <div class="guia-carrusel-div"></div>
+                    <div class="guia-carrusel-div"></div>
+                    <div class="guia-carrusel-div"></div>
+                    <div class="guia-carrusel-div"></div>
+                </div>
+            </section>
             <div>
-                <img src="https://phantom-elmundo.unidadeditorial.es/6736bc692f59a08ed2f74709c7254b59/resize/746/f/jpg/assets/multimedia/imagenes/2020/11/30/16066910612983.jpg"
-                    alt="" class="imagen-oferta">
+
+
             </div>
-            <div id="button-right"></div>
-        </article>
-        <div class="guia-carrusel">
-            <div class="guia-carrusel-div"></div>
-            <div class="guia-carrusel-div"></div>
-            <div class="guia-carrusel-div"></div>
-            <div class="guia-carrusel-div"></div>
-            <div class="guia-carrusel-div"></div>
-        </div>
-    </section>
-    <div>
+            <section class="category-home-container">
+                <article class="category-home">
+                    <div><img src="/vectores/GameVector.png" alt="" id="imagen-vector"></div>
+                    <p>Games</p>
+                </article>
+                <article class="category-home">
+                    <div><img src="/vectores/BookVector.png" alt=""></div>
+                    <p>Libros</p>
+                </article>
+                <article class="category-home">
+                    <div><img src="/vectores/TshirtVector.png" alt=""></div>
+                    <p>T-shirt</p>
+                </article>
+                <article class="category-home">
+                    <div><img src="/vectores/PlusVector.png" alt=""></div>
+                    <p>Mas</p>
+                </article>
 
+            </section>
 
-    </div>
-    <section class="category-home-container">
-        <article class="category-home">
-            <div><img src="/vectores/GameVector.png" alt="" id="imagen-vector"></div>
-            <p>Games</p>
-        </article>
-        <article class="category-home">
-            <div><img src="/vectores/BookVector.png" alt=""></div>
-            <p>Libros</p>
-        </article>
-        <article class="category-home">
-            <div><img src="/vectores/TshirtVector.png" alt=""></div>
-            <p>T-shirt</p>
-        </article>
-        <article class="category-home">
-            <div><img src="/vectores/PlusVector.png" alt=""></div>
-            <p>Mas</p>
-        </article>
-
-    </section>
-
-    <div class="titulo-decompra">
-        <p>Games</p>
-    </div>
-
-
-    <section class="articulos">
-        <article class="articulo-container">
-            <div class="articulo-container-img"></div>
-
-            <div class="articulo-container-description">
-                <h3> Nombre del Producto</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
-                <div>
-                    <div class="articulo-container-description-valor">
-                        <h4 id="precio">18.000$</h4>
-                        <h4>17%off</h4>
-                    </div>
-
-                    <div class="articulo-container-description-button">
-
-                        <input type="button" value="CARRITO">
-                    </div>
-
-
-                </div>
+            <div class="titulo-decompra">
+                <p>Games</p>
             </div>
 
 
-        </article>
-        <article class="articulo-container">
-            <div class="articulo-container-img"></div>
+            <section class="articulos">
+                <article class="articulo-container">
+                    <div class="articulo-container-img"></div>
 
-            <div class="articulo-container-description">
-                <h3> Nombre del Producto</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
-                <div>
-                    <div class="articulo-container-description-valor">
-                        <h4 id="precio">18.000$</h4>
-                        <h4>17%off</h4>
-                    </div>
+                    <div class="articulo-container-description">
+                        <h3> Nombre del Producto</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
+                        <div>
+                            <div class="articulo-container-description-valor">
+                                <h4 id="precio">18.000$</h4>
+                                <h4>17%off</h4>
+                            </div>
 
-                    <div class="articulo-container-description-button">
+                            <div class="articulo-container-description-button">
 
-                        <input type="button" value="CARRITO">
-                    </div>
-
-
-                </div>
-            </div>
+                                <input type="button" value="CARRITO">
+                            </div>
 
 
-        </article>
-        <article class="articulo-container">
-            <div class="articulo-container-img"></div>
-
-            <div class="articulo-container-description">
-                <h3> Nombre del Producto</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
-                <div>
-                    <div class="articulo-container-description-valor">
-                        <h4 id="precio">18.000$</h4>
-                        <h4>17%off</h4>
-                    </div>
-
-                    <div class="articulo-container-description-button">
-
-                        <input type="button" value="CARRITO">
+                        </div>
                     </div>
 
 
-                </div>
-        </article>
+                </article>
+                <article class="articulo-container">
+                    <div class="articulo-container-img"></div>
+
+                    <div class="articulo-container-description">
+                        <h3> Nombre del Producto</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
+                        <div>
+                            <div class="articulo-container-description-valor">
+                                <h4 id="precio">18.000$</h4>
+                                <h4>17%off</h4>
+                            </div>
+
+                            <div class="articulo-container-description-button">
+
+                                <input type="button" value="CARRITO">
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </article>
+                <article class="articulo-container">
+                    <div class="articulo-container-img"></div>
+
+                    <div class="articulo-container-description">
+                        <h3> Nombre del Producto</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
+                        <div>
+                            <div class="articulo-container-description-valor">
+                                <h4 id="precio">18.000$</h4>
+                                <h4>17%off</h4>
+                            </div>
+
+                            <div class="articulo-container-description-button">
+
+                                <input type="button" value="CARRITO">
+                            </div>
+
+
+                        </div>
+                </article>
 
 
 
-    </section>
-    <footer class="main-footer">
+            </section>
 
-        <nav class="enlaces-footer">
-            <ul>
-                <li><a href="#">Nuestras sucursales</a></li>
-                <li><a href="#">Contáctanos</a></li>
-                <li><a href="#">Horarios de atención</a></li>
-                <li><a href="#">Ayuda</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-            </ul>
-        </nav>
+            <%- include('./partials/footer.ejs') %>
 
-        <div class="logos-contacto">
-            <a href="https://whatsapp.com" target="_blanck"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com" target="_blanck"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com" target="_blanck"><i class="fab fa-facebook"></i></a>
-        </div>
-
-        <div class="derechos">
-            <i class="far fa-copyright"></i>
-            <p>Mundo Gamer - Todos los derechos reservados</p>
-        </div>
-
-    </footer>
-</body>
+    </body>
 
 </html>
