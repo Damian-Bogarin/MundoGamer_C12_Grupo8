@@ -6,3 +6,9 @@
  Se valora mucho la comunicación, la responsabilidad, el esfuerzo y sin duda es algo que tenemos que seguir mejorando como grupo.
 
  # Sprint 2 - HTML + CSS
+
+ En este sprint tratamos de repartirnos más equitativamente las tareas, según nuestras vistas de wireframes, del sprint anterior. 
+ Teníamos dos semanas para el sprint, la primera, fue muy estresante debido a la maquetación y estilo de las vistas, parecía que estas no salían, después a fuerza de práctica, para la segunda semana, fue saliendo de a poco, sabíamos que todos estábamos más o menos en la misma situación. 
+ Si costo mucho que estuviéramos todos presentes en las deylis. No teníamos noticias de parte de dos integrantes del grupo, eso fue un motivo de preocupación, sabiendo que se reducía el tiempo que teníamos por delante. Hasta que Nico nos ayudó a hablarlo bien en una deyli y ver qué estaba pasando, ver qué dificultades se estaban presentando y cómo seguiríamos de ahí en más. Seguimos cada uno con el trabajo. Sin embargo, se acercaba la fecha de entrega y la mitad del grupo ya tenia todo listo y la otra mitad no. Así que no entregamos a tiempo el sprint, como plan “B” el equipo que ya había terminado hizo las vistas que faltaban, por las dudas, una de ellas si se subió, la otra fue terminada y subida por el compañero.
+ Después, este último compañero nos avisó que dejaba la cursada.
+
