@@ -15,38 +15,15 @@ let rutasRegister = require('./routes/register.js')
 
 app.use('/categorias', rutasCategorias)
 app.use('/productos', rutasProductos)
-app.use('/home', rutasHome)
+app.use('/', rutasHome)
 app.use('/login', rutasLogin)
 app.use('/register', rutasRegister)
 
 
 
-
-/* app.get("/",(req,res) => {
-        res.render('home')
-})
-
-
-app.get('/login', (req, res) => {
-    res.render('login')
-})
-
-app.get('/productDetail', (req, res) => {
-    res.render('productDetail')
-})
-
-app.get('/productCart', (req, res) => {
-    res.render('productCart') 
-})
-
-app.get('/register', (req, res) => {
-    res.render('register') 
-}) */
-
-
 //EJS
 app.set("view engine", "ejs") // Setea el template engine
-app.set('views', path.join(__dirname, 'views')) // Indica la ubicación de la carpeta views
+app.set('views', path.join(__dirname, 'views'))   // Indica la ubicación de la carpeta views
 
 
 app.listen(PORT, () => 

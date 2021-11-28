@@ -1,10 +1,8 @@
 let express = require('express')
 let router = express.Router()
+let controller = require('../controladores/usersController.js')
 
-
-router.get("",(req,res) => {
-    res.render('categorias')
-})
+router.get("", controller.register)
 
 
 

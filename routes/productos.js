@@ -1,18 +1,13 @@
 let express = require('express')
 let router = express.Router()
+let controller = require('../controladores/productosController')
 
+router.get("/detalle", controller.detalle
+)
 
-router.get("/detalle",(req,res) => {
-    res.render('productDetail')
-})
+router.get("/carrito",controller.carrito)
 
-router.get("/carrito",(req,res) => {
-    res.render('productCart')
-})
-
-router.get("/crear",(req,res) => {
-    res.render('productCrear')
-})
+router.get("/crear",controller.crear)
 
 
 module.exports = router

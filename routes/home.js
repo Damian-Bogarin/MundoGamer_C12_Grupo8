@@ -1,10 +1,9 @@
 let express = require('express')
 let router = express.Router()
+let controller = require('../controladores/homeController')
 
-
-router.get("",(req,res) => {
-    res.render('home')
-})
+router.get("",controller.home
+)
 
 
 

@@ -30,15 +30,18 @@ body{
     width: 100vw;
     height: 200px;
     border-radius: 25px;
+    object-fit: cover;
+   height: 200px;
     
 
 }
 #button-left{
     width: 32px;
     height: 32px;
-    position: absolute;
-    top: 325px;
-    left: 20px;
+     z-index: 999;
+     position: absolute;  
+    top: 230px;
+    left: 20px; 
     border-radius: 100%;
     background-image: url('../vectores/leftarrowcircularbutton1_80098.png');
     background-repeat: no-repeat;
@@ -50,7 +53,7 @@ body{
     width: 32px;
     height: 32px;
     position: absolute;
-    top: 325px;
+    top: 230px;
     right: 20px;
     border-radius: 100%;
     background-image: url('../vectores/righttarrowcircularbutton1_80098.png');
