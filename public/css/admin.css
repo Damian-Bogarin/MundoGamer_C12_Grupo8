@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-header {
+    background-color: rgba(28, 13, 197, 0.5);
+    font-size: 18px;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.main-admin {
+    /* padding: 1rem; */
+    flex-direction: column;
+    text-align: center;
+}
+
+.main-admin .title {
+    /* text-align: center; */
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.main-admin .box-category {
+    margin: 12px 0;
+}
+
+.main-admin .box-category label {
+    font-size: 20px;
+}
+
+.main-admin .box-category select {
+    font-size: 18px;
+}
+
+.main-admin .text-tarea {
+    margin: 15px 0;
+}
+
+.main-admin .text-tarea label {
+   
+}
+
+.main-admin .input-number {
+    margin: 15px 0;
+}
+
+.main-admin .input-file label {
+    margin: 50px 0;
+    border: solid 1px black;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.main-admin .input-file input {
+    display: none;
+}
+
+.main-admin .img {
+    margin: 12px 0;
+}
+
+.main-admin label {
+
+}
+
+.main-admin .img img {
+    width: 250px;
+    height: 200px;
+    
+}
+
+.main-admin .box-button {
+    margin: 20px 0 50px 0;
+}
+
+.footer-main {
+    background-color: #ebebeb;
+    border-radius: 22px 22px 0 0 ;
+    height: 100px;
+}
