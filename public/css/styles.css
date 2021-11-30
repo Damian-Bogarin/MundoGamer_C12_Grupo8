@@ -16,5 +16,5 @@
 @import url('productCart.css');
 @import url('register.css');
 
-/*En el archivo admin.css estarán los estilos newProduct.ejs y para editProduct.ejs*/
+/*En el archivo admin.css estarán los estilos para newProduct.ejs y editProduct.ejs*/
 @import url('admin.css');

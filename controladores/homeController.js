@@ -1,11 +1,11 @@
 const controller = {
 
     home : (req,res) => {
-        res.render('home')} ,
+        res.render('home')},
     
 
 }
 
 
 
-module.exports = controller
+module.exports = controller;
