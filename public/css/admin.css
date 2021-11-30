@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+} 
+
+html {
+    background-color: lightgray;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .header-admin {
@@ -21,7 +26,6 @@
 }
 
 .main-admin .title {
-    /* text-align: center; */
     font-size: 22px;
     margin: 15px 0;
 }
@@ -42,10 +46,6 @@
     margin: 15px 0;
 }
 
-.main-admin .text-tarea label {
-   
-}
-
 .main-admin .input-number {
     margin: 15px 0;
 }
@@ -62,14 +62,10 @@
 
 .main-admin .input-file input {
     display: none;
-}
+} 
 
 .main-admin .img {
     margin: 12px 0;
-}
-
-.main-admin label {
-
 }
 
 .main-admin .img img {
@@ -86,4 +82,12 @@
     background-color: #ebebeb;
     border-radius: 22px 22px 0 0 ;
     height: 100px;
+} */
+
+
+/* @media (min-width: 1200px) {
+    .main-admin {
+        display: flex;
+        flex-direction: row;
+    }
 } */
