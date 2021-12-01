@@ -7,7 +7,7 @@
 - 20 años
 - Estudiante de Programación Web Full Stack
 
-**Nicolas Duette**
+**Nicolas Duette** ( Dejo de cursar. )
 - 21 años
 - Estudiante de Programación Web Full Stack
 
