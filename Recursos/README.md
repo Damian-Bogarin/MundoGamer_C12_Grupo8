@@ -1,6 +1,6 @@
 # PROYECTO INTEGRADOR - ***MUNDO GAMER***
 ## Grupo 8 - Comisión 12
-![logotipo](public/img/logo.png)
+![logotipo](../public/img/logo.png)
 ## Integrantes:
  
  **Anubis Burgos**
@@ -38,4 +38,4 @@ En nuestro e-commerce hemos tomado como referencia algunos sitios web para orien
 
 ## Enlace a la retrospectiva:
 
-- [Retro](/retro.md)
+- [Retro](retro.md)
