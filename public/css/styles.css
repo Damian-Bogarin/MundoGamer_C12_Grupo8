@@ -9,9 +9,12 @@
 @import url('home.css');
 @import url('categoria.css');
 
-/*En el documento forms.css estarán todos los estilos para el login.html y register.html*/
+/*En el documento forms.css estarán todos los estilos para el login.ejs y register.ejs*/
 @import url('forms.css');
 
 @import url('productDetail.css');
 @import url('productCart.css');
 @import url('register.css');
+
+/*En el archivo admin.css estarán los estilos para newProduct.ejs y editProduct.ejs*/
+@import url('admin.css');
