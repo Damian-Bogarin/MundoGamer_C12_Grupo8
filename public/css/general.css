@@ -7,3 +7,8 @@
     font-family: var(--font-quicksand);
 }
 
+#link-container{
+    text-decoration: none;
+    color: black;
+   
+}

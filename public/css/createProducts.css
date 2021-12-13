@@ -1,0 +1,135 @@
+* {
+    user-select: none;
+}
+
+.crearProducto{
+    width: 100%;
+}
+
+.crearProducto h2{
+    margin: 5%; 
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.crearProducto p{
+    margin: 15%; 
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.crearProducto form{
+    width: 90%;
+    padding: 10%;
+    margin: 10% auto;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(74, 178, 209);
+    border-radius: 10px;
+}
+
+.crearProducto form input[type=text]{
+    height: 25px;
+    border:solid 1px grey;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.crearProducto form input[type=text]:focus{
+    outline: 1px solid blue;
+}
+
+.crearProducto form .nombre{
+    margin: 15px; 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.crearProducto form label{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.crearProducto .select{
+    border-radius: 5px;
+    background-color: white;
+    height: 30px;
+    padding: 5px;
+}
+
+.crearProducto .select:focus{
+    outline: 1px solid blue;
+}
+
+.crearProducto form span{
+    font-size: 12px;
+    color: red;
+    display: none;
+} 
+
+@media (min-width: 768px) {
+
+    .crearProducto h2{
+        font-size: 30px;
+    }
+
+    .crearProducto p{
+        font-size: 20px;
+    }
+
+    .crearProducto form{
+        width: 90%;
+        margin: 0 auto;
+        max-width: 760px;
+    }
+
+    .crearProducto form label{
+        font-size: 17px;
+    }
+
+    .crearProducto form .estrellas label input{
+        margin: 1rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .crearProducto h2{
+        font-size: 30px;
+    }
+
+    .crearProducto form{
+        margin: 10% auto;
+
+    }
+
+    .crearProducto form p{
+        font-size: 30px;
+    }
+
+    .crearProducto form input[type=text]{
+        height: 25px;
+
+    }
+
+    .crearProducto form label input[type=radio]{
+        padding-left: 5rem;
+    }
+
+    .crearProducto form input[type=checkbox]{
+        padding: 1rem;
+        height: 20px;
+    }
+
+    .crearProducto form input[type=number]{
+        height: 25px;
+    }
+
+
+
+
+}

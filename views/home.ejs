@@ -30,31 +30,65 @@
 
             </div>
             <section class="category-home-container">
-                <article class="category-home">
-                    <div><img src="/vectores/GameVector.png" alt="" id="imagen-vector"></div>
-                    <p>Games</p>
-                </article>
+                <a href="#oferta" id="link-container">
+                    <article class="category-home">
+                        <div><img src="/vectores/Oferta.png" alt="" id="imagen-vector"></div>
+                        <p>Ofertas</p>
+                    </article>
+                </a>
+                <a href="#nuevo" id="link-container">
                 <article class="category-home">
                     <div><img src="/vectores/BookVector.png" alt=""></div>
-                    <p>Libros</p>
+                    <p>Nuevos</p>
                 </article>
+                </a>
+                <a href="#mas-vendidos" id="link-container">
                 <article class="category-home">
                     <div><img src="/vectores/TshirtVector.png" alt=""></div>
-                    <p>T-shirt</p>
+                    <p>Mas Vendido</p>
                 </article>
+                </a>
+                <a href="#5-estrellas" id="link-container">
                 <article class="category-home">
                     <div><img src="/vectores/PlusVector.png" alt=""></div>
-                    <p>Mas</p>
+                    <p>¡5 Estrellas!</p>
                 </article>
-
+                </a>
             </section>
 
-            <div class="titulo-decompra">
-                <p>Games</p>
+            <div class="titulo-decompra" id="oferta"> 
+                <p>Ofertas</p>
             </div>
 
 
             <section class="articulos">
+                <a href="/productos/detalle/1" id="link-container">
+                    <article class="articulo-container">
+                    <div class="articulo-container-img"><img src="/img/SuperMarioBros3.jpg" alt="" > </div>
+
+                    <div class="articulo-container-description">
+                        <h3> Nombre del Producto</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
+                        <div>
+                            <div class="articulo-container-description-valor">
+                                <h4 id="precio">18.000$</h4>
+                                <h4>17%off</h4>
+                            </div>
+
+                            <div class="articulo-container-description-button">
+
+                                <input type="button" value="CARRITO">
+                            </div>
+
+
+                        </div>
+                    </div>
+              
+
+                </article>
+                </a>
+
+
                 <article class="articulo-container">
                     <div class="articulo-container-img"></div>
 
@@ -97,34 +131,101 @@
 
 
                         </div>
-                    </div>
-
-
                 </article>
-                <article class="articulo-container">
-                    <div class="articulo-container-img"></div>
-
-                    <div class="articulo-container-description">
-                        <h3> Nombre del Producto</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
-                        <div>
-                            <div class="articulo-container-description-valor">
-                                <h4 id="precio">18.000$</h4>
-                                <h4>17%off</h4>
-                            </div>
-
-                            <div class="articulo-container-description-button">
-
-                                <input type="button" value="CARRITO">
-                            </div>
-
-
-                        </div>
-                </article>
-
 
 
             </section>
+
+
+            <div class="titulo-decompra" id="mas-vendidos">
+                <p>¡Mas Vendidos!</p>
+            </div>
+
+            <section class="articulos">
+                <% 
+                let masVendidos = productos.filter( producto => producto.ventas == 20);
+                
+                masVendidos.forEach(productos => { %>
+    
+                    <a href="/productos/detalle/<%= productos.id %>" id="link-container">
+                        <article class="articulo-container">
+                        <div class="articulo-container-img"></div>
+    
+                        <div class="articulo-container-description">
+                            <h3><%= productos.name %></h3>
+                            <p><%= productos.descripcion %></p>
+                            <div>
+                                <div class="articulo-container-description-valor">
+                                    <h4 id="precio"><%= productos.precio %>$</h4>
+                                    <% if(productos.oferta != 0){ %>
+    
+                                    <h4><%= productos.oferta %>%off</h4>
+                                    <% } %>
+    
+                                </div>
+    
+                                <div class="articulo-container-description-button">
+    
+                                    <input type="button" value="CARRITO">
+                                </div>
+    
+    
+                            </div>
+                        </div>
+                        
+    
+                    </article>
+                    </a>
+    
+    
+                <% }) %>
+                </section>
+
+
+            <div class="titulo-decompra" id="5-estrellas">
+                <p>¡5 Estrellas!</p>
+            </div>
+
+            <section class="articulos">
+            <% 
+            let cincoEstrellas = productos.filter( producto => producto.estrellas >= 4);
+            
+            cincoEstrellas.forEach(productos => { %>
+
+                <a href="/productos/detalle/<%= productos.id %>" id="link-container">
+                    <article class="articulo-container">
+                    <div class="articulo-container-img"></div>
+
+                    <div class="articulo-container-description">
+                        <h3><%= productos.name %></h3>
+                        <p><%= productos.descripcion %></p>
+                        <div>
+                            <div class="articulo-container-description-valor">
+                                <h4 id="precio"><%= productos.precio %>$</h4>
+                                <% if(productos.oferta != 0){ %>
+
+                                <h4><%= productos.oferta %>%off</h4>
+                                <% } %>
+
+                            </div>
+
+                            <div class="articulo-container-description-button">
+
+                                <input type="button" value="CARRITO">
+                            </div>
+
+
+                        </div>
+                    </div>
+                    
+
+                </article>
+                </a>
+
+
+            <% }) %>
+            </section>
+            
 
             <%- include('./partials/footer.ejs') %>
 

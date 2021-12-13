@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head.ejs') %>
+
+
+    <body>
+
+        <%- include('../partials/header.ejs') %>
+
+         <main class="crearProducto">
+             
+                 <h2>Crear producto</h2>
+                
+            <form action="/productos/almacen" method="POST">
+        
+                    <label class="nombre" for="nombre"><p>Nombre</p></label>
+                    <input type="text" name="name" id="nombre" >
+                    <span>debe ingresar un nombre</span>
+                    
+            <p>Genero</p>
+                <select class="select" name="genero" id="genero">
+                    <option value="0">Selecione un juego</option>
+                    <option value="RPG">RPG</option>
+                    <option value="ACCION">ACCION</option>
+                    <option value="AVENTURA">AVENTURA</option>
+                    <option value="ROL">ROL</option>
+                    <option value="DEPORTE">DEPORTE</option>
+                    <option value="SIMULACION">SIMULACION</option>
+                    <option value="ESTRATEGIA">ESTRATEGIA</option>
+                    <option value="SUPERVIVENCIA">SUPERVIVENCIA</option>
+                </select>
+
+                <p>Estrellas</p> 
+                <div class="estrellas">
+                    
+                    <label for="estrellas1"><i class="far fa-star"></i><input type="radio"  name="estrellas" id="estrellas1" value="1">1</label>
+                    <label for="estrellas2"><i class="far fa-star"></i><input type="radio"  name="estrellas" id="estrellas2" value="2">2</label>
+                    <label for="estrellas3"><i class="far fa-star"></i><input type="radio"  name="estrellas" id="estrellas3" value="3">3</label>
+                    <label for="estrellas4"><i class="far fa-star"></i><input type="radio"  name="estrellas" id="estrellas4" value="4">4</label>
+                    <label for="estrellas5"><i class="far fa-star"></i><input type="radio"  name="estrellas" id="estrellas5" value="5">5</label>
+                </div>
+
+                <p>Clasificación</p>
+                <select class="select" name="clasificacion" id="clasificacion">
+                    <option value="A" selected >Contenido para todo el público</option>
+                    <option value="B">Contenido para adolescente a partir de 12 años</option>
+                    <option value="B15">Contenido para mayores de 15 años</option>
+                    <option value="C">Contenido no apto para menores de 18 años</option>
+                </select>
+
+               <!--  CONSOLAS COMPATIBLES: -PC -PLAYSTATION 1 - PLAYSTATION 2 - PLAY 3 -PLAY4 -PLAY 5 -XBOX -NINTENDO *CHECKBOX*--> 
+        
+                 <p>Consolas compatibles</p>
+                <label for="consola"><input type="checkbox" name="consola" id="consola" value="pc">pc</label>
+                <label for="consola2"><input type="checkbox" name="consola" id="consola2" value="playstation_1">playstation_1</label>
+                <label for="consola3"><input type="checkbox" name="consola" id="consola3" value="playstation_2">playstation_2</label>
+                <label for="consola4"><input type="checkbox" name="consola" id="consola4" value="playstation_3">playstation_3</label>
+                <label for="consola5"><input type="checkbox" name="consola" id="consola5" value="playstation_4">playstation_4</label>
+                <label for="consola6"><input type="checkbox" name="consola" id="consola6" value="playstation_5">playstation_5</label>
+                <label for="consola7"><input type="checkbox" name="consola" id="consola7" value="xbox">xbox</label>
+                <label for="consola8"><input type="checkbox" name="consola" id="consola8" value="nintendo">nintendo</label>    
+        
+                <p>Idiomas</p>
+                <label for="idiomas"><input type="checkbox" name="idiomas" id="idiomas" value="español">español</label>
+                <label for="idiomas2"><input type="checkbox" name="idiomas" id="idiomas2" value="ingles">ingles</label>
+                <label for="idiomas3"><input type="checkbox" name="idiomas" id="idiomas3" value="chino">chino</label>
+        
+                <p>Subtitulos</p>
+                <label for="subtitulos"><input type="checkbox" name="subtitulos" id="subtitulos" value="español">español</label>
+                <label for="subtitulos2"><input type="checkbox" name="subtitulos" id="subtitulos2" value="frances">frances</label>
+                <label for="subtitulos3"><input type="checkbox" name="subtitulos" id="subtitulos3" value="aleman">aleman</label>
+        
+                <p>Conexion a internet</p>
+                <label for="Conexion"><input type="radio"  name="Conexion" id="Conexion" value="SI">SI</label>
+                <label for="Conexion2"><input type="radio"  name="Conexion" id="Conexion2" value="NO">NO</label>
+        
+                <p>Compras integradas</p>
+                <label for="comprasIntegradas"><input type="radio"  name="comprasIntegradas" id="comprasIntegradas" value="SI">SI</label>
+                <label for="comprasIntegradas2"><input type="radio"  name="comprasIntegradas" id="comprasIntegradas2" value="NO">NO</label>
+                
+                <P>Multijugador</P>
+                <label for="multijugador"><input type="checkbox" name="multijugador" id="multijugador" value="1">1</label>
+                <label for="multijugador2"><input type="checkbox" name="multijugador" id="multijugador2" value="2">2</label>
+                <label for="multijugador3"><input type="checkbox" name="multijugador" id="multijugador3" value="4">4</label>
+                <label for="multijugador4"><input type="checkbox" name="multijugador" id="multijugador4" value="5">5</label>
+                <label for="multijugador5"><input type="checkbox" name="multijugador" id="multijugador5" value="8">8</label>
+        
+                <label for="message">Descripcion</label>
+                <textarea name="Descripcion" id="message" cols="30" rows="10"></textarea>
+                
+                <label for="precio">Precio</label>
+                <span>Debe deescribir el producto</span>
+                
+                <input type="number" name="precio" id="precio">
+                <span>debe fijar un precio</span>
+                
+                <label for="almacenamiento">almacenamiento</label>
+                <input type="number" name="alamacenamiento" id="almacenamiento">
+
+                <p>ingrse una foto</p>
+                <input type="file" name="photo" id="photo"> --> 
+
+                <br>
+                <input type="submit">
+            </form>
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
+
+    </body>
+
+</html>
