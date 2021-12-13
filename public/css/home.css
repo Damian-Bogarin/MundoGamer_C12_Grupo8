@@ -5,7 +5,10 @@
     font-family: Quicksand ;
  }
 
-
+#link-container{
+    text-decoration: none;
+   
+}
 
  /*MOBILE FIRST*/
 
@@ -162,7 +165,7 @@ body{
     display: flex;
     width: 95vw;
     padding: 2.5%;
-    height: 10rem;
+     height: 10rem; 
     background: linear-gradient(to bottom right, rgb(143, 143, 145), white);
     box-shadow: 5px 5px 5px rgb(146, 137, 137);
     margin: 15px 0px;
@@ -173,14 +176,25 @@ body{
 }
 
 .articulo-container-img {
-    display: flex;
-    background-color: white;
+   
+    background-color: rgb(255, 255, 255);
     width: 30%;
     height: 80%;
     border-radius: 15px;
     margin: 5px;
     
 }
+
+
+.articulo-container-img img{
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+   
+
+
 .articulo-container-description{
     display: flex;
     flex-direction: column;
@@ -264,6 +278,10 @@ color: red;
     height: 70px;
     width:  70px;
 
+}
+
+.articulo-container{
+    height: 20rem;
 }
 }
     

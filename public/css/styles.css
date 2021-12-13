@@ -18,3 +18,5 @@
 
 /*En el archivo admin.css estarán los estilos para newProduct.ejs y editProduct.ejs*/
 @import url('admin.css');
+
+@import url('createProducts.css');
