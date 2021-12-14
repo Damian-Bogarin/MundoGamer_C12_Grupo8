@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+
+        <%- include('../partials/headerAdmin.ejs') %>
+
+            <main class="listOfAllProducts">
+
+                <h2 class="titleListProduct">Listado de mis productos</h2>
+
+                <section class="listTable">
+
+                    <table>
+                    <!-- tr para la primer fila general (row:fila) -->
+                        <tr class="header">
+                         <!-- th, la h de header(encabezado) --> 
+                            <th>ID</th>
+                            <th>Categoria</th>
+                            <th>Subcategoria</th>
+                            <th>Nombre</th>
+                            <th>Stock</th>
+                            <th>Acción</th>
+
+                        </tr> 
+
+                        <tr class="body">
+                        <!-- td, estas serian las celdas normales -->
+                            <td>1</td>
+                            <td>Deporte</td>
+                            <td>Futbol</td>
+                            <td>Videojuego</td>
+                            <td>2</td>
+                            <td>
+                            <a href="/updateProduct"><i class="fas fa-edit"></i></a>
+                            <form action="">
+                                <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                            </td>
+
+
+                        <!-- icono de delete: <i class="fas fa-trash-alt"></i>   -->
+                        <!-- icono de edit:  <i class="fas fa-edit"></i>    -->
+                        </tr>
+
+                    </table>
+
+                </section>
+
+            </main>
+
+    </body>
+
+</html>

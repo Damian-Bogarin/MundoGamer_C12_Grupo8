@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 3008; /* en el puerto 3008 porque somos grupo 8 :) */
+const PORT = 3008;
 app.use(express.static('public'));
 //EJS
 app.set("view engine", "ejs") // Setea el template engine

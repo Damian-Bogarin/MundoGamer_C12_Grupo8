@@ -1,4 +1,4 @@
-/*Header*/
+/*Header (min-width: 320px)*/
 
 .main-header {
      display: flex;
@@ -12,7 +12,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      object-fit: cover;
      position: relative; 
      width: 100%; 
-     height: 140px; 
+     height: 90px; 
 }
 
 .main-header .header {
@@ -24,28 +24,29 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 .header .header-top {
      display: flex; 
      align-items: center; 
-     height: 85px;
-     padding: 1px;
+     height: 90px; 
+     padding: 2px;
 }
 
 .header .logo {
-     width: 80px;
-     height: 80px;
+     width: 70px; 
+     height: 70px;
      cursor: pointer;
+     margin-right: 10px;
 }
 
 .header-top .search-bar {
-     width: 60%;
+     width: 55%; 
      border-radius: 1rem;
      display: flex;
      align-items: center;
-     justify-content: space-between;
      padding: 4px 8px;
      background-color: white;
+     margin-right: 8px;
 }
 
 .search-bar input {
-     width: 100%;
+     width: 100%; 
      border: none;
      flex-grow: 1;
 }
@@ -72,22 +73,22 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      .header .logo {
           width: 90px;
           height: 90px;
-     }
+     } 
 
-    .header .header-top input {
-         font-size: 18px; 
-    }
-
-    .header .header-top a {
-         font-size: 20px;
-    }
+     .header .header-top a {
+         font-size: 18px;
+    } 
 }
 
 @media (min-width: 425px) {
 
-    .header .header-top {
-         justify-content: space-evenly;
-    }
+     .header .header-top {
+          justify-content: space-between;
+     }  
+
+     .header .header-top a {
+          font-size: 20px;
+     } 
 }
 
 
@@ -96,14 +97,27 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 @media (min-width: 768px) {
     /*header-top*/
 
-    .header .header-top .logo {
-         width: 110px; 
-         height: 110px;
-         margin-top: 5px;
+    .main-header .fondo-header {
+         height: 120px; 
     }
 
+    .main-header .header {
+         padding: 0 10px 0 4px;
+    }
+
+    .header .header-top .logo {
+         width: 100px; 
+         height: 100px;
+         order: 0;
+    }
+
+    .header-top .search-bar {
+         order: 1;
+}
+
     .header .header-top a {
-         font-size: 25px;
+         font-size: 24px;
+         order: 2;
     }
 
     .header .header-top a.hamburguer {
@@ -114,27 +128,17 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
     .header nav.header-bottom {
          display: block; 
-         height: 35px; 
          align-items: center;
-         margin-top: 18px; 
     }
 
     .main-header nav.header-bottom ul {
          display: flex;
-         justify-content: space-evenly; 
+         justify-content: space-evenly;  
          width: 100%; 
-         
-    }
-
-    .header-bottom ul li { 
-         display: inline-block; 
-         background-color: white; 
-         border-radius: 1rem;
-         padding: 4px;
-    }
+     }
 
     .header-bottom ul li a {
-         color: black;
+         color: white;
          text-decoration: none;
          font-family: var(--font-quicksand);
          font-weight: 800; 
@@ -147,17 +151,17 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 @media (min-width: 1200px) {
     /*header-top*/
-    .header .header-top {
-         justify-content: space-around; 
-         margin-top: 10px;
-    } 
+    .main-header .header {
+     padding: 0 10px 0 6px;
+    }
 
     .header .header-top a {
-         font-size: 35px; 
+         font-size: 26px; 
     }
 
     /*header-bottom*/
-     .header nav.header-bottom {
-         margin-top: 10px; 
-     }
+
+     .header-bottom ul li a {
+          font-size: 20px;
+     } 
 }

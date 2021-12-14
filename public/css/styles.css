@@ -20,3 +20,12 @@
 @import url('admin.css');
 
 @import url('createProducts.css');
+
+/* @import url('myProfile.css'); */
+
+/*En el archivo create&update.css estarán los estilos para productCreate.ejs y updateProduct.ejs que estan dentro del admin*/
+@import url('create&update.css'); 
+
+@import url('headerAdmin.css');
+
+@import url('listProduct.css');

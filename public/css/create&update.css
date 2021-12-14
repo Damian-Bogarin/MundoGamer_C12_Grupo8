@@ -1,0 +1,113 @@
+/* Aqui están los estilos para productCreate.ejs y updateProduct.ejs */
+
+.main-productCreate {
+    /* Con el padding se completa todo el background-color */
+    padding: 5px;
+    flex-direction: column;
+    /* text-align: center; */
+    width: 100%;
+    background-color: lightgray;
+}
+
+.main-productCreate .title-productCreate {
+    font-size: 20px;
+    margin: 40px 0; 
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    /* width: auto; *//* -------------------------- */
+}
+
+.main-productCreate .label-subtitle {
+    margin: 10px 0 8px 0;
+    font-size: 18px;
+    text-align: center; 
+}  
+
+.main-productCreate form{
+    width: 85%; /* tenia 90% */
+    max-width: 1100px;
+    padding: 8px 18px 15px 18px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+   /*  border-radius: 8px; */
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 25px;
+    background-color: white;
+}
+
+.main-productCreate input:focus{
+    /*sacamos el borde que hace al hacer click*/
+    outline: none;
+}
+
+.main-productCreate .errorCreate {
+    color: rgb(255, 51, 51);
+    font-size: 12px;
+    display: none;
+}
+
+.main-productCreate .div-box input{
+    margin: 0 4px;
+}
+
+.main-productCreate .label-subtitle i {
+    color: rgb(251, 251, 59);
+}
+
+.main-productCreate textarea:focus {
+    outline: none;
+}
+
+.main-productCreate .input-file-create {
+    display: none; 
+}
+
+.main-productCreate .label-file-create {
+    cursor: pointer;
+    border: solid 1px black;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.main-productCreate .button-productCreate {
+    display: flex; 
+    margin: 12px 0px;
+}
+
+.main-productCreate .button-productCreate button{
+    font-weight: bold; /*grosor de letra*/
+    font-size: 23px;
+    border: none;
+    border-radius: 25px;
+    background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, rgba(28, 13, 197, 0.5) 60%);
+    color: rgb(44, 44, 44);
+    cursor: pointer; 
+    width: 180px;
+    height: 40px;
+    margin: auto;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+/* Media-query - Tablet */
+
+@media (min-width: 768px) {
+
+    .main-productCreate form {
+       /*  max-width: 500px; */
+       width: 65%;
+    }
+} 
+
+@media (min-width: 1200px) {
+
+    .main-productCreate form {
+        min-width: 55%; 
+    }
+
+    .main-productCreate .title-productCreate {
+        font-size: 22px;
+    }
+
+}

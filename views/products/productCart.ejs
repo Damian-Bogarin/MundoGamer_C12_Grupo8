@@ -3,18 +3,18 @@
 
 <%- include('../partials/head.ejs') %>
 
-    <body>
+    <body class="bodyCart">
 
         <%- include('../partials/header.ejs') %>
 
             <main class="cart">
                 <div class="title-cart">
-                    <h2>Carrito</h2>
-                    <h4>4 elementos en tu carrito</h4>
+                    <h2 class="h2title">Carrito</h2>
+                    <p class="titleP">4 elementos en tu carrito</p> 
                 </div>
                 <hr>
 
-                <div class="product">
+                <div class="div-products">
 
                     <div class="product-1">
                         <img src="/img/futbolCarrito.png" alt="">
@@ -23,11 +23,19 @@
                             <p>FIFA 22 Edition Electronic Arts PS5 <br>
                                 $9.900
                             </p>
-                            <div class="icon-cart">
-                                <i class="fas fa-minus"></i>
-                                <i class="fas fa-plus"></i>
-                                <i class="far fa-trash-alt"></i>
+                            
+                            <div class="counter">
+                                <button type="button" class="btn-subtract" onclick="subtract();">
+                                    -
+                                </button>
+        
+                                            <div id="count">1</div>
+        
+                                <button type="button" id="btn-add" onclick="add();">
+                                    +
+                                </button>
                             </div>
+
                         </div>
                     </div><br>
                     <hr>
@@ -38,11 +46,19 @@
                             <p>Ao Tennis 2 Fisico Ps4 Soy Gamer <br>
                                 $7.800
                             </p>
-                            <div class="icon-cart">
-                                <i class="fas fa-minus"></i>
-                                <i class="fas fa-plus"></i>
-                                <i class="far fa-trash-alt"></i>
+
+                            <div class="counter">
+                                <button type="button" class="btn-subtract" onclick="subtract();">
+                                    -
+                                </button>
+        
+                                            <div id="count">1</div>
+        
+                                <button type="button" id="btn-add" onclick="add();">
+                                    +
+                                </button>
                             </div>
+
                         </div>
                     </div><br>
                     <hr>
@@ -53,11 +69,19 @@
                             <p>Lego Jurassic World Ps4 Fisico <br>
                                 $4.500
                             </p>
-                            <div class="icon-cart">
-                                <i class="fas fa-minus"></i>
-                                <i class="fas fa-plus"></i>
-                                <i class="far fa-trash-alt"></i>
+                           
+                            <div class="counter">
+                                <button type="button" class="btn-subtract" onclick="subtract();">
+                                    -
+                                </button>
+        
+                                            <div id="count">1</div>
+        
+                                <button type="button" id="btn-add" onclick="add();">
+                                    +
+                                </button>
                             </div>
+
                         </div>
                     </div><br>
                     <hr>
@@ -68,11 +92,19 @@
                             <p>Ghost Of Tsushima Ps4 Soy Gamer <br>
                                 $5.000
                             </p>
-                            <div class="icon-cart">
-                                <i class="fas fa-minus"></i>
-                                <i class="fas fa-plus"></i>
-                                <i class="far fa-trash-alt"></i>
+                            
+                            <div class="counter">
+                                <button type="button" class="btn-subtract" onclick="subtract();">
+                                    -
+                                </button>
+        
+                                            <div id="count">1</div>
+        
+                                <button type="button" id="btn-add" onclick="add();">
+                                    +
+                                </button>
                             </div>
+
                         </div>
                     </div><br>
                     <hr>
@@ -80,8 +112,8 @@
                 </div>
 
                 <div class="total-and-buttom">
-                    <p>Subtotal $20.298</p><br>
-                    <p>TOTAL $20.298</p><br>
+                    <p class="p-totales">Subtotal $20.298</p><br>
+                    <p class="p-totales">TOTAL $20.298</p><br>
                     <button type="submit">Realizar pedido</button> <br>
                     <button type="submit">Seguir comprando</button>
                 </div>
@@ -89,7 +121,8 @@
             </main>
 
             <%- include('../partials/footer.ejs') %>
-
+            <script src="/js/productCart.js"></script>
+            <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     </body>
 
 </html>

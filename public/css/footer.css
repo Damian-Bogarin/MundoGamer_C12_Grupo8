@@ -1,3 +1,5 @@
+/* Media queries-mobile(360px) */ 
+
 .main-footer {
      display: flex;
      flex-direction: column;
@@ -9,12 +11,12 @@
 .enlaces-footer ul {
      list-style: none; /*sin los puntos por delante*/
      text-align: center;
-     margin-bottom: 10px;
-     margin-top: 40px;
+     margin-bottom: 8px;
+     margin-top: 18px; 
 }
 
 .enlaces-footer ul li {
-     margin: 15px 0; /*interlineado entre los enlaces*/
+     margin: 10px 0; /*interlineado entre los enlaces*/
 }
 
 .enlaces-footer ul li a{
@@ -27,7 +29,7 @@
 
 .logos-contacto {
      display: flex;
-     margin: 15px 0px;
+     margin: 12px 0px;
      justify-content: center;
 }
 

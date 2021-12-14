@@ -1,25 +1,37 @@
+.bodyCart {
+    width: 100%;
+}
+
 main.cart {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.cart .title-cart {
-    margin: 20px 0 1px 15px;
+.cart .title-cart { 
+    margin: 8px 0 1px 15px;
 }
 
-.cart .product img {
-    max-width: 110px;
-    max-height: 110px;
+.cart .title-cart .h2title {
+    font-size: 18px;
+}
+
+.cart .title-cart .titleP {
+    font-size: 16px;
+}
+
+.cart .div-products img {
+    max-width: 115px;
+    max-height: 115px;
     margin-right: 8px;
 }
 
-.product .product-1, 
+.div-products .product-1, 
 .product-2, 
 .product-3, 
 .product-4 {
     display: flex;
-    margin: 20px 20px 0 20px; 
+    margin: 18px 18px 0 18px; 
     padding: 5px;
 }
 
@@ -28,9 +40,34 @@ main.cart {
     cursor: pointer;
 }
 
+/* contador */
+
+.counter {
+    display: flex;
+    padding: 4px 14px;/* 4px 20px */
+    justify-content: space-between;
+    align-items: center; 
+    width: 4rem; /* 7rem */
+    border: 1px solid black;
+    border-radius: 15px;
+    max-height: 35px;
+    height: 25px;
+}
+
+.counter button {
+    border: none;
+    font-size: 18px; /* 1.5rem */
+    font-weight: bold;
+    background-color: white;
+}
+
 .cart .total-and-buttom {
     text-align: center;
     margin: 18px 0;
+}
+
+.cart .total-and-buttom .p-totales {
+    font-size: 18px;
 }
 
 .cart .total-and-buttom button {
@@ -47,38 +84,42 @@ main.cart {
 
 @media (min-width: 768px) {
 
-    .cart .title-cart h2, h4{
-        font-size: 22px;
+    .cart .title-cart .h2title {
+        font-size: 20px;
+    }
+    
+    .cart .title-cart .titleP {
+        font-size: 18px;
     }
 
-    .cart .product img {
+    .cart .div-products img {
         max-width: 150px;
         max-height: 150px;
         margin-right: 10px;
     }
 
-    .product .product-container {
+    .div-products .product-container {
         display: flex;
         flex-direction: row;
         width: 100%; 
         justify-content: space-between;
     }
 
-    .product .product-container .icon-cart i{
+    .div-products .product-container .icon-cart i{
         margin: 0 4px;
     }
 
-    .cart .product p {
+    .cart .div-products p {
         font-size: 16px;
     }
 
-    .cart .product i {
+    .cart .div-products i {
         font-size: x-large;
     }
 
     
     .cart .total-and-buttom {
-        margin: 28px 0;
+        margin: 25px 0;
     }
 
     .cart .total-and-buttom button {
@@ -97,23 +138,32 @@ main.cart {
         display: flex;
         flex-direction: row;
         width: 100%;
-        padding: 30px 0;
-        justify-content: space-evenly;
+        padding: 18px 0;
+        justify-content: space-evenly; 
     }
 
     .cart .title-cart {
         font-size: 30px;
-        max-width: 210px;
+        min-width: 200px; 
+        margin: 0 18px;
+        padding-top: 15px; 
     }
 
-    .product {
+    .div-products {
         max-width: 70%; 
+        padding: 0 35px;
+    }
+
+    .div-products .product-container p {
+        width: 350px; 
     }
 
     .cart .total-and-buttom {
         flex-direction: row;
         display: inline-block;
         max-width: 30%; 
+        margin: 0 40px;
+        margin-top: 20px;
         /* transition? */
     }
 
@@ -124,13 +174,13 @@ main.cart {
         
     }
 
-    .cart .product img {
-        max-width: 200px;
-        max-height: 200px;
-        margin-right: 10px;
-    }
+    .cart .div-products img {
+        max-width: 180px;
+        max-height: 180px;
+        margin-right: 10px; 
+    } 
 
-    .product hr {
+    .div-products hr {
         display: none;
     }
 }
