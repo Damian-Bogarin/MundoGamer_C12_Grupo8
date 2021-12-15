@@ -4,7 +4,7 @@ const {products,writeProductsJSON} = require("../Datos/baseDatos");
 
 const controller = {
 
-    detalle : (req,res) => {
+    detail: (req,res) => {
         let productId = req.params.id
         let producto
         for (let index = 0; index < products.length; index++) {
@@ -15,26 +15,21 @@ const controller = {
         }
         res.render('products/productDetail', {producto})},
 
-
-
-    carrito: (req,res) => {
-        res.render('products/productCart') }, 
-    crear: (req,res) => {
-        res.render('products/crearProductos')},
-    almacen: (req,res) => {
+   
+   /*  almacen: (req,res) => {
         let ejem = req.body
         products.push(ejem)
-      writeProductsJSON(products)  
+      writeProductsJSON(products)   
     
     
 
 
-      res.redirect('/')    },
-    editar: (req,res) => {
-        res.render('products/productEditar')},
+      res.redirect('/')    },*/
+    
     categorias: (req,res) => {
         res.render('products/categorias')}
 }
+
 
 
 

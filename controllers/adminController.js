@@ -1,9 +1,9 @@
-/* let controller = {
+let controller = {
 
-    adminCreate: (req, res) => {
+    create: (req, res) => {
         res.render('admin/productCreate')
     },
-    adminUpdate: (req, res) => {
+    update: (req, res) => {
         res.render('admin/updateProduct')
     },
     list: (req, res) => {
@@ -12,4 +12,5 @@
 };
 
 
-module.exports = controller; */
+
+module.exports = controller;
