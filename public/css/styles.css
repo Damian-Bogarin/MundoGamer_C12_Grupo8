@@ -1,31 +1,29 @@
-/*Aqui van todos los links de los css para importar*/
+/*Links-css-import*/
 
 @import url('general.css');
 @import url('variables.css');
 
+
+/* Partials */
 @import url('header.css');
+@import url('headerAdmin.css');
 @import url('footer.css'); 
 
-@import url('home.css');
+
+/* Admin */
+@import url('listProduct.css'); 
+@import url('create&update.css'); /* (create&update.css) -> styles for productCreate.ejs and updateProduct.ejs  */
+
+
+/* Products */
 @import url('categoria.css');
-
-/*En el documento forms.css estarán todos los estilos para el login.ejs y register.ejs*/
-@import url('forms.css');
-
 @import url('productDetail.css');
-@import url('productCart.css');
-@import url('register.css');
 
-/*En el archivo admin.css estarán los estilos para newProduct.ejs y editProduct.ejs*/
-@import url('admin.css');
 
-@import url('createProducts.css');
-
+/* Users */
+@import url('forms.css'); /* (forms.css) -> styles for login.ejs and register.ejs */
 /* @import url('myProfile.css'); */
+@import url('productCart.css');
 
-/*En el archivo create&update.css estarán los estilos para productCreate.ejs y updateProduct.ejs que estan dentro del admin*/
-@import url('create&update.css'); 
 
-@import url('headerAdmin.css');
-
-@import url('listProduct.css');
+@import url('home.css');

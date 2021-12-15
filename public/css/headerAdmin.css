@@ -1,4 +1,4 @@
-/* Header para TODAS las vistas del admin */
+/* headerAdmin -> para todas las vistas de la carpeta admin */
 
 .header-admin {
     position: relative;
@@ -6,7 +6,7 @@
     width: 100%;
 }
 
-.header-admin .fondo-header { /* Foto del fondo */
+.header-admin .fondo-header-admin { /* Foto del fondo */
     object-fit: cover;
     width: 100%;
     height: 90px;

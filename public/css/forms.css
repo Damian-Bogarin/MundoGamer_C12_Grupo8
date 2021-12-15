@@ -1,7 +1,7 @@
 .form-main .formulario {
     font-family: var(--font-quicksand);
     border-radius: 14px;
-    background-color: lightgray;
+    background-color: #ebebeb;
     margin: 55px auto;
     display: flex;
     flex-direction: column;

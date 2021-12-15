@@ -6,7 +6,7 @@
     flex-direction: column;
     /* text-align: center; */
     width: 100%;
-    background-color: lightgray;
+    background-color: #ebebeb;
 }
 
 .main-productCreate .title-productCreate {
@@ -100,6 +100,8 @@
     }
 } 
 
+
+/* Media-query - Desktop */
 @media (min-width: 1200px) {
 
     .main-productCreate form {

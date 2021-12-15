@@ -3,6 +3,8 @@
 :root {
     /*color entre azul y violeta*/
     --ligth_violet: rgba(28, 13, 197, 0.5); 
+    /* color gris bajito */
+    --ligth_grey: #ebebeb;
     /*font-family*/
     --font-quicksand: 'Quicksand', sans-serif;
 }
