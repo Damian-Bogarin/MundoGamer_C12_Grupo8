@@ -16,11 +16,11 @@
                 <form action="/products/store" method="POST">
         
                     <label class="label-subtitle">Nombre del producto</label>
-                    <input class="input-productCreate" type="text" name="user" id="nombre">
+                    <input class="input-productCreate" type="text" name="name" id="nombre">
                     <span class="errorCreate">Debes ingresar un nombre</span>
                     
                     <label class="label-subtitle">Género</label>
-                    <select class="select" name="genero" id="genero">
+                    <select class="select" name="gender" id="genero">
                             <option value="0">Seleccione un juego</option>
                             <option value="RPG">RPG</option>
                             <option value="ACCION">ACCION</option>
@@ -35,16 +35,16 @@
                
                     <p class="label-subtitle">Estrellas  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p> 
                     <div class="div-box">
-                    <label for="estrellas1"><input type="radio" name="estrellas" id="estrellas1" value="1">1</label>
-                    <label for="estrellas2"><input type="radio" name="estrellas" id="estrellas2" value="2">2</label>
-                    <label for="estrellas3"><input type="radio" name="estrellas" id="estrellas3" value="3">3</label>
-                    <label for="estrellas4"><input type="radio" name="estrellas" id="estrellas4" value="4">4</label>
-                    <label for="estrellas5"><input type="radio" name="estrellas" id="estrellas5" value="5">5</label>
+                    <label for="estrellas1"><input type="radio" name="stars" id="estrellas1" value="1">1</label>
+                    <label for="estrellas2"><input type="radio" name="stars" id="estrellas2" value="2">2</label>
+                    <label for="estrellas3"><input type="radio" name="stars" id="estrellas3" value="3">3</label>
+                    <label for="estrellas4"><input type="radio" name="stars" id="estrellas4" value="4">4</label>
+                    <label for="estrellas5"><input type="radio" name="stars" id="estrellas5" value="5">5</label>
                     </div>
                     
         
                     <label class="label-subtitle">Clasificación</label>
-                    <select class="select" name="clasificacion" id="clasificacion">
+                    <select class="select" name="clasification" id="clasificacion">
                         <option value="A" selected>Contenido para todo el público</option>
                         <option value="B">Contenido para adolescentes a partir de 12 años</option>
                         <option value="B">Contenido para mayores de 15 años</option>
@@ -54,60 +54,60 @@
                     <!--CONSOLAS COMPATIBLES: -PC -PLAYSTATION 1 - PLAYSTATION 2 - PLAY 3 -PLAY4 -PLAY 5 -XBOX -NINTENDO *CHECKBOX*-->
         
                     <label class="label-subtitle">Consolas compatibles</label>
-                    <label for="consola"><input type="checkbox" name="consola" id="consola" value="PC">PC</label>
-                    <label for="consola2"><input type="checkbox" name="consola" id="consola2" value="Playstation 1">Playstation 1</label>
-                    <label for="consola3"><input type="checkbox" name="consola" id="consola3" value="Playstation 2">Playstation 2</label>
-                    <label for="consola4"><input type="checkbox" name="consola" id="consola4" value="Playstation 3">Playstation 3</label>
-                    <label for="consola5"><input type="checkbox" name="consola" id="consola5" value="Playstation 4">Playstation 4</label>
-                    <label for="consola6"><input type="checkbox" name="consola" id="consola6" value="Playstation 5">Playstation 5</label>
-                    <label for="consola7"><input type="checkbox" name="consola" id="consola7" value="XBOX">XBOX</label>
-                    <label for="consola8"><input type="checkbox" name="consola" id="consola8" value="Nintendo">Nintendo</label>
+                    <label for="consola"><input type="checkbox" name="console" id="consola" value="PC">PC</label>
+                    <label for="consola2"><input type="checkbox" name="console" id="consola2" value="Playstation 1">Playstation 1</label>
+                    <label for="consola3"><input type="checkbox" name="console" id="consola3" value="Playstation 2">Playstation 2</label>
+                    <label for="consola4"><input type="checkbox" name="console" id="consola4" value="Playstation 3">Playstation 3</label>
+                    <label for="consola5"><input type="checkbox" name="console" id="consola5" value="Playstation 4">Playstation 4</label>
+                    <label for="consola6"><input type="checkbox" name="console" id="consola6" value="Playstation 5">Playstation 5</label>
+                    <label for="consola7"><input type="checkbox" name="console" id="consola7" value="XBOX">XBOX</label>
+                    <label for="consola8"><input type="checkbox" name="console" id="consola8" value="Nintendo">Nintendo</label>
         
                     <label class="label-subtitle">Idiomas</label>
                     <div class="div-box">
-                    <label for="idioma1"><input type="checkbox" name="idiomas" id="idiomas1" value="Español">Español</label>
-                    <label for="idioma2"><input type="checkbox" name="idiomas" id="idioma2" value="Ingles">Inglés</label> 
-                    <label for="idioma3"><input type="checkbox" name="idiomas" id="idioma3" value="Chino">Chino</label>
+                    <label for="idioma1"><input type="checkbox" name="lenguage" id="idiomas1" value="Español">Español</label>
+                    <label for="idioma2"><input type="checkbox" name="lenguage" id="idioma2" value="Ingles">Inglés</label> 
+                    <label for="idioma3"><input type="checkbox" name="lenguage" id="idioma3" value="Chino">Chino</label>
                     </div>
 
                     <label class="label-subtitle">Subtitulos</label>
                     <div class="div-box">
-                    <label for="subtitulo1"><input type="checkbox" name="subtitulos" id="subtitulo1" value="español">Español</label>
-                    <label for="subtitulo2"><input type="checkbox" name="subtitulos" id="subtitulo2" value="frances">Francés</label>
-                    <label for="subtitulo3"><input type="checkbox" name="subtitulos" id="subtitulo3" value="aleman">Alemán</label>
+                    <label for="subtitulo1"><input type="checkbox" name="subtitle" id="subtitulo1" value="español">Español</label>
+                    <label for="subtitulo2"><input type="checkbox" name="subtitle" id="subtitulo2" value="frances">Francés</label>
+                    <label for="subtitulo3"><input type="checkbox" name="subtitle" id="subtitulo3" value="aleman">Alemán</label>
                     </div>
 
                     <label class="label-subtitle">Conexión a internet</label>
                     <div class="div-box">
-                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="SI">SI</label>
-                    <label for="conexion2"><input type="radio" name="conexion" id="conexion2" value="NO">NO</label>
+                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="true">SI</label>
+                    <label for="conexion2"><input type="radio" name="conexion" id="conexion2" value="false">NO</label>
                     </div><br>
 
                     <label class="label-subtitle">Compras integradas</label>
                     <div class="div-box">
-                    <label for="comprasIntegradas1"><input type="radio" name="comprasIntegradas" id="comprasIntegradas1" value="SI">SI</label>
-                    <label for="comprasIntegradas2"><input type="radio" name="comprasIntegradas" id="comprasIntegradas2" value="NO">NO</label>
+                    <label for="comprasIntegradas1"><input type="radio" name="integrated shopping" id="comprasIntegradas1" value="SI">SI</label>
+                    <label for="comprasIntegradas2"><input type="radio" name="integrated shopping" id="comprasIntegradas2" value="NO">NO</label>
                     </div><br>
 
                     <label class="label-subtitle">Multijugador</label>
                     <div class="div-box">
-                    <label for="multijugador1"><input type="checkbox" name="multijugador" id="multijugador1" value="1">1</label>
-                    <label for="multijugador2"><input type="checkbox" name="multijugador" id="multijugador2" value="2">2</label>
-                    <label for="multijugador3"><input type="checkbox" name="multijugador" id="multijugador3" value="3">3</label>
-                    <label for="multijugador4"><input type="checkbox" name="multijugador" id="multijugador4" value="4">4</label>
-                    <label for="multijugador5"><input type="checkbox" name="multijugador" id="multijugador5" value="5">5</label>
+                    <label for="multijugador1"><input type="checkbox" name="multiplayer" id="multijugador1" value="1">1</label>
+                    <label for="multijugador2"><input type="checkbox" name="multiplayer" id="multijugador2" value="2">2</label>
+                    <label for="multijugador3"><input type="checkbox" name="multiplayer" id="multijugador3" value="3">3</label>
+                    <label for="multijugador4"><input type="checkbox" name="multiplayer" id="multijugador4" value="4">4</label>
+                    <label for="multijugador5"><input type="checkbox" name="multiplayer" id="multijugador5" value="5">5</label>
                     </div><br>
 
                     <label class="label-subtitle" for="message">Descripción del producto</label>
-                    <textarea name="descripcion" id="message" cols="30" rows="10"></textarea>
+                    <textarea name="description" id="message" cols="30" rows="10"></textarea>
                     <span class="errorCreate">Debes dar detalles de este producto</span>
         
                     <label class="label-subtitle" for="precio">Precio</label>
-                    <input class="input-productCreate" type="number" name="precio" id="precio">
+                    <input class="input-productCreate" type="number" name="price" id="precio">
                     <span class="errorCreate">Debes fijar un precio</span>
         
                     <label class="label-subtitle" for="almacenamiento">Almacenamiento</label>
-                    <input class="input-productCreate" type="number" name="almacenamiento" id="almacenamiento">
+                    <input class="input-productCreate" type="number" name="stock" id="almacenamiento">
                     <span class="errorCreate">Debes agregar el stock</span><br>
         
                     <div class="file-productCreate">

@@ -1,32 +1,22 @@
 [
     {
-        "id": 1,
-        "name": "Super Mario Bros",
-        "precio": 1000,
-        "oferta": 10,
-        "estrellas": 5,
-        "ventas": 10,
-        "nuevo": false,
-        "descripcion": "El juego describe las aventuras de los hermanos Mario y Luigi, personajes que ya protagonizaron el arcade Mario Bros. de 1983. En esta ocasión ambos deben rescatar a la Princesa Peach del Reino Champiñón que fue secuestrada por el rey de los Koopas, Bowser. A través de ocho diferentes mundos, los jugadores pueden controlar a alguno de los dos hermanos y deben enfrentarse finalmente tras los niveles correspondientes de cada mundo a los monstruos de cada castillo para rescatar a la Princesa Peach."
-    },
-    {
         "id": 2,
         "name": "Super Mario Bros 2",
-        "precio": 2000,
-        "oferta": 10,
-        "estrellas": 2,
-        "ventas": 2,
-        "nuevo": false,
-        "descripcion": "El juego describe las aventuras de los hermanos Mario y Luigi, personajes que ya protagonizaron el arcade Mario Bros. de 1983. En esta ocasión ambos deben rescatar a la Princesa Peach del Reino Champiñón que fue secuestrada por el rey de los Koopas, Bowser. A través de ocho diferentes mundos, los jugadores pueden controlar a alguno de los dos hermanos y deben enfrentarse finalmente tras los niveles correspondientes de cada mundo a los monstruos de cada castillo para rescatar a la Princesa Peach."
+        "price": 2000,
+        "descount": 10,
+        "stars": 2,
+        "sales": 2,
+        "new": false,
+        "description": "El juego describe las aventuras de los hermanos Mario y Luigi, personajes que ya protagonizaron el arcade Mario Bros. de 1983. En esta ocasión ambos deben rescatar a la Princesa Peach del Reino Champiñón que fue secuestrada por el rey de los Koopas, Bowser. A través de ocho diferentes mundos, los jugadores pueden controlar a alguno de los dos hermanos y deben enfrentarse finalmente tras los niveles correspondientes de cada mundo a los monstruos de cada castillo para rescatar a la Princesa Peach."
     },
     {
         "id": 3,
-        "name": "Super Mario Bros 3",
-        "precio": 1000,
-        "oferta": 25,
-        "estrellas": 4,
-        "ventas": 20,
-        "nuevo": true,
-        "descripcion": "El juego describe las aventuras de los hermanos Mario y Luigi, personajes que ya protagonizaron el arcade Mario Bros. de 1983. En esta ocasión ambos deben rescatar a la Princesa Peach del Reino Champiñón que fue secuestrada por el rey de los Koopas, Bowser. A través de ocho diferentes mundos, los jugadores pueden controlar a alguno de los dos hermanos y deben enfrentarse finalmente tras los niveles correspondientes de cada mundo a los monstruos de cada castillo para rescatar a la Princesa Peach."
+        "name": "dquwejqwyeqjyuewrqrk",
+        "price": 1000,
+        "descount": 25,
+        "stars": 4,
+        "sales": 20,
+        "new": true,
+        "description": "El juego describe las aventuras de los hermanos Mario y Luigi, personajes que ya protagonizaron el arcade Mario Bros. de 1983. En esta ocasión ambos deben rescatar a la Princesa Peach del Reino Champiñón que fue secuestrada por el rey de los Koopas, Bowser. A través de ocho diferentes mundos, los jugadores pueden controlar a alguno de los dos hermanos y deben enfrentarse finalmente tras los niveles correspondientes de cada mundo a los monstruos de cada castillo para rescatar a la Princesa Peach."
     }
 ]

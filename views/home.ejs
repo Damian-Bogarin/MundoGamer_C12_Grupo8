@@ -143,7 +143,7 @@
 
             <section class="articulos">
                 <% 
-                let masVendidos = productos.filter( producto => producto.ventas == 20);
+                let masVendidos = productos.filter( producto => producto.sales == 20);
                 
                 masVendidos.forEach(productos => { %>
     
@@ -153,13 +153,13 @@
     
                         <div class="articulo-container-description">
                             <h3><%= productos.name %></h3>
-                            <p><%= productos.descripcion %></p>
+                            <p><%= productos.description %></p>
                             <div>
                                 <div class="articulo-container-description-valor">
-                                    <h4 id="precio"><%= productos.precio %>$</h4>
-                                    <% if(productos.oferta != 0){ %>
+                                    <h4 id="precio"><%= productos.price %>$</h4>
+                                    <% if(productos.descount != 0){ %>
     
-                                    <h4><%= productos.oferta %>%off</h4>
+                                    <h4><%= productos.descount %>%off</h4>
                                     <% } %>
     
                                 </div>
@@ -188,7 +188,7 @@
 
             <section class="articulos">
             <% 
-            let cincoEstrellas = productos.filter( producto => producto.estrellas >= 4);
+            let cincoEstrellas = productos.filter( producto => producto.stars >= 4);
             
             cincoEstrellas.forEach(productos => { %>
 
@@ -198,13 +198,13 @@
 
                     <div class="articulo-container-description">
                         <h3><%= productos.name %></h3>
-                        <p><%= productos.descripcion %></p>
+                        <p><%= productos.description %></p>
                         <div>
                             <div class="articulo-container-description-valor">
-                                <h4 id="precio"><%= productos.precio %>$</h4>
-                                <% if(productos.oferta != 0){ %>
+                                <h4 id="precio"><%= productos.price %>$</h4>
+                                <% if(productos.descount != 0){ %>
 
-                                <h4><%= productos.oferta %>%off</h4>
+                                <h4><%= productos.descount %>%off</h4>
                                 <% } %>
 
                             </div>

@@ -9,6 +9,10 @@ router.get("/detail/:id", controller.detail)
 
  router.post("/store", controller.store)
 
+ router.put("/store/:id", controller.update)
+
+ router.delete("/delete/:id",controller.delete)
+
 router.get("/categorias",controller.categorias)
 
 

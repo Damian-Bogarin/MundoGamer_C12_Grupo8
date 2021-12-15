@@ -18,7 +18,7 @@
         </div>
 
         <div class="producto-detalles">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam sit, autem totam vitae soluta fuga dolores inventore placeat? Id temporibus aspernatur impedit quos sed eligendi.</p>
+                <p><%= producto.description %></p>
 
 
 
@@ -31,8 +31,8 @@
                 <div class="producto-botones">
                     <div><input type="button" value="Carrito"></div>
                     <div><input type="button" value="Comprar"></div>
-                    <h3 id="oferta">25% off </h3>
-                    <h3 id="precio">18.000$ </h3>
+                    <h3 id="oferta"><%= producto.descount %> %off </h3>
+                    <h3 id="precio"><%= producto.price %>$ </h3>
 
 
                 </div>

@@ -8,7 +8,17 @@ let controller = {
         res.render('admin/productCreate')
     },
     update: (req, res) => {
-        res.render('admin/updateProduct')
+        let productsID = req.params.id  // Guardo el id 
+        let productsToUpdate
+        for (let index = 0; index < products.length; index++) {
+            if ( productsID == products[index].id) {
+               productsToUpdate = products[index];
+            } 
+            
+        }
+
+
+        res.render('admin/updateProduct', {products: productsToUpdate})
     },
     list: (req, res) => {
         res.render('admin/listProduct', {products: products})

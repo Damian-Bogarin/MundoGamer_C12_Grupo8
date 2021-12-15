@@ -13,13 +13,13 @@
               
                 <h2 class="title-productCreate">Actualizar mi producto</h2>
         
-                <form action="/updateProduct" method="POST">
+                <form action="/products/store/<%= products.id %>?_method=PUT" method="POST">
         
-                    <label class="label-subtitle">Nombre del producto</label>
-                    <input class="input-productCreate" type="text" name="user" id="nombre">
+                    <label class="label-subtitle"><%= products.name %></label>
+                    <input class="input-productCreate" type="text" name="name" id="nombre">
                     <span class="errorCreate">Debes ingresar un nombre</span>
                     
-                    <label class="label-subtitle">Género</label>
+                 <!--    <label class="label-subtitle">Género</label>
                     <select class="select" name="genero" id="genero">
                             <option value="0">Seleccione un juego</option>
                             <option value="RPG">RPG</option>
@@ -52,7 +52,7 @@
                     </select>
         
                     <!--CONSOLAS COMPATIBLES: -PC -PLAYSTATION 1 - PLAYSTATION 2 - PLAY 3 -PLAY4 -PLAY 5 -XBOX -NINTENDO *CHECKBOX*-->
-        
+        <!-- 
                     <label class="label-subtitle">Consolas compatibles</label>
                     <label for="consola"><input type="checkbox" name="consola" id="consola" value="PC">PC</label>
                     <label for="consola2"><input type="checkbox" name="consola" id="consola2" value="Playstation 1">Playstation 1</label>
@@ -113,11 +113,11 @@
                     <div class="file-productCreate">
                     <label class="label-file-create" for="photo">Ingrese una foto</label>
                     <input class="input-file-create" type="file" name="photo" id="photo"><br>
-                    </div><br>
+                    </div><br>-->-->
 
                     <div class="button-productCreate">
-                        <button type="submit" onclick="window.open('/')">Crear producto</button>
-                    </div>
+                        <button type="submit" >Editar producto</button>
+                    </div>   
                     
         
                 </form>

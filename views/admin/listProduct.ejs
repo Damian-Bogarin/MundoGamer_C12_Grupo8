@@ -36,8 +36,8 @@
                             <td><%= products.name %></td>
                             <td>2</td>
                             <td>
-                            <a href="/products/update/<%= products.id %>"><i class="fas fa-edit"></i></a>
-                            <form action="">
+                            <a href="/admin/update/<%= products.id %>"><i class="fas fa-edit"></i></a>
+                            <form action="/products/delete/<%= products.id %>?_method=DELETE" method="POST">
                                 <button type="submit"><i class="fas fa-trash-alt"></i></button>
                             </form>
                             </td>
