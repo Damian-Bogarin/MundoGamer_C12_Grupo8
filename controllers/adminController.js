@@ -1,3 +1,7 @@
+const {products} = require("../data/dataBase");
+
+
+
 let controller = {
 
     create: (req, res) => {
@@ -7,7 +11,7 @@ let controller = {
         res.render('admin/updateProduct')
     },
     list: (req, res) => {
-        res.render('admin/listProduct')
+        res.render('admin/listProduct', {products: products})
     }
 };
 

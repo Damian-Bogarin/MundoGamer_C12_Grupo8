@@ -1,4 +1,4 @@
-const {products} = require("../Datos/baseDatos");
+const {products} = require("../data/dataBase");
 
 
 /* let cincoEstrellas = products.filter( products => products.estrellas >= 4) */

@@ -7,7 +7,7 @@ router.get("/detail/:id", controller.detail)
 /* router.post("") */
 
 
-/* router.post("/almacen", controller.almacen) */
+ router.post("/store", controller.store)
 
 router.get("/categorias",controller.categorias)
 

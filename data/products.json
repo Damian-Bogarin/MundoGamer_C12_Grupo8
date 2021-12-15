@@ -28,26 +28,5 @@
         "ventas": 20,
         "nuevo": true,
         "descripcion": "El juego describe las aventuras de los hermanos Mario y Luigi, personajes que ya protagonizaron el arcade Mario Bros. de 1983. En esta ocasión ambos deben rescatar a la Princesa Peach del Reino Champiñón que fue secuestrada por el rey de los Koopas, Bowser. A través de ocho diferentes mundos, los jugadores pueden controlar a alguno de los dos hermanos y deben enfrentarse finalmente tras los niveles correspondientes de cada mundo a los monstruos de cada castillo para rescatar a la Princesa Peach."
-    },
-    {
-        "name": "Nicolas Damian",
-        "genero": "AVENTURA",
-        "estrellas": "5",
-        "clasificacion": "B",
-        "consola": [
-            "playstation_1",
-            "playstation_2",
-            "playstation_4",
-            "playstation_5"
-        ],
-        "idiomas": "chino",
-        "subtitulos": "frances",
-        "Conexion": "SI",
-        "comprasIntegradas": "NO",
-        "multijugador": "4",
-        "Descripcion": "asdasdasd",
-        "precio": "5000",
-        "alamacenamiento": "25",
-        "photo": ""
     }
 ]

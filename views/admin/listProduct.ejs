@@ -25,16 +25,18 @@
                             <th>Acción</th>
 
                         </tr> 
+                        
 
+                        <% products.forEach(products =>{  %>
                         <tr class="body">
                         <!-- td, estas serian las celdas normales -->
-                            <td>1</td>
+                            <td><%= products.id %></td>
                             <td>Deporte</td>
                             <td>Futbol</td>
-                            <td>Videojuego</td>
+                            <td><%= products.name %></td>
                             <td>2</td>
                             <td>
-                            <a href="/updateProduct"><i class="fas fa-edit"></i></a>
+                            <a href="/products/update/<%= products.id %>"><i class="fas fa-edit"></i></a>
                             <form action="">
                                 <button type="submit"><i class="fas fa-trash-alt"></i></button>
                             </form>
@@ -45,6 +47,7 @@
                         <!-- icono de edit:  <i class="fas fa-edit"></i>    -->
                         </tr>
 
+                        <% }) %>
                     </table>
 
                 </section>
