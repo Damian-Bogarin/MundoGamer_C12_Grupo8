@@ -5,9 +5,10 @@ const {products} = require("../data/dataBase");
 
 const controller = {
 
-    home : (req,res) => {
+    home: (req,res) => {
        
-        res.render('home' , {productos: products})} ,
+        res.render('home', {productos: products})
+    } 
    
     
 

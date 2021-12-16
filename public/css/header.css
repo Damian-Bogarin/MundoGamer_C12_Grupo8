@@ -63,10 +63,9 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 .header-top .burguer-menu { /* i */
      font-size: 18px;
-     text-align: center;
      cursor: pointer;
-     width: 60px;
-     height: 60px;
+     margin-right: 4px;
+     order: 3;
 }
 
 .header-top .navigation-bar {
@@ -74,9 +73,16 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      font-size: 18px;
      background-color: #ebebeb;
      color: black;
-     max-width: 150px;
      list-style: none;
-     display: none; 
+     margin-top: 180px;
+     position: absolute;
+     border-radius: 6px;
+     display: flex;
+    /*  margin-right: -60wh; */
+     /* align-items: flex-end;
+     justify-content: flex-end; */
+    display: none;  
+    order: 4;
 }
 
 .navigation-bar ul li{
@@ -84,6 +90,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      list-style: none;
      text-align: center;
      font-weight: 700;
+     order: 4; 
  }
 
 .header nav.header-bottom {

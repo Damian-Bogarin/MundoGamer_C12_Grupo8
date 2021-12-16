@@ -10,10 +10,6 @@ router.get('/register', controller.register);
 
 router.get('/productCart', controller.cart)
 
-/* post - recibe datos del formulario*/
-/*router.post('/register', controller.newUser);*/ /*editUser*/
-
-
 
 router.get('/myProfile', controller.profile); 
 

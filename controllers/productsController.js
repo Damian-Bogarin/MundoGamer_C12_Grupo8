@@ -1,4 +1,4 @@
-const {products,writeProductsJSON} = require("../data/dataBase");
+const {products, writeProductsJSON} = require("../data/dataBase");
 
 
 
