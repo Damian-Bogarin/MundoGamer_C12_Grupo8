@@ -1,4 +1,5 @@
 # PROYECTO INTEGRADOR - ***MUNDO GAMER***
+
 ## Grupo 8 - Comisión 12
 ![logotipo](public/img/logo.png)
 ## Integrantes:
@@ -36,6 +37,6 @@ En nuestro e-commerce hemos tomado como referencia algunos sitios web para orien
 
 - [Trello](https://trello.com/b/fbcDp5NK/grupo-8)
 
-## Enlace a la retrospectivas de los sprint:
+## Enlace a las retrospectivas de los sprint:
 
 - [Retro](resources/retro.md)

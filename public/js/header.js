@@ -1,9 +1,16 @@
 /* <script src='/js/header.js'></script>  -> ESTA ETIQUETA ESTA AL FINAL EN REGISTER */
-//->  alert("vinculado") solo prueba
+/* let logo = document.querySelector(".logo") Capturo por medio de su clase(.) */
 
 
-/* let logo = document.querySelector(".logo") //Capturo por medio de su clase(.) 
+let navBar = document.querySelector("#navigation-burguer-menu"); // Capturo el elemento por el ID
 
-logo.addEventListener("click", () => {
-    document.body.style.backgroundColor = "red"//Averiguar como haciendo click al logo me pueda llevar al home
- })   */
+function dropMenu() {
+    let subcategoryMenu = document.querySelector(".active");
+    if (navBar.style.display === "block") {
+      navBar.style.display = "none";
+      subcategoryMenu?.classList.remove("active");
+    } else {
+      navBar.style.display = "block"; // aparece la caja
+      subcategoryMenu ? subcategoryMenu.classList.remove("active") : "";
+    }
+}

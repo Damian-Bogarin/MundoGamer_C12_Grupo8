@@ -7,7 +7,9 @@
         <div class="header-top">
 
             <div class="logo">
-                <img src="/img/logo.png" alt="" width="100%">
+                <a href="/">
+                    <img src="/img/logo.png" alt="" width="100%">
+                </a>
             </div>
 
             <div class="search-bar">
@@ -16,7 +18,27 @@
             </div>
 
             <a href="/users/productCart"><i class="fas fa-shopping-cart"></i></a>
-            <a class="hamburguer" href="#"><i class="fas fa-bars"></i></a>
+
+            <!-- menu hamburguer | desplegable -->
+
+            <i class="fas fa-bars burguer-menu" onclick="dropMenu()"></i>
+
+            <!-- nav que tendra display none o block-->
+            <nav class="navigation-bar" id="navigation-burguer-menu">
+
+                <!-- Menu de navegacion mobile desplegable -->
+                <ul class="menu">
+
+                    <li class="dropdown-menu">Categorias</li><hr>
+                    <li class="dropdown-menu">Ofertas</li><hr>
+                    <li class="dropdown-menu">Mi cuenta</li><hr>
+                    <li class="dropdown-menu">Creá tu cuenta</li><hr>
+                    <li class="dropdown-menu">Ayuda</li>
+
+                </ul>
+
+            </nav>
+
         </div>
 
         <nav class="header-bottom">
