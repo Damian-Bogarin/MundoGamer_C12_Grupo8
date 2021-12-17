@@ -56,7 +56,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      outline: none;
 } 
 
-.header-top a, i { /* -------------------------- */
+.header-top a i { 
      color: white;
      margin: 0px 4px;
 }
@@ -66,6 +66,8 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      cursor: pointer;
      margin-right: 4px;
      order: 3;
+     color: white;
+     margin: 0px 4px;
 }
 
 .header-top .navigation-bar {
@@ -107,7 +109,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
           height: 90px;
      } 
 
-     .header .header-top a, i { /*  */
+     .header .header-top a i { 
          font-size: 18px;
     } 
 }
@@ -118,9 +120,14 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
           justify-content: space-between;
      }  
 
-     .header .header-top a, i { /*  */
+     .header .header-top a i { 
           font-size: 20px;
      } 
+
+     .header-top .burguer-menu { 
+          margin: 0px 6px;
+          font-size: 20px;
+     }
 }
 
 
@@ -147,12 +154,12 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
          order: 1;
 }
 
-    .header .header-top a, i { /*  */
+    .header .header-top a, i { 
          font-size: 24px;
          order: 2;
-    }
+    } 
 
-    .header .header-top a.hamburguer { /* --------------------------------------- */
+    .header .header-top .burguer-menu { 
          display: none;
     }
 

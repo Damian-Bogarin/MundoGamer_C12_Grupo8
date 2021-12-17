@@ -33,7 +33,7 @@
      justify-content: center;
 }
 
-.logos-contacto a {
+.logos-contacto a i { 
      font-size: 25px;
      color: black;
      margin: 0 15px;
@@ -44,7 +44,7 @@
     text-align: start;
 }
 
-.main-footer .derechos i, p{
+.main-footer .derechos i, p {
     display: inline;
     font-size: 12px;
 }
@@ -57,8 +57,8 @@
          font-size: 20px;
      }
 
-     .logos-contacto a {
-          font-size: 35px;
+     .logos-contacto a i { 
+          font-size: 30px;
      }
 
      .main-footer .derechos i, p {
@@ -79,8 +79,8 @@
           margin: 0 14px;
      }
 
-     .logos-contacto a {
-          font-size: 40px;
+     .logos-contacto a i {
+          font-size: 35px;
           margin: 20px 15px;
      }
 }
