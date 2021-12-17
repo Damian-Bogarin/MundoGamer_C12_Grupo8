@@ -13,110 +13,114 @@
               
                 <h2 class="title-productCreate">Actualizar mi producto</h2>
         
-                <form action="/products/store/<%= products.id %>?_method=PUT" method="POST">
+                <form action="/products/store/<%= products.id %>?_method=PUT"  enctype="multipart/form-data" method="POST">
         
-                    <label class="label-subtitle"><%= products.name %></label>
-                    <input class="input-productCreate" type="text" name="name" id="nombre">
+                    <label class="label-subtitle">El nombre del producto es: <%= products.name %></label>
+                    <input class="input-productCreate" type="text" name="name" id="nombre" value="<%= products.name %>" >
                     <span class="errorCreate">Debes ingresar un nombre</span>
                     
-                 <!--    <label class="label-subtitle">Género</label>
-                    <select class="select" name="genero" id="genero">
-                            <option value="0">Seleccione un juego</option>
-                            <option value="RPG">RPG</option>
-                            <option value="ACCION">ACCION</option>
-                            <option value="AVENTURA">AVENTURA</option>
-                            <option value="ROL">ROL</option>
-                            <option value="DEPORTE">DEPORTE</option>
-                            <option value="SIMULACION">SIMULACION</option>
-                            <option value="ESTRATEGIA">ESTRATEGIA</option>
-                            <option value="SUPERVIVENCIA">SUPERVIVENCIA</option>
+                    <label class="label-subtitle">El género es <%= products.gender %></label>
+                    <select class="select" name="gender" id="genero">
+                            <option value="0" <% if(products.gender == "0"){ %> selected <% } %> >Seleccione un juego</option>
+                            <option value="RPG" <% if(products.gender == "RPG"){ %> selected <% } %> >RPG</option>
+                            <option value="ACCION" <% if(products.gender == "ACCION"){ %> selected <% } %> >ACCION</option>
+                            <option value="AVENTURA" <% if(products.gender == "AVENTURA"){ %> selected <% } %> >AVENTURA</option>
+                            <option value="ROL" <% if(products.gender == "ROL"){ %> selected <% } %> >ROL</option>
+                            <option value="DEPORTE"  <% if(products.gender == "DEPORTE"){ %> selected <% } %>>DEPORTE</option>
+                            <option value="SIMULACION" <% if(products.gender == "SIMULACION"){ %> selected <% } %> >SIMULACION</option>
+                            <option value="ESTRATEGIA" <% if(products.gender == "ESTRATEGIA"){ %> selected <% } %> >ESTRATEGIA</option>
+                            <option value="SUPERVIVENCIA" <% if(products.gender == "SUPERVIVENCIA"){ %> selected <% } %> >SUPERVIVENCIA</option>
                     </select>
                     <span class="errorCreate">Debes seleccionar un género</span>
                
                     <p class="label-subtitle">Estrellas  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p> 
                     <div class="div-box">
-                    <label for="estrellas1"><input type="radio" name="estrellas" id="estrellas1" value="1">1</label>
-                    <label for="estrellas2"><input type="radio" name="estrellas" id="estrellas2" value="2">2</label>
-                    <label for="estrellas3"><input type="radio" name="estrellas" id="estrellas3" value="3">3</label>
-                    <label for="estrellas4"><input type="radio" name="estrellas" id="estrellas4" value="4">4</label>
-                    <label for="estrellas5"><input type="radio" name="estrellas" id="estrellas5" value="5">5</label>
+                    <label for="estrellas1"><input type="radio" name="stars" id="estrellas1" value="1" <% if(products.stars == 1){ %> checked <% } %>  >1</label>
+                    <label for="estrellas2"><input type="radio" name="stars" id="estrellas2" value="2" <% if(products.stars == 2){ %> checked <% } %>>2</label>
+                    <label for="estrellas3"><input type="radio" name="stars" id="estrellas3" value="3" <% if(products.stars == 3){ %> checked <% } %>>3</label>
+                    <label for="estrellas4"><input type="radio" name="stars" id="estrellas4" value="4" <% if(products.stars == 4){ %> checked <% } %>>4</label>
+                    <label for="estrellas5"><input type="radio" name="stars" id="estrellas5" value="5" <% if(products.stars == 5){ %> checked <% } %>>5</label>
                     </div>
                     
         
-                    <label class="label-subtitle">Clasificación</label>
-                    <select class="select" name="clasificacion" id="clasificacion">
-                        <option value="A" selected>Contenido para todo el público</option>
-                        <option value="B">Contenido para adolescentes a partir de 12 años</option>
-                        <option value="B">Contenido para mayores de 15 años</option>
-                        <option value="C">Contenido no apto para menores de 18 años</option>
+                    <label class="label-subtitle">Este producto tiene como clasificación: <%= products.clasification %></label>
+                    <select class="select" name="clasification" id="clasificacion">
+                        <option value="A" <% if(products.clasification == "A"){ %> selected <% } %> >Contenido para todo el público</option>
+                        <option value="B" <% if(products.clasification == "B"){ %> selected <% } %>>Contenido para adolescentes a partir de 12 años</option>
+                        <option value="C" <% if(products.clasification == "C"){ %> selected <% } %>>Contenido para mayores de 15 años</option>
+                        <option value="D" <% if(products.clasification == "D"){ %> selected <% } %>>Contenido no apto para menores de 18 años</option>
                     </select>
         
                     <!--CONSOLAS COMPATIBLES: -PC -PLAYSTATION 1 - PLAYSTATION 2 - PLAY 3 -PLAY4 -PLAY 5 -XBOX -NINTENDO *CHECKBOX*-->
-        <!-- 
-                    <label class="label-subtitle">Consolas compatibles</label>
-                    <label for="consola"><input type="checkbox" name="consola" id="consola" value="PC">PC</label>
-                    <label for="consola2"><input type="checkbox" name="consola" id="consola2" value="Playstation 1">Playstation 1</label>
-                    <label for="consola3"><input type="checkbox" name="consola" id="consola3" value="Playstation 2">Playstation 2</label>
-                    <label for="consola4"><input type="checkbox" name="consola" id="consola4" value="Playstation 3">Playstation 3</label>
-                    <label for="consola5"><input type="checkbox" name="consola" id="consola5" value="Playstation 4">Playstation 4</label>
-                    <label for="consola6"><input type="checkbox" name="consola" id="consola6" value="Playstation 5">Playstation 5</label>
-                    <label for="consola7"><input type="checkbox" name="consola" id="consola7" value="XBOX">XBOX</label>
-                    <label for="consola8"><input type="checkbox" name="consola" id="consola8" value="Nintendo">Nintendo</label>
+         
+                    <label class="label-subtitle">Este producto es compatible con: <%= products.console %></label>
+                    <label for="consola"><input type="checkbox" name="console" id="consola" value="PC">PC</label>
+                    <label for="consola2"><input type="checkbox" name="console"  id="consola2" <% if(products.console.includes("Playstation 1")){ %> checked <% } %>  value="Playstation 1"> Playstation 1</label>
+                    <label for="consola3"><input type="checkbox" name="console" id="consola3" <% if(products.console.includes("Playstation 2")){ %> checked <% } %>  value="Playstation 2">Playstation 2</label>
+                    <label for="consola4"><input type="checkbox" name="console" id="consola4" <% if(products.console.includes("Playstation 3")){ %> checked <% } %> value="Playstation 3">Playstation 3</label>
+                    <label for="consola5"><input type="checkbox" name="console" id="consola5" <% if(products.console.includes("Playstation 4")){ %> checked <% } %> value="Playstation 4">Playstation 4</label>
+                    <label for="consola6"><input type="checkbox" name="console" id="consola6"<% if(products.console.includes("Playstation 5")){ %> checked <% } %>  value="Playstation 5">Playstation 5</label>
+                    <label for="consola7"><input type="checkbox" name="console" id="consola7" <% if(products.console.includes("XBOX")){ %> checked <% } %> value="XBOX">XBOX</label>
+                    <label for="consola8"><input type="checkbox" name="console" id="consola8" <% if(products.console.includes("Nintendo")){ %> checked <% } %> value="Nintendo">Nintendo</label>
         
                     <label class="label-subtitle">Idiomas</label>
                     <div class="div-box">
-                    <label for="idioma1"><input type="checkbox" name="idiomas" id="idiomas1" value="Español">Español</label>
-                    <label for="idioma2"><input type="checkbox" name="idiomas" id="idioma2" value="Ingles">Inglés</label> 
-                    <label for="idioma3"><input type="checkbox" name="idiomas" id="idioma3" value="Chino">Chino</label>
+                    <label for="idioma1"><input type="checkbox" name="language" id="idiomas1" <% if(products.language.includes("Español")){ %> checked <% } %>  value="Español">Español</label>
+                    <label for="idioma2"><input type="checkbox" name="language" id="idioma2" <% if(products.language.includes("Ingles")){ %> checked <% } %> value="Ingles">Inglés</label> 
+                    <label for="idioma3"><input type="checkbox" name="language" id="idioma3" <% if(products.language.includes("Chino")){ %> checked <% } %> value="Chino">Chino</label>
                     </div>
 
                     <label class="label-subtitle">Subtitulos</label>
                     <div class="div-box">
-                    <label for="subtitulo1"><input type="checkbox" name="subtitulos" id="subtitulo1" value="español">Español</label>
-                    <label for="subtitulo2"><input type="checkbox" name="subtitulos" id="subtitulo2" value="frances">Francés</label>
-                    <label for="subtitulo3"><input type="checkbox" name="subtitulos" id="subtitulo3" value="aleman">Alemán</label>
+                    <label for="subtitulo1"><input type="checkbox" name="subtitle"  id="subtitulo1" value="Español" <% if(products.subtitle.includes("Español")){ %> checked <% } %>>Español</label>
+                    <label for="subtitulo2"><input type="checkbox" name="subtitle" id="subtitulo2" value="Frances" <% if(products.subtitle.includes("Frances")){ %> checked <% } %>>Francés</label>
+                    <label for="subtitulo3"><input type="checkbox" name="subtitle" id="subtitulo3" value="Aleman"<% if(products.subtitle.includes("Aleman")){ %> checked <% } %>>Alemán</label>
                     </div>
 
                     <label class="label-subtitle">Conexión a internet</label>
                     <div class="div-box">
-                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="SI">SI</label>
-                    <label for="conexion2"><input type="radio" name="conexion" id="conexion2" value="NO">NO</label>
+                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="SI" <% if(products.conexion == "SI"){ %> checked <% }%> >SI</label>
+                    <label for="conexion2"><input type="radio" name="conexion" id="conexion2" value="NO"<% if(products.conexion == "NO"){ %> checked <% } %> >NO</label>
                     </div><br>
 
                     <label class="label-subtitle">Compras integradas</label>
                     <div class="div-box">
-                    <label for="comprasIntegradas1"><input type="radio" name="comprasIntegradas" id="comprasIntegradas1" value="SI">SI</label>
-                    <label for="comprasIntegradas2"><input type="radio" name="comprasIntegradas" id="comprasIntegradas2" value="NO">NO</label>
+                    <label for="comprasIntegradas1"><input type="radio" name="integratedShopping" id="comprasIntegradas1" value="SI" <% if(products.integratedShopping == "SI"){ %> checked <% }%> >SI</label>
+                    <label for="comprasIntegradas2"><input type="radio" name="integratedShopping" id="comprasIntegradas2" value="NO" <% if(products.integratedShopping == "NO"){ %> checked <% }%>>NO</label>
                     </div><br>
 
                     <label class="label-subtitle">Multijugador</label>
                     <div class="div-box">
-                    <label for="multijugador1"><input type="checkbox" name="multijugador" id="multijugador1" value="1">1</label>
-                    <label for="multijugador2"><input type="checkbox" name="multijugador" id="multijugador2" value="2">2</label>
-                    <label for="multijugador3"><input type="checkbox" name="multijugador" id="multijugador3" value="3">3</label>
-                    <label for="multijugador4"><input type="checkbox" name="multijugador" id="multijugador4" value="4">4</label>
-                    <label for="multijugador5"><input type="checkbox" name="multijugador" id="multijugador5" value="5">5</label>
+                    <label for="multijugador1"><input type="checkbox" name="multiplayer" id="multijugador1" value="1" <% if(products.multiplayer.includes("1")){ %> checked <% } %>>1</label>
+                    <label for="multijugador2"><input type="checkbox" name="multiplayer" id="multijugador2" value="2"<% if(products.multiplayer.includes("2")){ %> checked <% } %>>2</label>
+                    <label for="multijugador3"><input type="checkbox" name="multiplayer" id="multijugador3" value="3"<% if(products.multiplayer.includes("3")){ %> checked <% } %>>3</label>
+                    <label for="multijugador4"><input type="checkbox" name="multiplayer" id="multijugador4" value="4"<% if(products.multiplayer.includes("4")){ %> checked <% } %>>4</label>
+                    <label for="multijugador5"><input type="checkbox" name="multiplayer" id="multijugador5" value="5"<% if(products.multiplayer.includes("5")){ %> checked <% } %>>5</label>
                     </div><br>
 
                     <label class="label-subtitle" for="message">Descripción del producto</label>
-                    <textarea name="descripcion" id="message" cols="30" rows="10"></textarea>
+                    <textarea name="description" id="message" cols="30" rows="10"><%= products.description %></textarea>
                     <span class="errorCreate">Debes dar detalles de este producto</span>
         
                     <label class="label-subtitle" for="precio">Precio</label>
-                    <input class="input-productCreate" type="number" name="precio" id="precio">
+                    <input class="input-productCreate" type="number" name="price" id="precio" value="<%= products.price %>">
                     <span class="errorCreate">Debes fijar un precio</span>
+
+                    <label class="label-subtitle" for="descount">Descuento</label>
+                    <input class="input-productCreate" type="number" name="descount" id="descount" value="<%= products.descount %>">
+                    <span class="errorCreate">Debes fijar un % de descuento</span>
         
                     <label class="label-subtitle" for="almacenamiento">Almacenamiento</label>
-                    <input class="input-productCreate" type="number" name="almacenamiento" id="almacenamiento">
+                    <input class="input-productCreate" type="number" name="stock" id="almacenamiento" value="<%= products.stock %>">
                     <span class="errorCreate">Debes agregar el stock</span><br>
         
                     <div class="file-productCreate">
                     <label class="label-file-create" for="photo">Ingrese una foto</label>
                     <input class="input-file-create" type="file" name="photo" id="photo"><br>
-                    </div><br>-->-->
+                    </div><br>
 
                     <div class="button-productCreate">
-                        <button type="submit" >Editar producto</button>
+                        <button type="submit" >Guardar Cambios</button>
                     </div>   
                     
         

@@ -31,10 +31,10 @@
                         <tr class="body">
                         <!-- td, estas serian las celdas normales -->
                             <td><%= products.id %></td>
-                            <td>Deporte</td>
+                            <td><%= products.gender %></td>
                             <td>Futbol</td>
                             <td><%= products.name %></td>
-                            <td>2</td>
+                            <td><%= products.stock %></td>
                             <td>
                             <a href="/admin/update/<%= products.id %>"><i class="fas fa-edit"></i></a>
                             <form action="/products/delete/<%= products.id %>?_method=DELETE" method="POST">

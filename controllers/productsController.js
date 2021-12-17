@@ -18,10 +18,41 @@ const controller = {
 
 
     store: (req, res) => {
-        let newProduct = req.body
-        products.push(newProduct)
-        writeProductsJSON(products)
 
+        let lastId = 1;
+
+        products.forEach(product => {
+            if(product.id > lastId){
+                lastId = product.id
+            }
+        });
+
+        const {name, price, descount,stock ,clasification,stars,language,subtitle, gender,description, multiplayer, integratedShopping,console,conexion} = req.body
+
+        let newProduct = {
+            id: lastId + 1,
+            name: name.trim(),
+            clasification:clasification,
+            language:(language != null ? language : ["No Tiene Idiomas"] ),
+            subtitle:(subtitle != null ? subtitle : ["No Tiene subtitulos"] ),
+            price: +price.trim(),
+            descount: +descount.trim(),
+            gender: gender,
+            stars: (stars != null ? +stars : ["No Tiene compatibles"] ),
+            new: true,
+            conexion:conexion,
+            stock: +stock,
+            sales: 0,
+            description: description.trim(),
+            multiplayer: multiplayer,
+            console:(console != null ? console : ["No Tiene compatibles"] ),
+            integratedShopping: integratedShopping,
+            photo: req.file ? [req.file.filename] : ["default-image.png"]
+        }
+
+        products.push(newProduct)
+
+        writeProductsJSON(products)
 
 
 
@@ -29,19 +60,30 @@ const controller = {
     },
     update: (req, res) => { 
         
+        
         let productId = req.params.id;
-        const {name /* , price, category, subcategory, description, discount */} = req.body
+        const {name, price,descount ,stock,clasification,stars,language,subtitle, gender,description, multiplayer, integratedShopping,console,conexion} = req.body
 
         products.forEach(product => {
             if(product.id == productId){
                 product.id = product.id,
-                product.name = name.trim()
-                /*, product.price = +price.trim(),
-                product.category = +category,
-                product.subcategory = subcategory,
-                product.description = description.trim(),
-                product.discount = +discount,
-                product.image = req.file ? [req.file.filename] : product.image */
+                product.name = name ,
+                product.sales = product.sales, 
+                product.clasification = clasification,
+                product.language = language,
+                product.subtitle = subtitle,
+                product.price = +price,
+                product.gender = gender,
+                product.stars = +stars,
+                product.stock = +stock,
+                product.conexion = conexion,
+               product.descount = +descount,
+                product.description = description,
+                product.multiplayer = multiplayer,
+                product.console = console,
+                product.integratedShopping = integratedShopping,
+                product.photo = req.file ? [req.file.filename] : product.photo
+            
             }
         })
 
