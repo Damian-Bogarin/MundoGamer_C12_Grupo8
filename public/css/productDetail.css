@@ -82,7 +82,28 @@ object-fit: cover;
     color: red;
 }
 
+/*MEDIA DE LAPTOP*/
 
+
+@media (min-width: 769px){
+
+
+    .producto-imagenes{ 
+        
+       height: 850px;  /* ALTURA DEL GRID */
+      
+    }
+
+    .img1{   
+        object-fit: cover;
+        height: 850px;
+       
+      /*  background-image: url('../img/taza\ de\ mario.jpg'); */
+        
+    }
+
+
+}
 
 
 
