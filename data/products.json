@@ -75,35 +75,6 @@
         "photo": [
             "1639728218122_img_.jpg"
         ]
-    },
-    {
-        "id": 6,
-        "name": "NICOLAS",
-        "clasification": "C",
-        "language": [
-            "No Tiene Idiomas"
-        ],
-        "subtitle": [
-            "No Tiene subtitulos"
-        ],
-        "price": 0,
-        "descount": 0,
-        "gender": "DEPORTE",
-        "stars": 5,
-        "new": true,
-        "conexion": "SI",
-        "stock": 0,
-        "sales": 0,
-        "description": "Escribe la descripción aquí..",
-        "multiplayer": "1",
-        "console": [
-            "PC",
-            "Playstation 3",
-            "Nintendo"
-        ],
-        "integratedShopping": "SI",
-        "photo": [
-            "default-image.png"
-        ]
     }
+   
 ]
