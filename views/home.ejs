@@ -149,17 +149,17 @@
     
                     <a href="/products/detail/<%= productos.id %>" id="link-container">
                         <article class="articulo-container">
-                        <div class="articulo-container-img"></div>
+                        <div class="articulo-container-img"><img src="/img/<%=productos.photo[0] %>" alt=""></div>
     
                         <div class="articulo-container-description">
                             <h3><%= productos.name %></h3>
-                            <p><%= productos.description %></p>
+                            <p><%= productos.description.slice(0,80) + "..."%></p>
                             <div>
                                 <div class="articulo-container-description-valor">
                                     <h4 id="precio"><%= productos.price %>$</h4>
                                     <% if(productos.descount != 0){ %>
     
-                                    <h4><%= productos.descount %>%off</h4>
+                                    <h4><%= productos.descount %> %off</h4>
                                     <% } %>
     
                                 </div>
@@ -229,6 +229,7 @@
 
             <%- include('./partials/footer.ejs') %>
 
+            <%- include('./partials/script.ejs')  %> 
     </body>
 
 </html>

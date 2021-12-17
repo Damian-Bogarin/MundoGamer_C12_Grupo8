@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Lorena",
+        "lastName": "Noce",
+        "email": "lore123@gmail.com",
+        "password": "123",
+        "tel": "25151",
+        "avatar": "foto.png"
+    },
+    {
+        "id": 2,
+        "name": "Evelin",
+        "lastName": "Noce1",
+        "email": "evi@gmail.com",
+        "password": "123abc",
+        "tel": "146464",
+        "avatar": "myfoto.png"
+    },
+    {
+        "id": 3,
+        "name": "Monica",
+        "lastName": "Noce2",
+        "email": "mon321@gmail.com",
+        "password": "abc",
+        "tel": "79797",
+        "avatar": "lafoto.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Gisela",
+        "lastName": "Noce3",
+        "email": "gigi5@gmail.com",
+        "password": "456g",
+        "tel": "9797",
+        "avatar": "paisaje.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Marcos",
+        "lastName": "Noce4",
+        "email": "mar456@gmail.com",
+        "password": "662",
+        "tel": "787",
+        "avatar": "marquitos.png"
+    },
+    {
+        "id": 6,
+        "name": "Wilson",
+        "lastName": "Noce5",
+        "email": "avicci@gmail.com",
+        "password": "mybro",
+        "tel": "78787",
+        "avatar": "heybrother.png"
+    },
+    {
+        "id": 7,
+        "name": "Jazmin",
+        "lastName": "Noce6",
+        "email": "jaz123min@gmail.com",
+        "password": "444j",
+        "tel": "4949",
+        "avatar": "jaz.png"
+    },
+    {
+        "id": 8,
+        "name": "Jesi",
+        "lastName": "Noce7",
+        "email": "helado-jesi@gmail.com",
+        "password": "888",
+        "tel": "4646",
+        "avatar": "fotito.jpg"
+    }
+]

@@ -82,6 +82,7 @@ main.cart {
 }
 
 
+/* Media-query - Tablet */
 @media (min-width: 768px) {
 
     .cart .title-cart .h2title {
@@ -129,9 +130,11 @@ main.cart {
         height: 42px;
         font-size: 18px;
     }
-
 }
 
+
+
+/* Media-query - Desktop */
 @media (min-width: 1200px) {
     
     main.cart {

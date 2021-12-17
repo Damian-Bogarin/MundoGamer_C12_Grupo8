@@ -12,3 +12,11 @@
  Si costo mucho que estuviéramos todos presentes en las daylis. No teníamos noticias de parte de dos integrantes del grupo, eso fue un motivo de preocupación, sabiendo que se reducía el tiempo que teníamos por delante. Hasta que Nico nos ayudó a hablarlo bien en una dayli y ver qué estaba pasando, ver qué dificultades se estaban presentando y cómo seguiríamos de ahí en más. Seguimos cada uno con el trabajo. Sin embargo, se acercaba la fecha de entrega y la mitad del grupo ya tenia todo listo y la otra mitad no. Así que no entregamos a tiempo el sprint, como plan “B” el equipo que ya había terminado hizo las vistas que faltaban, por las dudas, una de ellas si se subió, la otra fue terminada y subida por el compañero.
  Después, este último compañero nos avisó que dejaba la cursada.
 
+
+ # Sprint 3 - Templates engines
+
+ Nuestras daylis en general suelen ser cortas, es raro que nos pongamos a codear todos juntos. Si es que hay algún problema compartimos pantalla y lo tratamos de resolver. Las habíamos establecido los lunes, miércoles y jueves a las 15.30hr. pero decidimos cambiarla a las 18.15hr los días lunes, miércoles y viernes, porque el compañero que más estaba complicado de horarios ya dejo el curso.
+ Generalmente son puntuales las daylis. Hubieron 2 o 3 daylis en donde no estuvieron todos los integrantes. Y hacemos las tres preguntas. 
+
+
+ # Sprint 4 - JSON y métodos HTTP

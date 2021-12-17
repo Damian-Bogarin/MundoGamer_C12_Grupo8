@@ -7,7 +7,9 @@
         <div class="header-top">
 
             <div class="logo">
-                <img src="/img/logo.png" alt="/" width="100%">
+                <a href="/">
+                    <img src="/img/logo.png" alt="" width="100%">
+                </a>
             </div>
 
             <div class="search-bar">
@@ -15,16 +17,36 @@
                 <i class="fas fa-search"></i>
             </div>
 
-            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-            <a class="hamburguer" href="#"><i class="fas fa-bars"></i></a>
+            <a href="/users/productCart"><i class="fas fa-shopping-cart"></i></a>
+
+            <!-- menu hamburguer | desplegable -->
+
+            <i class="fas fa-bars burguer-menu" onclick="dropMenu()"></i>
+
+            <!-- nav que tendra display none o block-->
+            <nav class="navigation-bar" id="navigation-burguer-menu">
+
+                <!-- Menu de navegacion mobile desplegable -->
+                <ul class="menu">
+
+                    <li class="dropdown-menu">Categorias</li><hr>
+                    <li class="dropdown-menu">Ofertas</li><hr>
+                    <li class="dropdown-menu">Mi cuenta</li><hr>
+                    <li class="dropdown-menu">Creá tu cuenta</li><hr>
+                    <li class="dropdown-menu">Ayuda</li>
+
+                </ul>
+
+            </nav>
+
         </div>
 
         <nav class="header-bottom">
             <ul>
-                <li><a href="#">Categorias</a></li>
+                <li><a href="/products/categorias">Categorias</a></li>
                 <li><a href="#">Ofertas</a></li>
-                <li><a href="/login">Mi cuenta</a></li>
-                <li><a href="/register">Creá tu cuenta</a></li>
+                <li><a href="/users/login">Mi cuenta</a></li>
+                <li><a href="/users/register">Creá tu cuenta</a></li>
                 <li><a href="#">Ayuda</a></li>
             </ul>
         </nav>

@@ -1,13 +1,14 @@
 # PROYECTO INTEGRADOR - ***MUNDO GAMER***
+
 ## Grupo 8 - Comisión 12
-![logotipo](../public/img/logo.png)
+![logotipo](public/img/logo.png)
 ## Integrantes:
  
  **Anubis Burgos**
 - 20 años
 - Estudiante de Programación Web Full Stack
 
-**Nicolas Duette** ( Dejo de cursar. )
+**Nicolas Duette** (Dejo de cursar)
 - 21 años
 - Estudiante de Programación Web Full Stack
 
@@ -36,6 +37,6 @@ En nuestro e-commerce hemos tomado como referencia algunos sitios web para orien
 
 - [Trello](https://trello.com/b/fbcDp5NK/grupo-8)
 
-## Enlace a la retrospectiva:
+## Enlace a las retrospectivas de los sprint:
 
-- [Retro](retro.md)
+- [Retro](resources/retro.md)
