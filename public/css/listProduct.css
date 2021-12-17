@@ -1,3 +1,9 @@
+/* * {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
 .listOfAllProducts .titleListProduct {
     margin: auto;
     font-size: 20px;
@@ -63,7 +69,30 @@
     }
 
     .listOfAllProducts .listTable table tr.header {
-        display: none;
+        display: none; 
     }
 
-}/* llegue hasta linea 169 */
+    .listOfAllProducts .listTable table,
+    .listOfAllProducts .listTable table .body,
+    .listOfAllProducts .listTable table tr,
+    .listOfAllProducts .listTable table td {
+        display: block;
+        width: 100%;
+    }      
+    
+    .listOfAllProducts .listTable table tr.body td {
+        text-align: right;
+        padding-right: 10px; /* 15px */
+        position: relative;
+        width: 280px; /* 290px */
+    }
+
+    .listOfAllProducts .listTable table tr.body td::before {
+        content: attr(data-header);
+        position: absolute;
+        left: 0;
+        width: 50%;/* 50 */
+        padding-left: 15px;
+        text-align: left;
+    }
+}
