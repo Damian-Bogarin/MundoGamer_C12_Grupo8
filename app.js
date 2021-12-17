@@ -23,16 +23,16 @@ let productsRouter = require('./routers/productsRouter');
 let adminRouter = require('./routers/adminRouter');
 
 /* HOME ROUTER Y CONTROLLER */
-app.use('/', rutasHome);
+app.use('/', rutasHome);  /* home */
 
 /* USERS ROUTER Y CONTROLLER */
-app.use('/users', usersRouter);  /* login */
+app.use('/users', usersRouter);  /* login, register, productCart */
 
 /* PRODUCTS ROUTER Y CONTROLLER */
-app.use('/products', productsRouter); /* cart */
+app.use('/products', productsRouter);  /* categories, productDetail */
 
 /* ADMIN ROUTER Y CONTROLLER */
-app.use('/admin', adminRouter);  /* productCreate */
+app.use('/admin', adminRouter);  /* listProduct, productCreate, updateProduct */
 
 
 

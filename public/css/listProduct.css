@@ -2,20 +2,19 @@
     border: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+}  */
 
 .listOfAllProducts .titleListProduct {
     margin: auto;
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     text-align: center;
 }
 
-.listOfAllProducts {
-    margin: 40px auto;/* 10 rem decia */
+main.listOfAllProducts {
+    margin: 25px auto; 
     width: 90%;
     max-width: 1000px;
-    
 }
 
 .listOfAllProducts .listTable table {
@@ -63,6 +62,10 @@
 
 @media (max-width: 550px) {
     
+   /*  main.listOfAllProducts {
+        width: 100%;  
+    } */
+
     .listOfAllProducts .listTable table {
         width: 90%; /* -----------??----------- */
         margin: 1rem auto; 
@@ -84,14 +87,15 @@
         text-align: right;
         padding-right: 10px; /* 15px */
         position: relative;
-        width: 280px; /* 290px */
+        width: 280px; 
     }
 
     .listOfAllProducts .listTable table tr.body td::before {
+        /* Antes del td quiero que tengan el contenido del atributo data-header*/
         content: attr(data-header);
         position: absolute;
         left: 0;
-        width: 50%;/* 50 */
+        width: 50%;
         padding-left: 15px;
         text-align: left;
     }

@@ -30,6 +30,7 @@
                         <% products.forEach(products =>{  %>
                         <tr class="body">
                         <!-- td, estas serian las celdas normales -->
+                        <!-- atributo: data-(algun nombre) -->
                             <td data-header="ID"><%= products.id %></td>
                             <td data-header="Categoria"><%= products.gender %></td>
                             <td data-header="Subcategoria">Futbol</td>
@@ -42,9 +43,6 @@
                             </form>
                             </td>
 
-
-                        <!-- icono de delete: <i class="fas fa-trash-alt"></i>   -->
-                        <!-- icono de edit:  <i class="fas fa-edit"></i>    -->
                         </tr>
 
                         <% }) %>
