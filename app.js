@@ -36,13 +36,5 @@ app.use('/admin', adminRouter);  /* listProduct, productCreate, updateProduct */
 
 
 
-console.log("Ya esta")
-console.log("todo ok")
-
-
-
-console.log('segundaPrueba')
-
-
 app.listen(PORT, () => 
 console.log(`Servidor levantado en el puerto ${PORT} http://localhost:${PORT}`))
