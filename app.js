@@ -37,6 +37,7 @@ app.use('/admin', adminRouter);  /* listProduct, productCreate, updateProduct */
 
 
 console.log("Ya esta")
+console.log("todo ok")
 
 
 
