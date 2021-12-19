@@ -41,5 +41,8 @@ console.log("todo ok")
 
 
 
+console.log('segundaPrueba')
+
+
 app.listen(PORT, () => 
 console.log(`Servidor levantado en el puerto ${PORT} http://localhost:${PORT}`))
