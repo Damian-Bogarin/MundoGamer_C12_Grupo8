@@ -12,7 +12,7 @@ router.get("/detail/:id", controller.detail)
 
  router.delete("/delete/:id",controller.delete)
 
-router.get("/categorias",controller.categorias)
+router.get("/category",controller.category)
 
 
 

@@ -106,8 +106,8 @@ const controller = {
 
     },
 
-    categorias: (req, res) => {
-        res.render('products/categorias')
+    category: (req, res) => {
+        res.render('products/category')
     }
 }
 
