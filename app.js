@@ -35,6 +35,11 @@ app.use('/products', productsRouter);  /* categories, productDetail */
 app.use('/admin', adminRouter);  /* listProduct, productCreate, updateProduct */
 
 
+/* Error 404 */
+app.use((req, res, next) => {
+    res.status(404).render('404-page')
+})
+
 
 app.listen(PORT, () => 
 console.log(`Servidor levantado en el puerto ${PORT} http://localhost:${PORT}`))
