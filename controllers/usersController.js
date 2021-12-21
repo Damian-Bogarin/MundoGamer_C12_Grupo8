@@ -5,9 +5,23 @@ let controller = {
     login: (req, res) => {
         res.render('users/login')
     },
+    processLogin: (req, res) => {
+
+        
+
+
+
+
+
+
+
+    },
     register: (req, res) => {
         res.render('users/register')
     },
+   /*  processRegister: (req, res) => {
+
+    }, */
     profile: (req, res) => {
         res.render('users/myProfile')
     },
