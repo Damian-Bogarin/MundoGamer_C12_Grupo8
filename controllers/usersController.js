@@ -1,4 +1,5 @@
-/* const { users } = require('../data/dataBase'); */
+const { users } = require('../data/dataBase'); 
+const { validationResult } = require('express-validator');
 
 let controller = {
 
@@ -6,7 +7,15 @@ let controller = {
         res.render('users/login')
     },
     processLogin: (req, res) => {
+        let errors = validationResult(req);
 
+        if (errors.isEmpty()) {  //Pregunta si errores esta vacio, si no hay errores permitirá loguearse y sino tendrá que mostrar esos errores
+            res.send('algoo')
+        }else{
+            res.render('users/login', {
+                errors: errors.mapped() //Envia a la vista los errores como un objeto
+            })
+        }
         
 
 
@@ -19,9 +28,9 @@ let controller = {
     register: (req, res) => {
         res.render('users/register')
     },
-   /*  processRegister: (req, res) => {
-
-    }, */
+    processRegister: (req, res) => {
+        res.send('holaa register por post')
+    }, 
     profile: (req, res) => {
         res.render('users/myProfile')
     },

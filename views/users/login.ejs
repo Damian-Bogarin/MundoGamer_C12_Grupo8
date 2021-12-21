@@ -9,7 +9,7 @@
 
             <main class="form-main">
 
-                <form method="GET" action="/login">
+                <form action="/users/login" method="POST">
 
                     <div class="formulario">
 
@@ -17,15 +17,19 @@
 
                         <div class="input-datos">
                             <label for="email">E-mail</label><br>
-                            <input class="input-estilo" type="email" name="email" id="email">
                             <!--como propiedad de input podemos agregar un required (por defecto saldra un aviso) o mejor podemos hacer un span-->
-                            <span class="error-msj">Debes ingresar tu e-mail</span>
+                            <input class="input-estilo" type="email" name="email" id="email">
+                            <% if (locals.errors && errors.email) { %>
+                                <span class="error-msj"><%= errors.email.msg %></span>
+                            <% } %>
                         </div>
 
                         <div class="input-datos">
                             <label for="pass">Contraseña</label><br>
                             <input class="input-estilo" type="password" name="pass" id="pass">
-                            <span class="error-msj">Debes ingresar tu contraseña</span>
+                            <% if (locals.errors && errors.pass) { %>
+                                <span class="error-msj"><%= errors.pass.msg %></span>
+                            <% } %>
                         </div>
 
                         <div class="check">
@@ -34,8 +38,9 @@
                         </div>
 
                         <div class="button">
-                            <button type="submit" onclick="alert('Estamos trabajando en ello')">INICIAR SESIÓN</button><br>
-                            <span class="error-msj">Credenciales inválidas</span>
+                            <button type="submit">INICIAR SESIÓN</button><br>
+                            <!-- onclick="alert('Estamos trabajando en ello')" -->
+                            <!-- <span class="error-msj">Credenciales inválidas</span> -->
                         </div>
 
                         <span><a href="">¿Olvidaste tu contraseña?</a></span>
