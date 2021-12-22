@@ -22,8 +22,6 @@ let controller = {
 
 
 
-
-
     },
     register: (req, res) => {
         res.render('users/register')
