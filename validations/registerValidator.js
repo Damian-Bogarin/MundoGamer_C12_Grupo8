@@ -14,9 +14,15 @@ module.exports = [
     .isEmail()
     .withMessage('Debes ingresar un e-mail válido'),
 
-    body('email').custom(value => { //custom recibe como parámetro una función 
+    body('email').custom(value => { //custom recibe como parámetro un collback, que recibe como parámetro el value 
         let user = users.filter(user => {
-            return user.email == value
+            return user.email == value //Si existe este usuario en nuestra base de datos
         })
-    }),
+
+        if(user){
+            return false
+        }else{
+            return true
+        }
+    }).withMessage('Este email ya está registrado'),
 ]

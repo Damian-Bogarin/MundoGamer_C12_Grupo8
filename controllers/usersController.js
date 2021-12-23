@@ -25,12 +25,12 @@ let controller = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req);
-
+        res.send(errors.mapped()) /* prueba */
         if (errors.isEmpty()) { 
             
         }else{
             res.render('users/register', {
-                errors: errors.mapped()
+                errors: errors.mapped() 
             })
         }
     }, 
