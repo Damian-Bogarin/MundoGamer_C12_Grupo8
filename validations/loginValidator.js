@@ -8,7 +8,7 @@ module.exports = [
     .withMessage('Debes ingresar un e-mail') 
     .bail() //Corta la ejecución 
     .isEmail()
-    .withMessage('Debes ingresar un e-mail válido') ,
+    .withMessage('Debes ingresar un e-mail válido'),
 
     check('pass')
     .notEmpty()

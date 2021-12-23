@@ -6,6 +6,7 @@ let controller = {
     login: (req, res) => {
         res.render('users/login')
     },
+
     processLogin: (req, res) => {
         let errors = validationResult(req);
 
@@ -16,22 +17,28 @@ let controller = {
                 errors: errors.mapped() //Envia a la vista los errores como un objeto
             })
         }
-        
-
-
-
-
-
     },
+
     register: (req, res) => {
         res.render('users/register')
     },
+
     processRegister: (req, res) => {
-        res.send('holaa register por post')
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) { 
+            
+        }else{
+            res.render('users/register', {
+                errors: errors.mapped()
+            })
+        }
     }, 
+
     profile: (req, res) => {
         res.render('users/myProfile')
     },
+
     cart: (req, res) => {
         res.render('users/productCart')
     }
