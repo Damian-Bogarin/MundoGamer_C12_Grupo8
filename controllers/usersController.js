@@ -9,9 +9,18 @@ let controller = {
 
     processLogin: (req, res) => {
         let errors = validationResult(req);
-
+       
         if (errors.isEmpty()) {  //Pregunta si errores esta vacio, si no hay errores permitirá loguearse y sino tendrá que mostrar esos errores
-            res.send('algoo')
+            let user = users.find(user => user.email == req.body.email);  //Iniciamos sesión
+            req.session.user = { //datos de la seccion
+                id: user.id,
+                name: user.name,
+                email: user.email,
+                rol: user.rol,
+                avatar: user.avatar
+            }
+            res.locals.user = req.session.user;
+            res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviaria al home, y estaria en su session 
         }else{
             res.render('users/login', {
                 errors: errors.mapped() //Envia a la vista los errores como un objeto
@@ -35,13 +44,13 @@ let controller = {
                 }
             });
 
-            let { name, email, pass } = req.body //Probar sino con pass1 y pass2
+            let { name, email, pass1 } = req.body /* pass1 */
             let newUser = {
                 id : lastId + 1,
                 name,
                 /* lastName, */
                 email, 
-                pass,
+                pass: pass1, /* funcionó que pusiera pass1, pero muestra contraseña en el json*/
                 rol: "ROL_USER",
                 address: "",
                 city: "",
