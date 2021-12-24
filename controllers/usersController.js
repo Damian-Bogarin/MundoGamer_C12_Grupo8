@@ -1,4 +1,4 @@
-const { users } = require('../data/dataBase'); 
+const { users, writeUsersJSON } = require('../data/dataBase'); 
 const { validationResult } = require('express-validator');
 
 let controller = {
@@ -25,9 +25,9 @@ let controller = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req);
-        res.send(errors.mapped()) /* prueba */
+        
         if (errors.isEmpty()) { 
-            
+            let lastId = 1;
         }else{
             res.render('users/register', {
                 errors: errors.mapped() 
