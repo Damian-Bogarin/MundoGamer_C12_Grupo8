@@ -28,6 +28,31 @@ let controller = {
         
         if (errors.isEmpty()) { 
             let lastId = 1;
+
+            users.forEach(user => {
+                if(user.id > lastId){
+                   lastId = user.id
+                }
+            });
+
+            let { name, email, pass } = req.body //Probar sino con pass1 y pass2
+            let newUser = {
+                id : lastId + 1,
+                name,
+                /* lastName, */
+                email, 
+                pass,
+                rol: "ROL_USER",
+                address: "",
+                city: "",
+                province: "",
+                CP: "",
+                tel: "",
+                avatar: req.file ? req.file.filename: "default-img.png",
+            }
+            users.push(newUser) //Al nuevo usuario lo introducimos en el array
+            writeUsersJSON(users)
+            res.redirect('/users/login')
         }else{
             res.render('users/register', {
                 errors: errors.mapped() 
