@@ -17,7 +17,7 @@ let controller = {
                 name: user.name,
                 email: user.email,
                 rol: user.rol,
-                avatar: user.avatar
+                photo: user.photo
             }
             res.locals.user = req.session.user;
             res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviaria al home, y estaria en su session 
@@ -44,20 +44,20 @@ let controller = {
                 }
             });
 
-            let { name, email, pass1 } = req.body /* pass1 */
+            let { name, email, pass1 } = req.body 
             let newUser = {
                 id : lastId + 1,
                 name,
                 /* lastName, */
                 email, 
-                pass: pass1, /* funcionó que pusiera pass1, pero muestra contraseña en el json*/
+                pass: pass1, 
                 rol: "ROL_USER",
                 address: "",
                 city: "",
                 province: "",
                 CP: "",
                 tel: "",
-                avatar: req.file ? req.file.filename: "default-img.png",
+                photo: req.file ? req.file.filename: "default-img.png",
             }
             users.push(newUser) //Al nuevo usuario lo introducimos en el array
             writeUsersJSON(users)
