@@ -17,7 +17,7 @@
 
                         <div class="input-datos">
                             <label for="nombre">Nombre</label><br>
-                            <input class="input-estilo" type="text" name="name" id="name">
+                            <input class="input-estilo" type="text" name="name" id="name" value="<%= locals.old && old.name %>"> <!-- old para que al rellenar los datos no se vuelvan a borrar todos y tener que comenzar de vuelta-->
                             <% if (locals.errors && errors.name) { %> 
                                 <span class="error-msj"><%= errors.name.msg %></span>
                             <% } %> 

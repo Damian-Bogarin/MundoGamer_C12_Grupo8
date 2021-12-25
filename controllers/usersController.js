@@ -11,7 +11,7 @@ let controller = {
         let errors = validationResult(req);
        
         if (errors.isEmpty()) {  //Pregunta si errores esta vacio, si no hay errores permitirá loguearse y sino tendrá que mostrar esos errores
-            let user = users.find(user => user.email == req.body.email);  //Iniciamos sesión
+            let user = users.find(user => user.email === req.body.email);  //Iniciamos sesión
             req.session.user = { //datos de la seccion
                 id: user.id,
                 name: user.name,
