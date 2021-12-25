@@ -11,7 +11,7 @@
         "province": "nqn",
         "CP": "1",
         "tel": "25151",
-        "photo": "foto.png"
+        "avatar": "foto.png"
     },
     {
         "id": 2,
@@ -25,7 +25,7 @@
         "province": "nqn",
         "CP": "1",
         "tel": "146464",
-        "photo": "myfoto.png"
+        "avatar": "myfoto.png"
     },
     {
         "id": 3,
@@ -39,7 +39,7 @@
         "province": "nqn",
         "CP": "1",
         "tel": "79797",
-        "photo": "lafoto.jpg"
+        "avatar": "lafoto.jpg"
     },
     {
         "id": 4,
@@ -53,7 +53,7 @@
         "province": "nqn",
         "CP": "1",
         "tel": "9797",
-        "photo": "paisaje.jpg"
+        "avatar": "paisaje.jpg"
     },
     {
         "id": 5,
@@ -67,7 +67,7 @@
         "province": "nqn",
         "CP": "1",
         "tel": "787",
-        "photo": "marquitos.png"
+        "avatar": "marquitos.png"
     },
     {
         "id": 6,
@@ -81,7 +81,7 @@
         "province": "nqn",
         "CP": "1",
         "tel": "78787",
-        "photo": "heybrother.png"
+        "avatar": "heybrother.png"
     },
     {
         "id": 7,
@@ -95,7 +95,7 @@
         "province": "nqn",
         "CP": "1",
         "tel": "4949",
-        "photo": "jaz.png"
+        "avatar": "jaz.png"
     },
     {
         "id": 8,
@@ -109,11 +109,11 @@
         "province": "nqn",
         "CP": "1",
         "tel": "4646",
-        "photo": "fotito.jpg"
+        "avatar": "fotito.jpg"
     },
     {
         "id": 9,
-        "name": "dani",
+        "name": "daniela",
         "email": "hdaniela127c@gmail.com",
         "pass": "123456",
         "rol": "ROL_USER",
@@ -122,19 +122,19 @@
         "province": "",
         "CP": "",
         "tel": "",
-        "photo": "default-img.png"
+        "avatar": "1640466892266_img_.png"
     },
     {
         "id": 10,
         "name": "daniela",
         "email": "daniela127c@gmail.com",
-        "pass": "123456",
+        "pass": "654321",
         "rol": "ROL_USER",
         "address": "",
         "city": "",
         "province": "",
         "CP": "",
         "tel": "",
-        "photo": "default-img.png"
+        "avatar": "default-img.png"
     }
 ]

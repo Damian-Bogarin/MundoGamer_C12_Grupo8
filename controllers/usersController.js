@@ -10,17 +10,20 @@ let controller = {
     processLogin: (req, res) => {
         let errors = validationResult(req);
        
-        if (errors.isEmpty()) {  //Pregunta si errores esta vacio, si no hay errores permitirá loguearse y sino tendrá que mostrar esos errores
-            let user = users.find(user => user.email === req.body.email);  //Iniciamos sesión
+        if (errors.isEmpty()) { 
+        //Pregunta si errores esta vacio, si no hay errores permitirá loguearse y sino tendrá que mostrar esos errores
+        //Iniciamos sesión, pero hace una comparación estricta si es el mismo usuario
+            let user = users.find(user => user.email === req.body.email);  
+            
             req.session.user = { //datos de la seccion
                 id: user.id,
                 name: user.name,
                 email: user.email,
                 rol: user.rol,
-                photo: user.photo
+                avatar: user.avatar
             }
             res.locals.user = req.session.user;
-            res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviaria al home, y estaria en su session 
+            res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
         }else{
             res.render('users/login', {
                 errors: errors.mapped() //Envia a la vista los errores como un objeto
@@ -57,7 +60,7 @@ let controller = {
                 province: "",
                 CP: "",
                 tel: "",
-                photo: req.file ? req.file.filename: "default-img.png",
+                avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
             }
             users.push(newUser) //Al nuevo usuario lo introducimos en el array
             writeUsersJSON(users)
