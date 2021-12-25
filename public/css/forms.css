@@ -61,6 +61,23 @@
     font-size: 16px; 
 }
 
+/* input file */
+.formulario .file-avatar {
+    margin: 10px 0;
+}
+
+.formulario .file-avatar .input-avatar {
+    display: none; 
+}
+
+.formulario .file-avatar .label-avatar {
+    cursor: pointer;
+    border: solid 1px var(--ligth_violet);
+    border-radius: 4px;
+    padding: 4px;
+}
+/* end input file */
+
 .formulario .button {
     margin-bottom: 10px;
 }
