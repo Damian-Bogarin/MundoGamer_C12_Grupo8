@@ -53,3 +53,7 @@
     </div>
 
 </header>
+
+<% if (typeof session.user !== "undefined") { %>
+ <h1><%= session.user.name %></h1>
+<% } %>

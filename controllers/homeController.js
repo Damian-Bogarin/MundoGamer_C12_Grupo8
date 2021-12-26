@@ -15,5 +15,5 @@ const controller = {
 }
 
 
-
+/* session: req.session  */
 module.exports = controller;

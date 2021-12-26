@@ -4,7 +4,9 @@ const { validationResult } = require('express-validator');
 let controller = {
 
     login: (req, res) => {
-        res.render('users/login')
+        res.render('users/login', {
+            session: req.session // La variable session la pasaremos en todas las vistas, ahi tenemos guardados todos los datos
+        })
     },
 
     processLogin: (req, res) => {
@@ -26,13 +28,16 @@ let controller = {
             res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
         }else{
             res.render('users/login', {
-                errors: errors.mapped() //Envia a la vista los errores como un objeto
+                errors: errors.mapped(), //Envia a la vista los errores como un objeto
+                session: req.session 
             })
         }
     },
 
     register: (req, res) => {
-        res.render('users/register')
+        res.render('users/register', {
+            session: req.session 
+        })
     },
 
     processRegister: (req, res) => {
@@ -67,7 +72,8 @@ let controller = {
             res.redirect('/users/login')
         }else{
             res.render('users/register', {
-                errors: errors.mapped() 
+                errors: errors.mapped(),
+                session: req.session 
             })
         }
     }, 
