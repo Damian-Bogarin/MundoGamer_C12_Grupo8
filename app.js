@@ -21,8 +21,7 @@ const session = require('express-session');
 app.use(session({
     secret: "MundoGamer",
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
+    saveUninitialized: true
 }));
 
 /* RUTEO */
