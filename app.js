@@ -24,6 +24,10 @@ app.use(session({
     saveUninitialized: true
 }));
 
+//COOKIE-PARSER
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 /* RUTEO */
 let rutasHome = require('./routers/home');
 let usersRouter = require('./routers/usersRouter');

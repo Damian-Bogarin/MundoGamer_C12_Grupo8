@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NeD2020/grupo_8_mundo_gamer_C12#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
