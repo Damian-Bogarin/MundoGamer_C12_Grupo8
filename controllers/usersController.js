@@ -1,5 +1,6 @@
 const { users, writeUsersJSON } = require('../data/dataBase'); 
 const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs')
 
 let controller = {
 
@@ -24,6 +25,16 @@ let controller = {
                 rol: user.rol,
                 avatar: user.avatar
             }
+            //Si la persona marcó el "recordarme" (cookie)
+         //   if(req.body.remember){ //Si existe, es decir si marcó el recordar es cuando se crea la cookie
+         //       const timeMiliseconds = 60000 //1min -> buena práctica, asignarlo a una variable
+         //       res.cookie("mundoGamer", req.session.user, { //Si es asi tendra como respuesta una cookie, que tendra 3 parámetros
+         //           expires: new Date(Date.now() + timeMiliseconds),  //configuración de la cookie
+         //           httpOnly: true, //http configura y accede a ellas
+         //           secure: true
+         //       })
+         //   }
+            
             res.locals.user = req.session.user;
             res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
         }else{
@@ -58,7 +69,7 @@ let controller = {
                 name,
                 /* lastName, */
                 email, 
-                pass: pass1, 
+                pass: bcrypt.hashSync(pass1, 12), //hashSync recibe dos parametros, pass y la sal
                 rol: "ROL_USER",
                 address: "",
                 city: "",
