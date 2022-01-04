@@ -18,7 +18,7 @@ app.use(methodOverride('_method'));
 
 //SESSION
 const session = require('express-session');
-const cookieSession = require('./middlewares/cookieSession')
+const cookieSession = require('./middlewares/cookieSession');
 app.use(session({
     secret: "mundoGamer",
     resave: false,
@@ -29,6 +29,7 @@ app.use(session({
 //COOKIE-PARSER
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
+app.use(cookieSession);
 
 /* RUTEO */
 let rutasHome = require('./routers/home');

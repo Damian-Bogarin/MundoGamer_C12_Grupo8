@@ -13,7 +13,7 @@ const controller = {
             }
 
         }
-        res.render('products/productDetail', { producto: producto })
+        res.render('products/productDetail', { producto: producto, session: req.session })
     }, // mando la vista, junto a la variable producto.
 
 
@@ -107,7 +107,9 @@ const controller = {
     },
 
     categorias: (req, res) => {
-        res.render('products/categorias')
+        res.render('products/categorias', {
+            session: req.session
+        })
     }
 }
 

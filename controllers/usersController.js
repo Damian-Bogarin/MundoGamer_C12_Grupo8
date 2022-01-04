@@ -1,6 +1,6 @@
 const { users, writeUsersJSON } = require('../data/dataBase'); 
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
 
 let controller = {
 
@@ -12,7 +12,7 @@ let controller = {
 
     processLogin: (req, res) => {
         let errors = validationResult(req);
-       
+        
         if (errors.isEmpty()) { 
         //Pregunta si errores esta vacio, si no hay errores permitirá loguearse y sino tendrá que mostrar esos errores
         //Iniciamos sesión, pero hace una comparación estricta si es el mismo usuario
@@ -26,14 +26,14 @@ let controller = {
                 avatar: user.avatar
             }
             //Si la persona marcó el "recordarme" (cookie)
-         //   if(req.body.remember){ //Si existe, es decir si marcó el recordar es cuando se crea la cookie
-         //       const timeMiliseconds = 60000 //1min -> buena práctica, asignarlo a una variable
-         //       res.cookie("mundoGamer", req.session.user, { //Si es asi tendra como respuesta una cookie, que tendra 3 parámetros
-         //           expires: new Date(Date.now() + timeMiliseconds),  //configuración de la cookie
-         //           httpOnly: true, //http configura y accede a ellas
-         //           secure: true
-         //       })
-         //   }
+           if(req.body.remember){ //Si existe, es decir si marcó el recordar es cuando se crea la cookie
+                const timeMiliseconds = 60000 //1min -> buena práctica, asignarlo a una variable
+                res.cookie("mundoGamer", req.session.user, { //Si es asi tendra como respuesta una cookie, que tendra 3 parámetros
+                expires: new Date(Date.now() + timeMiliseconds),  //configuración de la cookie
+                httpOnly: true, //http configura y accede a ellas
+                secure: true
+                })
+            }
             
             res.locals.user = req.session.user;
             res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
@@ -89,12 +89,14 @@ let controller = {
         }
     }, 
 
-    profile: (req, res) => {
+    profile: (req, res) => {   /* acá session: req.session?? */
         res.render('users/myProfile')
     },
 
-    cart: (req, res) => {
-        res.render('users/productCart')
+    cart: (req, res) => {     
+        res.render('users/productCart', {
+            session: req.session      
+        })
     }
 };
 

@@ -7,7 +7,7 @@ const controller = {
 
     home: (req,res) => {
        
-        res.render('home', {productos: products})
+        res.render('home', {productos: products, session: req.session})
     } 
    
     
@@ -15,5 +15,5 @@ const controller = {
 }
 
 
-/* session: req.session  */
+
 module.exports = controller;

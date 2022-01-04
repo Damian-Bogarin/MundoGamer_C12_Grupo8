@@ -1,5 +1,7 @@
 const { check, body } = require('express-validator'); //Requiero express-validator, desestructuro y pido el método check
-const { users } = require('../data/dataBase')
+const { users } = require('../data/dataBase');
+const bcrypt = require('bcryptjs');
+
 
 module.exports = [
 
@@ -19,7 +21,7 @@ module.exports = [
         let user = users.find(user => user.email == req.body.email);
 
         if(user){ //Si al usuario en su propiedad pass es igual a lo que me estan mandando en el formulario
-            if(user.pass === req.body.pass){
+            if(bcrypt.compareSync(req.body.pass, user.pass)){ //comparar de manera sincrónica lo que entra con el user que ya esta guardado
                 return true
             }else{
                 return false

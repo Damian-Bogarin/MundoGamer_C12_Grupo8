@@ -51,6 +51,9 @@
                         <div class="file-avatar">
                             <label class="label-avatar" for="avatar">Ingrese una foto</label>
                             <input class="input-avatar" type="file" name="avatar" id="avatar">
+                            <% if (locals.errors && errors.image) { %>
+                                <span class="text-danger"><%= errors.image.msg %></span>
+                            <% } %>
                         </div>
 
                         <div class="check-1">
