@@ -9,7 +9,7 @@
 
             <main class="form-main">
 
-                <form action="/register" method="POST">
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
 
                     <div class="formulario">
 
@@ -17,37 +17,56 @@
 
                         <div class="input-datos">
                             <label for="nombre">Nombre</label><br>
-                            <input class="input-estilo" type="text" name="nombre" id="nombre">
-                            <span class="error-msj">Debes ingresar tu nombre</span>
+                            <input class="input-estilo" type="text" name="name" id="name" value="<%= locals.old && old.name %>"> <!-- old para que al rellenar los datos no se vuelvan a borrar todos y tener que comenzar de vuelta-->
+                            <% if (locals.errors && errors.name) { %> 
+                                <span class="error-msj"><%= errors.name.msg %></span>
+                            <% } %> 
                         </div>
 
                         <div class="input-datos">
                             <label for="email">E-mail</label><br>
-                            <input class="input-estilo" type="email" name="email" id="email">
                             <!--Tambien dentro del input podemos agregar un required (saldra un aviso standar) pero mejor hacer un span-->
-                            <span class="error-msj">Debes ingresar tu e-mail</span>
+                            <input class="input-estilo" type="email" name="email" id="email">
+                            <% if (locals.errors && errors.email) { %> 
+                                <span class="error-msj"><%= errors.email.msg %></span>
+                            <% } %> 
                         </div>
 
                         <div class="input-datos">
                             <label for="pass">Contraseña</label><br>
-                            <input class="input-estilo" type="password" name="pass" id="pass">
-                            <span class="error-msj">Debes ingresar tu contraseña</span>
+                            <input class="input-estilo" type="password" name="pass1" id="pass">
+                            <% if (locals.errors && errors.pass1) { %> 
+                                <span class="error-msj"><%= errors.pass1.msg %></span>
+                            <% } %>
                         </div>
 
-                        <div class="check">
-                            <input type="checkbox"><label for="">Recordarme</label>
+                        <div class="input-datos">
+                            <label for="pass">Repetir contraseña</label><br>
+                            <input class="input-estilo" type="password" name="pass2" id="pass">
+                            <% if (locals.errors && errors.pass2) { %> 
+                                <span class="error-msj"><%= errors.pass2.msg %></span>
+                            <% } %>
+                        </div>
+
+                        <div class="file-avatar">
+                            <label class="label-avatar" for="avatar">Ingrese una foto</label>
+                            <input class="input-avatar" type="file" name="avatar" id="avatar">
+                            <% if (locals.errors && errors.image) { %>
+                                <span class="text-danger"><%= errors.image.msg %></span>
+                            <% } %>
                         </div>
 
                         <div class="check-1">
-                            <!--cambie a check1 por q hay 2 elementos cn la misma clase-->
                             <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
                             <input type="checkbox" name="terms" id="terms"><br>
-                            <span class="error-msj">Debes aceptar los términos y condiciones</span>
+                            <% if (locals.errors && errors.terms) { %>
+                                <span class="error-msj"><%= errors.terms.msg %></span>
+                            <% } %>
                         </div><br>
 
                         <div class="button">
-                            <button type="submit" onclick="alert('Estamos trabajando en ello')">REGISTRARME</button><br>
-                            <span class="error-msj">Hubo errores en tu envio</span>
+                            <button type="submit">REGISTRARME</button><br>
+                            <!-- <span class="error-msj">Hubo errores en tu envio</span> -->
                         </div>
 
                         <span><a href="login">Ya tengo mi cuenta</a></span>

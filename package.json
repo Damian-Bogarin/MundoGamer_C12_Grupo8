@@ -17,8 +17,16 @@
   },
   "homepage": "https://github.com/NeD2020/grupo_8_mundo_gamer_C12#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.6",
+<<<<<<< HEAD
     "express": "^4.17.2",
+=======
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+>>>>>>> 042a8ef05c3045cf565f198e37fe360d980ea1a7
     "method-override": "^3.0.0",
     "multer": "^1.4.4",
     "nodemon": "^2.0.15"

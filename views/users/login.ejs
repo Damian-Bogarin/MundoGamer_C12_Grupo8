@@ -9,7 +9,7 @@
 
             <main class="form-main">
 
-                <form method="GET" action="/login">
+                <form action="/users/login" method="POST">
 
                     <div class="formulario">
 
@@ -17,28 +17,32 @@
 
                         <div class="input-datos">
                             <label for="email">E-mail</label><br>
-                            <input class="input-estilo" type="email" name="email" id="email">
                             <!--como propiedad de input podemos agregar un required (por defecto saldra un aviso) o mejor podemos hacer un span-->
-                            <span class="error-msj">Debes ingresar tu e-mail</span>
+                            <input class="input-estilo" type="email" name="email" id="email">
+                            <% if (locals.errors && errors.email) { %>
+                                <span class="error-msj"><%= errors.email.msg %></span>
+                            <% } %>
                         </div>
 
                         <div class="input-datos">
                             <label for="pass">Contraseña</label><br>
                             <input class="input-estilo" type="password" name="pass" id="pass">
-                            <span class="error-msj">Debes ingresar tu contraseña</span>
+                            <% if (locals.errors && errors.pass) { %>
+                                <span class="error-msj"><%= errors.pass.msg %></span>
+                            <% } %>
                         </div>
 
                         <div class="check">
-                            <input type="checkbox"><label for="">Recordarme</label>
+                            <input type="checkbox" name="remember" id="check"><label for="check">Recordarme</label>
                             <!-- dentro del input puedo colocar checked, y ya me lo marcaria  -->
                         </div>
-
+                        <% if (locals.errors && errors.custom) { %>
+                            <span class="error-msj"><%= errors.custom.msg %></span>
+                        <% } %>
                         <div class="button">
-                            <button type="submit" onclick="alert('Estamos trabajando en ello')">INICIAR SESIÓN</button><br>
-                            <span class="error-msj">Credenciales inválidas</span>
+                            <button type="submit">INICIAR SESIÓN</button><br>
+                            <!-- onclick="alert('Estamos trabajando en ello')" -->
                         </div>
-
-                        <span><a href="">¿Olvidaste tu contraseña?</a></span>
 
                         <span><a href="register">¿No tenés cuenta? Registrarme</a></span>
                     </div>

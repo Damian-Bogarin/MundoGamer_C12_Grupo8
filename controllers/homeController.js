@@ -7,7 +7,7 @@ const controller = {
 
     home: (req,res) => {
        
-        res.render('home', {productos: products})
+        res.render('home', {productos: products, session: req.session})
     } 
    
     
