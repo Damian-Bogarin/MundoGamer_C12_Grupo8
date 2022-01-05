@@ -1,27 +1,5 @@
 [
     {
-        "id": 2,
-        "name": "",
-        "clasification": "A",
-        "price": 0,
-        "descount": 0,
-        "gender": "0",
-        "stars": null,
-        "new": true,
-        "conexion": "si",
-        "stock": 0,
-        "sales": 0,
-        "language": [
-            "asd"
-        ],
-        "description": "Escribe la descripción aquí..",
-        "multiplayer": "1",
-        "integratedShopping": "SI",
-        "photo": [
-            "default-image.png"
-        ]
-    },
-    {
         "id": 3,
         "price": null,
         "descount": null,
