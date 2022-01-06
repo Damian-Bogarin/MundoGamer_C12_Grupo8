@@ -1,5 +1,5 @@
 const { products, writeProductsJSON } = require("../data/dataBase");
-
+let { validationResult } = require('express-validator')
 
 
 const controller = {
@@ -18,8 +18,10 @@ const controller = {
 
 
     store: (req, res) => {
+        let errors = validationResult(req);
 
-        let lastId = 1;
+        if(errors.isEmpty()){
+           let lastId = 1;
 
         products.forEach(product => {
             if(product.id > lastId){
@@ -56,9 +58,29 @@ const controller = {
 
 
 
-        res.redirect('/')
+        res.redirect('/') 
+        } else {
+            console.log(errors)
+            console.log(errors.mapped())
+            console.log(req.body)
+             res.render('admin/productCreate', {
+                
+                old:req.body, 
+
+                errors : errors.mapped()
+            }) 
+
+            
+            
+        }
+        
     },
     update: (req, res) => { 
+
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+        
         
         
         let productId = req.params.id;
@@ -91,7 +113,42 @@ const controller = {
         
        
         res.redirect("/admin/list") 
-    },
+    } else{
+    
+        console.log(errors.mapped())
+        req.body["id"] = req.params.id
+        
+        let productsID = req.params.id  // Guardo el id 
+        let productsToUpdate
+        for (let index = 0; index < products.length; index++) {
+            if ( productsID == products[index].id) {
+               productsToUpdate = products[index];
+            } 
+            
+        }
+
+       
+        res.render('admin/updateProduct', {old: req.body,
+         errors : errors.mapped()})
+        
+        
+       /*  res.render('admin/updateProduct', {
+
+
+
+            old:req.body, 
+
+           
+        }) */ 
+
+        
+        
+    }
+    
+    }
+        
+    
+    ,
 
     delete: (req,res) =>{
 
@@ -106,8 +163,8 @@ const controller = {
 
     },
 
-    categorias: (req, res) => {
-        res.render('products/categorias')
+    category: (req, res) => {
+        res.render('products/category')
     }
 }
 

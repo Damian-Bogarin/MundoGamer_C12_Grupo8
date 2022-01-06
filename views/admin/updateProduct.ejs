@@ -12,106 +12,124 @@
               
                 <h2 class="title-productCreate">Actualizar mi producto</h2>
         
-                <form action="/products/store/<%= products.id %>?_method=PUT"  enctype="multipart/form-data" method="POST">
+                <form action="/products/store/<%= (locals.products) ? products.id : old.id %>?_method=PUT"  enctype="multipart/form-data" method="POST">
         
-                    <label class="label-subtitle">El nombre del producto es: <%= products.name %></label>
-                    <input class="input-productCreate" type="text" name="name" id="nombre" value="<%= products.name %>" >
-                    <span class="errorCreate">Debes ingresar un nombre</span>
+                    <label class="label-subtitle">Nombre del producto</label>
+                    <input class="input-productCreate" type="text" name="name" id="nombre" value="<%= (locals.old && old.name ? old.name : "")%>">
+                   <% if (locals.errors && errors.name){   %> 
+                    <span class="errorCreate">* <%= errors.name.msg%></span> <% } %>
+                     
                     
-                    <label class="label-subtitle">El género es <%= products.gender %></label>
+                  
+                    <label class="label-subtitle">Género</label>
                     <select class="select" name="gender" id="genero">
-                            <option value="0" <% if(products.gender == "0"){ %> selected <% } %> >Seleccione un juego</option>
-                            <option value="RPG" <% if(products.gender == "RPG"){ %> selected <% } %> >RPG</option>
-                            <option value="ACCION" <% if(products.gender == "ACCION"){ %> selected <% } %> >ACCION</option>
-                            <option value="AVENTURA" <% if(products.gender == "AVENTURA"){ %> selected <% } %> >AVENTURA</option>
-                            <option value="ROL" <% if(products.gender == "ROL"){ %> selected <% } %> >ROL</option>
-                            <option value="DEPORTE"  <% if(products.gender == "DEPORTE"){ %> selected <% } %>>DEPORTE</option>
-                            <option value="SIMULACION" <% if(products.gender == "SIMULACION"){ %> selected <% } %> >SIMULACION</option>
-                            <option value="ESTRATEGIA" <% if(products.gender == "ESTRATEGIA"){ %> selected <% } %> >ESTRATEGIA</option>
-                            <option value="SUPERVIVENCIA" <% if(products.gender == "SUPERVIVENCIA"){ %> selected <% } %> >SUPERVIVENCIA</option>
+                            <option value="0" >Seleccione un género</option>
+                            <option value="RPG"<%= (locals.old && old.gender =="RPG") ?  "selected" : "" %> >RPG</option> 
+                            <option value="ACCION" <%= (locals.old && old.gender =="ACCION") ?  "selected" : "" %>>ACCION</option>
+                            <option value="AVENTURA" <%= (locals.old && old.gender =="AVENTURA") ?  "selected" : "" %>>AVENTURA</option>
+                            <option value="ROL"<%= (locals.old && old.gender =="ROL") ?  "selected" : "" %>>ROL</option>
+                            <option value="DEPORTE"<%= (locals.old && old.gender =="DEPORTE") ?  "selected" : "" %>>DEPORTE</option>
+                            <option value="SIMULACION" <%= (locals.old && old.gender =="SIMULACION") ?  "selected" : "" %>>SIMULACION</option>
+                            <option value="ESTRATEGIA" <%= (locals.old && old.gender =="ESTRATEGIA") ?  "selected" : "" %>>ESTRATEGIA</option>
+                            <option value="SUPERVIVENCIA"<%= (locals.old && old.gender =="SUPERVIVENCIA") ?  "selected" : "" %>>SUPERVIVENCIA</option>
                     </select>
-                    <span class="errorCreate">Debes seleccionar un género</span>
+                    <% if ( locals.errors && errors.gender){ %> 
+                    <span class="errorCreate"> * <%= errors.gender.msg %>  </span> <% } %>  
                
                     <p class="label-subtitle">Estrellas  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p> 
                     <div class="div-box">
-                    <label for="estrellas1"><input type="radio" name="stars" id="estrellas1" value="1" <% if(products.stars == 1){ %> checked <% } %>  >1</label>
-                    <label for="estrellas2"><input type="radio" name="stars" id="estrellas2" value="2" <% if(products.stars == 2){ %> checked <% } %>>2</label>
-                    <label for="estrellas3"><input type="radio" name="stars" id="estrellas3" value="3" <% if(products.stars == 3){ %> checked <% } %>>3</label>
-                    <label for="estrellas4"><input type="radio" name="stars" id="estrellas4" value="4" <% if(products.stars == 4){ %> checked <% } %>>4</label>
-                    <label for="estrellas5"><input type="radio" name="stars" id="estrellas5" value="5" <% if(products.stars == 5){ %> checked <% } %>>5</label>
+                    <label for="estrellas1"><input type="radio" name="stars" id="estrellas1" value="1" <%= (locals.old && old.stars =="1") ?  "checked" : "" %> >1</label>
+                    <label for="estrellas2"><input type="radio" name="stars" id="estrellas2" value="2"<%= (locals.old && old.stars =="2") ?  "checked" : "" %>>2</label>
+                    <label for="estrellas3"><input type="radio" name="stars" id="estrellas3" value="3"<%= (locals.old && old.stars =="3") ?  "checked" : "" %>>3</label>
+                    <label for="estrellas4"><input type="radio" name="stars" id="estrellas4" value="4"<%= (locals.old && old.stars =="4") ?  "checked" : "" %>>4</label>
+                    <label for="estrellas5"><input type="radio" name="stars" id="estrellas5" value="5"<%= (locals.old && old.stars =="5") ?  "checked" : "" %>>5</label>
                     </div>
-                    
+                    <% if (locals.errors && errors.stars){   %> 
+                        <span class="errorCreate">* <%= errors.stars.msg%></span> <% } %>
         
-                    <label class="label-subtitle">Este producto tiene como clasificación: <%= products.clasification %></label>
+                    <label class="label-subtitle">Clasificación</label>
                     <select class="select" name="clasification" id="clasificacion">
-                        <option value="A" <% if(products.clasification == "A"){ %> selected <% } %> >Contenido para todo el público</option>
-                        <option value="B" <% if(products.clasification == "B"){ %> selected <% } %>>Contenido para adolescentes a partir de 12 años</option>
-                        <option value="C" <% if(products.clasification == "C"){ %> selected <% } %>>Contenido para mayores de 15 años</option>
-                        <option value="D" <% if(products.clasification == "D"){ %> selected <% } %>>Contenido no apto para menores de 18 años</option>
+                        <option value="Z" <%= (locals.old && old.clasification =="Z") ?  "selected" : "" %>>Elige una clasificación</option>
+                        <option value="A" <%= (locals.old && old.clasification =="A") ?  "selected" : "" %>>Contenido para todo el público</option>
+                        <option value="B" <%= (locals.old && old.clasification =="B") ?  "selected" : "" %>>Contenido para adolescentes a partir de 12 años</option>
+                        <option value="C"<%= (locals.old && old.clasification =="C") ?  "selected" : "" %>>Contenido para mayores de 15 años</option>
+                        <option value="D"<%= (locals.old && old.clasification =="D") ?  "selected" : "" %>>Contenido no apto para menores de 18 años</option>
                     </select>
-        
+                    <% if (locals.errors && errors.clasification){   %> 
+                        <span class="errorCreate">* <%= errors.clasification.msg%></span> <% } %>
                     <!--CONSOLAS COMPATIBLES: -PC -PLAYSTATION 1 - PLAYSTATION 2 - PLAY 3 -PLAY4 -PLAY 5 -XBOX -NINTENDO *CHECKBOX*-->
-         
-                    <label class="label-subtitle">Este producto es compatible con: <%= products.console %></label>
-                    <label for="consola"><input type="checkbox" name="console" id="consola" value="PC">PC</label>
-                    <label for="consola2"><input type="checkbox" name="console"  id="consola2" <% if(products.console.includes("Playstation 1")){ %> checked <% } %>  value="Playstation 1"> Playstation 1</label>
-                    <label for="consola3"><input type="checkbox" name="console" id="consola3" <% if(products.console.includes("Playstation 2")){ %> checked <% } %>  value="Playstation 2">Playstation 2</label>
-                    <label for="consola4"><input type="checkbox" name="console" id="consola4" <% if(products.console.includes("Playstation 3")){ %> checked <% } %> value="Playstation 3">Playstation 3</label>
-                    <label for="consola5"><input type="checkbox" name="console" id="consola5" <% if(products.console.includes("Playstation 4")){ %> checked <% } %> value="Playstation 4">Playstation 4</label>
-                    <label for="consola6"><input type="checkbox" name="console" id="consola6"<% if(products.console.includes("Playstation 5")){ %> checked <% } %>  value="Playstation 5">Playstation 5</label>
-                    <label for="consola7"><input type="checkbox" name="console" id="consola7" <% if(products.console.includes("XBOX")){ %> checked <% } %> value="XBOX">XBOX</label>
-                    <label for="consola8"><input type="checkbox" name="console" id="consola8" <% if(products.console.includes("Nintendo")){ %> checked <% } %> value="Nintendo">Nintendo</label>
+        
+                    <label class="label-subtitle">Consolas compatibles</label>
+                    <label for="consola"><input type="checkbox" name="console" id="consola" value="PC"<% if(locals.old && old.console){ if (old.console.includes("PC")){ %> checked <% } } %> >PC</label>
+                    <label for="consola2"><input type="checkbox" name="console" id="consola2" value="Playstation 1" <% if(locals.old && old.console){ if (old.console.includes("Playstation 1")){ %> checked <% } } %> >Playstation 1</label>
+                    <label for="consola3"><input type="checkbox" name="console" id="consola3" value="Playstation 2" <% if(locals.old && old.console){ if (old.console.includes("Playstation 2")){ %> checked <% } } %>>Playstation 2</label>
+                    <label for="consola4"><input type="checkbox" name="console" id="consola4" value="Playstation 3" <% if(locals.old && old.console){ if (old.console.includes("Playstation 3")){ %> checked <% } } %>>Playstation 3</label>
+                    <label for="consola5"><input type="checkbox" name="console" id="consola5" value="Playstation 4" <% if(locals.old && old.console){ if (old.console.includes("Playstation 4")){ %> checked <% } } %>>Playstation 4</label>
+                    <label for="consola6"><input type="checkbox" name="console" id="consola6" value="Playstation 5"<% if(locals.old && old.console){ if (old.console.includes("Playstation 5")){ %> checked <% } } %>>Playstation 5</label>
+                    <label for="consola7"><input type="checkbox" name="console" id="consola7" value="XBOX" <% if(locals.old && old.console){ if (old.console.includes("XBOX")){ %> checked <% } } %>>XBOX</label>
+                    <label for="consola8"><input type="checkbox" name="console" id="consola8" value="Nintendo"<% if(locals.old && old.console){ if (old.console.includes("Nintendo")){ %> checked <% } } %> >Nintendo</label>
+                    <% if (locals.errors && errors.console){   %> 
+                        <span class="errorCreate">* <%= errors.console.msg%></span> <% } %>
         
                     <label class="label-subtitle">Idiomas</label>
                     <div class="div-box">
-                    <label for="idioma1"><input type="checkbox" name="language" id="idiomas1" <% if(products.language.includes("Español")){ %> checked <% } %>  value="Español">Español</label>
-                    <label for="idioma2"><input type="checkbox" name="language" id="idioma2" <% if(products.language.includes("Ingles")){ %> checked <% } %> value="Ingles">Inglés</label> 
-                    <label for="idioma3"><input type="checkbox" name="language" id="idioma3" <% if(products.language.includes("Chino")){ %> checked <% } %> value="Chino">Chino</label>
+                    <label for="idioma1"><input type="checkbox" name="language" id="idiomas1" value="Español" <% if(locals.old && old.language){ if (old.language.includes("Español")){ %> checked <% } } %>>Español</label>
+                    <label for="idioma2"><input type="checkbox" name="language" id="idioma2" value="Ingles" <% if(locals.old && old.language){ if (old.language.includes("Ingles")){ %> checked <% } } %>>Inglés</label> 
+                    <label for="idioma3"><input type="checkbox" name="language" id="idioma3" value="Chino" <% if(locals.old && old.language){ if (old.language.includes("Chino")){ %> checked <% } } %>>Chino</label>
                     </div>
+                    <% if (locals.errors && errors.language){   %> 
+                        <span class="errorCreate">* <%= errors.language.msg%></span> <% } %>
 
                     <label class="label-subtitle">Subtitulos</label>
                     <div class="div-box">
-                    <label for="subtitulo1"><input type="checkbox" name="subtitle"  id="subtitulo1" value="Español" <% if(products.subtitle.includes("Español")){ %> checked <% } %>>Español</label>
-                    <label for="subtitulo2"><input type="checkbox" name="subtitle" id="subtitulo2" value="Frances" <% if(products.subtitle.includes("Frances")){ %> checked <% } %>>Francés</label>
-                    <label for="subtitulo3"><input type="checkbox" name="subtitle" id="subtitulo3" value="Aleman"<% if(products.subtitle.includes("Aleman")){ %> checked <% } %>>Alemán</label>
+                    <label for="subtitulo1"><input type="checkbox" name="subtitle" id="subtitulo1" value="Español" <% if(locals.old && old.subtitle){ if (old.subtitle.includes("Español")){ %> checked <% } } %> >Español</label>
+                    <label for="subtitulo2"><input type="checkbox" name="subtitle" id="subtitulo2" value="Frances" <% if(locals.old && old.subtitle){ if (old.subtitle.includes("Frances")){ %> checked <% } } %> >Francés</label>
+                    <label for="subtitulo3"><input type="checkbox" name="subtitle" id="subtitulo3" value="Aleman" <% if(locals.old && old.subtitle){ if (old.subtitle.includes("Aleman")){ %> checked <% } } %> >Alemán</label>
                     </div>
+                    
 
                     <label class="label-subtitle">Conexión a internet</label>
                     <div class="div-box">
-                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="SI" <% if(products.conexion == "SI"){ %> checked <% }%> >SI</label>
-                    <label for="conexion2"><input type="radio" name="conexion" id="conexion2" value="NO"<% if(products.conexion == "NO"){ %> checked <% } %> >NO</label>
+                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="SI" <% if(locals.old && old.conexion){ if (old.conexion.includes("SI")){ %> checked <% } } %> >SI</label>
+                    <label for="conexion2"><input type="radio" name="conexion" id="conexion2" value="NO"<% if(locals.old && old.conexion){ if (old.conexion.includes("NO")){ %> checked <% } } %>>NO</label>
                     </div><br>
-
+                    <% if (locals.errors && errors.conexion){   %> 
+                        <span class="errorCreate">* <%= errors.conexion.msg%></span> <% } %>
                     <label class="label-subtitle">Compras integradas</label>
                     <div class="div-box">
-                    <label for="comprasIntegradas1"><input type="radio" name="integratedShopping" id="comprasIntegradas1" value="SI" <% if(products.integratedShopping == "SI"){ %> checked <% }%> >SI</label>
-                    <label for="comprasIntegradas2"><input type="radio" name="integratedShopping" id="comprasIntegradas2" value="NO" <% if(products.integratedShopping == "NO"){ %> checked <% }%>>NO</label>
+                    <label for="comprasIntegradas1"><input type="radio" name="integratedShopping" id="comprasIntegradas1" value="SI" <% if(locals.old && old.integratedShopping){ if (old.integratedShopping.includes("SI")){ %> checked <% } } %>>SI</label>
+                    <label for="comprasIntegradas2"><input type="radio" name="integratedShopping" id="comprasIntegradas2" value="NO"<% if(locals.old && old.integratedShopping){ if (old.integratedShopping.includes("NO")){ %> checked <% } } %>>NO</label>
                     </div><br>
-
+                    <% if (locals.errors && errors.integratedShopping){   %> 
+                        <span class="errorCreate">* <%= errors.integratedShopping.msg%></span> <% } %>
                     <label class="label-subtitle">Multijugador</label>
                     <div class="div-box">
-                    <label for="multijugador1"><input type="checkbox" name="multiplayer" id="multijugador1" value="1" <% if(products.multiplayer.includes("1")){ %> checked <% } %>>1</label>
-                    <label for="multijugador2"><input type="checkbox" name="multiplayer" id="multijugador2" value="2"<% if(products.multiplayer.includes("2")){ %> checked <% } %>>2</label>
-                    <label for="multijugador3"><input type="checkbox" name="multiplayer" id="multijugador3" value="3"<% if(products.multiplayer.includes("3")){ %> checked <% } %>>3</label>
-                    <label for="multijugador4"><input type="checkbox" name="multiplayer" id="multijugador4" value="4"<% if(products.multiplayer.includes("4")){ %> checked <% } %>>4</label>
-                    <label for="multijugador5"><input type="checkbox" name="multiplayer" id="multijugador5" value="5"<% if(products.multiplayer.includes("5")){ %> checked <% } %>>5</label>
+                    <label for="multijugador1"><input type="checkbox" name="multiplayer" id="multijugador1" value="1" <% if(locals.old && old.multiplayer){ if (old.multiplayer.includes("1")){ %> checked <% } } %> >1</label>
+                    <label for="multijugador2"><input type="checkbox" name="multiplayer" id="multijugador2" value="2"<% if(locals.old && old.multiplayer){ if (old.multiplayer.includes("2")){ %> checked <% } } %>>2</label>
+                    <label for="multijugador3"><input type="checkbox" name="multiplayer" id="multijugador3" value="3"<% if(locals.old && old.multiplayer){ if (old.multiplayer.includes("3")){ %> checked <% } } %>>3</label>
+                    <label for="multijugador4"><input type="checkbox" name="multiplayer" id="multijugador4" value="4"<% if(locals.old && old.multiplayer){ if (old.multiplayer.includes("4")){ %> checked <% } } %>>4</label>
+                    <label for="multijugador5"><input type="checkbox" name="multiplayer" id="multijugador5" value="5"<% if(locals.old && old.multiplayer){ if (old.multiplayer.includes("5")){ %> checked <% } } %>>5</label>
                     </div><br>
-
+                    <% if (locals.errors && errors.multiplayer){   %> 
+                        <span class="errorCreate">* <%= errors.multiplayer.msg%></span> <% } %>
                     <label class="label-subtitle" for="message">Descripción del producto</label>
-                    <textarea name="description" id="message" cols="30" rows="10"><%= products.description %></textarea>
-                    <span class="errorCreate">Debes dar detalles de este producto</span>
+                    <textarea name="description" id="message" cols="30" rows="10" placeholder="Escribe la descripción aquí.." ><%= (locals.old && old.description) ? old.description : "" %></textarea>
+                    <% if (locals.errors && errors.description){   %> 
+                        <span class="errorCreate">* <%= errors.description.msg%></span> <% } %>
         
                     <label class="label-subtitle" for="precio">Precio</label>
-                    <input class="input-productCreate" type="number" name="price" id="precio" value="<%= products.price %>">
-                    <span class="errorCreate">Debes fijar un precio</span>
-
+                    <input class="input-productCreate" type="number" name="price" id="precio" value="<%= old.price %>" >
+                    <% if (locals.errors && errors.multiplayer){   %> 
+                        <span class="errorCreate">* <%= errors.multiplayer.msg%></span> <% } %>
                     <label class="label-subtitle" for="descount">Descuento</label>
-                    <input class="input-productCreate" type="number" name="descount" id="descount" value="<%= products.descount %>">
-                    <span class="errorCreate">Debes fijar un % de descuento</span>
+                    <input class="input-productCreate" type="number" name="descount" id="descount" value="<%= (locals.old && old.descount) ? old.descount : "0" %>">
+                    <% if (locals.errors && errors.descount){   %> 
+                        <span class="errorCreate">* <%= errors.descount.msg%></span> <% } %>
         
                     <label class="label-subtitle" for="almacenamiento">Almacenamiento</label>
-                    <input class="input-productCreate" type="number" name="stock" id="almacenamiento" value="<%= products.stock %>">
-                    <span class="errorCreate">Debes agregar el stock</span><br>
+                    <input class="input-productCreate" type="number" name="stock" id="almacenamiento" value="<%= old.stock %>">
+                    <% if (locals.errors && errors.stock){   %> 
+                        <span class="errorCreate">* <%= errors.stock.msg%></span> <% } %>
         
                     <div class="file-productCreate">
                     <label class="label-file-create" for="photo">Ingrese una foto</label>
@@ -119,9 +137,8 @@
                     </div><br>
 
                     <div class="button-productCreate">
-                        <button type="submit" >Guardar Cambios</button>
-                    </div>   
-                    
+                        <button type="submit">Guardar Cambios</button>
+                    </div>
         
                 </form>
             </main>

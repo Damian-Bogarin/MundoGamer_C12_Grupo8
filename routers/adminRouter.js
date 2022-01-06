@@ -3,7 +3,6 @@
 let express = require('express'); 
 let router = express.Router();
 let controller = require('../controllers/adminController'); 
-
 router.get('/create', controller.create); /*devuelve la vista para crear un producto */
 /* router.post('/productCreate', controller.newProduct); */ /* <- todavia no esta echa...guardaria el producto en la base de datos */
 
