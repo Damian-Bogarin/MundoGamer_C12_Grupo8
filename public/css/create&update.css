@@ -47,9 +47,14 @@
 }
 
 .main-productCreate .errorCreate {
-    color: rgb(255, 51, 51);
+    border-radius: 5px;
+    background-color: #F6A1F0 ;
+    color: rgb(228, 10, 10);
     font-size: 12px;
-    display: none;
+    font-weight: bolder;
+    margin: 1px;
+    
+    
 }
 
 .main-productCreate .div-box input{

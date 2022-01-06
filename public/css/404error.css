@@ -1,0 +1,97 @@
+.section-404{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 15%;
+    }
+    
+    .img-404 img{
+        width: 90%;
+        margin: 5%;
+        object-fit: cover;
+        max-width: 900px;
+    }
+    
+    .container-404{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 50px;
+        width: 90%;
+        height: 25vh;
+        box-shadow: 15px 10px 25px green;
+        border-radius: 25px;
+        margin-bottom: 50px;
+        
+    }
+    .header-404{
+        height: 10%;
+        border-radius: 25px 25px 0 0;
+        background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
+    }
+    .center-404{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    align-items: center;
+    }
+    /* .center-404 h2{
+    
+    } */
+    .center-404 img{
+        object-fit: cover;
+        margin: 0;
+        max-width: 150px;
+        max-height: 52px;
+    }
+    .center-404{
+        font-size: 0.9em;
+        background-color: seashell;
+    }
+    .center-404 button{
+        
+            background-color: #ffffff; /* Green */
+            border-radius: 5% ;
+            color: rgb(8, 8, 8);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 2000ms;
+            cursor: pointer;
+    }
+    .center-404 button:hover{
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+     
+    
+    .footer-404{
+    height: 10%;
+    border-radius: 0 0 25px 25px;
+    background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
+    }
+    
+    
+    @media (min-width: 426px){
+        .container-404{
+            height: 35vw;
+            font-size: 1.5em;
+            width: 70%;
+
+        }
+        .section-404{
+            
+            margin-top: 5%;
+            }
+        .center-404 img{
+            object-fit: cover;
+            margin: 0;
+            max-width: 300px;
+            max-height: 100px;
+        }
+    }

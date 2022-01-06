@@ -1,6 +1,7 @@
 const { check, body } = require('express-validator')
 const req = require('express/lib/request')
 
+
 module.exports = [
     check('name')
     .notEmpty()
