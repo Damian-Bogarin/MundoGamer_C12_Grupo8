@@ -7,10 +7,10 @@ let navBar = document.querySelector("#navigation-burguer-menu"); // Capturo el e
 function dropMenu() {
     let subcategoryMenu = document.querySelector(".active");
     if (navBar.style.display === "block") {
-      navBar.style.display = "none";
-      subcategoryMenu?.classList.remove("active");
+        navBar.style.display = "none";
+        subcategoryMenu?.classList.remove("active");
     } else {
-      navBar.style.display = "block"; // aparece la caja
-      subcategoryMenu ? subcategoryMenu.classList.remove("active") : "";
+        navBar.style.display = "block"; // aparece la caja
+        subcategoryMenu ? subcategoryMenu.classList.remove("active") : "";
     }
 }

@@ -90,7 +90,7 @@ const controller = {
         writeProductsJSON(products)
         
        
-        res.redirect("/admin/list") 
+        res.redirect("/admin/listProduct")
     },
 
     delete: (req,res) =>{

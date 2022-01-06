@@ -89,8 +89,16 @@ let controller = {
         }
     }, 
 
+    logout: (req, res) => {  //cerraria la session, borra los datos del usuario y mata la cookie
+        req.session.destroy();
+        if(req.cookies.mundoGamer){
+            res.cookie('mundoGamer', "", { maxAge: -1 }) //Al darle el string vacio y poner -1 borramos todos esos datos que le estamos dando
+        }
+        res.redirect('/')
+    },
+
     profile: (req, res) => {   /* acá session: req.session?? */
-        res.render('users/myProfile')
+        res.render('users/myProfile')  /* logica: debe buscar al user */
     },
 
     cart: (req, res) => {     
@@ -99,6 +107,7 @@ let controller = {
         })
     }
 };
+
 
 
 module.exports = controller;
