@@ -5,13 +5,28 @@
     <div class="divs-containers">
 
         <div class="header-left">
-            <h2>Mundo <br> Gamer</h2>
+            <h2 class="headerAdminTitle">Mundo<br>Gamer</h2>
         </div>
 
         <div class="header-right">
-            <h2>Administrador</h2>
-            <button type="submit">Cerrar sesión</button>
+
+            <h2 class="headerAdminTitle">Admin</h2>
+
+            <i class="fas fa-bars" onclick="dropMenu()"></i>
+            
         </div>
+
+        <nav class="adminNavigationBar" id="burguer-admin">
+
+            <ul class="menu-admin">
+               
+                <a href="/admin/create"><li class="li-admin">Crear un producto</li></a><hr>
+                <a href="/admin/update"><li class="li-admin">Editar un producto</li></a><hr><!-- ruta del update? -->
+                <a href=""><li class="li-admin">Cerrar sesión</li></a>         
+
+            </ul>
+
+        </nav>
         
     </div>
 

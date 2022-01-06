@@ -14,6 +14,9 @@ router.post('/login', loginValidator, controller.processLogin);
 router.get('/register', controller.register);
 router.post('/register', uploadFile.single('avatar'), registerValidator, controller.processRegister); // Pasamos el middleware uploadFile, single, por que es un solo archivo y dentro el bombre q pusimos en el campo name
 
+/* logout GET */
+router.get('/logout', controller.logout);
+
 /* myProfile GET y POST */
 /* router.get('/myProfile', controller.profile); en el medio el middleware */
 /* router.post('/myProfile', controller.profile); multer, para editar el avatar*/

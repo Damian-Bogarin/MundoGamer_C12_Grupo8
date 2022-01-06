@@ -96,45 +96,5 @@
         "CP": "1",
         "tel": "4949",
         "avatar": "jaz.png"
-    },
-    {
-        "id": 8,
-        "name": "Jesi",
-        "lastName": "Noce7",
-        "email": "helado-jesi@gmail.com",
-        "pass": "888",
-        "rol": "jdjdj",
-        "address": "casa 1",
-        "city": "nqn",
-        "province": "nqn",
-        "CP": "1",
-        "tel": "4646",
-        "avatar": "fotito.jpg"
-    },
-    {
-        "id": 9,
-        "name": "daniela",
-        "email": "hdaniela127c@gmail.com",
-        "pass": "123456",
-        "rol": "ROL_USER",
-        "address": "",
-        "city": "",
-        "province": "",
-        "CP": "",
-        "tel": "",
-        "avatar": "1640466892266_img_.png"
-    },
-    {
-        "id": 10,
-        "name": "daniela",
-        "email": "daniela127c@gmail.com",
-        "pass": "654321",
-        "rol": "ROL_USER",
-        "address": "",
-        "city": "",
-        "province": "",
-        "CP": "",
-        "tel": "",
-        "avatar": "default-img.png"
     }
 ]

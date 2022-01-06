@@ -5,7 +5,7 @@
     <div class="header">
 
         <div class="header-top">
-
+            
             <div class="logo">
                 <a href="/">
                     <img src="/img/logo.png" alt="" width="100%">
@@ -17,8 +17,22 @@
                 <i class="fas fa-search"></i>
             </div>
 
-            <a href="/users/productCart"><i class="fas fa-shopping-cart"></i></a>
-
+            <!-- icon user -->
+            <div class="session-user">
+                <% if (typeof session.user != "undefined") { %>
+                    <i class="fas fa-user"></i><span class="open-session"></span>
+                    <div class="user-menu">
+                        <a href="/users/myProfile">Mi perfil</a><br><hr>
+                        <a href="/users/logout">Cerrar sesión</a>
+                        <% if (session.user.rol === "ROL_ADMIN") { %>
+                            <a href="/admin/list">ADMIN</a>
+                        <% } %>
+                    </div>
+                <% } else { %>
+                    <a href="/users/login"><i class="fas fa-user"></i></a>
+                <% } %> 
+            </div>
+            
             <!-- menu hamburguer | desplegable -->
 
             <i class="fas fa-bars burguer-menu" onclick="dropMenu()"></i>
@@ -29,25 +43,25 @@
                 <!-- Menu de navegacion mobile desplegable -->
                 <ul class="menu">
 
-                    <li class="dropdown-menu">Categorias</li><hr>
-                    <li class="dropdown-menu">Ofertas</li><hr>
-                    <li class="dropdown-menu">Mi cuenta</li><hr>
-                    <li class="dropdown-menu">Creá tu cuenta</li><hr>
-                    <li class="dropdown-menu">Ayuda</li>
+                    <a href="/products/categorias"><li class="dropdown-menu">Categorias</li></a><hr>
+                    <a href="/users/productCart"><li class="dropdown-menu">Carrito</li></a><hr>
+                    <a href="/users/login"><li class="dropdown-menu">Mi cuenta</li></a><hr>
+                    <a href="/users/register"><li class="dropdown-menu">Creá tu cuenta</li></a><hr>
+                    <a href="#"><li class="dropdown-menu">Ayuda</li></a><hr>
 
                 </ul>
 
             </nav>
 
         </div>
-
+        <!-- nab-var recien aparece a partir de 768px en tablet -->
         <nav class="header-bottom">
             <ul>
                 <li><a href="/products/categorias">Categorias</a></li>
-                <li><a href="#">Ofertas</a></li>
+                <li><a href="/users/productCart">Carrito</a></li>
                 <li><a href="/users/login">Mi cuenta</a></li>
                 <li><a href="/users/register">Creá tu cuenta</a></li>
-                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Ayuda</a></li><!-- o puede ser 'nosotros' -->
             </ul>
         </nav>
     </div>

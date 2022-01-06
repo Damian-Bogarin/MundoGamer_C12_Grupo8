@@ -18,12 +18,18 @@ app.use(methodOverride('_method'));
 
 //SESSION
 const session = require('express-session');
+const cookieSession = require('./middlewares/cookieSession');
 app.use(session({
-    secret: "MundoGamer",
+    secret: "mundoGamer",
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
+    saveUninitialized: true
 }));
+//app.use(cookieSession);
+
+//COOKIE-PARSER
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+app.use(cookieSession);
 
 /* RUTEO */
 let rutasHome = require('./routers/home');
@@ -51,4 +57,5 @@ app.use((req, res, next) => {
 
 
 app.listen(PORT, () => 
-console.log(`Servidor levantado en el puerto ${PORT} http://localhost:${PORT}`))
+console.log(`Servidor levantado en el puerto ${PORT} 
+http://localhost:${PORT}`))

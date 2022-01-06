@@ -14,7 +14,7 @@ module.exports = [
     .isEmail()
     .withMessage('Debes ingresar un e-mail válido'),
 
-    body('email').custom(value => { //custom recibe como parámetro un collback, que recibe como parámetro el value 
+    body('email').custom((value) => { //custom recibe como parámetro un collback, que recibe como parámetro el value 
         let user = users.find(user => {
             return user.email == value //Si existe este usuario en nuestra base de datos
         })

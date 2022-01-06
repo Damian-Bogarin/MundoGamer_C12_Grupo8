@@ -10,7 +10,7 @@ router.get("/detail/:id", controller.detail)
 
  router.post("/store", uploadFile.single('photo'), adminProductsValidator, controller.store)
 
- router.put("/store/:id", uploadFile.single('photo'),adminEditProductsValidator ,controller.update)
+ router.put("/store/:id", uploadFile.single('photo'), adminEditProductsValidator ,controller.update)
 
  router.delete("/delete/:id",controller.delete)
 
