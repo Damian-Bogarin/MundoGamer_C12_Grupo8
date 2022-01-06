@@ -1,4 +1,5 @@
 /* headerAdmin -> para todas las vistas de la carpeta admin */
+/* Media-query mobile, empezando desde 320px */
 
 .header-admin {
     position: relative;
@@ -50,7 +51,7 @@
     height: 65px; 
     position: absolute; 
     top: 60px;  
-    display: none;  /* display none?? */
+    display: none; 
 }
 
 .adminNavigationBar .menu-admin {
@@ -73,6 +74,24 @@
 /* Fin de menú navegación-admin */
 
 
+
+/* Media-query - 425px */
+
+@media (min-width: 425px) {
+    
+    .adminNavigationBar {
+        width: 40%; 
+        right: 0;
+        top: 48px;
+    }
+
+    .adminNavigationBar .menu-admin {
+        border-radius: 4px;
+    }
+}
+
+
+
 /* Media-query - tablet */
 
 @media (min-width: 768px) {
@@ -91,24 +110,18 @@
     } 
 
     .adminNavigationBar {
-        top: 65px;  
+        top: 52px;  
     }
-
 }
+
+
+
+/* Media-query - desktop */
 
 @media (min-width: 1024px) {
 
     .adminNavigationBar {
-        width: 30%; 
-        right: 0;
         top: 52px;
-        text-transform: none;
-        position: absolute;
-    }
-/* sacarle los puntos por defecto */
-    .adminNavigationBar ul.menu-admin a .li-admin { 
-        height: 70px;
-        padding: 18px;
-    }
-    
+        width: 30%;
+    }    
 }

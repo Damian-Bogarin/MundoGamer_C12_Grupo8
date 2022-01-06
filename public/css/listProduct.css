@@ -67,7 +67,7 @@ main.listOfAllProducts {
     } */
 
     .listOfAllProducts .listTable table {
-        width: 90%; /* -----------??----------- */
+        width: 100%; /* -------------90??------------ */
         margin: 1rem auto; 
     }
 
@@ -87,7 +87,7 @@ main.listOfAllProducts {
         text-align: right;
         padding-right: 10px; /* 15px */
         position: relative;
-        width: 280px; 
+        width: 280px;  
     }
 
     .listOfAllProducts .listTable table tr.body td::before {
