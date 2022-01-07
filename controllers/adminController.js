@@ -21,7 +21,7 @@ let controller = {
         res.render('admin/updateProduct', {old: productsToUpdate})
     },
     list: (req, res) => {
-        res.render('admin/listProduct', {products: products})
+        res.render('admin/listProduct', {products: products}) 
     }
 };
 
