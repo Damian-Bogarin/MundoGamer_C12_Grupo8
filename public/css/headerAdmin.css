@@ -1,4 +1,5 @@
 /* headerAdmin -> para todas las vistas de la carpeta admin */
+/* Media-query mobile, empezando desde 320px */
 
 .header-admin {
     position: relative;
@@ -21,24 +22,106 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-.header-admin .header-left {
+.header-admin .divs-containers .header-left {
     padding: 15px;
 }
 
-.header-admin .header-left h2 {
-   font-size: 20px; 
+.header-admin .divs-containers .headerAdminTitle {
+   font-size: 18px; 
 }
 
-.header-admin .header-right {
+.header-admin .divs-containers .header-right {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 112px;
+    align-items: center;
     padding: 15px;
 }
 
-.header-right h2, button {
-    font-size: 20px; 
+.header-admin .divs-containers .header-right i.fa-bars {
+    margin-left: 12px; 
+    cursor: pointer;
+    font-size: 17px;
+} 
+
+/* Menú de navegación-admin */
+.adminNavigationBar {
+    display: flex;
+    width: 100%;
+    height: 65px; 
+    position: absolute; 
+    top: 60px;  
+    display: none; 
 }
 
-.header-right button { /* Dar mas estilo al boton */
-    cursor: pointer;
+.adminNavigationBar .menu-admin {
+    background-color: #ebebeb;
+    text-align: center;
+    width: 100%;
+    height: 132px;
+}
+
+.adminNavigationBar ul.menu-admin a {
+    text-decoration: none; 
+}
+
+.adminNavigationBar ul.menu-admin a .li-admin { 
+    color: black;
+    font-weight: 700;
+    padding: 11px;
+    list-style: none;
+}
+/* Fin de menú navegación-admin */
+
+
+
+/* Media-query - 425px */
+
+@media (min-width: 425px) {
+    
+    .adminNavigationBar {
+        width: 40%; 
+        right: 0;
+        top: 48px;
+    }
+
+    .adminNavigationBar .menu-admin {
+        border-radius: 4px;
+    }
+}
+
+
+
+/* Media-query - tablet */
+
+@media (min-width: 768px) {
+    
+    .header-admin .divs-containers .headerAdminTitle {
+        font-size: 20px; 
+    }
+
+    .header-admin .divs-containers .header-right {
+        width: 116px;
+    
+    }
+
+    .header-admin .divs-containers .header-right i.fa-bars {
+        font-size: 18px;
+    } 
+
+    .adminNavigationBar {
+        top: 52px;  
+    }
+}
+
+
+
+/* Media-query - desktop */
+
+@media (min-width: 1024px) {
+
+    .adminNavigationBar {
+        top: 52px;
+        width: 30%;
+    }    
 }

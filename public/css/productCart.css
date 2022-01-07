@@ -52,18 +52,24 @@ main.cart {
     border-radius: 15px;
     max-height: 35px;
     height: 25px;
+   background-color: rgb(91, 77, 185); /* greta */
 }
 
 .counter button {
     border: none;
     font-size: 18px; /* 1.5rem */
     font-weight: bold;
-    background-color: white;
+    /* background-color: white; */
+    background-color: rgb(91, 77, 185); /* greta */
 }
 
 .cart .total-and-buttom {
     text-align: center;
     margin: 18px 0;
+}
+
+.btn-subtract { /* ggg */
+    background-color: rgb(91, 77, 185); /* greta */
 }
 
 .cart .total-and-buttom .p-totales {
@@ -186,4 +192,21 @@ main.cart {
     .div-products hr {
         display: none;
     }
+
+    .counter {
+        margin: 9px 0;
+        cursor: pointer;
+        padding: 9px;
+        border: none;
+        font-weight: bold; 
+        border-radius: 25px;
+        color: rgb(44, 44, 44);
+        background-color: rgb(91, 77, 185); /* greta */
+        width: 90px;
+        height: 40px;
+        font-size: 20px;
+
+    }
+
+
 }
