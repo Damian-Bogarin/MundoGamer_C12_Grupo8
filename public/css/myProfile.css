@@ -1,0 +1,134 @@
+.form-main-36 .formulario {
+    font-family: var(--font-quicksand);
+    border-radius: 14px;
+    background-color: #ebebeb;
+    margin: 55px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /*ancho del contenedor*/
+    height: 800px; /* 430px */   /*altura del cuadro gris*/
+}
+
+.form-main-36 .titulo {
+    font-size: 25px;
+    text-align: center;
+}
+.avatar {
+    border-radius: 50%;
+    border: solid 1px black;
+    background-color: white;
+    width: 105px;
+    height: 105px;
+    /* position: absolute; */
+    margin-top: 5px; /* 35px */
+    z-index: 100;
+
+}
+.formulario .check {
+    font-size: 12px;
+    margin: 2px 0 15px 0;
+}
+
+.formulario .check-1 label {
+    /*clase check-1: solo en register*/
+    font-size: 12px;
+}
+
+.formulario .check-1 a {
+    color: blue;
+    text-decoration: none;
+}
+
+.formulario span a {
+    color: blue;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.formulario .error-msj {
+    font-size: 12px;
+    color: rgb(255, 51, 51);
+    display: none;  
+}
+
+.formulario .input-datos {
+    margin: 8px 0;
+    width: 90%;
+}
+
+.input-datos input:focus {
+    outline: none;
+} 
+
+.formulario .input-datos .input-estilo {
+    border-radius: 8px;
+    width: 100%;
+    height: 22px; 
+    border: none;
+}
+
+.formulario .button {
+    margin-bottom: 10px;
+}
+
+.formulario .button-36 button {
+    font-weight: bold; /*grosor de letra*/
+    font-size: 23px;
+    border: none;
+    border-radius: 25px;
+    background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
+    color: rgb(44, 44, 44);
+    cursor: pointer; /*manito*/
+    width: 200px; /* 180 */
+    height: 50px; /* 40 */
+}
+
+.file-box{
+    background-color: red;
+}
+
+
+/*Media queries-tablet*/
+
+@media (min-width: 768px) {
+
+    .form-main-36 .formulario {
+        max-width: 550px; 
+        height: 870px; /* 450px;  */
+    }
+
+    .formulario .input-datos {
+        width: 75%;
+    }
+
+    .formulario .input-datos .input-estilo {
+        max-width: 100%;
+    }
+
+    .avatar {
+        border-radius: 50%;
+        border: solid 1px black;
+        background-color: white;
+        width: 205px;
+        height: 205px;
+        /* position: absolute; */
+        margin-top: 5px; /* 35px */
+        z-index: 100;
+    
+    }
+}
+
+
+/*Media queries-desktop*/
+
+@media (min-width: 1200px) {
+
+    .button button:hover {
+        color: rgb(78, 78, 78);
+        background:  linear-gradient(100deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
+        transition: all 0.4ms ease-in-out;
+        /*buttom tendra transition (segundos) para cambiar el color que le asignamos*/
+    }
+}

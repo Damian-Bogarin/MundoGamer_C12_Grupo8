@@ -10,7 +10,7 @@
             <main class="cart">
                 <div class="title-cart">
                     <h2 class="h2title">Carrito</h2>
-                    <p class="titleP">4 elementos en tu carrito</p> 
+                    <p class="titleP">4 elementos en tu carrito</p>
                 </div>
                 <hr>
 
@@ -23,22 +23,19 @@
                             <p>FIFA 22 Edition Electronic Arts PS5 <br>
                                 $9.900
                             </p>
-                            
                             <div class="counter">
                                 <button type="button" class="btn-subtract" onclick="subtract();">
                                     -
                                 </button>
-        
-                                            <div id="count">1</div>
-        
+                                <div id="count">1</div>
                                 <button type="button" id="btn-add" onclick="add();">
                                     +
                                 </button>
                             </div>
-
                         </div>
                     </div><br>
                     <hr>
+
                     <div class="product-2">
                         <img src="/img/tennis.png" alt="">
 
@@ -47,36 +44,41 @@
                                 $7.800
                             </p>
 
-                            <div class="counter">
+                             <div class="counter">
                                 <button type="button" class="btn-subtract" onclick="subtract();">
                                     -
                                 </button>
-        
-                                            <div id="count">1</div>
-        
+
+                                <div id="count">1</div>
+
                                 <button type="button" id="btn-add" onclick="add();">
                                     +
                                 </button>
                             </div>
 
+                        
+
+                           
+
                         </div>
                     </div><br>
                     <hr>
-                    <div class="product-3">
+
+                 <div class="product-3">
                         <img src="/img/aventura.png" alt="">
 
                         <div class="product-container">
                             <p>Lego Jurassic World Ps4 Fisico <br>
                                 $4.500
                             </p>
-                           
+
                             <div class="counter">
                                 <button type="button" class="btn-subtract" onclick="subtract();">
                                     -
                                 </button>
-        
-                                            <div id="count">1</div>
-        
+
+                                <div id="count">1</div>
+
                                 <button type="button" id="btn-add" onclick="add();">
                                     +
                                 </button>
@@ -92,14 +94,14 @@
                             <p>Ghost Of Tsushima Ps4 Soy Gamer <br>
                                 $5.000
                             </p>
-                            
+
                             <div class="counter">
                                 <button type="button" class="btn-subtract" onclick="subtract();">
                                     -
                                 </button>
-        
-                                            <div id="count">1</div>
-        
+
+                                <div id="count">1</div>
+
                                 <button type="button" id="btn-add" onclick="add();">
                                     +
                                 </button>
@@ -107,7 +109,7 @@
 
                         </div>
                     </div><br>
-                    <hr>
+                    <hr> -->
 
                 </div>
 
@@ -115,15 +117,17 @@
                     <p class="p-totales">Subtotal $20.298</p><br>
                     <p class="p-totales">TOTAL $20.298</p><br>
                     <button type="submit">Realizar pedido</button> <br>
-                    <button type="submit">Seguir comprando</button>
+                    <!-- <button type="submit">Seguir comprando</button> -->
+                    <button type="submit"> <a href="/">Seguir comprando</a></button>
                 </div>
 
             </main>
 
             <%- include('../partials/footer.ejs') %>
-            <script src="/js/productCart.js"></script>
-            <script src='/js/header.js'></script>
-            <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+                <script src="/js/productCart.js"></script>
+                <script src='/js/header.js'></script>
+                <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+                <script src="/js/carrito.js"></script>
     </body>
 
 </html>

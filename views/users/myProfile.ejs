@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+
+<%- include('../partials/head.ejs') %>
+
+
+
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+
+            <main class="form-main-36">
+
+                <form action="/register" method="POST">
+
+                    <div class="formulario">
+
+                        <h2 class="titulo">Mi Perfil</h2>
+
+                        <div class="avatar">
+
+                        </div>
+
+
+
+                        <div class="input-datos">
+                            <label for="nombre"> Editar Foto  <i class="fas fa-pencil-alt"> </i>  </label><br>
+                            <input class="button-36" type="file" name="avatar" accept=".jpg" id="archivo" multiple>
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="input-datos">
+                            <label for="nombre">Nombre</label><br>
+                            <input class="input-estilo" type="text" name="nombre" id="nombre">
+                            <span class="error-msj">Debes ingresar tu nombre</span>
+                        </div>
+
+                        <div class="input-datos">
+                            <label for="apellido">Apellido</label><br>
+                            <input class="input-estilo" type="text" name="apellido" id="apellido">
+                            <span class="error-msj">Debes ingresar tu apellido</span>
+                        </div>
+
+                        <div class="input-datos">
+                            <label for="email">E-mail</label><br>
+                            <input class="input-estilo" type="email" name="email" id="email">
+                            <!--Tambien dentro del input podemos agregar un required (saldra un aviso standar) pero mejor hacer un span-->
+                            <span class="error-msj">Debes ingresar tu e-mail</span>
+                        </div>
+
+
+                        <div class="input-datos">
+                            <label for="date">Fecha de nacimiento</label><br>
+                            <input class="input-estilo" type="date" name="date" id="date">
+                            <span class="error-msj">Debes ingresar tu fecha de nacimiento</span>
+                        </div>
+
+                        <div class="input-datos">
+                            <label for="provincia">Provincia</label><br>
+                            <select class="input-estilo" id="country" name="country">
+                                <option value="arg">Buenos Aires</option>
+                                <option value="br">Capital Federal</option>
+                                <option value="cl">Catamarca</option>
+                                <option value="ur">Chaco</option>
+                                <option value="ur">Chubut</option>
+                                <option value="ur">Córdoba</option>
+                                <option value="ur">Corrientes</option>
+                                <option value="ur">Entre Ríos</option>
+                                <option value="ur">Formosa</option>
+                                <option value="ur">Jujuy</option>
+                                <option value="ur">La Pampa</option>
+                                <option value="ur">La Rioja</option>
+                                <option value="ur">Mendoza</option>
+                                <option value="ur">Misiones</option>
+                                <option value="ur">Neuquén</option>
+                                <option value="ur">Río Negro</option>
+                                <option value="ur">Salta</option>
+                                <option value="ur">San Juan</option>
+                                <option value="ur">San Luis</option>
+                                <option value="ur">Santa Cruz</option>
+                                <option value="ur">Santa Fé</option>
+                                <option value="ur">Santiago del Estero</option>
+                                <option value="ur">Tierra del Fuego</option>
+                                <option value="ur">Tucumám</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="input-datos">
+                            <label for="cod postal">Cód. Postal</label><br>
+                            <input class="input-estilo" type="number" name="cod postal" id="cod postal">
+                            <span class="error-msj">Debes ingresar tu contraseña</span>
+                        </div>
+
+                        <div class="input-datos">
+                            <label for="domicilio">Domicilio</label><br>
+                            <input class="input-estilo" type="text" name="domicilio" id="domicilio">
+                            <span class="error-msj">Debes ingresar tu domicilio</span>
+                        </div>
+
+                        <div class="input-datos">
+                            <label for="number">Teléfono</label><br>
+                            <input class="input-estilo" type="number" name="number" id="number">
+                            <span class="error-msj">Debes ingresar tu número de telefono</span>
+                        </div>
+
+
+                        <div class="check-1">
+                            <!--cambie a check1 por q hay 2 elementos cn la misma clase-->
+                            <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
+                            <input type="checkbox" name="terms" id="terms"><br>
+                            <span class="error-msj">Debes aceptar los términos y condiciones</span>
+                        </div><br>
+
+                        <div class="button">
+                            <button type="submit" onclick="alert('Estamos trabajando en ello')">Editar</button><br>
+                            <span class="error-msj">Hubo errores en tu envio</span>
+                        </div>
+
+                      
+
+                    </div>
+
+                </form>
+            </main>
+
+            <!-- INCLUDE  -->
+            <footer class="main-footer">
+
+                <nav class="enlaces-footer">
+                    <ul>
+                        <li><a href="#">Nuestras sucursales</a></li>
+                        <li><a href="https://whatsapp.com" target="_blanck">Contáctanos</a></li>
+                        <li><a href="#">Horarios de atención</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </nav>
+
+                <div class="logos-contacto">
+                    <a href="https://whatsapp.com" target="_blanck"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com" target="_blanck"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com" target="_blanck"><i class="fab fa-facebook"></i></a>
+                </div>
+
+                <div class="derechos">
+                    <i class="far fa-copyright"></i>
+                    <p>Mundo Gamer - Todos los derechos reservados</p>
+                </div>
+            </footer>
+
+
+
+            <script src='/js/header.js'></script>
+
+    </body>
+
+</html>
