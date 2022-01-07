@@ -4,7 +4,7 @@
 ![logotipo](public/img/logo.png)
 ## Integrantes:
  
- **Anubis Burgos**
+ **Anubis Burgos** (Dejo de cursar)
 - 20 años
 - Estudiante de Programación Web Full Stack
 
@@ -18,6 +18,10 @@
 
 **Daniela Calisaya**
 - 31 años
+- Estudiante de Programación Web Full Stack
+
+**Greta**
+- 36    
 - Estudiante de Programación Web Full Stack
 
 ## Descripción del sitio web:
