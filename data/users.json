@@ -79,22 +79,9 @@
     },
     {
         "id": 8,
-        "name": "daniela",
-        "email": "daniela127c@gmail.com",
+        "name": "ara",
+        "email": "ara@gmail.com",
         "pass": "$2a$12$IiOGHme71tcIBmpMt07lA.xgzXaPtKUqIobojesIHIee14M0fI3Uu",
-        "rol": "ROL_USER",
-        "address": "",
-        "city": "",
-        "province": "",
-        "CP": "",
-        "tel": "",
-        "avatar": "default-img.png"
-    },
-    {
-        "id": 8,
-        "name": "daniela",
-        "email": "hdaniela127c@gmail.com",
-        "pass": "$2a$12$EUIUQ8ShkpByRATNIXdDh.Q0Z5KqRb/dbgpDVXJJmG7SvoA2r0kjC",
         "rol": "ROL_USER",
         "address": "",
         "city": "",
@@ -106,14 +93,27 @@
     {
         "id": 9,
         "name": "daniela",
-        "email": "daniela127c@gmail.com",
-        "pass": "$2a$12$IiOGHme71tcIBmpMt07lA.xgzXaPtKUqIobojesIHIee14M0fI3Uu",
+        "email": "hdaniela127c@gmail.com",
+        "pass": "$2a$12$DokNY/8icwVWAcBNhXHyPu84QIV8se2mUACY5fcXoAWuNajTqzHHO",
         "rol": "ROL_USER",
         "address": "",
         "city": "",
         "province": "",
         "CP": "",
         "tel": "",
-        "avatar": "default-img.png"
+        "avatar": "1641528503700_img_.jpg"
+    },
+    {
+        "id": 10,
+        "name": "dani",
+        "email": "daniela127c@gmail.com",
+        "pass": "$2a$12$.qVIRb9jygowxUa5WgiwBOqw1dH5.bXdrM6S3eckkjGwch6igIg9u",
+        "rol": "ROL_USER",
+        "address": "",
+        "city": "",
+        "province": "",
+        "CP": "",
+        "tel": "",
+        "avatar": "1641528577215_img_.png"
     }
 ]
