@@ -4,10 +4,10 @@ let controller = require('../controllers/usersController');
 let loginValidator = require('../validations/loginValidator');
 let registerValidator = require('../validations/registerValidator');
 let uploadFile = require('../middlewares/uploadAvatar');
-
-
+let userLogMiddlewares = require('../middlewares/userLogMiddlewares')
+let guestMiddlewares = require('../middlewares/guestMiddlewares')
 /* login GET y POST */
-router.get('/login', controller.login);
+router.get('/login',guestMiddlewares, controller.login);
 router.post('/login', loginValidator, controller.processLogin);
 
 /* register GET y POST */
@@ -18,11 +18,11 @@ router.post('/register', uploadFile.single('avatar'), registerValidator, control
 router.get('/logout', controller.logout);
 
 /* myProfile GET y POST */
-/* router.get('/myProfile', controller.profile); en el medio el middleware */
+/* router.get('/myProfile',userLogMiddlewares , controller.profile); en el medio el middleware */
 /* router.post('/myProfile', controller.profile); multer, para editar el avatar*/
 
 /* productCart GET y POST */
-router.get('/productCart', controller.cart);
+router.get('/productCart',userLogMiddlewares , controller.cart);
 
 
 module.exports = router;
