@@ -164,7 +164,7 @@ const controller = {
     },
 
     category: (req, res) => {
-        res.render('products/categorias', {
+        res.render('products/category', {
             session: req.session
         })
     }
