@@ -5,3 +5,29 @@ Generalmente las hacemos puntuales. Se realizan las tres preguntas. Sin embargo,
 
 PD: 
 Como no se llegó a tiempo con las vistas que tenia asignadas Anubis (crear producto y editar producto) se entregó las que hizo Daniela. Pero apenas termine él las vistas justo con los estilos y este revisada por el grupo, vamos a cambiar las vistas. Para que esté presente su trabajo.
+
+
+
+# Lunes 3/1/2022
+
+    - Dami: Maquetacion del home
+
+    -Daniela:  Session, cookie, validaciones usuarios,  validacion login
+
+    -Greta: Avance del carrito, actualizacion del trabajo
+
+# Miercoles 5/1/2022
+
+    -Dami : Validacion de productos
+
+    -Daniela: Terminado el cookie, mejorado el header del admin, dinamismo menu de hamburguesa
+
+    -Greta: Ausente por cumpleaños
+
+# Viernes 7/1/2022
+
+    -Dami: Middlwares de acceso por rol
+
+    -Daniela: Mergeo y testeo del sprit
+
+    -Greta: Mejorando las views carrito y el myProfile
