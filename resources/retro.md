@@ -24,7 +24,7 @@
 En este sprint definitivamente no nos funcionó trabajar cada uno por su lado, por más que las daylis estuvieran. Esto trajo algunos inconvenientes. También surgieron problemas por el trabajo de un compañero. Todavía hay cosas que arreglar que se arrastran del sprint 2. Así que no entregamos a tiempo. De nuevo comunicación es algo a mejorar, hablar las cosas y saber escuchar. Entonces acordamos en juntarnos a codear juntos, las veces que sean necesarias para que esto salga adelante.
 
 
-# Sprit 5- Middlwares + Auth
+ # Sprint 5 - Middlwares + Auth
 
 Este sprint nos fue un poco más sencillo de hacerlo, tuvimos una baja más en el grupo, Anubis, debido a sus problemas personales dejo el curso, pero tuvimos la suerte de poder agregar a una compañera más, Greta, si bien 
 
