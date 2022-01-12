@@ -35,14 +35,17 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      margin-right: 10px;
 }
 
-.header-top .search-bar {
-     width: 55%; 
+.header-top .form-search { 
+     margin-right: 8px;  
+}
+
+.header-top .form-search .search-bar { 
+     width: 100%; 
      border-radius: 1rem;
      display: flex;
      align-items: center;
-     padding: 4px 8px;
+     padding: 4px 8px; 
      background-color: white;
-     margin-right: 8px;
 }
 
 .search-bar input {
@@ -58,6 +61,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 .search-bar i.fa-search {
      color: black;
+     cursor: pointer;
 }
 
 
@@ -161,6 +165,10 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      .header .header-top i.fa-user { 
          font-size: 18px; 
      }  
+
+     .header-top .form-search { 
+          width: 55%;  
+     }
 }
 
 @media (min-width: 425px) {
@@ -243,8 +251,12 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 @media (min-width: 1200px) {
     /*header-top*/
     .main-header .header {
-     padding: 0 10px 0 6px;
-    }
+          padding: 0 10px 0 6px;
+     }
+
+     .header-top .form-search { 
+          width: 40%;  
+     }
 
     /*header-bottom*/
 
