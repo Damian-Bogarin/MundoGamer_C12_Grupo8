@@ -8,8 +8,20 @@
     <%- include('./partials/header.ejs') %>
 
     <main class="main-search">
-        <div>
-            
+        <div class="searchProduct">
+            <% if (result.length > 0) { %>
+                <h2 class="">Resultados de tu busqueda de <%- search %></h2>
+                <section class="productSearch">
+                    <% result.forEach(product => { %>
+                     <div class="product">
+                        <a href="/products/detail/<%- product.id %>"> <!-- id o name?? -->
+                            <img src="/img/ <%- product.photo[0]%>" alt=""><!-- los productos en img dentro de una carpeta? -->
+                            
+                        </a>
+                     </div>
+                    <% }) %>
+                </section>
+            <% } %>
         </div>
     </main>
 
