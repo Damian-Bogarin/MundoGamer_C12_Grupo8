@@ -20,12 +20,12 @@
 - 31 años
 - Estudiante de Programación Web Full Stack
 
-**Greta**
-- 36    
+**Greta Pereda**
+- 36 años 
 - Estudiante de Programación Web Full Stack
 
 ## Descripción del sitio web:
-Nuestro sitio web está destinado a la "venta" de productos, tanto videojuegos como a su merchandising... ¿a qué público está dirigido? a todo aquel que sea apasionado por los juegos!! tantos jóvenes como mayores pueden acceder a nuestros productos permitiendo asi también registrarse, ser parte de esta comunidad y tener más beneficios.
+Nuestro sitio web está destinado a la "venta" de videojuegos... ¿a qué público está dirigido? a todo aquel que sea apasionado por los juegos!! tantos jóvenes como mayores pueden acceder a nuestros productos permitiendo asi también registrarse, ser parte de esta comunidad y tener más beneficios.
 
 ## Sitios de referencia:
 

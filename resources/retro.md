@@ -27,7 +27,4 @@ En este sprint definitivamente no nos funcionó trabajar cada uno por su lado, p
  # Sprint 5 - Middlwares + Auth
 
 Este sprint nos fue un poco más sencillo de hacerlo, tuvimos una baja más en el grupo, Anubis, debido a sus problemas personales dejo el curso, pero tuvimos la suerte de poder agregar a una compañera más, Greta, si bien 
-
-acomodarse a un nuevo ambiente de trabajo es difícil, tuvimos la buena fortuna de que íbamos a tener una semana libre de clases debido a las fiestas de fin de año, esa semana libre nos sirvió para poder ponernos al día tanto en Playground 
-
-como en el proyecto integrador, luego del receso volvimos con más potencia logrando hacer lindas maquetaciones y llegar al día de entrega sin muchos problemas, pero... aun nos falta mucho camino por REPASAR y ajustar muchas cosas de maquetación que todavía nos persigue. 
+acomodarse a un nuevo ambiente de trabajo es difícil, tuvimos la buena fortuna de que íbamos a tener una semana libre de clases debido a las fiestas de fin de año. Esa semana libre nos sirvió para poder ponernos al día tanto en Playground como en el proyecto integrador, luego del receso volvimos con más potencia logrando hacer lindas maquetaciones y llegar al día de entrega sin muchos problemas, pero... aun nos falta mucho camino por REPASAR y ajustar muchas cosas de maquetación que todavía nos persigue. 

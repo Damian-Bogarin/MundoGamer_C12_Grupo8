@@ -2,7 +2,7 @@
   "name": "grupo_8_mundo_gamer_c12",
   "version": "1.0.0",
   "description": "![logotipo](design/logo.png)\r ## Integrantes:",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
