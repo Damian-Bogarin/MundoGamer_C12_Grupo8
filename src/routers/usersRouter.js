@@ -6,6 +6,7 @@ let registerValidator = require('../validations/registerValidator');
 let uploadFile = require('../middlewares/uploadAvatar');
 let userLogMiddlewares = require('../middlewares/userLogMiddlewares')
 let guestMiddlewares = require('../middlewares/guestMiddlewares')
+
 /* login GET y POST */
 router.get('/login',guestMiddlewares, controller.login);
 router.post('/login', loginValidator, controller.processLogin);

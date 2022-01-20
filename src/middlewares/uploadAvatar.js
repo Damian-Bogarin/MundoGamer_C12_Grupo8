@@ -4,7 +4,7 @@ const path = require('path');
 
 const storage = multer.diskStorage({ //De multer tiene asignada la propiedad diskStorage y recibe dos objetos: destination y filename
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../public/img/avatars')); //ubicación
+        cb(null, path.join(__dirname, '../../public/img/avatars')); //ubicación
     },
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`)

@@ -28,7 +28,7 @@ module.exports = [
 
     check('pass1')
     .notEmpty()
-    .withMessage()
+    .withMessage('Debes escribir tu contraseña')
     .isLength({ //largo de carácteres
         min: 6,
         max: 10
