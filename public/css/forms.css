@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     width: 85%; /*ancho del contenedor*/
-    height: 550px;   /*altura del cuadro gris originalmente 470*/
+    height: 600px;   /*altura del cuadro gris originalmente 470*/
 }
 
 .form-main .titulo {

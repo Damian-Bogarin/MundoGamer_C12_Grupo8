@@ -89,5 +89,19 @@
         "CP": "",
         "tel": "",
         "avatar": "default-img.png"
+    },
+    {
+        "id": 9,
+        "name": "daniela",
+        "last_name": "cali",
+        "email": "hdaniela127c@gmail.com",
+        "pass": "$2a$12$aggICWEgmCctTK3IMU.21.YPtQolJnqsyKVBDA/LEFIuKpUaMrYg6",
+        "rol": "ROL_USER",
+        "address": "",
+        "city": "",
+        "province": "",
+        "CP": "",
+        "tel": "",
+        "avatar": "default-img.png"
     }
 ]
