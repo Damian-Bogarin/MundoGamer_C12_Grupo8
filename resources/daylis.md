@@ -7,27 +7,33 @@ PD:
 Como no se llegó a tiempo con las vistas que tenia asignadas Anubis (crear producto y editar producto) se entregó las que hizo Daniela. Pero apenas termine él las vistas justo con los estilos y este revisada por el grupo, vamos a cambiar las vistas. Para que esté presente su trabajo.
 
 
+# SPRINT n°4 DAYLIS
+En el sprint 4 se hicieron las deylis habituales, y al final del sprint se hicieron ajustes en el modo de trabajo.
 
-# Lunes 3/1/2022
+# SPRINT n°5 DAYLIS
 
-    - Dami: Maquetacion del home
+En la semana libre del 27 de diciembre también se hicieron las daylis los tres dias asignados.
 
-    -Daniela:  Session, cookie, validaciones usuarios,  validacion login
+## Lunes 3/1/2022
 
-    -Greta: Avance del carrito, actualizacion del trabajo
+- Dami: Maquetacion del home
 
-# Miercoles 5/1/2022
+- Daniela:  Session, cookie, validaciones usuarios,  validacion login
 
-    -Dami : Validacion de productos
+- Greta: Avance del carrito, actualizacion del trabajo
 
-    -Daniela: Terminado el cookie, mejorado el header del admin, dinamismo menu de hamburguesa
+## Miercoles 5/1/2022
 
-    -Greta: Ausente por cumpleaños
+- Dami : Validacion de productos
 
-# Viernes 7/1/2022
+- Daniela: Terminado el cookie, mejorado el header del admin, dinamismo menu de hamburguesa
 
-    -Dami: Middlwares de acceso por rol
+- Greta: Ausente por cumpleaños
 
-    -Daniela: Mergeo y testeo del sprit
+## Viernes 7/1/2022
 
-    -Greta: Mejorando las views carrito y el myProfile
+- Dami: Middlwares de acceso por rol
+
+- Daniela: Mergeo y testeo del sprit
+
+- Greta: Mejorando las views carrito y el myProfile

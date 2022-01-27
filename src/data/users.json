@@ -94,13 +94,14 @@
         "id": 9,
         "name": "daniela",
         "email": "hdaniela127c@gmail.com",
-        "pass": "$2a$12$DokNY/8icwVWAcBNhXHyPu84QIV8se2mUACY5fcXoAWuNajTqzHHO",
+        "pass": "$2a$12$W5fEZvAXJvuq50y6SIPPb.BUP3yixL1lUlaweZnhCdw.LTNIMiWMm",
         "rol": "ROL_USER",
         "address": "",
         "city": "",
         "province": "",
         "CP": "",
         "tel": "",
+<<<<<<< HEAD:data/users.json
         "avatar": "1641528503700_img_.jpg"
     },
     {
@@ -127,6 +128,8 @@
         "province": "",
         "CP": "",
         "tel": "",
+=======
+>>>>>>> cf20bbbc756bd51d5765d7777925d497eb5f2488:src/data/users.json
         "avatar": "default-img.png"
     }
 ]

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('./partials/head.ejs') %>
+
+<body>
+    
+    <%- include('./partials/header.ejs') %>
+
+    <main class="main-search">
+        <div class="searchProduct">
+            <% if (result.length > 0) { %>
+                <h2 class="">Resultados de tu busqueda de <%- search %></h2>
+                <section class="productSearch">
+                    <% result.forEach(product => { %>
+                     <div class="product">
+                        <a href="/products/detail/<%- product.id %>"> <!-- id o name?? -->
+                            <img src="/img/ <%- product.photo[0]%>" alt=""><!-- los productos en img dentro de una carpeta? -->
+                            
+                        </a>
+                     </div>
+                    <% }) %>
+                </section>
+            <% } %>
+        </div>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+
+    <%- include('./partials/script.ejs') %> 
+
+</body>
+</html>
