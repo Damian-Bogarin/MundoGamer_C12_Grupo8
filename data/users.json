@@ -115,5 +115,18 @@
         "CP": "",
         "tel": "",
         "avatar": "1641528577215_img_.png"
+    },
+    {
+        "id": 11,
+        "name": "Nicolas Damian",
+        "email": "boga_nicdam@outlook.com",
+        "pass": "$2a$12$8jnIOms1.R2UIze3fsnPIeJHkceKYF3tB7oOOjNur7tDHeoVxK/cy",
+        "rol": "admin",
+        "address": "",
+        "city": "",
+        "province": "",
+        "CP": "",
+        "tel": "",
+        "avatar": "default-img.png"
     }
 ]
