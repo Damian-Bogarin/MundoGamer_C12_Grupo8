@@ -24,6 +24,14 @@
                         </div>
 
                         <div class="input-datos">
+                            <label for="last_name">Apellido</label><br>
+                            <input class="input-estilo" type="text" name="last_name" id="last_name" value="<%= locals.old && old.last_name %>">
+                            <% if (locals.errors && errors.last_name) { %> 
+                                <span class="error-msj"><%= errors.last_name.msg %></span>
+                            <% } %> 
+                        </div> 
+
+                        <div class="input-datos">
                             <label for="email">E-mail</label><br>
                             <!--Tambien dentro del input podemos agregar un required (saldra un aviso standar) pero mejor hacer un span-->
                             <input class="input-estilo" type="email" name="email" id="email">

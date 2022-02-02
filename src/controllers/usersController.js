@@ -63,11 +63,11 @@ let controller = {
                 }
             });
 
-            let { name, email, pass1 } = req.body 
+            let { name, last_name, email, pass1 } = req.body 
             let newUser = {
                 id : lastId + 1,
                 name,
-                /* lastName, */
+                last_name, 
                 email, 
                 pass: bcrypt.hashSync(pass1, 12), //hashSync recibe dos parametros, pass y la sal
                 rol: "ROL_USER",

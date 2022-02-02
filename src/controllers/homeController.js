@@ -1,5 +1,7 @@
 const {products} = require("../data/dataBase");
 
+const Products = require()
+
 
 /* let cincoEstrellas = products.filter( products => products.estrellas >= 4) */
 

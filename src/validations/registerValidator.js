@@ -7,6 +7,10 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes ingresar tu nombre'),
 
+    check('last_name')
+    .notEmpty()
+    .withMessage('Debes ingresar tu apellido'), 
+
     check('email')
     .notEmpty()  
     .withMessage('Debes ingresar un e-mail') 
