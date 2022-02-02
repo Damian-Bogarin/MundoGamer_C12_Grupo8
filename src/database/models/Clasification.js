@@ -9,6 +9,10 @@ module.exports = (sequelize, dataTypes) => {
         },
         nameClassification:{
             type: dataTypes.STRING
+        },
+        productId:{ // FALTA ESTE EN LA TABLA DE GENDER
+            type: dataTypes.INTEGER.UNSIGNED,
+            allowNull: false 
         }
 
     }
@@ -21,7 +25,10 @@ module.exports = (sequelize, dataTypes) => {
     const Clasification = sequelize.define(alias, cols, config)
 
     Clasification.associate = (models) => {
-        
+        Clasification.hasMany(models.Product,{
+            as:'product',
+            foreignKey: 'classificationId'
+        })
     }
 
     return Clasification

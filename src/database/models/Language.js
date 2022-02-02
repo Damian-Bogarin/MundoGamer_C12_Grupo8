@@ -22,6 +22,14 @@ module.exports = (sequelize, dataTypes) => {
     const Languages = sequelize.define(alias, cols, config)
 
     Languages.associate = (models) => {
+        Languages.belongsToMany(models.Product, {
+            as: 'product',
+            through: 'language_product',
+            foreignKey: 'languageId',
+            otherKey:'productId',
+            timestamps:false
+        })
+
         
     }
 

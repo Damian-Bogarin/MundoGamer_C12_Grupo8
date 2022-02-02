@@ -30,9 +30,9 @@ module.exports = (sequelize, dataTypes) => {
             as: "user",
             foreignKey: 'userId'
         })
-        Cart.belongsTo(models.Order, {
+        Cart.hasMany(models.Order, {
             as: "order",
-            foreignKey: 'orderId'
+            foreignKey: 'cartId'
         })
         
     }

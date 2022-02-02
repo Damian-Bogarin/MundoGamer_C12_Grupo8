@@ -23,10 +23,10 @@ module.exports = (sequelize, dataTypes) => {
 
     Multiplayer.associate = (models) => {
         Multiplayer.belongsToMany(models.Product, {
-            as: 'multiplayer',
+            as: 'product',
             through: 'multiplayer_product',
-            foreignKey: 'productId',
-            otherKey:'multiplayerId',
+            foreignKey: 'multiplayerId',
+            otherKey:'productId',
             timestamps:false
         })
         

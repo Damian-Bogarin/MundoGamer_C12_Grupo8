@@ -9,6 +9,10 @@ module.exports = (sequelize, dataTypes) => {
         },
         nameGender:{
             type: dataTypes.STRING
+        },
+        productId:{ // FALTA ESTE EN LA TABLA DE GENDER
+            type: dataTypes.INTEGER.UNSIGNED,
+            allowNull: false 
         }
 
     }
@@ -21,7 +25,14 @@ module.exports = (sequelize, dataTypes) => {
     const Genders = sequelize.define(alias, cols, config)
 
     Genders.associate = (models) => {
-        
+        Genders.hasMany(models.Product,{
+            as:'product',
+            foreignKey: 'genderId'
+        })
+        Genders.belongsTo(models.Product,{
+            as:'product',
+            foreignKey: 'productId'
+        })
     }
 
     return Genders

@@ -90,6 +90,35 @@ module.exports = (sequelize, dataTypes) => {
             otherKey:'multiplayerId',
             timestamps:false
         })
+        Products.belongsToMany(models.Order, {
+            as: 'order',
+            through: 'order_product',
+            foreignKey: 'productId',
+            otherKey:'orderId',
+            timestamps:false
+        })
+        Products.belongsToMany(models.Language, {
+            as: 'language',
+            through: 'language_product',
+            foreignKey: 'productId',
+            otherKey:'languageId',
+            timestamps:false
+        })
+        Products.belongsTo(models.Gender,{
+            as:'gender',
+            foreignKey: 'genderId'
+
+        })
+        Products.hasOne(models.Gender,{
+            as: 'gender',
+            foreignKey: 'productId'
+
+        })
+        Products.hasOne(models.Clasification,{
+            as: 'clasification',
+            foreignKey: 'productId'
+
+        })
         }
 
 
