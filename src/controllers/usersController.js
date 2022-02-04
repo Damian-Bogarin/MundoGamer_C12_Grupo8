@@ -1,6 +1,9 @@
-const { users, writeUsersJSON } = require('../data/dataBase'); 
+//const { users, writeUsersJSON } = require('../data/dataBase'); 
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const db = require('../database/models');
+
+const Users = db.User;
 
 let controller = {
 
@@ -14,17 +17,20 @@ let controller = {
         let errors = validationResult(req);
         
         if (errors.isEmpty()) { 
-        //Pregunta si errores esta vacio, si no hay errores permitirá loguearse y sino tendrá que mostrar esos errores
-        //Iniciamos sesión, pero hace una comparación estricta si es el mismo usuario
-            let user = users.find(user => user.email === req.body.email);  
-            
-            req.session.user = { //datos de la seccion
-                id: user.id,
-                name: user.name,
-                email: user.email,
-                rol: user.rol,
-                avatar: user.avatar
-            }
+            Users.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })     
+            .then(user => {
+                req.session.user = { 
+                    id: user.id,
+                    name: user.name,
+                    email: user.email,
+                    rol: user.rol,
+                    avatar: user.avatar
+                }
+            })
             //Si la persona marcó el "recordarme" (cookie)
            if(req.body.remember){ //Si existe, es decir si marcó el recordar es cuando se crea la cookie
                 const timeMiliseconds = 60000 //1min -> buena práctica, asignarlo a una variable
@@ -55,17 +61,9 @@ let controller = {
         let errors = validationResult(req);
         
         if (errors.isEmpty()) { 
-            let lastId = 1;
-
-            users.forEach(user => {
-                if(user.id > lastId){
-                   lastId = user.id
-                }
-            });
 
             let { name, last_name, email, pass1 } = req.body 
-            let newUser = {
-                id : lastId + 1,
+            Users.create({
                 name,
                 last_name, 
                 email, 
@@ -77,19 +75,21 @@ let controller = {
                 CP: "",
                 tel: "",
                 avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
-            }
-            users.push(newUser) //Al nuevo usuario lo introducimos en el array
-            writeUsersJSON(users)
-            res.redirect('/users/login')
+            })
+            .then(() => {
+                res.redirect('/users/login')
+            })
+            
         }else{
             res.render('users/register', {
                 errors: errors.mapped(),
+                old: req.body,
                 session: req.session 
             })
         }
     }, 
 
-    logout: (req, res) => {  //cerraria la session, borra los datos del usuario y mata la cookie
+    logout: (req, res) => { 
         req.session.destroy();
         if(req.cookies.mundoGamer){
             res.cookie('mundoGamer', "", { maxAge: -1 }) //Al darle el string vacio y poner -1 borramos todos esos datos que le estamos dando
@@ -97,10 +97,18 @@ let controller = {
         res.redirect('/')
     },
 
-    profile: (req, res) => {   /* acá session: req.session?? */
-        res.render('users/myProfile')  /* logica: debe buscar al user */
-    },
+    profile: (req, res) => { 
 
+        Users.findByPk(req.session.user.id, {
+            include: [{association: 'rol_user'}]
+        })
+        .then((user) => {
+            res.render('users/myProfile', {
+                user,
+                session: req.session
+            })
+        })
+    },
     cart: (req, res) => {     
         res.render('users/productCart', {
             session: req.session      

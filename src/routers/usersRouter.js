@@ -19,15 +19,11 @@ router.post('/register', uploadFile.single('avatar'), registerValidator, control
 router.get('/logout', userLogMiddlewares, controller.logout);
 
 /* myProfile GET y POST */
-/* router.get('/myProfile',userLogMiddlewares , controller.profile); en el medio el middleware */
-/* router.post('/myProfile', controller.profile); multer, para editar el avatar*/
+router.get('/myProfile',userLogMiddlewares , controller.profile); 
+router.post('/myProfile', controller.profile); 
 
 /* productCart GET y POST */
-<<<<<<< HEAD
 router.get('/productCart',userLogMiddlewares, controller.cart);
-=======
-router.get('/productCart', userLogMiddlewares, controller.cart);
->>>>>>> master
 
 
 module.exports = router;

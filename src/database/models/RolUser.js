@@ -1,18 +1,21 @@
 module.exports = (sequelize, dataTypes) => {
+
     const alias = "rolUser";
+
     const cols = {
         id: {
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
         nameRol:{
-            type: dataTypes.STRING(6),  //puede ser "admin" o "client"
-            allowNull:false
+            type: dataTypes.STRING(60),  //puede ser "admin" o "client"
+            allowNull: false
         },
         userId:{
-            type: dataTypes.INTEGER(11).UNSIGNED,
+            type: dataTypes.INTEGER(11),
+            foreignKey: true,
             allowNull: false 
         }
 
@@ -32,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
 
-    return RolUser
+    return RolUser;
 }
 
 /* const cols = {

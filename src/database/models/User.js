@@ -1,53 +1,64 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "user";
+
+    const alias = "User";
+
     const cols = {
         id: {
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
         name: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(50),
             allowNull: false,
         },
         lastName: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(50),
             allowNull: false,
         },
         email: {
-            type: dataTypes.STRING(45),
-            allowNull: false,
-            unique: true
+            type: dataTypes.STRING(50),
+            unique: true,
+            allowNull: false
         },
         pass: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(100),
             allowNull: false,
         },
-        address:{
-            type: dataTypes.STRING(45),
-            allowNull: true,
+        address: {
+            type: dataTypes.STRING(100),
+            allowNull: false,
 
         },
-        rol: {
-            type: dataTypes.STRING(6), 
-            allowNull: false,
+        city: {
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
         tel: {
-            type: dataTypes.STRING(45),
-            unique: true
+            type: dataTypes.STRING(50),
+            allowNull: false
         },
-        age:{
-            type: dataTypes.INTEGER,
-
+        age: {
+            type: dataTypes.STRING(2),
+            allowNull: false
+        },
+        createdAt: {
+            type: dataTypes.TIMESTAMP,
+            allowNull: false
+        },
+        updatedAt: {
+            type: dataTypes.TIMESTAMP,
+            allowNull: false
+        },
+        rol: {
+            type: dataTypes.STRING(3), 
+            allowNull: false,
         },
         avatar:{
-            type: dataTypes.STRING(45)
+            type: dataTypes.STRING(100),
+            allowNull: false
         }
-        
-
-
-
     }
 
     const config = {
@@ -83,5 +94,5 @@ module.exports = (sequelize, dataTypes) => {
         
     }
 
-    return User
+    return User;
 }
