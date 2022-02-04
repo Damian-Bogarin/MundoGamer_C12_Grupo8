@@ -69,6 +69,7 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config)
 
     User.associate = (models) => {
+
         User.hasOne(models.Cart, {
             as: "cart",
             foreignKey: 'userId'
@@ -77,21 +78,14 @@ module.exports = (sequelize, dataTypes) => {
             as: "likes",
             foreignKey: 'userId'
         })
-        User.hasOne(models.RolUser, {
-            as: "rol",
-            foreignKey: 'rol'
-        })
         User.hasMany(models.Stars, {
             as: "stars",
             foreignKey: 'userId'
         })
         User.belongsTo(models.RolUser, {
             as: "rol",
-            foreignKey: 'rol'
+            foreignKey: 'userId'
         })
-        
-
-        
     }
 
     return User;
