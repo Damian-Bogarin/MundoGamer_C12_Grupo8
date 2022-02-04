@@ -1,7 +1,7 @@
 const { products } = require("../../data/dataBase");
 
 module.exports = (sequelize, dataTypes) => {
-    const alias = "stars";
+    const alias = "Stars";
     const cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,

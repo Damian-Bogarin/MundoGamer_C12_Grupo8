@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
     const MultiplayerProduct = sequelize.define(alias, cols, config)
 
     MultiplayerProduct.associate = (models) => {
-        
+        // ME FALTAN LOS BELONGS TO DE PRODUCT ID Y MULTIPLAYER ID
     }
 
     return MultiplayerProduct

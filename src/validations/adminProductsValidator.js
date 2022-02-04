@@ -13,7 +13,7 @@ module.exports = [
     check('gender')
     .notEmpty()
     .withMessage('Debes elegir una categoría').bail()
-    .isIn(["RPG","ACCION","AVENTURA", "ROL", "DEPORTE","SIMULACION", "ESTRATEGIA", "SUPERVIVENCIA"])
+    .isIn(["1","2","3", "4", "5","6", "7", "8"])
     .withMessage('Debes elegir una categoría')
 ,
     check('stars')
@@ -23,7 +23,7 @@ module.exports = [
     check('clasification')
     .notEmpty()
     .withMessage('Debes elegir una clasificación')
-    .isIn(["A","B","C", "D"])
+    .isIn(["1","2","3", "4"]) //este es el validator de CLASIFICATION
     .withMessage('Debes elegir una clasificación'),
 
     check('console')

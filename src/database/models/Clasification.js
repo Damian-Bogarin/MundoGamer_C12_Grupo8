@@ -1,6 +1,10 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "clasification";
+    const alias = "Clasification";
     const cols = {
+
+        //--------------------
+        // FALTA PRODUCT ID
+        //---------------------
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
@@ -10,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         nameClassification:{
             type: dataTypes.STRING
         },
-        productId:{ // FALTA ESTE EN LA TABLA DE GENDER
+        productId:{ // FALTA ESTE EN LA TABLA DE CLASIFICATION
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false 
         }

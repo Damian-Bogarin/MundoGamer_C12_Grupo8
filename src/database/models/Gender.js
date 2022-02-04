@@ -1,6 +1,10 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "gender";
+    const alias = "Gender";
     const cols = {
+
+        //--------------
+        // FALTA PRODUCT ID
+        //------------------
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
@@ -10,10 +14,10 @@ module.exports = (sequelize, dataTypes) => {
         nameGender:{
             type: dataTypes.STRING
         },
-        productId:{ // FALTA ESTE EN LA TABLA DE GENDER
+         productId:{ // borro esto ??
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false 
-        }
+        } 
 
     }
 
@@ -26,13 +30,13 @@ module.exports = (sequelize, dataTypes) => {
 
     Genders.associate = (models) => {
         Genders.hasMany(models.Product,{
-            as:'product',
+            as:'gender',
             foreignKey: 'genderId'
         })
-        Genders.belongsTo(models.Product,{
+         Genders.belongsTo(models.Product,{
             as:'product',
             foreignKey: 'productId'
-        })
+        }) 
     }
 
     return Genders

@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "likes";
+    const alias = "Like";
     const cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
@@ -34,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'userId'
         })
         Likes.belongsTo(models.Product, {
-            as: "user",
+            as: "product",
             foreignKey: 'productId'
         })
 

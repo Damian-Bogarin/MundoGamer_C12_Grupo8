@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "rolUser";
+    const alias = "RolUser";
     const cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,

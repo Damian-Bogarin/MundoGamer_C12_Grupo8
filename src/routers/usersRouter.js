@@ -23,11 +23,7 @@ router.get('/logout', userLogMiddlewares, controller.logout);
 /* router.post('/myProfile', controller.profile); multer, para editar el avatar*/
 
 /* productCart GET y POST */
-<<<<<<< HEAD
 router.get('/productCart',userLogMiddlewares, controller.cart);
-=======
-router.get('/productCart', userLogMiddlewares, controller.cart);
->>>>>>> master
 
 
 module.exports = router;
