@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "order";
+    const alias = "Order";
     const cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
@@ -7,8 +7,9 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false,
         },
-        queantity:{
-            type: dataTypes.STRING.UNSIGNED,
+        quantity:{
+            type: dataTypes.STRING,
+            
 
         },
         totalPrice: {

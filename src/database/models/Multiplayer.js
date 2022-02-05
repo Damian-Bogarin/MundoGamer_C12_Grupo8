@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "multiplayer";
+    const alias = "Multiplayer";
     const cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,

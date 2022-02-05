@@ -1,6 +1,11 @@
-const { products, writeProductsJSON } = require("../data/dataBase");
+//const { products, writeProductsJSON } = require("../data/dataBase");
 let { validationResult } = require('express-validator')
 
+ const db = require('../database/models');
+const Gender = require('../database/models/Gender');
+
+const Products = db.Product; 
+const Photo = db.Photo
 
 const controller = {
 
@@ -19,46 +24,46 @@ const controller = {
 
     store: (req, res) => {
         let errors = validationResult(req);
-
+        
         if(errors.isEmpty()){
-           let lastId = 1;
-
-        products.forEach(product => {
-            if(product.id > lastId){
-                lastId = product.id
-            }
-        });
-
         const {name, price, descount,stock ,clasification,stars,language,subtitle, gender,description, multiplayer, integratedShopping,console,conexion} = req.body
+        /* res.send(req.body) 
+        COMPATIBILITY DEBE SER UN ID
+        */
+        let conexiontrue = +conexion
+        let date = new Date
+        let priceEndtrue = price * ((100 - descount) / 100) ;
+        
+        let gendertrue = +gender;
+        let clasificationtrue = +clasification
+        let integratedShop = +integratedShopping
+        let compatibility = +console
 
-        let newProduct = {
-            id: lastId + 1,
-            name: name.trim(),
-            clasification:clasification,
-            language:(language != null ? language : ["No Tiene Idiomas"] ),
-            subtitle:(subtitle != null ? subtitle : ["No Tiene subtitulos"] ),
-            price: +price.trim(),
-            descount: +descount.trim(),
-            gender: gender,
-            stars: (stars != null ? +stars : ["No Tiene compatibles"] ),
-            new: true,
-            conexion:conexion,
-            stock: +stock,
-            sales: 0,
-            description: description.trim(),
-            multiplayer: multiplayer,
-            console:(console != null ? console : ["No Tiene compatibles"] ),
-            integratedShopping: integratedShopping,
-            photo: req.file ? [req.file.filename] : ["default-image.png"]
-        }
-
-        products.push(newProduct)
-
-        writeProductsJSON(products)
-
-
-
-        res.redirect('/') 
+        Products.create({
+            name,
+            description,
+            date: date,
+            compatibility: compatibility,
+            conexion : conexiontrue, // Verificar si da un 0 o 1
+            integratedShop: integratedShop,
+            price,
+            descount,
+            priceEnd: priceEndtrue,
+            sold: 0,
+            stock,
+            genderId: gendertrue,
+            classificationId: clasificationtrue
+        })
+        /* .then((product) => {
+            Photo.create({
+                image: req.file ? req.file.filename : 'default-image.png',
+                productId: product.id
+            })
+        
+        }) */
+        .then((result)=> res.send(result,/* {
+            include: [{associate: 'gender'}]
+        } */));
         } else {
             console.log(errors)
             console.log(errors.mapped())

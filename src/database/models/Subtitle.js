@@ -1,13 +1,15 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "subtitle";
+    const alias = "Subtitle";
     const cols = {
+
+        // FALTA LA TABLA PIVOT SUBTITLE-PRODUCT
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
-        nameLanguage: {
+        nameSubtitle: {
             type: dataTypes.STRING,
             allowNull: false
         }

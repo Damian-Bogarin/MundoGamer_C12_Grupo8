@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "product";
+    const alias = "Product";
     const cols = {
         
         id: {
@@ -18,13 +18,13 @@ module.exports = (sequelize, dataTypes) => {
        
          date:{
             type: dataTypes.DATEONLY,
-            allowNull:false
+            allowNull: true
         },
-        compatibilityId:{ //falta la tabla intermedia
+       /*  compatibilityId:{ //falta la tabla intermedia pc, play 1-productos productos-play1 play 2 
             type: dataTypes.INTEGER,
             allowNull: false
-        },
-        conexion:{
+        }, */
+        conexion:{ // USA O NO INTERNET
             type: dataTypes.BOOLEAN,
             allowNull:false,
 
@@ -36,6 +36,14 @@ module.exports = (sequelize, dataTypes) => {
        
         price: {
             type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        priceEnd:{
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        sold:{
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
         descount: {
@@ -61,28 +69,37 @@ module.exports = (sequelize, dataTypes) => {
 
     const config = {
         tableName: 'products',
-        timestamps: true
+        timestamps: true 
     }
 
     const Products = sequelize.define(alias, cols, config)
 
     Products.associate = (models) => {
+        Products.hasOne(models.Photo,{
+            as:'photo',
+            foreignKey: 'productId'
+        })
         Products.hasMany( models.Like, {
             as:'likes',
             foreignKey: 'productId'
         })
         Products.hasMany( models.Stars, {
-            as:'likes',
+            as:'stars',
             foreignKey: 'productId'
         })
-        Products.belongsTo(models.Gender, {
+        Products.hasOne( models.Gender, {
+            as:'genderproduct', // a verificar
+            foreignKey: 'productId'
+        })
+
+         Products.belongsTo(models.Gender, { // A elminar
             as: "gender",
             foreignKey: 'genderId'
-        })
-        Products.belongsTo(models.Clasification, {
+        }) 
+         Products.belongsTo(models.Clasification, { //A eliminar
             as: "clasification",
             foreignKey: 'classificationId'
-        })
+        }) 
         Products.belongsToMany(models.Multiplayer, {
             as: 'multiplayer',
             through: 'multiplayer_product',
@@ -103,21 +120,6 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'productId',
             otherKey:'languageId',
             timestamps:false
-        })
-        Products.belongsTo(models.Gender,{
-            as:'gender',
-            foreignKey: 'genderId'
-
-        })
-        Products.hasOne(models.Gender,{
-            as: 'gender',
-            foreignKey: 'productId'
-
-        })
-        Products.hasOne(models.Clasification,{
-            as: 'clasification',
-            foreignKey: 'productId'
-
         })
         }
 
