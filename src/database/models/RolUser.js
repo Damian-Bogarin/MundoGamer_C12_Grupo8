@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         nameRol:{
-            type: dataTypes.STRING(60),  //puede ser "admin" o "client"
+            type: dataTypes.STRING(60),  
             allowNull: false
         },
         userId:{
