@@ -88,15 +88,15 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'productId'
         })
         Products.hasOne( models.Gender, {
-            as:'genderproduct', // a verificar
+            as:'genderproduct', // este borro?
             foreignKey: 'productId'
         })
 
-         Products.belongsTo(models.Gender, { // A elminar
-            as: "gender",
+         Products.belongsTo(models.Gender, { // 
+            as: 'gender',
             foreignKey: 'genderId'
         }) 
-         Products.belongsTo(models.Clasification, { //A eliminar
+         Products.belongsTo(models.Clasification, {  //ACA
             as: "clasification",
             foreignKey: 'classificationId'
         }) 

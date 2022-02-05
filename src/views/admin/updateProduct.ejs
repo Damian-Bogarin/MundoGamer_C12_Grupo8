@@ -23,16 +23,16 @@
                   
                     <label class="label-subtitle">Género</label>
                     <select class="select" name="gender" id="genero">
-                            <option value="0" >Seleccione un género</option>
-                            <option value="RPG"<%= (locals.old && old.gender =="RPG") ?  "selected" : "" %> >RPG</option> 
-                            <option value="ACCION" <%= (locals.old && old.gender =="ACCION") ?  "selected" : "" %>>ACCION</option>
-                            <option value="AVENTURA" <%= (locals.old && old.gender =="AVENTURA") ?  "selected" : "" %>>AVENTURA</option>
-                            <option value="ROL"<%= (locals.old && old.gender =="ROL") ?  "selected" : "" %>>ROL</option>
-                            <option value="DEPORTE"<%= (locals.old && old.gender =="DEPORTE") ?  "selected" : "" %>>DEPORTE</option>
-                            <option value="SIMULACION" <%= (locals.old && old.gender =="SIMULACION") ?  "selected" : "" %>>SIMULACION</option>
-                            <option value="ESTRATEGIA" <%= (locals.old && old.gender =="ESTRATEGIA") ?  "selected" : "" %>>ESTRATEGIA</option>
-                            <option value="SUPERVIVENCIA"<%= (locals.old && old.gender =="SUPERVIVENCIA") ?  "selected" : "" %>>SUPERVIVENCIA</option>
-                    </select>
+                        <option value="0" >Seleccione un género</option>
+                        <option value="1"<%= (locals.old && old.gender.id =="1") ?  "selected" : "" %> >RPG</option> 
+                        <option value="2" <%= (locals.old && old.gender.id =="2") ?  "selected" : "" %>>ACCION</option>
+                        <option value="3" <%= (locals.old && old.gender.id =="3") ?  "selected" : "" %>>AVENTURA</option>
+                        <option value="4"<%= (locals.old && old.gender.id =="4") ?  "selected" : "" %>>ROL</option>
+                        <option value="5"<%= (locals.old && old.gender.id =="5") ?  "selected" : "" %>>DEPORTE</option>
+                        <option value="6" <%= (locals.old && old.gender.id =="6") ?  "selected" : "" %>>SIMULACION</option>
+                        <option value="7" <%= (locals.old && old.gender.id =="7") ?  "selected" : "" %>>ESTRATEGIA</option>
+                        <option value="8"<%= (locals.old && old.gender.id =="8") ?  "selected" : "" %>>SUPERVIVENCIA</option>
+                </select>
                     <% if ( locals.errors && errors.gender){ %> 
                     <span class="errorCreate"> * <%= errors.gender.msg %>  </span> <% } %>  
                
@@ -50,10 +50,10 @@
                     <label class="label-subtitle">Clasificación</label>
                     <select class="select" name="clasification" id="clasificacion">
                         <option value="Z" <%= (locals.old && old.clasification =="Z") ?  "selected" : "" %>>Elige una clasificación</option>
-                        <option value="A" <%= (locals.old && old.clasification =="A") ?  "selected" : "" %>>Contenido para todo el público</option>
-                        <option value="B" <%= (locals.old && old.clasification =="B") ?  "selected" : "" %>>Contenido para adolescentes a partir de 12 años</option>
-                        <option value="C"<%= (locals.old && old.clasification =="C") ?  "selected" : "" %>>Contenido para mayores de 15 años</option>
-                        <option value="D"<%= (locals.old && old.clasification =="D") ?  "selected" : "" %>>Contenido no apto para menores de 18 años</option>
+                        <option value="1" <%= (locals.old && old.clasification.id =="1") ?  "selected" : "" %>>Contenido para todo el público</option>
+                        <option value="2" <%= (locals.old && old.clasification.id =="2") ?  "selected" : "" %>>Contenido para adolescentes a partir de 12 años</option>
+                        <option value="3"<%= (locals.old && old.clasification.id =="3") ?  "selected" : "" %>>Contenido para mayores de 15 años</option>
+                        <option value="4"<%= (locals.old && old.clasification.id =="4") ?  "selected" : "" %>>Contenido no apto para menores de 18 años</option>
                     </select>
                     <% if (locals.errors && errors.clasification){   %> 
                         <span class="errorCreate">* <%= errors.clasification.msg%></span> <% } %>
