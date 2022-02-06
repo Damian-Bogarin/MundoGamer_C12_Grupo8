@@ -1,8 +1,8 @@
 //const { products, writeProductsJSON } = require("../data/dataBase");
 let { validationResult } = require('express-validator')
 
- const db = require('../database/models');
-const Gender = require('../database/models/Gender');
+const db = require('../database/models');
+
 
 const Products = db.Product; 
 const Photo = db.Photo
@@ -54,16 +54,14 @@ const controller = {
             genderId: gendertrue,
             classificationId: clasificationtrue
         })
-        /* .then((product) => {
+         .then((product) => {
             Photo.create({
                 image: req.file ? req.file.filename : 'default-image.png',
                 productId: product.id
             })
         
-        }) */
-        .then((result)=> res.send(result,/* {
-            include: [{associate: 'gender'}]
-        } */));
+        }) 
+        .then( res.redirect("/"));
         } else {
             console.log(errors)
             console.log(errors.mapped())

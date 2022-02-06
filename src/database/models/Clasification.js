@@ -14,10 +14,10 @@ module.exports = (sequelize, dataTypes) => {
         nameClassification:{
             type: dataTypes.STRING
         },
-        productId:{ // FALTA ESTE EN LA TABLA DE CLASIFICATION
+        /* productId:{ // FALTA ESTE EN LA TABLA DE CLASIFICATION
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false 
-        }
+        } */
 
     }
 

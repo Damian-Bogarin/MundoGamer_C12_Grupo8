@@ -29,11 +29,11 @@ module.exports = (sequelize, dataTypes) => {
     const Genders = sequelize.define(alias, cols, config)
 
     Genders.associate = (models) => {
-        Genders.hasMany(models.Product,{
+        Genders.hasMany(models.Product,{ //este lo dejo
             as:'gender',
             foreignKey: 'genderId'
         })
-         Genders.belongsTo(models.Product,{
+         Genders.belongsTo(models.Product,{ //este lo borro
             as:'product',
             foreignKey: 'productId'
         }) 
