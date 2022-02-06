@@ -1,5 +1,5 @@
 const { check, body } = require('express-validator');
-const { users } = require('../data/dataBase');
+//const { users } = require('../data/dataBase');
 const db = require('../database/models');
 const Users = db.User;
 
@@ -23,7 +23,7 @@ module.exports = [
     body('email').custom((value) => { //custom recibe como parámetro un collback, que recibe como parámetro el value 
         return Users.findOne({
             where: {
-                email: value
+                email: value,
             }
         })
         .then((user) => {

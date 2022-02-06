@@ -12,17 +12,11 @@ module.exports = (sequelize, dataTypes) => {
         nameRol:{
             type: dataTypes.STRING(60),  
             allowNull: false
-        },
-        userId:{
-            type: dataTypes.INTEGER(11),
-            foreignKey: true,
-            allowNull: false 
         }
-
     }
 
     const config = {
-        tableName: 'rol_user',
+        tableName: 'rols', /* antes rol_user */
         timestamps: false
     }
 

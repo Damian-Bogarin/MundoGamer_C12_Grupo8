@@ -28,8 +28,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         address: {
             type: dataTypes.STRING(100),
-            allowNull: false,
-
+            allowNull: false
         },
         city: {
             type: dataTypes.STRING(100),
@@ -43,9 +42,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(2),
             allowNull: false
         },
-        rol: {
-            type: dataTypes.INTEGER(3), 
-            allowNull: false,
+        rol_id: {
+            type: dataTypes.INTEGER(10).UNSIGNED, 
+            foreignKey: true,
+            allowNull: false
         },
         avatar:{
             type: dataTypes.STRING(100),
