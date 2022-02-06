@@ -4,7 +4,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const cols = {
         id: {
-            type: dataTypes.INTEGER(10).UNSIGNED, 
+            type: dataTypes.INTEGER(11), 
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
@@ -43,16 +43,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(2),
             allowNull: false
         },
-        createdAt: {
-            type: dataTypes.TIMESTAMP,
-            allowNull: false
-        },
-        updatedAt: {
-            type: dataTypes.TIMESTAMP,
-            allowNull: false
-        },
         rol: {
-            type: dataTypes.STRING(3), 
+            type: dataTypes.INTEGER(3), 
             allowNull: false,
         },
         avatar:{
@@ -83,7 +75,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'userId'
         })
         User.belongsTo(models.RolUser, {
-            as: "rol",
+            as: "Rol",  /* Rol */
             foreignKey: 'userId'
         })
     }
