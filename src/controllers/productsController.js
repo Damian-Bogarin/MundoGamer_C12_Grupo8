@@ -2,10 +2,14 @@
 let { validationResult } = require('express-validator')
 
 const db = require('../database/models');
+// const LanguageProduct = require('../database/models/LanguageProduct');
 
 
 const Products = db.Product; 
-const Photo = db.Photo
+const CompatibilityProduct = db.CompatibilityProduct
+const LanguageProduct = db.LanguageProduct
+const MultiplayerProduct = db.MultiplayerProduct
+const SubtitleProduct = db.SubtitleProduct
 
 const controller = {
 
@@ -27,9 +31,8 @@ const controller = {
         
         if(errors.isEmpty()){
         const {name, price, descount,stock ,clasification,stars,language,subtitle, gender,description, multiplayer, integratedShopping,console,conexion} = req.body
-        /* res.send(req.body) 
-        COMPATIBILITY DEBE SER UN ID
-        */
+        //res.send(req.body) 
+
         let conexiontrue = +conexion
         let date = new Date
         let priceEndtrue = price * ((100 - descount) / 100) ;
@@ -37,13 +40,11 @@ const controller = {
         let gendertrue = +gender;
         let clasificationtrue = +clasification
         let integratedShop = +integratedShopping
-        let compatibility = +console
 
         Products.create({
             name,
             description,
             date: date,
-            compatibility: compatibility,
             conexion : conexiontrue, // Verificar si da un 0 o 1
             integratedShop: integratedShop,
             price,
@@ -52,21 +53,50 @@ const controller = {
             sold: 0,
             stock,
             genderId: gendertrue,
-            classificationId: clasificationtrue
+            classificationId: clasificationtrue,
+            photo: req.file ? req.file.filename : 'default-image.png',
         })
-         .then((product) => {
-            Photo.create({
-                image: req.file ? req.file.filename : 'default-image.png',
-                productId: product.id
-            })
+        .then((productCreate)=>{
+            for (let i = 0; i < console.length; i++) {
+                CompatibilityProduct.create({
+                compatibilityId: +console[i],
+                productId: productCreate.id
+            });
+            
+            } 
+             for (let i = 0; i < language.length; i++) {
+                LanguageProduct.create({
+                languageId: +language[i],
+                productId: productCreate.id
+            });
+                
+            } 
+            for (let i = 0; i < multiplayer.length; i++) {
+                MultiplayerProduct.create({
+                multiplayerId: +multiplayer[i],
+                productId: productCreate.id
+            });
+                
+            } 
+            for (let i = 0; i < subtitle.length; i++) {
+                SubtitleProduct.create({
+                subtitleId: +subtitle[i],
+                productId: productCreate.id
+            });
+                
+            } 
+            
+        })
+      
+        /* .catch(error => console.log(error)) */
+
+        .then( res.redirect("/"))
         
-        }) 
-        .then( res.redirect("/"));
         } else {
             console.log(errors)
             console.log(errors.mapped())
             console.log(req.body)
-             res.render('admin/productCreate', {
+            res.render('admin/productCreate', {
                 
                 old:req.body, 
 
@@ -81,45 +111,108 @@ const controller = {
     update: (req, res) => { 
 
         let errors = validationResult(req);
+        // res.send(req.body)
+        const {name, price,descount ,stock,clasification,stars,language,subtitle, gender,description, multiplayer, integratedShopping,console,conexion} = req.body
+        
         
         if(errors.isEmpty()){
+            let conexiontrue = +conexion
+            let date = new Date
+            let priceEndtrue = price * ((100 - descount) / 100) ;
         
-        
-        
-        let productId = req.params.id;
-        const {name, price,descount ,stock,clasification,stars,language,subtitle, gender,description, multiplayer, integratedShopping,console,conexion} = req.body
+            let gendertrue = +gender;
+            let clasificationtrue = +clasification
+            let integratedShop = +integratedShopping
+            Products.update({
+                name,
+                description,
+                
+                conexion : conexiontrue, // Verificar si da un 0 o 1
+                integratedShop: integratedShop,
+                price,
+                descount,
+                priceEnd: priceEndtrue,
+                sold: 0,
+                stock,
+                genderId: gendertrue,
+                classificationId: clasificationtrue,
+                photo: req.file ? req.file.filename : 'default-image.png',
 
-        products.forEach(product => {
-            if(product.id == productId){
-                product.id = product.id,
-                product.name = name ,
-                product.sales = product.sales, 
-                product.clasification = clasification,
-                product.language = language,
-                product.subtitle = subtitle,
-                product.price = +price,
-                product.gender = gender,
-                product.stars = +stars,
-                product.stock = +stock,
-                product.conexion = conexion,
-               product.descount = +descount,
-                product.description = description,
-                product.multiplayer = multiplayer,
-                product.console = console,
-                product.integratedShopping = integratedShopping,
-                product.photo = req.file ? [req.file.filename] : product.photo
-            
-            }
-        })
 
-        writeProductsJSON(products)
-        
-       
+            },
+            {
+                where: {id: req.params.id}
+            })
+            .then((productEdit)=>{
+                CompatibilityProduct.destroy({where: {
+                    productId: req.params.id
+                }})
+                LanguageProduct.destroy({where: {
+                    productId: req.params.id
+                }})
+                MultiplayerProduct.destroy({where: {
+                    productId: req.params.id
+                }})
+                SubtitleProduct.destroy({where: {
+                    productId: req.params.id
+                }})
+                for (let i = 0; i < console.length; i++) {
+                    CompatibilityProduct.create({
+                    compatibilityId: +console[i],
+                    productId: req.params.id
+                });
+                
+                } 
+                for (let i = 0; i < language.length; i++) {
+                    LanguageProduct.create({
+                    languageId: +language[i],
+                    productId: req.params.id
+                });
+                    
+                } 
+                for (let i = 0; i < multiplayer.length; i++) {
+                    MultiplayerProduct.create({
+                    multiplayerId: +multiplayer[i],
+                    productId: req.params.id
+                });
+                    
+                } 
+                for (let i = 0; i < subtitle.length; i++) {
+                    SubtitleProduct.create({
+                    subtitleId: +subtitle[i],
+                    productId: req.params.id
+                });
+                    
+                } 
+
+
+
+            })
+
         res.redirect("/admin") 
     } else{
     
-        console.log(errors.mapped())
-        req.body["id"] = req.params.id
+        //console.log(errors.mapped())
+        
+        Products.findByPk(req.params.id, {
+            include: [{ association: 'gender'} ,
+                    {association: 'clasification'},
+                {association: 'compatibility'},
+                {association: 'language'},
+                {association: 'subtitle'},
+                {association: 'multiplayer'}
+             ] 
+            
+                   
+                
+            
+        })
+        .then((productsToUpdate) => {
+            //res.send(productsToUpdate)
+            res.render('admin/updateProduct', {old: productsToUpdate,
+            errors : errors.mapped()})
+        })
+      /*   req.body["id"] = req.params.id
         
         let productsID = req.params.id  // Guardo el id 
         let productsToUpdate
@@ -128,12 +221,12 @@ const controller = {
                productsToUpdate = products[index];
             } 
             
-        }
+        } */
 
        
-        res.render('admin/updateProduct', {old: req.body,
-         errors : errors.mapped()})
-        
+       /*  res.render('admin/updateProduct', {old: req.body,
+        })
+         */
         
        /*  res.render('admin/updateProduct', {
 
@@ -155,14 +248,25 @@ const controller = {
 
     delete: (req,res) =>{
 
+        Products.destroy({
+            where: {id: req.params.id}
+        })
         
-         let deleteProductID = req.params.id
-
-         
-       let productsFilter = products.filter((product) => product.id != deleteProductID) 
-       
-        writeProductsJSON(productsFilter)
-        res.redirect("/") 
+        CompatibilityProduct.destroy({where: {
+                productId: req.params.id
+            }})
+        LanguageProduct.destroy({where: {
+                productId: req.params.id
+            }})
+        MultiplayerProduct.destroy({where: {
+                productId: req.params.id
+            }})
+        SubtitleProduct.destroy({where: {
+                productId: req.params.id
+            }})
+        
+        .then((result)=>{res.redirect("/") })
+        
 
     },
 

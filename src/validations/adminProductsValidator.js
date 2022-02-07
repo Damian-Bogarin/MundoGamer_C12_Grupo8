@@ -16,9 +16,9 @@ module.exports = [
     .isIn(["1","2","3", "4", "5","6", "7", "8"])
     .withMessage('Debes elegir una categoría')
 ,
-    check('stars')
+    /* check('stars')
     .notEmpty()
-    .withMessage('Debes elegir un nivel de estrellas'),
+    .withMessage('Debes elegir un nivel de estrellas'), */
 
     check('clasification')
     .notEmpty()

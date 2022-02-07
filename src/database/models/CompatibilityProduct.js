@@ -1,7 +1,6 @@
 
-
 module.exports = (sequelize, dataTypes) => {
-    const alias = "LanguageProduct";
+    const alias = "CompatibilityProduct";
     const cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
@@ -13,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false 
         },
-        languageId:{
+        compatibilityId:{
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false 
         }
@@ -21,22 +20,21 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const config = {
-        tableName: 'language_product',
+        tableName: 'compatibility_product',
         timestamps: false
     }
 
-    const LanguageProduct = sequelize.define(alias, cols, config)
+    const CompatibilityProduct = sequelize.define(alias, cols, config)
 
-    LanguageProduct.associate = (models) => {
-        LanguageProduct.belongsTo(models.Product, {
-            as: "product",
+    CompatibilityProduct.associate = (models) => {
+        CompatibilityProduct.belongsTo(models.Product, {
+            as: 'product',
             foreignKey: 'productId'
         })
-        LanguageProduct.belongsTo(models.Language, { 
-            as: 'language',
-            foreignKey: 'languageId'
-        })   
-    }
-
-    return LanguageProduct
+    CompatibilityProduct.belongsTo(models.Compatibility, { 
+        as: 'compatibility',
+        foreignKey: 'compatibilityId'
+    })   
+     } 
+    return CompatibilityProduct
 }

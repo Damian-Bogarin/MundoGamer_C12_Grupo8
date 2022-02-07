@@ -90,15 +90,16 @@
 
                     <label class="label-subtitle">Conexión a internet</label>
                     <div class="div-box">
-                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="1" <% if(locals.old && old.conexion){ if (old.conexion.includes("SI")){ %> checked <% } } %> >SI</label>
-                    <label for="conexion2"><input type="radio" name="conexion" id="conexion2" value="0"<% if(locals.old && old.conexion){ if (old.conexion.includes("NO")){ %> checked <% } } %>>NO</label>
+                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="1" <%= (locals.old && old.conexion == 1 )? "checked" : ""  %> >SI</label>
+                    <label for="conexion2"><input type="radio" name="conexion" id="conexion2" value="0" <%= (locals.old && old.conexion == 0 )? "checked" : ""  %>>NO</label>
                     </div><br>
                     <% if (locals.errors && errors.conexion){   %> 
                         <span class="errorCreate">* <%= errors.conexion.msg%></span> <% } %>
+
                     <label class="label-subtitle">Compras integradas</label>
                     <div class="div-box">
-                    <label for="comprasIntegradas1"><input type="radio" name="integratedShopping" id="comprasIntegradas1" value="1" <% if(locals.old && old.integratedShopping){ if (old.integratedShopping.includes("SI")){ %> checked <% } } %>>SI</label>
-                    <label for="comprasIntegradas2"><input type="radio" name="integratedShopping" id="comprasIntegradas2" value="0"<% if(locals.old && old.integratedShopping){ if (old.integratedShopping.includes("NO")){ %> checked <% } } %>>NO</label>
+                    <label for="comprasIntegradas1"><input type="radio" name="integratedShopping" id="comprasIntegradas1" value="1" <%= (locals.old && old.integratedShopping == 1 )? "checked" : ""  %>>SI</label>
+                    <label for="comprasIntegradas2"><input type="radio" name="integratedShopping" id="comprasIntegradas2" value="0" <%= (locals.old && old.integratedShopping == 0 )? "checked" : ""  %>>NO</label>
                     </div><br>
                     <% if (locals.errors && errors.integratedShopping){   %> 
                         <span class="errorCreate">* <%= errors.integratedShopping.msg%></span> <% } %>
@@ -112,22 +113,24 @@
                     </div><br>
                     <% if (locals.errors && errors.multiplayer){   %> 
                         <span class="errorCreate">* <%= errors.multiplayer.msg%></span> <% } %>
+
                     <label class="label-subtitle" for="message">Descripción del producto</label>
                     <textarea name="description" id="message" cols="30" rows="10" placeholder="Escribe la descripción aquí.." ><%= (locals.old && old.description) ? old.description : "" %></textarea>
                     <% if (locals.errors && errors.description){   %> 
                         <span class="errorCreate">* <%= errors.description.msg%></span> <% } %>
         
                     <label class="label-subtitle" for="precio">Precio</label>
-                    <input class="input-productCreate" type="number" name="price" id="precio" placeholder="0">
+                    <input class="input-productCreate" type="number" name="price" id="precio" placeholder="0" value="<%= (locals.old && old.price) ? old.price : "0" %>">
                     <% if (locals.errors && errors.multiplayer){   %> 
-                        <span class="errorCreate">* <%= errors.multiplayer.msg%></span> <% } %>
+                        <span class="errorCreate">* <%= errors.price.msg%></span> <% } %>
+
                     <label class="label-subtitle" for="descount">Descuento</label>
                     <input class="input-productCreate" type="number" name="descount" id="descount" value="<%= (locals.old && old.descount) ? old.descount : "0" %>">
                     <% if (locals.errors && errors.descount){   %> 
                         <span class="errorCreate">* <%= errors.descount.msg%></span> <% } %>
         
                     <label class="label-subtitle" for="almacenamiento">Almacenamiento</label>
-                    <input class="input-productCreate" type="number" name="stock" id="almacenamiento" placeholder="0">
+                    <input class="input-productCreate" type="number" name="stock" id="almacenamiento" placeholder="0" value="<%= (locals.old && old.stock) ? old.stock : "0" %>">
                     <% if (locals.errors && errors.stock){   %> 
                         <span class="errorCreate">* <%= errors.stock.msg%></span> <% } %>
         

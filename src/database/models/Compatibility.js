@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "Language";
+    const alias = "Compatibility";
     const cols = {
         
         id: {
@@ -8,30 +8,29 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false,
         },
-        nameLanguage:{
+        nameCompatibility:{
             type: dataTypes.STRING,
             allowNull:false
         }
     }
 
     const config = {
-        tableName: 'languages',
+        tableName: 'compatibility',
         timestamps: false
     }
 
-    const Languages = sequelize.define(alias, cols, config)
+    const Compatibility = sequelize.define(alias, cols, config)
 
-    Languages.associate = (models) => {
-        Languages.belongsToMany(models.Product, {
+    Compatibility.associate = (models) => {
+        Compatibility.belongsToMany(models.Product, {
             as: 'product',
-            through: 'language_product',
-            foreignKey: 'languageId',
+            through: 'compatibility_product',
+            foreignKey: 'compatibilityId',
             otherKey:'productId',
             timestamps:false
         })
 
         
     }
-
-    return Languages
+      return Compatibility
 }

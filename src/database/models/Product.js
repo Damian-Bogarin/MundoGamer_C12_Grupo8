@@ -25,8 +25,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         }, */
         conexion:{ // USA O NO INTERNET
-            type: dataTypes.BOOLEAN,
-            allowNull:false,
+            type: dataTypes.INTEGER,
+            allowNull: false
 
         },
         integratedShop:{
@@ -62,6 +62,9 @@ module.exports = (sequelize, dataTypes) => {
         classificationId: {
             type: dataTypes.INTEGER,
             allowNull: false
+        },
+        photo: {
+            type:dataTypes.STRING(250)
         }
         
         
@@ -75,10 +78,6 @@ module.exports = (sequelize, dataTypes) => {
     const Products = sequelize.define(alias, cols, config)
 
     Products.associate = (models) => {
-        Products.hasOne(models.Photo,{
-            as:'photo',
-            foreignKey: 'productId'
-        })
         Products.hasMany( models.Like, {
             as:'likes',
             foreignKey: 'productId'
@@ -119,6 +118,20 @@ module.exports = (sequelize, dataTypes) => {
             through: 'language_product',
             foreignKey: 'productId',
             otherKey:'languageId',
+            timestamps:false
+        })
+        Products.belongsToMany(models.Subtitle, {
+            as: 'subtitle',
+            through: 'subtitle_product',
+            foreignKey: 'productId',
+            otherKey:'subtitleId',
+            timestamps:false
+        })
+        Products.belongsToMany(models.Compatibility, {
+            as: 'compatibility',
+            through: 'compatibility_product',
+            foreignKey: 'productId',
+            otherKey:'compatibilityId',
             timestamps:false
         })
         }
