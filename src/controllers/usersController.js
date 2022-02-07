@@ -1,6 +1,5 @@
 //const { users, writeUsersJSON } = require('../data/dataBase'); 
 const { validationResult } = require('express-validator');
-
 const bcrypt = require('bcryptjs');
 
 const db = require('../database/models');
@@ -28,7 +27,7 @@ let controller = {
                     id: user.id,
                     name: user.name,
                     email: user.email,
-                    rol: user.rol,
+                    rol: user.rol, /* --------- */
                     avatar: user.avatar
                 }
             })
@@ -63,18 +62,17 @@ let controller = {
         
         if (errors.isEmpty()) { 
 
-            let { name, last_name, email, pass1 } = req.body 
+            let { name, lastName, email, pass1 } = req.body 
             Users.create({
                 name,
-                last_name, 
+                lastName, /* last_name */ 
                 email, 
                 pass: bcrypt.hashSync(pass1, 12), //hashSync recibe dos parametros, pass y la sal
-                rol: "ROL_USER",
-                address: "",
-                city: "",
-                province: "",
-                CP: "",
-                tel: "",
+                rol: "ROL_USER", 
+                address, /* "", y los siguientes dos */
+                city,
+                tel,
+                age,
                 avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
             })
             .then(() => {
@@ -101,7 +99,7 @@ let controller = {
     profile: (req, res) => { 
 
         Users.findByPk(req.session.user.id, {
-            include: [{association: 'rol_user'}]
+            include: [{association: 'rols'}] /* ----rol_user ??------- */
         })
         .then((user) => {
             res.render('users/myProfile', {

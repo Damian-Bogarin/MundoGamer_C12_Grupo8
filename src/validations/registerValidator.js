@@ -16,7 +16,7 @@ module.exports = [
     check('email')
     .notEmpty()  
     .withMessage('Debes ingresar un e-mail') 
-    .bail() 
+    .bail()  
     .isEmail()
     .withMessage('Debes ingresar un e-mail válido'),
 
@@ -28,7 +28,7 @@ module.exports = [
         })
         .then((user) => {
             if(user){
-            return Promise.reject('Este email ya está registrado') 
+            return Promise.reject('Este email ya está registrado')
             }
         })
     }),

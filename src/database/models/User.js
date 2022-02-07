@@ -19,8 +19,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         email: {
             type: dataTypes.STRING(50),
-            unique: true,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         pass: {
             type: dataTypes.STRING(100),
@@ -35,8 +35,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         tel: {
-            type: dataTypes.STRING(50),
-            allowNull: false
+            type: dataTypes.STRING(50)
+            /* allowNull: false */
         },
         age: {
             type: dataTypes.STRING(2),
@@ -48,8 +48,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         avatar:{
-            type: dataTypes.STRING(100),
-            allowNull: false
+            type: dataTypes.STRING(100)
+           /*  allowNull: false */
         }
     }
 
@@ -75,10 +75,10 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'userId'
         })
         User.belongsTo(models.RolUser, {
-            as: "Rol",  /* Rol */
-            foreignKey: 'userId'
-        })
+            as: "Rol",
+            foreignKey: 'userId' 
+        }) 
     }
 
     return User;
-}
+} 

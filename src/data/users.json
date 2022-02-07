@@ -91,20 +91,6 @@
         "avatar": "default-img.png"
     },
     {
-        "id": 9,
-        "name": "daniela",
-        "last_name": "cali",
-        "email": "hdaniela127c@gmail.com",
-        "pass": "$2a$12$aggICWEgmCctTK3IMU.21.YPtQolJnqsyKVBDA/LEFIuKpUaMrYg6",
-        "rol": "ROL_USER",
-        "address": "",
-        "city": "",
-        "province": "",
-        "CP": "",
-        "tel": "",
-        "avatar": "1641528503700_img_.jpg"
-    },
-    {
         "id": 10,
         "name": "dani",
         "email": "daniela127c@gmail.com",

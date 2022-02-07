@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const config = {
-        tableName: 'rols', /* antes rol_user */
+        tableName: 'rols', 
         timestamps: false
     }
 
@@ -25,9 +25,9 @@ module.exports = (sequelize, dataTypes) => {
     RolUser.associate = (models) => {
         RolUser.belongsTo(models.User, {
             as: "user",
-            foreignKey: 'userId'
+            foreignKey: 'userId' 
         })
     }
 
     return RolUser;
-}
+} 

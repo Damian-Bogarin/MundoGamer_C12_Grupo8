@@ -34,7 +34,7 @@
                         <div class="input-datos">
                             <label for="email">E-mail</label><br>
                             <!--Tambien dentro del input podemos agregar un required (saldra un aviso standar) pero mejor hacer un span-->
-                            <input class="input-estilo" type="email" name="email" id="email">
+                            <input class="input-estilo" type="email" name="email" id="email"> 
                             <% if (locals.errors && errors.email) { %> 
                                 <span class="error-msj"><%= errors.email.msg %></span>
                             <% } %> 

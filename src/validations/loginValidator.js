@@ -1,5 +1,5 @@
 const { check, body } = require('express-validator'); //Requiero express-validator, desestructuro y pido el método check
-const { users } = require('../data/dataBase');
+//const { users } = require('../data/dataBase');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
 const Users = db.User;
@@ -21,7 +21,9 @@ module.exports = [
     body('custom')
     .custom((value, {req}) => { //Buscará ese usuario en la base de datos, y comparará la contraseña
         return Users.findOne({
-            where: {email: req.body.email}
+            where: {
+                email: req.body.email
+            }
         })
     
     .then(user => {
@@ -32,7 +34,7 @@ module.exports = [
     .catch(() => {
         return Promise.reject("Credenciales inválidas")
     })
-    })
+})
 ]
 
 /* if(fs.existsSync("./public/images/products/", product.img) && (product.img != "default-image.jpg")){ 
