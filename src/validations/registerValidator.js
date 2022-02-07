@@ -1,5 +1,7 @@
 const { check, body } = require('express-validator');
-const { users } = require('../data/dataBase');
+//const { users } = require('../data/dataBase');
+const db = require('../database/models');
+const Users = db.User;
 
 module.exports = [
 
@@ -14,21 +16,22 @@ module.exports = [
     check('email')
     .notEmpty()  
     .withMessage('Debes ingresar un e-mail') 
-    .bail() 
+    .bail()  
     .isEmail()
     .withMessage('Debes ingresar un e-mail válido'),
 
     body('email').custom((value) => { //custom recibe como parámetro un collback, que recibe como parámetro el value 
-        let user = users.find(user => {
-            return user.email == value //Si existe este usuario en nuestra base de datos
+        return Users.findOne({
+            where: {
+                email: value,
+            }
         })
-
-        if(user){
-            return false //En el caso de que no esté el usuario en la base de datos tirará el mensaje de que ya está registrado el email
-        }else{
-            return true
-        }
-    }).withMessage('Este email ya está registrado'),
+        .then((user) => {
+            if(user){
+            return Promise.reject('Este email ya está registrado')
+            }
+        })
+    }),
 
     check('pass1')
     .notEmpty()

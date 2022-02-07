@@ -1,8 +1,6 @@
+const {products} = require("../data/dataBase");
 
-const { products } = require('../data/dataBase'); 
-const db = require('../database/models');
-
- const Products = db.Product; 
+//const Products = require()
 
 
 /* let cincoEstrellas = products.filter( products => products.estrellas >= 4) */

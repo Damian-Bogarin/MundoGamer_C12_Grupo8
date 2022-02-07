@@ -1,11 +1,10 @@
 module.exports = (sequelize, dataTypes) => {
+    
     const alias = "User";
-    //-------------------------
-//   FALTA CARTID
-    //----------------------
+
     const cols = {
         id: {
-            type: dataTypes.INTEGER(10).UNSIGNED, // preguntar a jannete
+            type: dataTypes.INTEGER(11), 
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
@@ -15,11 +14,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         lastName: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(50),
             allowNull: false,
         },
         email: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(50),
             allowNull: false,
             unique: true
         },
@@ -27,33 +26,31 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false,
         },
-        address:{
-            type: dataTypes.STRING(45),
-            allowNull: true,
-
+        address: {
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
-        rolId: { //rolId  1 -admin  2 - client
-            type: dataTypes.INTEGER.UNSIGNED,
-            allowNull: false 
+        city: {
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
         tel: {
-            type: dataTypes.STRING(45),
-            unique: true
+            type: dataTypes.STRING(50)
+            /* allowNull: false */
         },
-        age:{
-            type: dataTypes.INTEGER,
-
+        age: {
+            type: dataTypes.STRING(2),
+            allowNull: false
+        },
+        rol_id: {
+            type: dataTypes.INTEGER(10).UNSIGNED, 
+            foreignKey: true,
+            allowNull: false
         },
         avatar:{
-            type: dataTypes.STRING(45)
+            type: dataTypes.STRING(100)
+           /*  allowNull: false */
         }
-
-        //cartId:{
-
-        
-
-
-
     }
 
     const config = {
@@ -64,6 +61,7 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config)
 
     User.associate = (models) => {
+
         User.hasOne(models.Cart, {
             as: "cart",
             foreignKey: 'userId'
@@ -72,22 +70,15 @@ module.exports = (sequelize, dataTypes) => {
             as: "likes",
             foreignKey: 'userId'
         })
-       /*  User.hasOne(models.RolUser, {
-            as: "rol",
-            foreignKey: 'rol'
-        }) */
         User.hasMany(models.Stars, {
             as: "stars",
             foreignKey: 'userId'
         })
         User.belongsTo(models.RolUser, {
-            as: "rol",
-            foreignKey: 'rolId'
-        })
-        
-
-        
+            as: "Rol",
+            foreignKey: 'userId' 
+        }) 
     }
 
-    return User
-}
+    return User;
+} 
