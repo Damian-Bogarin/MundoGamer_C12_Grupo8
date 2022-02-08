@@ -11,10 +11,13 @@ let controller = {
     update: (req, res) => {
 
         Products.findByPk(req.params.id, {
-            include: [{
-                association: 'gender'
-               
-            },{association: 'clasification'} ] 
+            include: [{ association: 'gender'} ,
+                    {association: 'clasification'},
+                {association: 'compatibility'},
+                {association: 'language'},
+                {association: 'subtitle'},
+                {association: 'multiplayer'}
+             ] 
             
                    
                 
@@ -24,18 +27,6 @@ let controller = {
             //res.send(productsToUpdate)
             res.render('admin/updateProduct', {old: productsToUpdate})
         })
-
-        /* let productsID = req.params.id  // Guardo el id 
-        let productsToUpdate
-        for (let index = 0; index < products.length; index++) {
-            if ( productsID == products[index].id) {
-               productsToUpdate = products[index];
-            } 
-            
-        } */
-
-
-       
     },
     list: (req, res) => {
 

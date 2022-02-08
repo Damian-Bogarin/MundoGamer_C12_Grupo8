@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "MultiplayerProduct";
+    const alias = "SubtitleProduct";
     const cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false 
         },
-        multiplayerId: {  
+        subtitleId: {  
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false 
         }
@@ -19,22 +19,22 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const config = {
-        tableName: 'multiplayer_product',
+        tableName: 'subtitle_product',
         timestamps: false
     }
 
-    const MultiplayerProduct = sequelize.define(alias, cols, config)
+    const SubtitleProduct = sequelize.define(alias, cols, config)
 
-    MultiplayerProduct.associate = (models) => {
-        MultiplayerProduct.belongsTo(models.Product, {
+    SubtitleProduct.associate = (models) => {
+        SubtitleProduct.belongsTo(models.Product, {
             as: "product",
             foreignKey: 'productId'
         })
-        MultiplayerProduct.belongsTo(models.Multiplayer, { 
-            as: 'multiplayer',
-            foreignKey: 'multiplayerId'
+        SubtitleProduct.belongsTo(models.Subtitle, { 
+            as: 'subtitle',
+            foreignKey: 'subtitleId'
         })   
     }
 
-    return MultiplayerProduct
+    return SubtitleProduct
 }

@@ -14,17 +14,17 @@ module.exports = [
     check('gender')
     .notEmpty()
     .withMessage('Debes elegir una categoría').bail()
-    .isIn(["RPG","ACCION","AVENTURA", "ROL", "DEPORTE","SIMULACION", "ESTRATEGIA", "SUPERVIVENCIA"])
+    .isIn(["1","2","3", "4", "5","6", "7", "8"])
     .withMessage('Debes elegir una categoría')
 ,
-    check('stars')
+    /* check('stars')
     .notEmpty()
-    .withMessage('Debes elegir un nivel de estrellas'),
+    .withMessage('Debes elegir un nivel de estrellas'), */
 
     check('clasification')
     .notEmpty()
     .withMessage('Debes elegir una clasificación')
-    .isIn(["A","B","C", "D"])
+    .isIn(["1","2","3", "4"])
     .withMessage('Debes elegir una clasificación'),
 
     check('console')

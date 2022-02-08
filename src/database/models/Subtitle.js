@@ -2,14 +2,14 @@ module.exports = (sequelize, dataTypes) => {
     const alias = "Subtitle";
     const cols = {
 
-        // FALTA LA TABLA PIVOT SUBTITLE-PRODUCT
+        
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
-        nameSubtitle: {
+        nameLanguage: { //en la data BAse debo cambiarlo a nameSubtitle
             type: dataTypes.STRING,
             allowNull: false
         }
@@ -17,14 +17,20 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const config = {
-        tableName: 'subtitle',
+        tableName: 'subtitles',
         timestamps: false
     }
 
     const Subtitle = sequelize.define(alias, cols, config)
 
     Subtitle.associate = (models) => {
-        
+        Subtitle.belongsToMany(models.Product, {
+            as: 'product',
+            through: 'subtitle_product',
+            foreignKey: 'subtitleId',
+            otherKey:'productId',
+            timestamps:false
+        })
     }
 
     return Subtitle
