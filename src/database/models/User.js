@@ -45,7 +45,7 @@ module.exports = (sequelize, dataTypes) => {
         rol_id: {
             type: dataTypes.INTEGER(10).UNSIGNED, 
             foreignKey: true,
-            allowNull: false
+           /*  allowNull: false */
         },
         avatar:{
             type: dataTypes.STRING(100)

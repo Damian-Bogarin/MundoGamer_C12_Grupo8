@@ -84,6 +84,7 @@ let controller = {
             .then(() => {
                 res.redirect('/users/login')
             })
+            .catch(error => console.log(error))/* -------------------------catch??----------------------- */
             
         }else{
             res.render('users/register', {
@@ -105,7 +106,7 @@ let controller = {
     profile: (req, res) => { 
 
         Users.findByPk(req.session.user.id, {
-            include: [{association: 'rols'}] /* ----rol_user ??------- */
+            include: [{association: 'rols'}] /* ---incluir las otras asociaciones de like, starts y cart ??------ */
         })
         .then((user) => {
             res.render('users/myProfile', {

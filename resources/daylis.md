@@ -37,3 +37,8 @@ En la semana libre del 27 de diciembre también se hicieron las daylis los tres 
 - Daniela: Mergeo y testeo del sprit
 
 - Greta: Mejorando las views carrito y el myProfile
+
+# SPRINT n° 6 DAYLIS
+
+Las daylis se hicieron normalmente, desde el primer dia para repartir las tareas (excepto por un dia en que Daniela faltó por covid). Se hicieron daylis incluidos algunos sábados por la tarde. El lunes 24 de la primer semana de plazo del sprint nos juntamos con Jeanne para consultar dudas, corregir el diagrama y ver errores del sprint anterior. 
+Pero en este sprint no estuvieron todos los integrantes. Contamos con la ayuda de Greta antes del sprint para hacer el diagrama, ya después no (problemas familiares).
