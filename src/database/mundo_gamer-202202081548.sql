@@ -79,7 +79,7 @@ CREATE TABLE `compatibility` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nameCompatibility` varchar(50) NOT NULL,
   UNIQUE KEY `compatibility_un` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,6 +88,7 @@ CREATE TABLE `compatibility` (
 
 LOCK TABLES `compatibility` WRITE;
 /*!40000 ALTER TABLE `compatibility` DISABLE KEYS */;
+INSERT INTO `compatibility` VALUES (1,'PC'),(2,'PlayStation 1'),(3,'PlayStation 2'),(4,'PlayStation 3'),(5,'PlayStation 4'),(6,'PlayStation 5'),(7,'XBOX'),(8,'Nintendo');
 /*!40000 ALTER TABLE `compatibility` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,9 +130,8 @@ DROP TABLE IF EXISTS `genders`;
 CREATE TABLE `genders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nameGender` varchar(60) DEFAULT NULL,
-  `productId` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +140,7 @@ CREATE TABLE `genders` (
 
 LOCK TABLES `genders` WRITE;
 /*!40000 ALTER TABLE `genders` DISABLE KEYS */;
-INSERT INTO `genders` VALUES (1,'RPG',0),(2,'Acción',0),(3,'Aventura',0),(4,'Rol',0),(5,'Deporte',0);
+INSERT INTO `genders` VALUES (1,'RPG'),(2,'AcciÃ³n'),(3,'Aventura'),(4,'Rol'),(5,'Deporte'),(6,'SimulaciÃ³n'),(7,'Estrategia'),(8,'Supervivencia');
 /*!40000 ALTER TABLE `genders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,7 +193,7 @@ CREATE TABLE `languages` (
 
 LOCK TABLES `languages` WRITE;
 /*!40000 ALTER TABLE `languages` DISABLE KEYS */;
-INSERT INTO `languages` VALUES (1,'Español'),(2,'Ingles'),(3,'Chino'),(4,'Chino'),(5,'Chino');
+INSERT INTO `languages` VALUES (1,'EspaÃ±ol'),(2,'Ingles'),(3,'Chino'),(4,''),(5,'');
 /*!40000 ALTER TABLE `languages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -319,11 +319,9 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `quantity` varchar(100) DEFAULT NULL,
-  `totalPrice` decimal(10,0) NOT NULL,
+  `totalPrice` int(11) NOT NULL,
   `date` datetime NOT NULL,
-  `totalDescount` decimal(10,0) NOT NULL,
-  `cartId` int(11) DEFAULT NULL,
-  `orderProduct` int(11) DEFAULT NULL,
+  `totalDescount` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -334,7 +332,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,'2',8900,'2013-06-14 00:00:00',8000,1,1),(2,'3',12100,'2013-06-14 00:00:00',2000,2,2),(3,'1',12100,'2018-06-14 13:15:00',3000,3,3),(4,'2',6100,'2020-06-06 14:15:00',500,4,4),(5,'1',4500,'2022-01-06 19:15:00',400,5,5);
+INSERT INTO `orders` VALUES (1,'2',8900,'2013-06-14 00:00:00',8000),(2,'3',12100,'2013-06-14 00:00:00',2000),(3,'1',12100,'2018-06-14 13:15:00',3000),(4,'2',6100,'2020-06-06 14:15:00',500),(5,'1',4500,'2022-01-06 19:15:00',400);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -473,7 +471,7 @@ CREATE TABLE `subtitles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nameLanguage` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -482,6 +480,7 @@ CREATE TABLE `subtitles` (
 
 LOCK TABLES `subtitles` WRITE;
 /*!40000 ALTER TABLE `subtitles` DISABLE KEYS */;
+INSERT INTO `subtitles` VALUES (1,'EspaÃ±ol'),(2,'Frances'),(3,'Aleman');
 /*!40000 ALTER TABLE `subtitles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -510,7 +509,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `user_un` (`email`),
   KEY `users_FK` (`rol_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `rols` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -519,7 +518,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Daniela','Cali','dani@gmail.com','123','Calle falsa','Confluencia','4480249','20','2022-01-23 06:00:00','2022-02-01 06:00:00',1,''),(2,'Thomas','Edison','tom@gmail.com','321','Calle verdadera','Zapala','4412356','22','2022-01-01 06:00:00','2022-01-02 06:00:00',1,''),(3,'Galy','Lee','g@gmail.com','456','Belgrano','Plottier','4412356','24','2022-01-02 06:00:00','2022-01-31 06:00:00',1,''),(4,'Newt','Lee','ne@gmail.com','654','Avenida 123','Senillosa','4445454','24','2022-01-03 06:00:00','2022-01-30 06:00:00',1,''),(5,'Ana','Paez','ani@gmail.com','789','Avenida argentina 123','Catriel','44020474','25','2022-01-04 06:00:00','2022-01-28 06:00:00',1,'');
+INSERT INTO `users` VALUES (1,'Daniela','Cali','dani@gmail.com','123','Calle falsa','Confluencia','4480249','20','2022-01-23 06:00:00','2022-02-01 06:00:00',1,''),(2,'Thomas','Edison','tom@gmail.com','321','Calle verdadera','Zapala','4412356','22','2022-01-01 06:00:00','2022-01-02 06:00:00',1,''),(3,'Galy','Lee','g@gmail.com','456','Belgrano','Plottier','4412356','24','2022-01-02 06:00:00','2022-01-31 06:00:00',1,''),(4,'Newt','Lee','ne@gmail.com','654','Avenida 123','Senillosa','4445454','24','2022-01-03 06:00:00','2022-01-30 06:00:00',1,''),(5,'Ana','Paez','ani@gmail.com','789','Avenida argentina 123','Catriel','44020474','25','2022-01-04 06:00:00','2022-01-28 06:00:00',1,''),(9,'Daniela','cali','hdaniela127c@gmail.com','$2a$12$LeWxsCmbey1AVpp9U70V3.OMwfr9fRQngGTSstw2eSFHW.P/TJp.W',NULL,NULL,NULL,NULL,'2022-02-08 18:07:46','2022-02-08 18:07:46',2,'default-img.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -536,4 +535,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-07 19:36:53
+-- Dump completed on 2022-02-08 15:48:39
