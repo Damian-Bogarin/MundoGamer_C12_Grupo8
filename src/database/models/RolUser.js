@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         nameRol:{
             type: dataTypes.STRING(60),  
-            allowNull: false
+            /* allowNull: false */
         }
     }
 
@@ -23,9 +23,9 @@ module.exports = (sequelize, dataTypes) => {
     const RolUser = sequelize.define(alias, cols, config)
 
     RolUser.associate = (models) => {
-        RolUser.belongsTo(models.User, {
+        RolUser.hasOne(models.User, {
             as: "user",
-            foreignKey: 'userId' 
+            foreignKey: 'rol_id' /* userId */
         })
     }
 

@@ -9,7 +9,7 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes ingresar tu nombre'),
 
-    check('last_name')
+    check('lastName') /* last_name */
     .notEmpty()
     .withMessage('Debes ingresar tu apellido'), 
 

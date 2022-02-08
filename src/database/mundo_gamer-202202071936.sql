@@ -494,8 +494,8 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT NULL,
-  `lastName` varchar(50) DEFAULT NULL,
+  `name` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `pass` varchar(100) NOT NULL,
   `address` varchar(100) DEFAULT NULL,
@@ -510,7 +510,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `user_un` (`email`),
   KEY `users_FK` (`rol_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `rols` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -536,4 +536,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-07 12:54:46
+-- Dump completed on 2022-02-07 19:36:53
