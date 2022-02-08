@@ -2,9 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     const alias = "Gender";
     const cols = {
 
-        //--------------
-        // FALTA PRODUCT ID
-        //------------------
+ 
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
@@ -13,11 +11,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         nameGender:{
             type: dataTypes.STRING
-        },
-         productId:{ // borro esto ??
-            type: dataTypes.INTEGER.UNSIGNED,
-            allowNull: false 
-        } 
+        }
 
     }
 
@@ -33,10 +27,7 @@ module.exports = (sequelize, dataTypes) => {
             as:'gender',
             foreignKey: 'genderId'
         })
-         Genders.belongsTo(models.Product,{ //este lo borro
-            as:'product',
-            foreignKey: 'productId'
-        }) 
+
     }
 
     return Genders

@@ -23,9 +23,9 @@ module.exports = (sequelize, dataTypes) => {
     const RolUser = sequelize.define(alias, cols, config)
 
     RolUser.associate = (models) => {
-        RolUser.belongsTo(models.User, {
+        RolUser.hasMany(models.User, {
             as: "user",
-            foreignKey: 'userId' 
+            foreignKey: 'rol_id' 
         })
     }
 

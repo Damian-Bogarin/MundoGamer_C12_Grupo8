@@ -177,13 +177,16 @@ const controller = {
                 });
                     
                 } 
-                for (let i = 0; i < subtitle.length; i++) {
+                if (subtitle) { //evaluar
+                    for (let i = 0; i < subtitle.length; i++) {
                     SubtitleProduct.create({
                     subtitleId: +subtitle[i],
                     productId: req.params.id
                 });
                     
                 } 
+                }
+                
 
 
 

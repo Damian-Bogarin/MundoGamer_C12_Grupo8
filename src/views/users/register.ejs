@@ -25,7 +25,7 @@
 
                         <div class="input-datos">
                             <label for="last_name">Apellido</label><br>
-                            <input class="input-estilo" type="text" name="last_name" id="last_name" value="<%= locals.old && old.last_name %>">
+                            <input class="input-estilo" type="text" name="lastName" id="last_name" value="<%= locals.old && old.last_name %>">
                             <% if (locals.errors && errors.last_name) { %> 
                                 <span class="error-msj"><%= errors.last_name.msg %></span>
                             <% } %> 

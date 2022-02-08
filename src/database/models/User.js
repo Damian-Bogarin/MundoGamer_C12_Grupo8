@@ -28,11 +28,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         address: {
             type: dataTypes.STRING(100),
-            allowNull: false
+            //allowNull: false
         },
         city: {
             type: dataTypes.STRING(100),
-            allowNull: false
+            //allowNull: false
         },
         tel: {
             type: dataTypes.STRING(50)
@@ -40,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         age: {
             type: dataTypes.STRING(2),
-            allowNull: false
+            //allowNull: false
         },
         rol_id: {
             type: dataTypes.INTEGER(10).UNSIGNED, 
@@ -75,8 +75,8 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'userId'
         })
         User.belongsTo(models.RolUser, {
-            as: "Rol",
-            foreignKey: 'userId' 
+            as: "rol",
+            foreignKey: 'rol_id' 
         }) 
     }
 

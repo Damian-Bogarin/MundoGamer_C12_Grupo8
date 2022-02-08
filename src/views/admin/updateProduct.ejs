@@ -61,12 +61,12 @@
         
                     <label class="label-subtitle">Consolas compatibles</label>
                     <label for="consola"><input type="checkbox" name="console" id="consola" value="1"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PC"){ %> checked <% } })}%> >PC</label>
-                    <label for="consola2"><input type="checkbox" name="console" id="consola2" value="2" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "Playstation 1"){ %> checked <% } })}%> >Playstation 1</label>
-                    <label for="consola3"><input type="checkbox" name="console" id="consola3" value="3" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "Playstation 2"){ %> checked <% } })}%>>Playstation 2</label>
-                    <label for="consola4"><input type="checkbox" name="console" id="consola4" value="4" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "Playstation 3"){ %> checked <% } })}%>>Playstation 3</label>
-                    <label for="consola5"><input type="checkbox" name="console" id="consola5" value="5" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "Playstation 4"){ %> checked <% } })}%>>Playstation 4</label>
-                    <label for="consola6"><input type="checkbox" name="console" id="consola6" value="6"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "Playstation 5"){ %> checked <% } })}%>>Playstation 5</label>
-                    <label for="consola7"><input type="checkbox" name="console" id="consola7" value="7" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "XBox"){ %> checked <% } })}%>>XBOX</label>
+                    <label for="consola2"><input type="checkbox" name="console" id="consola2" value="2" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 1"){ %> checked <% } })}%> >Playstation 1</label>
+                    <label for="consola3"><input type="checkbox" name="console" id="consola3" value="3" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 2"){ %> checked <% } })}%>>Playstation 2</label>
+                    <label for="consola4"><input type="checkbox" name="console" id="consola4" value="4" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 3"){ %> checked <% } })}%>>Playstation 3</label>
+                    <label for="consola5"><input type="checkbox" name="console" id="consola5" value="5" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 4"){ %> checked <% } })}%>>Playstation 4</label>
+                    <label for="consola6"><input type="checkbox" name="console" id="consola6" value="6"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 5"){ %> checked <% } })}%>>Playstation 5</label>
+                    <label for="consola7"><input type="checkbox" name="console" id="consola7" value="7" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "XBOX"){ %> checked <% } })}%>>XBOX</label>
                     <label for="consola8"><input type="checkbox" name="console" id="consola8" value="8"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "Nintendo"){ %> checked <% } })}%> >Nintendo</label>
                     <% if (locals.errors && errors.console){   %> 
                         <span class="errorCreate">* <%= errors.console.msg%></span> <% } %>
@@ -119,8 +119,8 @@
         
                     <label class="label-subtitle" for="precio">Precio</label>
                     <input class="input-productCreate" type="number" name="price" id="precio" value="<%= old.price %>" >
-                    <% if (locals.errors && errors.multiplayer){   %> 
-                        <span class="errorCreate">* <%= errors.multiplayer.msg%></span> <% } %>
+                    <% if (locals.errors && errors.price){   %> 
+                        <span class="errorCreate">* <%= errors.price.msg%></span> <% } %>
                     <label class="label-subtitle" for="descount">Descuento</label>
                     <input class="input-productCreate" type="number" name="descount" id="descount" value="<%= (locals.old && old.descount) ? old.descount : "0" %>">
                     <% if (locals.errors && errors.descount){   %> 

@@ -86,11 +86,6 @@ module.exports = (sequelize, dataTypes) => {
             as:'stars',
             foreignKey: 'productId'
         })
-        Products.hasOne( models.Gender, {
-            as:'genderproduct', // este borro?
-            foreignKey: 'productId'
-        })
-
          Products.belongsTo(models.Gender, { // 
             as: 'gender',
             foreignKey: 'genderId'

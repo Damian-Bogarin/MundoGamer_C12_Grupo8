@@ -15,23 +15,26 @@ let controller = {
 
     processLogin: (req, res) => {
         let errors = validationResult(req);
-        
+        //res.send(req.body)
         if (errors.isEmpty()) { 
             Users.findOne({
                 where: {
                     email: req.body.email
-                }
+                },
+                include: [{association: 'rol'}]
             })     
             .then(user => {
-                req.session.user = { 
+                //res.send(user)
+                 req.session.user = { 
                     id: user.id,
                     name: user.name,
                     email: user.email,
-                    rol: user.rol, /* --------- */
-                    avatar: user.avatar
-                }
+                    rol: user.rol.nameRol, /* --------- */
+                   avatar: user.avatar
+                } 
             })
-            //Si la persona marcó el "recordarme" (cookie)
+            .then((result)=>{
+                 //Si la persona marcó el "recordarme" (cookie)
            if(req.body.remember){ //Si existe, es decir si marcó el recordar es cuando se crea la cookie
                 const timeMiliseconds = 60000 //1min -> buena práctica, asignarlo a una variable
                 res.cookie("mundoGamer", req.session.user, { //Si es asi tendra como respuesta una cookie, que tendra 3 parámetros
@@ -42,7 +45,10 @@ let controller = {
             }
             
             res.locals.user = req.session.user;
+            //res.send(res.locals.user)
             res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
+            })
+           
         }else{
             res.render('users/login', {
                 errors: errors.mapped(), //Envia a la vista los errores como un objeto
@@ -58,21 +64,21 @@ let controller = {
     },
 
     processRegister: (req, res) => {
-        let errors = validationResult(req);
+        const errors = validationResult(req);
         
         if (errors.isEmpty()) { 
 
-            let { name, lastName, email, pass1 } = req.body 
+            const { name, lastName, email, pass1 } = req.body 
             Users.create({
                 name,
                 lastName, /* last_name */ 
                 email, 
                 pass: bcrypt.hashSync(pass1, 12), //hashSync recibe dos parametros, pass y la sal
-                rol: "ROL_USER", 
-                address, /* "", y los siguientes dos */
-                city,
-                tel,
-                age,
+                rol_id: 2, 
+                //address, /* "", y los siguientes dos */  //ESTOS DATOS DEBERIAN LLENARSE EN EL EDITAR PROFILE QUE TENIA GRETA, pero que no paso :C
+                //city,
+                //tel,
+                //age,
                 avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
             })
             .then(() => {

@@ -121,7 +121,7 @@
         
                     <label class="label-subtitle" for="precio">Precio</label>
                     <input class="input-productCreate" type="number" name="price" id="precio" placeholder="0" value="<%= (locals.old && old.price) ? old.price : "0" %>">
-                    <% if (locals.errors && errors.multiplayer){   %> 
+                    <% if (locals.errors && errors.price){   %> 
                         <span class="errorCreate">* <%= errors.price.msg%></span> <% } %>
 
                     <label class="label-subtitle" for="descount">Descuento</label>
