@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %>
+
+    <body class="body-profile">
+
+        <form class="form-profile" action="/users/myProfile" method="POST">
+
+            <img class="fondo-header" src="/img/background/myProfileHeader.png" alt="">
+
+            <div class="avatar"></div>
+
+            <div class="file-box">
+                <label for="avatar">Cambiar mi foto</label>
+                <input type="file" name="avatar" accept=".jpg" id="archivo" multiple>
+            </div>
+            <!-- <i class="fas fa-pencil-alt"></i> -->
+
+            <h2 class="titleProfile">Mi perfil</h2>
+
+            <div class="data">
+
+                <div class="profileContainer">
+                    <input type="text" placeholder="Nombre">
+                </div>
+
+                <div class="profileContainer">
+                    <input type="text" placeholder="Apellido">
+                </div>
+
+                <div class="profileContainer">
+                    <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                </div>
+
+            </div>
+
+            <div class="nex-data">
+
+                <div class="profileContainer">
+                    <input type="number" placeholder="Edad">
+                </div>
+
+                <div class="profileContainer">
+                    <input type="text" placeholder="Domicilio">
+                </div>
+
+                <div class="profileContainer">
+                    <select name="provincia" class="input-select">
+                        <option value="" hidden selected>Elija una provincia</option>
+                        <option value="buenos aires">Buenos Aires</option>
+                        <option value="chaco">Chaco</option>
+                        <option value="cordoba">Córdoba</option>
+                        <option value="misiones">Misiones</option>
+                        <option value="chubut">Chubut</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </form>
+
+    </body>
+
+</html>

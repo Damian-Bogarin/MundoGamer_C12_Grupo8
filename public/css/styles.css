@@ -22,7 +22,7 @@
 
 /* Users */
 @import url('forms.css'); /* (forms.css) -> styles for login.ejs and register.ejs */
-/* @import url('myProfile.css'); */
+@import url('myProfile.css'); 
 @import url('productCart.css');
 
 
