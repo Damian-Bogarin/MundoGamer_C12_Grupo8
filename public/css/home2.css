@@ -1,0 +1,466 @@
+*{
+    font-family: 'Quicksand' ;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('./img/Fondo.png') ;
+}
+#homeLink{
+    text-decoration: none;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    color: black;
+    
+}
+
+
+
+
+/*-------------
+BANNER
+------------------*/
+
+
+/* ------------------
+SECTION CONTAINER
+----------------------*/
+
+.section-containers{
+
+    display: flex;
+    border-color: black;
+    border: 1px solid;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+
+
+
+
+/* 
+-+-----------------------------
+CONTAINER 
+--------------------------------*/
+.container{
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    /* background-color: transparent; */
+     transition: all 1500ms; 
+     width: 90%; 
+    margin:10% ;   
+    box-shadow: 10px 5px 5px rgb(71, 69, 69);
+}
+
+ .container::before{
+    
+        content: "";
+        position: absolute;
+        left: 0;
+        top:-50%;
+        background-color: #ffffff;
+        z-index: 1;
+       left: -35%;
+       right: 0;
+       width: 10px;
+       height: 400px;
+       transition: all 1750ms ease;
+        transform: rotate(45deg); 
+       box-shadow: 0 0 55px #faffff, 0 0 55px #cdebe9, 0 0 55px #dbfffd;
+      } 
+
+
+      .container:hover::before{
+        left: 140%;
+        width: 85px;
+      }
+
+.container:hover{
+    transform: scale(1.10);
+    box-shadow: 10px 5px 25px rgb(71, 69, 69); ;
+} 
+
+
+
+
+/*--------------------
+ARTICLE HEADER
+------------------*/
+
+
+.article-header{
+/* background-image: radial-gradient(circle at 29.44% 57.48%, #deffa8 0, #e6ff92 8.33%, #edff7b 16.67%, #f3f664 25%, #f8e54a 33.33%, #fcd32e 41.67%, #ffbf00 50%, #ffa900 58.33%, #ff9400 66.67%, #ff7d00 75%, #ff6400 83.33%, #ff4600 91.67%, #ff161c 100%); */  
+background: rgb(241,113,78);
+background: linear-gradient(90deg, rgba(241,113,78,1) 0%, rgba(225,241,78,1) 7%, rgba(221,233,106,1) 16%, rgba(255,255,255,1) 20%, rgba(214,214,105,1) 26%, rgba(255,255,255,1) 30%, rgba(232,228,66,1) 36%, rgba(247,98,34,1) 52%, rgba(223,188,105,1) 68%, rgba(240,238,69,1) 84%, rgba(251,251,251,1) 88%, rgba(228,235,150,1) 92%, rgba(240,119,11,1) 99%);
+height: 30%;
+border-radius: 10px 10px 0px 0px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: flex-end;
+
+}
+.article-header div{
+    background-color: white;
+    height: 80%;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: help;
+}
+
+
+
+
+#starpetit{
+    transform-origin:center ;
+    transition: all 2000ms;
+}
+.article-header div:hover #starpetit{
+    transform: rotate(360deg);
+    
+}
+#number5{
+    transform-origin: center ;
+  
+    transition: all 2500ms;
+}
+
+.article-header div:hover #number5{
+    transform: scale(1.1);
+    color: rgba(247, 145, 72, 1)
+}
+.article-header div:hover #humo,.article-header div:hover #humo_3{
+    animation: humito 3000ms;
+    animation-iteration-count: 4;
+}
+.article-header div:hover #humo_2{
+animation: humito2 3000ms ;
+animation-iteration-count: 4;
+}
+
+@keyframes humito {
+    33%{
+        transform: scaleY(1.15);
+    }
+    66%{
+        transform: scaleY(0.85);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
+@keyframes humito2 {
+    33%{
+      transform: scaleY(0.85)  ;
+    }
+    66%{
+        transform: scaleY(1.15);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
+
+.article-header div:hover #MoneyT{
+    
+    transition: all 2500ms;
+    animation: MoneyTop 2500ms;
+}
+.article-header div:hover #MoneyM{
+    
+    animation: Moneymedio 2500ms;
+    transition: all 2500ms;
+}
+.article-header div:hover #MoneyB{
+    transition: all 2500ms;
+    animation: MoneyBottom 2500ms;
+}
+.article-header div:hover #Chanchito{
+    transition: all 2500ms;
+    animation: Chancho 2500ms;
+}
+
+@keyframes Chancho{
+    10%{
+        transform: scaleX( 1.1);
+      
+    }
+    20%{
+        transform: scaleX( 0.9);
+        
+    }
+    
+    30%{
+        transform: scaleX( 1.1);
+        
+    }
+    40%{
+        transform: scaleX( 0.9);
+        
+    }
+    50%{
+        transform: scaleX( 1.1);
+        
+    }
+    60%{
+        transform: scaleX( 0.9);
+        
+    }
+    70%{
+        transform: scaleX( 1.1);
+        
+    }
+    80%{
+        transform: scaleX(0.9);
+        
+    }
+    90%{
+        transform: scaleX( 1.1)
+    }
+   
+    
+}
+@keyframes MoneyTop{
+    30%{
+        opacity: 0;
+        transform: translate(30%,45%);
+      
+
+    }
+    31%{
+        transform: translate(0%);
+        opacity: 1;
+    }
+    60%{
+        opacity: 0;
+        transform: translate(30%,45%);
+    }
+    61%{
+        transform: translate(0%);
+        opacity: 1;
+    }
+    90%{transform: translate(30%,45%);
+        opacity: 0;
+        
+    }
+    91%{
+        opacity: 1;
+        transform: translate(0%);
+    }
+    
+    
+    
+}
+
+@keyframes Moneymedio{
+    15%{
+        opacity: 0;
+        transform: translateY(25%);
+    }
+    16%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    45%{
+        opacity: 0;
+        transform: translateY(25%);
+    }
+    46%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    75%{
+        opacity: 0;
+        transform: translateY(25%);
+    }
+    91%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    
+    
+}
+@keyframes MoneyBottom{
+    30%{
+        opacity: 0;
+        transform: translate(-30%,45%);
+      
+
+    }
+    31%{
+        transform: translate(0%);
+        opacity: 1;
+    }
+    60%{
+        opacity: 0;
+        transform: translate(-30%,45%);
+    }
+    61%{
+        transform: translate(0%);
+        opacity: 1;
+    }
+    90%{transform: translate(-30%,45%);
+        opacity: 0;
+        
+    }
+    91%{
+        opacity: 1;
+        transform: translate(0%);
+    }
+    
+    
+    
+}
+
+.article-header div:hover #estrellas1{
+     animation: stela 3000ms ; 
+     animation-delay: 0.7s;
+     animation-iteration-count: infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+        fill-opacity: 0;  
+      
+   
+}
+
+.article-header div:hover #estrellas2{
+    animation: stela 3000ms ; 
+    animation-delay: 1.3s;
+    animation-iteration-count: infinite;
+       transform-box: fill-box;
+       transform-origin: center;
+       fill-opacity: 0;  
+     
+  
+}
+
+.article-header div:hover #estrellas3{
+    animation: stela 3000ms ; 
+    animation-delay: 1.5s;
+    animation-iteration-count: infinite;
+       transform-box: fill-box;
+       transform-origin: center;
+       fill-opacity: 0;  
+     
+  
+}
+.article-header div:hover #estrellas4{
+    animation: stela 3000ms ; 
+    animation-delay: 2.1s;
+    animation-iteration-count: infinite;
+       transform-box: fill-box;
+       transform-origin: center;
+       fill-opacity: 0;  
+     
+  
+}
+.article-header div:hover #estrellas5{
+    animation: stela 3000ms ; 
+    animation-delay: 2.5s;
+    animation-iteration-count: infinite;
+       transform-box: fill-box;
+       transform-origin: center;
+       fill-opacity: 0;  
+     
+  
+}
+ @keyframes stela {
+    50%{
+        transform: rotate(360deg) scale(3); 
+        fill-opacity: 1;
+
+    }
+    100%{
+        transform: rotate(-360deg) scale(0.1); 
+    }
+} 
+
+
+/* 
+-------------------------
+ ARTICLE CONTAINER 
+-------------------------- */
+
+
+ 
+.article-container-new{
+    height:60%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 20% 60% 20%;
+
+    
+}
+.img-container-new {
+grid-column: 1/2;
+grid-row: 1/4;
+
+}
+
+.img-container-new img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 10%;
+    border-radius: 15px;
+    /* border-color: ;  esto es un error porque esta vacio*/ 
+}
+.product-name{
+    
+    font-size: 15px;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self:center ;
+}
+.product-description{
+    background-color: aqua;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 10px;
+    height: 100%;
+}
+.product-value{
+    
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: flex;
+    justify-content: flex-end;
+   
+
+    
+}
+
+.product-price{
+    color: rgb(69, 223, 102);
+    font-weight: bold;
+   
+    margin:0px 0.5rem ;
+}
+.descount{
+    color: rgb(226, 12, 12);
+    font-size: 10px;
+}
+/* --------------------
+ARTICLE FOOTER
+*/
+.article-footer{
+    height: 10%;
+    background-image: radial-gradient(circle at 29.44% 57.48%, #deffa8 0, #e6ff92 8.33%, #edff7b 16.67%, #f3f664 25%, #f8e54a 33.33%, #fcd32e 41.67%, #ffbf00 50%, #ffa900 58.33%, #ff9400 66.67%, #ff7d00 75%, #ff6400 83.33%, #ff4600 91.67%, #ff161c 100%); 
+    border-radius: 0px 0px 10px 10px;
+    
+}

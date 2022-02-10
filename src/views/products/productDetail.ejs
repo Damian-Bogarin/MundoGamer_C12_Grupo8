@@ -10,7 +10,7 @@
     <section class="producto-container">
         <div ><h3 id="name-producto"><%= producto.name %></h3></div>
         <div class="producto-imagenes">
-            <div class="img1">  <img src="/img/<%= producto.photo[0] %>" alt="" >  </div>
+            <div class="img1">  <img src="/img/products/<%= producto.photo %>" alt="" >  </div>
             <div class="img2"></div>
             <div class="img3"></div>
             <div class="img3"></div>
@@ -35,7 +35,7 @@
     
                                     <h4 id="oferta"><%= producto.descount %> %off</h4>
                                     <% } %>
-                    <h3 id="precio"><%= producto.price %>$ </h3>
+                    <h3 id="precio"><%= producto.priceEnd %>$ </h3>
 
 
                 </div>
