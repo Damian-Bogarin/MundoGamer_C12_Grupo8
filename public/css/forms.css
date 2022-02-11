@@ -74,7 +74,7 @@
 
 .formulario .file-avatar .label-avatar {
     cursor: pointer;
-    border: solid 1px var(--ligth_violet);
+    border: solid 2px var(--ligth_violet);
     border-radius: 4px;
     padding: 4px;
 }
