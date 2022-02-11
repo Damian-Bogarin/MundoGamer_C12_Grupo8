@@ -1,6 +1,7 @@
 //const { products, writeProductsJSON } = require("../data/dataBase");
 let { validationResult } = require('express-validator')
-
+//const fs = require('fs').promises
+const fs = require('fs')
 const db = require('../database/models');
 // const LanguageProduct = require('../database/models/LanguageProduct');
 
@@ -130,21 +131,25 @@ const controller = {
             let gendertrue = +gender;
             let clasificationtrue = +clasification
             let integratedShop = +integratedShopping
+            if(req.file){
+                Products.update({                 
+                    photo: req.file.filename 
+                },
+                {
+                    where: {id: req.params.id}
+                })
+            }
             Products.update({
                 name,
                 description,
-                
                 conexion : conexiontrue, // Verificar si da un 0 o 1
                 integratedShop: integratedShop,
                 price,
                 descount,
                 priceEnd: priceEndtrue,
-                sold: 0,
                 stock,
                 genderId: gendertrue,
                 classificationId: clasificationtrue,
-                photo: req.file ? req.file.filename : 'default-image.png',
-
 
             },
             {
@@ -258,9 +263,12 @@ const controller = {
 
     delete: (req,res) =>{
 
-        Products.destroy({
+       
+        (Products.destroy({
             where: {id: req.params.id}
-        })
+        }))
+        
+        
         
         CompatibilityProduct.destroy({where: {
                 productId: req.params.id
