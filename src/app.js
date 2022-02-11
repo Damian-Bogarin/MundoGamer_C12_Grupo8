@@ -41,7 +41,7 @@ let adminRouter = require('./routers/adminRouter');
 app.use('/', rutasHome);  /* home */
 
 /* USERS ROUTER Y CONTROLLER */
-app.use('/users', usersRouter);  /* login, register, productCart */
+app.use('/users', usersRouter);  /* login, register, myProfile, productCart */
 
 /* PRODUCTS ROUTER Y CONTROLLER */
 app.use('/products', productsRouter);  /* categories, productDetail */

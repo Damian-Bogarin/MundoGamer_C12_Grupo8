@@ -3,62 +3,78 @@
 
 <%- include('../partials/head.ejs') %>
 
-    <body class="body-profile">
+    <body>
 
-        <form class="form-profile" action="/users/myProfile" method="POST">
+        <main class="myProfile">
 
-            <img class="fondo-header" src="/img/background/myProfileHeader.png" alt="">
+            <header class="headerMyProfile">
 
-            <div class="avatar"></div>
+                <img class="fondo-header" src="/img/background/myProfileHeader.png" alt="imgMyProfile">
 
-            <div class="file-box">
-                <label for="avatar">Cambiar mi foto</label>
-                <input type="file" name="avatar" accept=".jpg" id="archivo" multiple>
-            </div>
-            <!-- <i class="fas fa-pencil-alt"></i> -->
+                <div class="avatar"></div>
 
-            <h2 class="titleProfile">Mi perfil</h2>
+            </header>
 
-            <div class="data">
+            <form class="form-profile" action="/users/myProfile" method="POST">
 
-                <div class="profileContainer">
-                    <input type="text" placeholder="Nombre">
+                <div class="file-box">
+                    <!-- <label for="avatar">Cambiar mi foto</label> -->
+                    <!--  <input type="file" name="avatar" accept=".jpg" id="archivo" multiple> -->
+                </div>
+                <!-- <i class="fas fa-pencil-alt"></i> -->
+
+                <h2 class="titleProfile">Mi perfil</h2>
+
+                <div class="container-data">
+
+                    <div class="data">
+
+                        <div class="profileContainer">
+                            <label for="name">Nombre</label><br>
+                            <input class="input-style" type="text" >
+                        </div>
+
+                        <div class="profileContainer">
+                            <label for="lastName">Apellido</label><br>
+                            <input class="input-style" type="text">
+                        </div>
+
+                        <div class="profileContainer">
+                            <label for="address">Dirección</label><br>
+                            <input class="input-style" type="text" >
+                        </div>
+
+                    </div>
+
+                    <div class="nex-data">
+
+                        <div class="profileContainer">
+                            <label for="city">Ciudad</label><br>
+                            <input class="input-style" type="text">
+                        </div>
+
+                        <div class="profileContainer">
+                            <label for="tel">Teléfono</label><br>
+                            <input class="input-style" type="number">
+                        </div>
+
+                        <div class="profileContainer">
+                            <label for="age">Edad</label><br>
+                            <input class="input-style" type="number">
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="profileContainer">
-                    <input type="text" placeholder="Apellido">
+                <!-- buttom -->
+                <div class="buttom-myProfile">
+                    <button type="submit">Editar</button>
                 </div>
 
-                <div class="profileContainer">
-                    <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                </div>
+            </form>
 
-            </div>
-
-            <div class="nex-data">
-
-                <div class="profileContainer">
-                    <input type="number" placeholder="Edad">
-                </div>
-
-                <div class="profileContainer">
-                    <input type="text" placeholder="Domicilio">
-                </div>
-
-                <div class="profileContainer">
-                    <select name="provincia" class="input-select">
-                        <option value="" hidden selected>Elija una provincia</option>
-                        <option value="buenos aires">Buenos Aires</option>
-                        <option value="chaco">Chaco</option>
-                        <option value="cordoba">Córdoba</option>
-                        <option value="misiones">Misiones</option>
-                        <option value="chubut">Chubut</option>
-                    </select>
-                </div>
-
-            </div>
-
-        </form>
+        </main>
 
     </body>
 
