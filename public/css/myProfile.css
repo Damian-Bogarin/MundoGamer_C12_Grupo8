@@ -32,6 +32,19 @@ main.myProfile {
     /* z-index: 100; */
 }
 
+/* buttom-pencil */
+.myProfile .headerMyProfile .fileButtom {
+
+}
+
+.myProfile .headerMyProfile .fileButtom input {
+
+}
+
+.myProfile .headerMyProfile .fileButtom i {
+    
+}
+
 
 /* form */
 form.form-profile {
@@ -64,7 +77,7 @@ form.form-profile {
     margin: 10px 0;
 } 
 
-.profileContainer .input-style input:focus {
+.profileContainer input:focus {
     outline: none;
 }  
 
@@ -128,19 +141,36 @@ form.form-profile {
 
 @media(min-width: 1024px) {
 
+    .myProfile .headerMyProfile {
+        height: 210px;
+    }
+
+    .myProfile .headerMyProfile img.fondo-header {
+        height: 210px;
+    } 
+
+    .myProfile .headerMyProfile .avatar {
+        width: 155px;
+        height: 155px;
+    }
+
     form.form-profile {
-        width: 80%; /*ancho del contenedor gris*/
+        max-width: 700px; 
         height: 400px; 
     }
 
-    .container-data  {
+    .container-data {  /*------------------- */
         display: flex;
-       /*  justify-content:space-around;  */
+        justify-content:space-around;
     }
 
     .data, .next-data {
-        flex-direction: row;
-        margin: 0 25px;
+       /*  flex-direction: row; */
+        margin: 0 10px; /* 25px */
+    }
+
+    .container-data  .profileContainer { /* ------- */
+        width: 280px;
     }
 
     
