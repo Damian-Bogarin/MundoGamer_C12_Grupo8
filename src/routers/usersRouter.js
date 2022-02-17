@@ -7,8 +7,9 @@ let uploadFile = require('../middlewares/uploadAvatar');
 let userLogMiddlewares = require('../middlewares/userLogMiddlewares')
 let guestMiddlewares = require('../middlewares/guestMiddlewares')
 
+
 /* login GET y POST */
-router.get('/login',guestMiddlewares, controller.login);
+router.get('/login', guestMiddlewares, controller.login);
 router.post('/login', loginValidator, controller.processLogin);
 
 /* register GET y POST */

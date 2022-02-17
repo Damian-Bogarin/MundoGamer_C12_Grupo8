@@ -1,6 +1,7 @@
 //const { users, writeUsersJSON } = require('../data/dataBase'); 
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const fetch = require('node-fetch');
 
 const db = require('../database/models');
 const Users = db.User;
