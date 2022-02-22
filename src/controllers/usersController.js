@@ -1,7 +1,7 @@
 //const { users, writeUsersJSON } = require('../data/dataBase'); 
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-const fetch = require('node-fetch');
+
 
 const db = require('../database/models');
 const Users = db.User;
@@ -77,7 +77,7 @@ let controller = {
                 pass: bcrypt.hashSync(pass1, 12), //hashSync recibe dos parametros, pass y la sal
                 rol_id: 2, 
                 //address, /* "", y los siguientes dos */  //ESTOS DATOS DEBERIAN LLENARSE EN EL EDITAR PROFILE QUE TENIA GRETA, pero que no paso :C
-                //city,
+                //province,
                 //tel,
                 //age,
                 avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
@@ -116,6 +116,7 @@ let controller = {
             })
         })
     },
+
     cart: (req, res) => {     
         res.render('users/productCart', {
             session: req.session      
@@ -126,3 +127,26 @@ let controller = {
 
 
 module.exports = controller;
+
+
+/* profile: (req, res) => { 
+
+    Users.findByPk(req.session.user.id, {
+        include: [{association: 'rols'}] 
+    })  -----------Tenia comentado el include--------------
+    .then((user) => {
+        res.render('users/myProfile', {
+            user,
+            session: req.session
+        })
+    })
+}, */
+
+
+/* apiProvince: (req, res) => {
+    fetch('https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre') 
+    .then(response => response.json())
+    .then(province => {
+        res.render('users/myProfile', {province})
+    })
+} */

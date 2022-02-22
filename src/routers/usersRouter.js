@@ -20,8 +20,9 @@ router.post('/register', uploadFile.single('avatar'), registerValidator, control
 router.get('/logout',/* userLogMiddlewares,*/ controller.logout);
 
 /* myProfile GET y POST */
-router.get('/myProfile',/*  userLogMiddlewares */ controller.profile); /* ------------- */
-//router.post('/myProfile', controller.profile); /* multer */
+router.get('/myProfile',/*  userLogMiddlewares */ controller.profile); 
+//router.post('/myProfile', controller.profile);                     /*--------------------------- multer */
+
 
 /* productCart GET y POST */
 router.get('/productCart',userLogMiddlewares, controller.cart);

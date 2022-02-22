@@ -2,7 +2,7 @@
 <html lang="es">
 
 <%- include('../partials/head.ejs') %>
-
+    
     <body>
 
         <main class="myProfile">
@@ -50,8 +50,15 @@
 
                         <!-- API del gobierno que lista las provincias de la República Argentina(select) -->
                         <div class="profileContainer">
-                            <label for="province">Provincia</label><br>
-                            <select name="" id=""></select>
+
+                            <!-- <label for="select-province">Provincia</label><br> -->
+
+                            <select>
+                                <% provinces.forEach(province => { %> 
+                                    <option><%= province.provincias.nombre %></option>
+                                <% }) %> 
+                            </select>
+
                         </div>
 
                         <div class="profileContainer">
@@ -81,6 +88,8 @@
             </form>
 
         </main>
+        <!-- este script es solo para myProfile -->
+        <script src="/js/selectProvince.js" defer></script> 
 
     </body>
 

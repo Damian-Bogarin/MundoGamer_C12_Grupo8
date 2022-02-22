@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             //allowNull: false
         },
-        city: {
+        province: {
             type: dataTypes.STRING(100),
             //allowNull: false
         },
