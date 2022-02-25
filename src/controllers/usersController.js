@@ -78,6 +78,7 @@ let controller = {
                 rol_id: 2, 
                 //address, /* "", y los siguientes dos */  //ESTOS DATOS DEBERIAN LLENARSE EN EL EDITAR PROFILE QUE TENIA GRETA, pero que no paso :C
                 //province,
+                //locality,
                 //tel,
                 //age,
                 avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
@@ -104,7 +105,7 @@ let controller = {
         res.redirect('/')
     },
 
-    profile: (req, res) => { /* ---incluir las otras asociaciones de like, starts y cart ??------ */
+    profile: async (req, res) => { /* ---incluir las otras asociaciones de like, starts y cart ??------ */
 
         Users.findByPk(req.session.user.id/* , {
             include: [{association: 'rols'}] 

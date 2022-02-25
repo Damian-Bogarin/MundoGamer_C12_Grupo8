@@ -1,7 +1,7 @@
 # PROYECTO INTEGRADOR - ***MUNDO GAMER***
 
 ## Grupo 8 - Comisión 12
-![logotipo](public/img/logo.png)
+![logotipo](public/img/background/logo.png)
 ## Integrantes:
  
  **Anubis Burgos** (Dejo de cursar)
@@ -20,7 +20,7 @@
 - 31 años
 - Estudiante de Programación Web Full Stack
 
-**Greta Pereda**
+**Greta Pereda** (Dejo de cursar)
 - 36 años 
 - Estudiante de Programación Web Full Stack
 

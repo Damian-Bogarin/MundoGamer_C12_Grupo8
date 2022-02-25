@@ -53,10 +53,14 @@
 
                             <!-- <label for="select-province">Provincia</label><br> -->
 
-                            <select>
-                                <% provinces.forEach(province => { %> 
-                                    <option><%= province.provincias.nombre %></option>
-                                <% }) %> 
+                            <label for="">Provincia</label><br>
+                            <select id="select-provincias">
+                                <option value="" selected hidden>Seleccione...</option>
+                            </select>
+
+                            <label for="">Localidad</label><br>
+                            <select id="select-localidades">
+                                <option value="" selected hidden>Seleccione...</option>
                             </select>
 
                         </div>
@@ -64,7 +68,7 @@
                         <div class="profileContainer">
                             <label for="tel">Teléfono</label><br>
                             <input class="input-style" type="number">
-                        </div>
+                        </div> 
 
                         <div class="profileContainer">
                             <label for="age">Edad</label><br>
@@ -89,7 +93,7 @@
 
         </main>
         <!-- este script es solo para myProfile -->
-        <script src="/js/selectProvince.js" defer></script> 
+        <script src="/js/myProfile.js" defer></script> 
 
     </body>
 

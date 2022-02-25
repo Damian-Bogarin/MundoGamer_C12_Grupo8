@@ -28,11 +28,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         address: {
             type: dataTypes.STRING(100),
-            //allowNull: false
         },
         province: {
             type: dataTypes.STRING(100),
-            //allowNull: false
+        },
+        locality: {
+            type: dataTypes.STRING(100),
         },
         tel: {
             type: dataTypes.STRING(50)
@@ -42,15 +43,16 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(2),
             //allowNull: false
         },
+        avatar:{
+            type: dataTypes.STRING(100)
+           /*  allowNull: false */
+        },
         rol_id: {
             type: dataTypes.INTEGER(10).UNSIGNED, 
             foreignKey: true,
            /*  allowNull: false */
         },
-        avatar:{
-            type: dataTypes.STRING(100)
-           /*  allowNull: false */
-        }
+       
     }
 
     const config = {
