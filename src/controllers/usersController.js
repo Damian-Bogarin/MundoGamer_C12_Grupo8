@@ -105,7 +105,7 @@ let controller = {
         res.redirect('/')
     },
 
-    profile: (req, res) => { 
+    profile: (req, res) => { /* ---incluir las otras asociaciones de like, starts y cart ??------ */
 
         Users.findByPk(req.session.user.id, {
             include: [{association: 'rol'}] /* ---incluir las otras asociaciones de like, starts y cart ??------ */

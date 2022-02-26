@@ -1,0 +1,177 @@
+/* header and avatar */
+main.myProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myProfile .headerMyProfile {
+    width: 100%;
+    height: 160px; /* 150 headermyprofile y img------------------*/
+    display: flex;
+    justify-content: center;
+}
+
+.myProfile .headerMyProfile img.fondo-header {
+    object-fit: cover; 
+    position: relative;
+    top: 0;
+    height: 160px; /* --- */
+    width: 100%;
+}
+
+.myProfile .headerMyProfile .avatar {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    top: 35px;
+    display: flex;
+    flex-direction: column;
+    /* z-index: 100; */
+}
+
+/* buttom-pencil */
+.myProfile .headerMyProfile .fileButtom {
+
+}
+
+.myProfile .headerMyProfile .fileButtom input {
+
+}
+
+.myProfile .headerMyProfile .fileButtom i {
+    
+}
+
+
+/* form */
+form.form-profile {
+    font-family: var(--font-quicksand);
+    border-radius: 14px;
+    background-color: #ebebeb;
+    margin: 55px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /*ancho del contenedor gris*/
+    height: 600px; 
+}
+
+.form-profile .titleProfile {
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.form-profile .container-data {
+    width: 80%;
+}
+
+.form-profile .profileContainer input {
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px 0;
+} 
+
+.profileContainer input:focus {
+    outline: none;
+}  
+
+.container-data .profileContainer .input-style {
+    border-radius: 8px;
+    width: 100%;
+    height: 25px; 
+    border: none;
+    padding: 0 6px; 
+    font-size: 16px; 
+}
+
+/* buttom */
+.buttom-myProfile {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttom-myProfile button {
+    font-weight: bold; /*grosor de letra*/
+    font-size: 23px;
+    border: none;
+    border-radius: 25px;
+    background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
+    color: rgb(44, 44, 44);
+    cursor: pointer; /*manito*/
+    width: 100px;
+    height: 40px;
+}
+
+
+/* Media queries-tablet */
+
+@media (min-width: 768px) {
+
+    .myProfile .headerMyProfile {
+        height: 180px;
+    }
+    .myProfile .headerMyProfile img.fondo-header {
+        height: 180px;
+    }
+
+    .myProfile .headerMyProfile .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .form-profile  {
+        max-width: 550px; 
+    } 
+ 
+    .buttom-myProfile button {
+       max-width: 180px;
+    }
+
+}
+
+
+/* Media queries-desktop */
+
+@media(min-width: 1024px) {
+
+    .myProfile .headerMyProfile {
+        height: 210px;
+    }
+
+    .myProfile .headerMyProfile img.fondo-header {
+        height: 210px;
+    } 
+
+    .myProfile .headerMyProfile .avatar {
+        width: 155px;
+        height: 155px;
+    }
+
+    form.form-profile {
+        max-width: 700px; 
+        height: 400px; 
+    }
+
+    .container-data {  /*------------------- */
+        display: flex;
+        justify-content:space-around;
+    }
+
+    .data, .next-data {
+       /*  flex-direction: row; */
+        margin: 0 10px; /* 25px */
+    }
+
+    .container-data  .profileContainer { /* ------- */
+        width: 280px;
+    }
+
+    
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+
+        <main class="myProfile">
+
+            <header class="headerMyProfile">
+
+                <img class="fondo-header" src="/img/background/myProfileHeader.png" alt="imgMyProfile">
+
+                <div class="avatar"></div> 
+
+               <!--  <div class="fileButtom">
+                    <input type="file" name="avatar" accept=".jpg" id="archivo" multiple>
+                    <i class="fas fa-pencil-alt"></i> 
+                </div> -->
+                
+
+            </header>
+
+            <form class="form-profile" action="/users/myProfile" method="POST">
+
+                <h2 class="titleProfile">Mi perfil</h2>
+
+                <div class="container-data">
+
+                    <div class="data">
+
+                        <div class="profileContainer">
+                            <label for="name">Nombre</label><br>
+                            <input class="input-style" type="text" >
+                        </div>
+
+                        <div class="profileContainer">
+                            <label for="lastName">Apellido</label><br>
+                            <input class="input-style" type="text">
+                        </div>
+
+                        <div class="profileContainer">
+                            <label for="address">Dirección</label><br>
+                            <input class="input-style" type="text" >
+                        </div>
+
+                    </div>
+
+                    <div class="nex-data">
+
+                        <div class="profileContainer">
+                            <label for="city">Ciudad</label><br>
+                            <input class="input-style" type="text">
+                        </div>
+
+                        <div class="profileContainer">
+                            <label for="tel">Teléfono</label><br>
+                            <input class="input-style" type="number">
+                        </div>
+
+                        <div class="profileContainer">
+                            <label for="age">Edad</label><br>
+                            <input class="input-style" type="number">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- buttom -->
+
+               <!--  <div class="buttom-myProfile">
+                    <button type="submit">Guardar</button>
+                </div> -->
+
+                <div class="buttom-myProfile">
+                    <button type="submit">Editar</button>
+                </div>
+
+            </form>
+
+        </main>
+
+    </body>
+
+</html>

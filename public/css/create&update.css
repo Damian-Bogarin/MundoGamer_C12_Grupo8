@@ -69,20 +69,24 @@
     outline: none;
 }
 
+.main-productCreate .file-productCreate {
+    margin-top: 20px;
+}
+
 .main-productCreate .input-file-create {
     display: none; 
 }
 
 .main-productCreate .label-file-create {
     cursor: pointer;
-    border: solid 1px black;
+    border: solid 2px var(--ligth_violet);
     border-radius: 4px;
     padding: 4px;
 }
 
 .main-productCreate .button-productCreate {
     display: flex; 
-    margin: 12px 0px;
+    margin: 12px 0px; 
 }
 
 .main-productCreate .button-productCreate button{
@@ -93,7 +97,7 @@
     background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, rgba(28, 13, 197, 0.5) 60%);
     color: rgb(44, 44, 44);
     cursor: pointer; 
-    width: 180px;
+    width: 200px; /* 180px */
     height: 40px;
     margin: auto;
     font-family: 'Quicksand', sans-serif;
