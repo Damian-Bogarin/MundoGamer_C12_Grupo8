@@ -28,10 +28,12 @@ let controller = {
                  req.session.user = { 
                     id: user.id,
                     name: user.name,
+                    lastName: user.lastName,
                     email: user.email,
                     rol: user.rol.nameRol, /* --------- */
                    avatar: user.avatar
                 } 
+                //res.send(req.session.user)
             })
             .then((result)=>{
                  //Si la persona marcó el "recordarme" (cookie)
@@ -106,7 +108,7 @@ let controller = {
     profile: (req, res) => { 
 
         Users.findByPk(req.session.user.id, {
-            include: [{association: 'rols'}] /* ---incluir las otras asociaciones de like, starts y cart ??------ */
+            include: [{association: 'rol'}] /* ---incluir las otras asociaciones de like, starts y cart ??------ */
         })
         .then((user) => {
             res.render('users/myProfile', {
