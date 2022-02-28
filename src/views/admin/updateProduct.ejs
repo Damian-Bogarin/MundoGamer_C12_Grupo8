@@ -18,7 +18,7 @@
                     <input class="input-productCreate" type="text" name="name" id="nombre" value="<%= (locals.old && old.name ? old.name : "")%>">
                    <% if (locals.errors && errors.name){   %> 
                     <span class="errorCreate">* <%= errors.name.msg%></span> <% } %>
-                     
+                    <span class="errorCreate" id="nameError"></span>
                     
                   
                     <label class="label-subtitle">Género</label>
@@ -35,6 +35,7 @@
                 </select>
                     <% if ( locals.errors && errors.gender){ %> 
                     <span class="errorCreate"> * <%= errors.gender.msg %>  </span> <% } %>  
+                    <span class="errorCreate" id="genderError"></span>
                
                     <p class="label-subtitle">Estrellas  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p> 
                     <div class="div-box">
@@ -58,27 +59,32 @@
                     <% if (locals.errors && errors.clasification){   %> 
                         <span class="errorCreate">* <%= errors.clasification.msg%></span> <% } %>
                     <!--CONSOLAS COMPATIBLES: -PC -PLAYSTATION 1 - PLAYSTATION 2 - PLAY 3 -PLAY4 -PLAY 5 -XBOX -NINTENDO *CHECKBOX*-->
-        
+                    <span class="errorCreate" id="clasificationError"></span>
+
+
                     <label class="label-subtitle">Consolas compatibles</label>
-                    <label for="consola"><input type="checkbox" name="console" id="consola" value="1"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PC"){ %> checked <% } })}%> >PC</label>
-                    <label for="consola2"><input type="checkbox" name="console" id="consola2" value="2" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 1"){ %> checked <% } })}%> >Playstation 1</label>
-                    <label for="consola3"><input type="checkbox" name="console" id="consola3" value="3" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 2"){ %> checked <% } })}%>>Playstation 2</label>
-                    <label for="consola4"><input type="checkbox" name="console" id="consola4" value="4" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 3"){ %> checked <% } })}%>>Playstation 3</label>
-                    <label for="consola5"><input type="checkbox" name="console" id="consola5" value="5" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 4"){ %> checked <% } })}%>>Playstation 4</label>
-                    <label for="consola6"><input type="checkbox" name="console" id="consola6" value="6"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 5"){ %> checked <% } })}%>>Playstation 5</label>
-                    <label for="consola7"><input type="checkbox" name="console" id="consola7" value="7" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "XBOX"){ %> checked <% } })}%>>XBOX</label>
-                    <label for="consola8"><input type="checkbox" name="console" id="consola8" value="8"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "Nintendo"){ %> checked <% } })}%> >Nintendo</label>
+                    <label for="consola1"><input type="checkbox" name="console" id="consola1" class="consola" value="1"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PC"){ %> checked <% } })}%> >PC</label>
+                    <label for="consola2"><input type="checkbox" name="console" id="consola2" class="consola" value="2" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 1"){ %> checked <% } })}%> >Playstation 1</label>
+                    <label for="consola3"><input type="checkbox" name="console" id="consola3" class="consola" value="3" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 2"){ %> checked <% } })}%>>Playstation 2</label>
+                    <label for="consola4"><input type="checkbox" name="console" id="consola4" class="consola" value="4" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 3"){ %> checked <% } })}%>>Playstation 3</label>
+                    <label for="consola5"><input type="checkbox" name="console" id="consola5" class="consola" value="5" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 4"){ %> checked <% } })}%>>Playstation 4</label>
+                    <label for="consola6"><input type="checkbox" name="console" id="consola6" class="consola" value="6"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "PlayStation 5"){ %> checked <% } })}%>>Playstation 5</label>
+                    <label for="consola7"><input type="checkbox" name="console" id="consola7" class="consola" value="7" <% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "XBOX"){ %> checked <% } })}%>>XBOX</label>
+                    <label for="consola8"><input type="checkbox" name="console" id="consola8" class="consola" value="8"<% if(locals.old && old.compatibility) {old.compatibility.forEach(element => { if (element.nameCompatibility == "Nintendo"){ %> checked <% } })}%> >Nintendo</label>
                     <% if (locals.errors && errors.console){   %> 
                         <span class="errorCreate">* <%= errors.console.msg%></span> <% } %>
-        
+                        <span class="errorCreate" id="consoleError"></span>
+
+
                     <label class="label-subtitle">Idiomas</label>
                     <div class="div-box">
-                    <label for="idioma1"><input type="checkbox" name="language" id="idioma1" value="1" <% if(locals.old && old.language){old.language.forEach(element => { if (element.nameLanguage == "Español"){ %> checked <% } })} %>>Español</label>
-                    <label for="idioma2"><input type="checkbox" name="language" id="idioma2" value="2" <% if(locals.old && old.language){old.language.forEach(element => { if (element.nameLanguage == "Ingles"){ %> checked <% } })} %>>Inglés</label> 
-                    <label for="idioma3"><input type="checkbox" name="language" id="idioma3" value="3" <% if(locals.old && old.language){old.language.forEach(element => { if (element.nameLanguage == "Chino"){ %> checked <% } })} %>>Chino</label>
+                    <label for="idioma1"><input type="checkbox" name="language" id="idioma1" class="language" value="1" <% if(locals.old && old.language){old.language.forEach(element => { if (element.nameLanguage == "Español"){ %> checked <% } })} %>>Español</label>
+                    <label for="idioma2"><input type="checkbox" name="language" id="idioma2" class="language" value="2" <% if(locals.old && old.language){old.language.forEach(element => { if (element.nameLanguage == "Ingles"){ %> checked <% } })} %>>Inglés</label> 
+                    <label for="idioma3"><input type="checkbox" name="language" id="idioma3" class="language" value="3" <% if(locals.old && old.language){old.language.forEach(element => { if (element.nameLanguage == "Chino"){ %> checked <% } })} %>>Chino</label>
                     </div>
                     <% if (locals.errors && errors.language){   %> 
                         <span class="errorCreate">* <%= errors.language.msg%></span> <% } %>
+                        <span  class="errorCreate" id="languageError" ></span>
 
                     <label class="label-subtitle">Subtitulos</label>
                     <div class="div-box">                                                                    
@@ -104,47 +110,62 @@
                         <span class="errorCreate">* <%= errors.integratedShopping.msg%></span> <% } %>
                     <label class="label-subtitle">Multijugador</label>
                     <div class="div-box">
-                    <label for="multijugador1"><input type="checkbox" name="multiplayer" id="multijugador1" value="1"  <% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "1 Player"){ %> checked <% } })} %>>1</label>
-                    <label for="multijugador2"><input type="checkbox" name="multiplayer" id="multijugador2" value="2"<% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "2 Player"){ %> checked <% } })} %>>2</label>
-                    <label for="multijugador3"><input type="checkbox" name="multiplayer" id="multijugador3" value="3"<% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "3 Player"){ %> checked <% } })} %>>3</label>
-                    <label for="multijugador4"><input type="checkbox" name="multiplayer" id="multijugador4" value="4"<% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "4 Player"){ %> checked <% } })} %>>4</label>
-                    <label for="multijugador5"><input type="checkbox" name="multiplayer" id="multijugador5" value="5"<% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "5 o Mas"){ %> checked <% } })} %>>5 o Más</label>
+                    <label for="multijugador1"><input type="checkbox" name="multiplayer" id="multijugador1" class="multi" value="1"  <% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "1 Player"){ %> checked <% } })} %>>1</label>
+                    <label for="multijugador2"><input type="checkbox" name="multiplayer" id="multijugador2" class="multi" value="2"<% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "2 Player"){ %> checked <% } })} %>>2</label>
+                    <label for="multijugador3"><input type="checkbox" name="multiplayer" id="multijugador3" class="multi" value="3"<% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "3 Player"){ %> checked <% } })} %>>3</label>
+                    <label for="multijugador4"><input type="checkbox" name="multiplayer" id="multijugador4" class="multi" value="4"<% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "4 Player"){ %> checked <% } })} %>>4</label>
+                    <label for="multijugador5"><input type="checkbox" name="multiplayer" id="multijugador5" class="multi" value="5"<% if(locals.old && old.multiplayer){old.multiplayer.forEach(element => { if (element.type == "5 o Mas"){ %> checked <% } })} %>>5 o Más</label>
                     </div><br>
                     <% if (locals.errors && errors.multiplayer){   %> 
                         <span class="errorCreate">* <%= errors.multiplayer.msg%></span> <% } %>
+                        <span class="errorCreate" id="multiError" ></span>
+
+
                     <label class="label-subtitle" for="message">Descripción del producto</label>
                     <textarea name="description" id="message" cols="30" rows="10" placeholder="Escribe la descripción aquí.." ><%= (locals.old && old.description) ? old.description : "" %></textarea>
                     <% if (locals.errors && errors.description){   %> 
                         <span class="errorCreate">* <%= errors.description.msg%></span> <% } %>
+                        <span class="errorCreate" id="descriptionError" ></span>
         
                     <label class="label-subtitle" for="precio">Precio</label>
                     <input class="input-productCreate" type="number" name="price" id="precio" value="<%= old.price %>" >
                     <% if (locals.errors && errors.price){   %> 
                         <span class="errorCreate">* <%= errors.price.msg%></span> <% } %>
+                        <span class="errorCreate" id="priceError" ></span>
+
                     <label class="label-subtitle" for="descount">Descuento</label>
                     <input class="input-productCreate" type="number" name="descount" id="descount" value="<%= (locals.old && old.descount) ? old.descount : "0" %>">
                     <% if (locals.errors && errors.descount){   %> 
                         <span class="errorCreate">* <%= errors.descount.msg%></span> <% } %>
+                        <span class="errorCreate" id="descountError" ></span>
         
                     <label class="label-subtitle" for="almacenamiento">Almacenamiento</label>
                     <input class="input-productCreate" type="number" name="stock" id="almacenamiento" value="<%= old.stock %>">
                     <% if (locals.errors && errors.stock){   %> 
                         <span class="errorCreate">* <%= errors.stock.msg%></span> <% } %>
+                        <span class="errorCreate" id="stockError" ></span>
         
+                        
                     <div class="file-productCreate">
                     <label class="label-file-create" for="photo">Ingrese una foto</label>
+                    <div class="photoProductCreate" id="img-preview">
+                        <% if(locals.old){ %>
+                        <img src="/img/products/<%=old.photo%>" alt="">
+
+                        <% }  %> 
+                        </div>
                     <input class="input-file-create" type="file" name="photo" id="photo"><br>
                     </div><br>
 
                     <div class="button-productCreate">
-                        <button type="submit">Guardar Cambios</button>
+                        <button type="submit">Guardar</button>
                     </div>
         
                 </form>
             </main>
 
             <%- include('../partials/scriptAdmin.ejs') %> 
-
+            <script src="/js/productUpdate.js"></script>
     </body>
 
 </html>
