@@ -48,7 +48,13 @@ let controller = {
             
             res.locals.user = req.session.user;
             //res.send(res.locals.user)
-            res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
+            if(req.session.user.rol = 'admin'){
+                res.redirect('/admin')
+            }
+            else{
+                 res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
+            }
+           
             })
            
         }else{
