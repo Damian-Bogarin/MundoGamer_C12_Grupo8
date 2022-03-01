@@ -40,14 +40,16 @@
      margin: 0 15px;
 }
 
-.main-footer .derechos {
-    margin: 0px 0px;
+.main-footer .derechos { 
+    margin: 0px 0px; 
     text-align: start;
 }
 
-.main-footer .derechos i, p {
+.main-footer .derechos .copy { 
     display: inline;
     font-size: 12px;
+    margin-left: 0;
+    margin-bottom: 0;
 }
 
 
