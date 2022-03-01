@@ -29,10 +29,12 @@ let controller = {
                  req.session.user = { 
                     id: user.id,
                     name: user.name,
+                    lastName: user.lastName,
                     email: user.email,
                     rol: user.rol.nameRol, /* --------- */
                    avatar: user.avatar
                 } 
+                //res.send(req.session.user)
             })
             .then((result)=>{
                  //Si la persona marcó el "recordarme" (cookie)
@@ -47,7 +49,13 @@ let controller = {
             
             res.locals.user = req.session.user;
             //res.send(res.locals.user)
-            res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
+            if(req.session.user.rol = 'admin'){
+                res.redirect('/admin')
+            }
+            else{
+                 res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
+            }
+           
             })
            
         }else{
@@ -107,9 +115,9 @@ let controller = {
 
     profile: async (req, res) => { /* ---incluir las otras asociaciones de like, starts y cart ??------ */
 
-        Users.findByPk(req.session.user.id/* , {
-            include: [{association: 'rols'}] 
-        } */)
+        Users.findByPk(req.session.user.id, {
+            include: [{association: 'rol'}] /* ---incluir las otras asociaciones de like, starts y cart ??------ */
+        })
         .then((user) => {
             res.render('users/myProfile', {
                 user,

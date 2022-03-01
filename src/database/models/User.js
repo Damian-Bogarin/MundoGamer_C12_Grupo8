@@ -80,6 +80,13 @@ module.exports = (sequelize, dataTypes) => {
             as: "rol",
             foreignKey: 'rol_id' 
         }) 
+        User.belongsToMany(models.Gender, {
+            as: 'gender',
+            through: 'gender_user',
+            foreignKey: 'userId',
+            otherKey:'genderId',
+            timestamps:false
+        })
     }
 
     return User;

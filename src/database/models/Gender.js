@@ -27,6 +27,13 @@ module.exports = (sequelize, dataTypes) => {
             as:'gender',
             foreignKey: 'genderId'
         })
+        Genders.belongsToMany(models.User, {
+            as: 'user',
+            through: 'gender_user',
+            foreignKey: 'genderId',
+            otherKey:'userId',
+            timestamps:false
+        })
 
     }
 

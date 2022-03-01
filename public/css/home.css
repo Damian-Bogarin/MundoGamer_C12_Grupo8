@@ -29,15 +29,8 @@ body{
     margin-top: 00.5rem;
 }
 
-.imagen-oferta{
-    width: 100vw;
-    height: 200px;
-    border-radius: 25px;
-    object-fit: cover;
-   height: 200px;
-    
 
-}
+
 #button-left{
     width: 32px;
     height: 32px;
@@ -98,6 +91,7 @@ body{
 .category-home-container{
     display: flex;   
    justify-content: space-between;
+   margin-top: 1.8rem;
    margin-bottom: 1rem;
    width: 100vw;
    padding: 0px 15px 0px;
@@ -259,10 +253,7 @@ color: red;
 
 @media (min-width: 426px){
     
-    .imagen-oferta{
-        padding: 0px 20vw;
-        
-    }
+   
     .guia-carrusel{
     padding-left: 40vw;
     padding-right: 40vw;
@@ -293,6 +284,9 @@ color: red;
 
     .category-home-container{
         display:none;
+    }
+    #oferta{
+        margin-top: 1.9rem;
     }
 
     .titulo-decompra{

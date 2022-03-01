@@ -6,7 +6,7 @@
     flex-direction: column;
     /* text-align: center; */
     width: 100%;
-    background-color: #ebebeb;
+    
 }
 
 .main-productCreate .title-productCreate {
@@ -33,7 +33,12 @@
     border-radius: 8px; 
     font-family: 'Quicksand', sans-serif;
     margin-bottom: 25px;
-    background-color: white;
+    background: rgb(182,221,237);
+    background: -moz-linear-gradient(127deg, rgba(182,221,237,1) 0%, rgba(170,246,238,1) 16%, rgba(240,245,245,1) 48%, rgba(103,217,238,1) 64%, rgba(12,28,237,1) 100%);
+    background: -webkit-linear-gradient(127deg, rgba(182,221,237,1) 0%, rgba(170,246,238,1) 16%, rgba(240,245,245,1) 48%, rgba(103,217,238,1) 64%, rgba(12,28,237,1) 100%);
+    background: linear-gradient(127deg, rgba(182,221,237,1) 0%, rgba(170,246,238,1) 16%, rgba(240,245,245,1) 48%, rgba(103,217,238,1) 64%, rgba(12,28,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6dded",endColorstr="#0c1ced",GradientType=1); 
+    border: 1px solid black;
 }
 
 .main-productCreate .input-productCreate {
@@ -53,9 +58,12 @@
     font-size: 12px;
     font-weight: bolder;
     margin: 1px;
-    
+    margin-bottom: 10px;
     
 }
+
+
+
 
 .main-productCreate .div-box input{
     margin: 0 4px;
@@ -82,6 +90,8 @@
     border: solid 2px var(--ligth_violet);
     border-radius: 4px;
     padding: 4px;
+    background-color: #F6A1F0;
+    
 }
 
 .main-productCreate .button-productCreate {
@@ -94,15 +104,38 @@
     font-size: 23px;
     border: none;
     border-radius: 25px;
-    background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, rgba(28, 13, 197, 0.5) 60%);
-    color: rgb(44, 44, 44);
+ 
+    background: rgb(63,94,251);
+    background: -moz-linear-gradient(146deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: -webkit-linear-gradient(146deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: linear-gradient(146deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1); 
+    color: rgb(8, 3, 3);
     cursor: pointer; 
     width: 200px; /* 180px */
     height: 40px;
     margin: auto;
     font-family: 'Quicksand', sans-serif;
+    transition: 1.10s;
 }
 
+.button-productCreate:hover button{
+    transform: scale(1.1);
+    background: rgb(160,213,217);
+    background: -moz-linear-gradient(127deg, rgba(160,213,217,1) 0%, rgba(170,246,171,1) 16%, rgba(240,245,245,1) 48%, rgba(108,238,103,1) 64%, rgba(62,237,12,1) 100%);
+    background: -webkit-linear-gradient(127deg, rgba(160,213,217,1) 0%, rgba(170,246,171,1) 16%, rgba(240,245,245,1) 48%, rgba(108,238,103,1) 64%, rgba(62,237,12,1) 100%);
+    background: linear-gradient(127deg, rgba(160,213,217,1) 0%, rgba(170,246,171,1) 16%, rgba(240,245,245,1) 48%, rgba(108,238,103,1) 64%, rgba(62,237,12,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a0d5d9",endColorstr="#3eed0c",GradientType=1); 
+}
+
+.photoProductCreate {
+    display: flex;
+    justify-content: center;
+    
+}
+.photoProductCreate img{
+    border-radius: 15px;
+}
 
 /* Media-query - Tablet */
 

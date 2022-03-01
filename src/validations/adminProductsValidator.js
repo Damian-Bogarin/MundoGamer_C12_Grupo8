@@ -62,6 +62,17 @@ module.exports = [
     .isNumeric()
     .withMessage('Sólo números'),
 
+
+    body('price')
+    .custom((value,{req}) =>{
+        if(req.body.price == 0){
+            return false
+        }
+        else return true
+    }).withMessage('Debes ingresar un precio')
+,
+
+
      body('descount')
         .custom((value, {req}) => {
             if(req.body.descount < 100){
