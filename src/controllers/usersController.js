@@ -118,6 +118,37 @@ let controller = {
         })
     },
 
+   /*  updateProfile: async (req, res) => {
+
+        const errors = validationResult(req);
+        const { name, lastName, age, tel, address, province, locality, avatar } = req.body
+
+        Users.update({
+            name,
+            lastName,
+            age,
+            tel,
+            address,
+            province, 
+            locality,
+            avatar: 
+
+        })
+
+        if(req.file){
+            if(fs.existsSync("./public/images/avatars/", user.avatar) && (user.avatar != 'user_avatar_default.jpg')){
+                fs.unlinkSync(`./public/images/avatars/${user.avatar}`)
+
+                user.avatar = req.file.filename}
+                else{
+                    user.avatar = user.avatar
+                }
+            }
+        }
+
+        res.redirect('/')
+    }, */
+
     cart: (req, res) => {     
         res.render('users/productCart', {
             session: req.session      

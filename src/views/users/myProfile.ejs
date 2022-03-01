@@ -21,79 +21,81 @@
 
             </header>
 
-            <form class="form-profile" action="/users/myProfile" method="POST">
+            <form class="form-profile" action="/users/myProfile/<%= session.user.id %>/edit?_method=PUT" method="POST" id="form" enctype="multipart/form-data">
 
                 <h2 class="titleProfile">Mi perfil</h2>
 
                 <div class="container-data">
 
-                    <div class="data">
+                        <div class="profileContainer">
+                            <label class="data" for="name">Nombre</label><br>
+                            <input class="input-style" type="text" id="name" name="name" value="<%= locals.old ? old.name : user.name %>">
+                            <!-- <span class="error-msj" id="nameErrors"></span> -->
+                        </div>  
 
                         <div class="profileContainer">
-                            <label for="name">Nombre</label><br>
-                            <input class="input-style" type="text" >
+                            <label class="data" for="lastName">Apellido</label><br>
+                            <input class="input-style" type="text" id="lastName" name="lastName" value="<%= locals.old ? old.lastName : user.lastName %>">
+                            <span class="error-msj" id="lastNameErrors"></span>
                         </div>
 
                         <div class="profileContainer">
-                            <label for="lastName">Apellido</label><br>
-                            <input class="input-style" type="text">
+                            <label class="data" for="age">Edad</label><br>
+                            <input class="input-style" type="number" id="age" name="age" value="<%= locals.old ? old.age : user.age %>">
+                            <span class="error-msj" id="ageErrors"></span>
                         </div>
 
                         <div class="profileContainer">
-                            <label for="address">Dirección</label><br>
-                            <input class="input-style" type="text" >
-                        </div>
-
-                    </div>
-
-                    <div class="nex-data">
+                            <label class="data" for="address">Teléfono</label><br>
+                            <input class="input-style" type="text" id="tel" name="tel" value="<%= locals.old ? old.tel : user.tel %>">
+                            <span class="error-msj" id="telErrors"></span>
+                        </div> 
 
                         <!-- API del gobierno que lista las provincias de la República Argentina(select) -->
                         <div class="profileContainer">
 
-                            <!-- <label for="select-province">Provincia</label><br> -->
+                            <div class="profileContainer">
+                                <label class="data" for="address">Dirección</label><br>
+                                <input class="input-style" type="text" id="address" name="address" value="<%= locals.old ? old.address : user.address %>">
+                                <span class="error-msj" id="addressErrors"></span>
+                            </div>
 
-                            <label for="">Provincia</label><br>
+                            <label class="label-select" for="">Provincia</label><br>
                             <select id="select-provincias">
                                 <option value="" selected hidden>Seleccione...</option>
                             </select>
+                            <br>
+                            <br>
 
-                            <label for="">Localidad</label><br>
+                            <label class="label-select" for="">Localidad</label><br>
                             <select id="select-localidades">
                                 <option value="" selected hidden>Seleccione...</option>
-                            </select>
+                            </select> 
 
                         </div>
-
-                        <div class="profileContainer">
-                            <label for="tel">Teléfono</label><br>
-                            <input class="input-style" type="number">
-                        </div> 
-
-                        <div class="profileContainer">
-                            <label for="age">Edad</label><br>
-                            <input class="input-style" type="number">
-                        </div>
-
-                    </div>
 
                 </div>
 
-                <!-- buttom -->
-
-               <!--  <div class="buttom-myProfile">
-                    <button type="submit">Guardar</button>
-                </div> -->
-
+                <!-- div-buttom -->
                 <div class="buttom-myProfile">
                     <button type="submit">Editar</button>
                 </div>
 
             </form>
 
+            <footer class="footerMyProfile">
+
+                <p class="message">Que crecer no signifique dejar de ser niños… sigue jugando!!!</p>
+
+            </footer>
+
         </main>
-        <!-- este script es solo para myProfile -->
-        <script src="/js/myProfile.js" defer></script> 
+
+        <!-- este script es solo para myProfile(select: provincia y localidad) -->
+        <script src="/js/selectMyProfile.js" defer></script> 
+
+        <!-- script front end validations-->
+        <script src="/js/usersValidations/myProfileValidation.js" defer></script> 
 
     </body>
 

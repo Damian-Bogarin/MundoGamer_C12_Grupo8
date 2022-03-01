@@ -1,5 +1,4 @@
-/* Api-Provincias */
-/* const fetch = require('node-fetch'); */
+/* Api-Provincias - SELECT */
 
 const urlProvincias = 'https://apis.datos.gob.ar/georef/api/provincias';
 const urlLocalidades = 'https://apis.datos.gob.ar/georef/api/localidades?max=1000&provincia='
@@ -16,7 +15,7 @@ window.addEventListener('load', async () => { //Como estamos trabajando desde el
 
         let provincias = result.provincias;
        
-        provincias = provincias.sort((a, b) => a.nombre > b.nombre)  
+        provincias = provincias.sort((a, b) => a.nombre > b.nombre)  /* No se ordenan las provincias */
         
         provincias.forEach(provincia => {
             selectProvincias.innerHTML += `<option value="${provincia.nombre}">${provincia.nombre}</option>`
