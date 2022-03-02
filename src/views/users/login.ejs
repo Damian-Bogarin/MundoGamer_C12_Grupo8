@@ -18,7 +18,7 @@
                         <div class="input-datos">
                             <label for="email">E-mail</label><br>
                             <!--como propiedad de input podemos agregar un required (por defecto saldra un aviso) o mejor podemos hacer un span-->
-                            <input class="input-estilo" type="email" name="email" id="inputEmail">
+                            <input class="input-estilo inputData" type="email" name="email" id="inputEmail">
                             <!-- <i class="fas fa-check-circle"></i> 
                             <i class="fas fa-exclamation-circle"></i> -->
                             <% if (locals.errors && errors.email) { %>
@@ -29,7 +29,7 @@
 
                         <div class="input-datos">
                             <label for="pass">Contraseña</label><br>
-                            <input class="input-estilo" type="password" name="pass" id="inputPass">
+                            <input class="input-estilo inputData" type="password" name="pass" id="inputPass">
                             <!-- <i class="fas fa-check-circle"></i> 
                             <i class="fas fa-exclamation-circle"></i> -->
                             <% if (locals.errors && errors.pass) { %>
@@ -42,7 +42,7 @@
                             <input type="checkbox" name="remember" id="check"><label for="check">Recordarme</label>
                             <!-- dentro del input puedo colocar checked, y ya me lo marcaria  -->
                         </div>
-
+                        
                         <% if (locals.errors && errors.custom) { %>
                             <span class="error-msj"><%= errors.custom.msg %></span>
                         <% } %>
@@ -63,7 +63,7 @@
             <%- include('../partials/script.ejs') %> 
 
             <!-- script front end validations-->
-            <script src="/js/usersValidations/login&registerValidations.js" defer></script> 
+            <script src="/js/usersValidations/loginValidations.js" defer></script> 
 
     </body>
 

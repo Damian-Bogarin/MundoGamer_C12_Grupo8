@@ -61,7 +61,7 @@
                             <span class="error-msj" id="passErrors2"></span>
                         </div>
 
-                        <div class="file-avatar">
+                        <div class="file-avatar"><!-- Campo no obligatorio -->
                             <label class="label-avatar" for="avatar">Ingrese una foto</label>
                             <input class="input-avatar" type="file" name="avatar" id="avatar">
                             <% if (locals.errors && errors.image) { %> <!-- image o avatar?? -->
@@ -94,7 +94,7 @@
             <%- include('../partials/script.ejs') %> 
 
             <!-- script front end validations-->
-            <script src="/js/usersValidations/login&registerValidations.js" defer></script> 
+            <script src="/js/usersValidations/registerValidations.js" defer></script> 
     </body>
 
 </html>

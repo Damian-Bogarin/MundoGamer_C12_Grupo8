@@ -1,12 +1,15 @@
 /* Validations front end - register and login */
+
+/* Se podria resumir mucho mas el código */
+
 function qs(element) {
     return document.querySelector(element)
 }
 
 window.addEventListener('load', function() {
 
-    $form = qs('#form')
-    
+    $form = qs('#form')  
+                          
     $inputName = qs('#inputName')
     $nameErrors = qs('#nameErrors')
 
@@ -14,7 +17,7 @@ window.addEventListener('load', function() {
     $lastNameErrors = qs('#lastNameErrors')
 
     $inputEmail = qs('#inputEmail')
-    $emailErrors = qs('#emailErrors') /* toma el span cn id emailErrors */
+    $emailErrors = qs('#emailErrors') 
 
     $inputPass = qs('#inputPass')
     $passErrors = qs('#passErrors')
