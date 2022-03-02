@@ -21,7 +21,7 @@ router.get('/logout',/* userLogMiddlewares,*/ controller.logout);
 
 /* myProfile GET y POST */
 router.get('/myProfile',/*  userLogMiddlewares */ controller.profile); 
-//router.put('/myProfile', controller.updateProfile);                     /*--------------------------- multer */
+//router.put('/myProfile/:id/', controller.updateProfile);   /*--------------------------- multer */
 
 
 /* productCart GET y POST */

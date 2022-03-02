@@ -1,167 +1,175 @@
 /* Validations front end - register and login */
-
 function qs(element) {
     return document.querySelector(element)
 }
 
-
 window.addEventListener('load', function() {
 
-    $form = qs('form')
-
-    $inputName = qs('#name')
+    $form = qs('#form')
+    
+    $inputName = qs('#inputName')
     $nameErrors = qs('#nameErrors')
 
-    $inputLastName = qs('#lastName') /* el id en la vista lo tngo cm last_name */
+    $inputLastName = qs('#inputLastName') 
     $lastNameErrors = qs('#lastNameErrors')
 
-    $inputEmail = qs('#email')
-    $emailErrors = qs('#emailErrors')
+    $inputEmail = qs('#inputEmail')
+    $emailErrors = qs('#emailErrors') /* toma el span cn id emailErrors */
 
-    $pass = qs('#pass')
+    $inputPass = qs('#inputPass')
     $passErrors = qs('#passErrors')
 
-    $pass2 = qs('#pass2')
-    $pass2Errors = qs('#pass2Errors')
+    $inputPass2 = qs('#inputPass2')
+    $passErrors2 = qs('#passErrors2')
 
     $avatar = qs('#avatar')
     $avatarErrors = qs('#avatarErrors')
 
-    $terms = qs('#terms')
+    $inputTerms = qs('#inputTerms')
     $termsErrors = qs('#termsErrors')
 
     /* expresiones regulares */
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
-    regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
+    regExpEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;  /* estaba mal ahora ok */
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
     /* regExDNI = /^[0-9]{7,8}$/, */
     
-    let validationsErrors = false;
+/* let validationsErrors = false;  */ 
+
+    let errors = {} 
 
     /* name */
-    $inputName.addEventListener('blur', function() {  //blur detecta cuando salgo del input
+    $inputName.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
         switch (true) {
-            case !$inputName.value.trim(): //Este es el que se a estar evaluando
-                $nameErrors.innerHTML = 'El nombre es obligatorio'; //Texto que se colocará dentro de la etiqueta spam
-                $inputName.classList.add('error-msj');
-                validationsErrors = true //Como hubo un error será true
+            case !value.trim(): 
+                errorMsg = 'El nombre es requerido';
+                $inputName.classList.add('error');
+                errors.inputNameError = errorMsg; /* aunque ese input tenga otra clase, le agrega "otra clase" que ya esta definida en el css */
+                nameErrors.innerHTML = errorMsg;
                 break;
-            case !regExAlpha.test($inputName.value):
-                $nameErrors.innerHTML = 'El nombre es válido';
-                $inputName.classList.add('error-msj'); /* clase de span error-msj */
-                validationsErrors = true
+            case !regExAlpha.test(value): 
+                errorMsg = 'Nombre inválido';
+                $inputName.classList.add('error')
+                errors.inputNameError = errorMsg; /* inputNameError -> propiedad creada */
+                nameErrors.innerHTML = errorMsg;
                 break;
-            default:
-                $inputName.classList.remove('is-invalid'); //En caso de que tenga el invalid se lo quita y poner el valid
-                $inputName.classList.add('is-valid');
-                $nameErrors.innerHTML = "";
-                validationsErrors = false;
-            break;
+            default: 
+                nameErrors.innerHTML = "";
+                $inputName.classList.remove('error');
+                $inputName.classList.add('ok');    
         }
     })
-
 
     /* lastName */
-    $inputLastName.addEventListener('blur', function() {  //blur detecta cuando salgo del input
+    $inputLastName.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
         switch (true) {
-            case !$inputLastName.value.trim(): //Este es el que se a estar evaluando
-                $lastNameErrors.innerHTML = 'El apellido es obligatorio'; //Texto que se colocará dentro de la etiqueta spam
-                $inputLastName.classList.add('error-msj');
-                validationsErrors = true //Como hubo un error será true
+            case !value.trim(): 
+                errorMsg = 'El apellido es requerido';
+                $inputLastName.classList.add('error');
+                errors.inputLastNameError = errorMsg; /* aunque ese input tenga otra clase, le agrega "otra clase" que ya esta definida en el css */
+                lastNameErrors.innerHTML = errorMsg;
                 break;
-            case !regExAlpha.test($inputLastName.value):
-                $lastNameErrors.innerHTML = 'El apellido es válido';
-                $inputLastName.classList.add('error-msj'); /* clase de span error-msj */
-                validationsErrors = true
+            case !regExAlpha.test(value): 
+                errorMsg = 'Apellido inválido';
+                $inputLastName.classList.add('error')
+                errors.inputLastNameError = errorMsg; /* inputLastName -> propiedad creada */
+                lastNameErrors.innerHTML = errorMsg;
                 break;
-            default:
-                $inputLastName.classList.remove('is-invalid'); //En caso de que tenga el invalid se lo quita y poner el valid
-                $inputLastName.classList.add('is-valid');
-                $lastNameErrors.innerHTML = "";
-                validationsErrors = false;
-            break;
+            default: 
+                lastNameErrors.innerHTML = "";
+                $inputLastName.classList.remove('error');
+                $inputLastName.classList.add('ok');    
         }
     })
 
-
-    /* email */
-    $inputEmail.addEventListener('blur', function(){
+    /* email */ 
+    $inputEmail.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
         switch (true) {
-            case !$inputEmail.value.trim():
-                $emailErrors.innerHTML = 'El email es obligatorio'
-                $inputEmail.classList.add('is-invalid')
-                validationsErrors = true
+            case !value.trim(): 
+                errorMsg = 'El campo email es requerido';
+                $inputEmail.classList.add('error');
+                errors.inputEmailError = errorMsg; /* aunque ese input tenga otra clase, le agrega "otra clase" que ya esta definida en el css */
+                emailErrors.innerHTML = errorMsg;
                 break;
-            case !regExEmail.test($inputEmail.value):
-                $emailErrors.innerHTML = 'Debe ingresar un email válido'
-                $inputEmail.classList.add('is-invalid')
-                validationsErrors = true
-                break;    
-            default:
-                $inputEmail.classList.remove("is-invalid");
-                $inputEmail.classList.add('is-valid')
-                $emailErrors.innerHTML = ""
-                validationsErrors = false
-            break;
+            case !regExpEmail.test(value): 
+                errorMsg = 'Email inválido';
+                $inputEmail.classList.add('error')
+                errors.inputEmailError = errorMsg; /* inputEmailError -> propiedad creada */
+                emailErrors.innerHTML = errorMsg;
+                break;
+            default: 
+                emailErrors.innerHTML = "";
+                $inputEmail.classList.remove('error');
+                $inputEmail.classList.add('ok');       
         }
     })
 
-
-     /* pass */
-     $pass.addEventListener('blur', function(){
+    /* pass */
+    $inputPass.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
         switch (true) {
-            case !$pass.value.trim():
-                $passErrors.innerHTML = 'El campo contraseña es obligatorio'
-                $pass.classList.add('is-invalid')
-                validationsErrors = true
+            case !value.trim(): 
+                errorMsg = 'La contraseña es requerida';
+                $inputPass.classList.add('error');
+                errors.inputPassError = errorMsg; 
+                passErrors.innerHTML = errorMsg;
                 break;
-            case !regExPass.test($pass.value):
-                $passErrors.innerHTML = 'La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número';
-                $pass.classList.add('is-invalid')
-                validationsErrors = true
-                break;    
-            default:
-                $pass.classList.remove("is-invalid");
-                $pass.classList.add('is-valid')
-                $passErrors.innerHTML = ""
-                validationsErrors = false
-            break;
+            case !regExPass.test(value): 
+                errorMsg = 'La contraseña debe tener entre 6 o 12 carácteres, al menos una mayúscula, una minúscula y un número';
+                $inputPass.classList.add('error')
+                errors.inputPassError = errorMsg;
+                passErrors.innerHTML = errorMsg;
+                break;
+            default: 
+                passErrors.innerHTML = "";
+                $inputPass.classList.remove('error');
+                $inputPass.classList.add('ok');
         }
     })
 
-
-    /* pass2 */
-    $pass2.addEventListener('blur', function(){
+    /* pass 2*/
+    $inputPass2.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
         switch (true) {
-            case !$pass2.value.trim():
-                $pass2Errors.innerHTML = 'El campo contraseña es obligatorio'
-                $pass2.classList.add('is-invalid')
-                validationsErrors = true
+            case !value.trim(): 
+                errorMsg = 'La contraseña es requerida';
+                $inputPass2.classList.add('error');
+                errors.inputPassError = errorMsg; 
+                passErrors2.innerHTML = errorMsg;
                 break;
-            case $pass2.value !== $pass.value:
-                $pass2Errors.innerHTML = 'Las contraseñas no coinciden';
-                $pass2.classList.add('is-invalid')
-                validationsErrors = true
-                break;    
-            default:
-                $pass2.classList.remove("is-invalid");
-                $pass2.classList.add('is-valid')
-                $pass2Errors.innerHTML = ""
-                validationsErrors = false
-            break;
+            case $inputPass.value !== $inputPass2.value: 
+                errorMsg = 'Las contraseñas no coinciden';
+                $inputPass2.classList.add('error')
+                errors.inputPassError = errorMsg;
+                passErrors2.innerHTML = errorMsg;
+                break;
+            default: 
+                passErrors2.innerHTML = "";
+                $inputPass2.classList.remove('error');
+                $inputPass2.classList.add('ok');
         }
     })
-
 
     /* terms */
-    $terms.addEventListener('click', function (){
-        $terms.value = "on"
-        $terms.classList.toggle('is-valid')
-        $terms.classList.remove('is-invalid')
+    $inputTerms.addEventListener('click', function (){
+        $inputTerms.value = "on"
+        $inputTerms.classList.toggle('ok')
+        $inputTerms.classList.remove('error')
         $termsErrors.innerHTML = ""
     })
 
+  /*   $inputTerms = qs('#inputTerms')   falta corregir aca
+    $termsErrors = qs('#termsErrors')
 
+ */
 
 
 

@@ -25,13 +25,16 @@ main.myProfile {
 .myProfile .headerMyProfile .avatar {
     position: absolute;
     background: white;
-    border-radius: 50%;
     width: 110px;
     height: 110px;
     top: 35px;
     display: flex;
     flex-direction: column;
     /* z-index: 100; */
+}
+
+.myProfile .headerMyProfile .avatar .img-avatar {
+    border-radius: 50%;
 }
 
 /* buttom-pencil */
@@ -138,13 +141,13 @@ form.form-profile {
 
 .buttom-myProfile button {
     font-weight: bold; /*grosor de letra*/
-    font-size: 23px;
+    font-size: 18px;
     border: none;
     border-radius: 25px;
     background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
     color: rgb(44, 44, 44);
     cursor: pointer; /*manito*/
-    width: 100px;
+    width: 160px;
     height: 40px;
 }
 

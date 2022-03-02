@@ -12,18 +12,19 @@
                 <img class="fondo-header" src="/img/background/myProfileHeader.png" alt="imgMyProfile">
 
                 <!-- circle photo -->
-                <div class="avatar"></div>  
+                <div class="avatar">
+                    <img class="img-avatar" src="/img/avatars/<%= locals.old ? old.avatar : user.avatar %>" alt="">
+                </div>  
 
                 <div class="fileButtom"> 
                     <i class="fas fa-pencil-alt"></i>
                     <input type="file" name="avatar" accept=".jpg" id="archivo" multiple> 
-                </div> 
-                 
+                </div>
 
             </header>
 
-            <form class="form-profile" action="/users/myProfile/<%= session.user.id %>/edit?_method=PUT" method="POST" id="form" enctype="multipart/form-data">
-
+            <form class="form-profile" action="/users/myProfile/<%= session.user.id %>/edit?_method=PUT" method="POST" id="form">
+                <!-- enctype="multipart/form-data" ???-->
                 <h2 class="titleProfile">Mi perfil</h2>
 
                 <div class="container-data">
@@ -79,7 +80,7 @@
 
                 <!-- div-buttom -->
                 <div class="buttom-myProfile">
-                    <button type="submit">Editar</button>
+                    <button type="submit">Guardar cambios</button>
                 </div>
 
             </form>

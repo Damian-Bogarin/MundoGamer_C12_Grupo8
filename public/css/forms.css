@@ -66,6 +66,22 @@
 
 /* validations front end (icono de color rojo o verde, dentro del input) */
 
+/* .formulario .input-datos .input-estilo {
+    border-color: 1px tomato; */ 
+
+input.error { /* esta clase la creamos solo aca, no en el html */
+    border: 1px solid tomato;
+    box-shadow: 3px 3px 10px tomato; /* de px tenia 5 */
+}
+
+input.ok {
+    border: 1px solid green;
+    box-shadow: 3px 3px 10px green;
+}
+
+.errors {
+    color: tomato;
+}
 
 /* end validations front end */
 

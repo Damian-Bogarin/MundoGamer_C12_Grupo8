@@ -139,8 +139,7 @@ let controller = {
             address,
             province, 
             locality,
-            avatar: 
-
+            avatar 
         })
 
         if(req.file){
