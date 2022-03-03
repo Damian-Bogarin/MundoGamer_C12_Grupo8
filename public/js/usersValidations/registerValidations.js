@@ -125,7 +125,7 @@ window.addEventListener('load', function() {
                 passErrors.innerHTML = errorMsg;
                 break;
             case !regExPass.test(value): 
-                errorMsg = 'La contraseña debe tener entre 6 o 12 carácteres, al menos una mayúscula, una minúscula y un número';
+                errorMsg = 'La contraseña debe tener entre 6 o 10 carácteres, al menos una mayúscula, una minúscula y un número';
                 $inputPass.classList.add('error')
                 errors.inputPassError = errorMsg;
                 passErrors.innerHTML = errorMsg;

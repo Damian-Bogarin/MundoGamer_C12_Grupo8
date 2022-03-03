@@ -13,17 +13,19 @@
     height: 90px;
 }
 
-.header-admin .divs-containers {
+.header-admin div.divs-containers {
     position: absolute;
     display: flex;
     width: 100%;
     color: white;
     justify-content: space-between;
     font-family: 'Quicksand', sans-serif;
+    height: 90px;
 }
 
 .header-admin .divs-containers .header-left {
-    padding: 15px;
+    padding: 20px; 
+    margin-left: 8px;
 }
 
 .header-admin .divs-containers .headerAdminTitle {
@@ -33,15 +35,18 @@
 .header-admin .divs-containers .header-right {
     display: flex;
     flex-direction: row;
-    width: 112px;
+    width: 120px; /* 112 */
     align-items: center;
-    padding: 15px;
+    padding: 20px;
+    margin-right: 8px;
+    height: 90px;
 }
 
 .header-admin .divs-containers .header-right i.fa-bars {
     margin-left: 12px; 
     cursor: pointer;
     font-size: 17px;
+    margin-top: 5px;
 } 
 
 /* Menú de navegación-admin */
@@ -101,8 +106,7 @@
     }
 
     .header-admin .divs-containers .header-right {
-        width: 116px;
-    
+        width: 129px;
     }
 
     .header-admin .divs-containers .header-right i.fa-bars {
