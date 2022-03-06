@@ -123,8 +123,40 @@ justify-content: flex-end;
     cursor: help;
 }
 
+.home-descount{
+    background: rgb(245,99,129);
+    background: -moz-radial-gradient(circle, rgba(245,99,129,0.8799720571822479) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(245,99,129,0.8799720571822479) 0%, rgba(255,255,255,1) 100%);
+    background: radial-gradient(circle, rgba(245,99,129,0.8799720571822479) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f56381",endColorstr="#ffffff",GradientType=1); 
+    border: palevioletred solid 2px;
 
+}
+.home-sold{
+    background: rgb(245,143,99);
+    background: -moz-radial-gradient(circle, rgba(245,143,99,0.8799720571822479) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(245,143,99,0.8799720571822479) 0%, rgba(255,255,255,1) 100%);
+    background: radial-gradient(circle, rgba(245,143,99,0.8799720571822479) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f58f63",endColorstr="#ffffff",GradientType=1); 
+    border: rgb(96, 206, 155) solid 2px;
+}
 
+.home-stars{
+    background: rgb(244,241,20);
+    background: -moz-radial-gradient(circle, rgba(244,241,20,0.8799720571822479) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(244,241,20,0.8799720571822479) 0%, rgba(255,255,255,1) 100%);
+    background: radial-gradient(circle, rgba(244,241,20,0.8799720571822479) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4f114",endColorstr="#ffffff",GradientType=1); 
+    border: rgb(248, 116, 63) solid 2px;
+}
+.home-new{
+    background: rgb(241,239,202);
+    background: -moz-radial-gradient(circle, rgba(241,239,202,0.725910432532388) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(241,239,202,0.725910432532388) 0%, rgba(255,255,255,1) 100%);
+    background: radial-gradient(circle, rgba(241,239,202,0.725910432532388) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1efca",endColorstr="#ffffff",GradientType=1); 
+    border: rgb(112, 216, 126) solid 2px;
+}
 
 #starpetit{
     transform-origin:center ;

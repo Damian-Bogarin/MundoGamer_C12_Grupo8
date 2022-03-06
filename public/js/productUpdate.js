@@ -33,9 +33,11 @@ window.addEventListener('load', function(){
 
 
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+    regExAlphaNum =/^[a-zA-Z\sñáéíóúü 0-9 :]+$/i,
     regExNum = /^[0-9]{7,8}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+
 
     console.log($console)
 
@@ -44,18 +46,18 @@ window.addEventListener('load', function(){
         switch (true) {
             case !$name.value.trim():
                 $nameError.innerHTML ='El campo nombre es obligatorio';
-                //$inputName.classList.add('is-invalid')
+                $name.classList.add('input-Error')
                 //validationsErrors = true
                 break;
-                case !regExAlpha.test($name.value): //si pasa el test dara true, y sera negado.
+                case !regExAlphaNum.test($name.value): //si pasa el test dara true, y sera negado.
                     $nameError.innerHTML ='Ingrese un nombre valido';
-                    //$inputName.classList.add('is-invalid')
+                    $name.classList.add('input-Error')
                     //validationsErrors = true
                 break
         
             default:
-                //$inputName.classList.remove('is-invalid');
-                //$inputLastname.classList.add ('is-valid');
+                $name.classList.remove('input-Error');
+                $name.classList.add ('input-Valid');
                 $nameError.innerHTML = ""
                 break;
         }

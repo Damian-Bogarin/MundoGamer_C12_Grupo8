@@ -1,110 +1,126 @@
+.detail-{}
 
+.detail-main{
+display: flex;
+flex-direction: column;
+width: 100vw;
 
-.producto-container{
+justify-content: center;
+
+}
+
+.detail-product{
+    height: 500px;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom right, rgb(143, 143, 145), white);
-    box-shadow: 5px 5px 5px rgb(146, 137, 137);
-    width: 90vw;
-    
-    margin-left: 5vw;
-    margin-right:5vw ;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 2rem;
-    padding-bottom: 5px;
-    justify-self: center;
-    border-radius: 15px;
-}
-
-#name-producto{
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.producto-imagenes{ 
-    display: grid;
-    background-color:white;
-    border-radius: 5px;
-    
-   height: 250px;  /* ALTURA DEL GRID */
-  
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    width: 80%;
+    margin: 25px 10%;
+   border-radius: 25px;
+    background-color: beige;
    
-
-}
-.producto-imagenes div{
-    background-color: white;
-    border: 1px solid black;
-    padding: 2px;
-    margin: 2px;
-    border-radius: 5px;
-    /* background-size: cover ;
-    background-position: center ;
-    background-repeat: no-repeat; */
-   
-    
-}
-.img1{   
-    grid-column: 1 / 3;
-   grid-row: 1 / 4;  
-    height: 250px;
-   
-  /*  background-image: url('../img/taza\ de\ mario.jpg'); */
-    
-}
-.img1 img{
-width: 100%;
-height: 100%;
-object-fit: cover;
 }
 
-.producto-detalles{
+.detail-top{
+    height: 10%;
+    background: rgb(241,113,78);
+    background: linear-gradient(90deg, rgba(241,113,78,1) 0%, rgba(225,241,78,1) 7%, rgba(221,233,106,1) 16%, rgba(255,255,255,1) 20%, rgba(214,214,105,1) 26%, rgba(255,255,255,1) 30%, rgba(232,228,66,1) 36%, rgba(247,98,34,1) 52%, rgba(223,188,105,1) 68%, rgba(240,238,69,1) 84%, rgba(251,251,251,1) 88%, rgba(228,235,150,1) 92%, rgba(240,119,11,1) 99%);
+    border-radius: 25px 25px 0 0 ;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+
+    
+}
+.detail-top div{
     background-color: white;
-    border-radius: 5px;
+    height: 80%;
+    width: 20%;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    cursor: help;
 }
 
 
-.producto-botones{
-    display: flex;
-    font-size: 12px;
+.detail-img{
+    height: 25%;
     
-    justify-content: space-evenly;
-    flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#oferta{
-    color: red;
+.detail-img img{
+    height: 90%;
+    
+    border-radius: 10px;
 }
 
-/*MEDIA DE LAPTOP*/
-
-
-@media (min-width: 769px){
-
-
-    .producto-imagenes{ 
-        
-       height: 850px;  /* ALTURA DEL GRID */
-      
-    }
-
-    .img1{   
-        object-fit: cover;
-        height: 850px;
-       
-      /*  background-image: url('../img/taza\ de\ mario.jpg'); */
-        
-    }
-
-
+.detail-name{
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    background: rgb(241,113,78);
+    background: linear-gradient(90deg, rgba(241,113,78,1) 0%, rgba(225,241,78,1) 7%, rgba(221,233,106,1) 16%, rgba(255,255,255,1) 20%, rgba(214,214,105,1) 26%, rgba(255,255,255,1) 30%, rgba(232,228,66,1) 36%, rgba(247,98,34,1) 52%, rgba(223,188,105,1) 68%, rgba(240,238,69,1) 84%, rgba(251,251,251,1) 88%, rgba(228,235,150,1) 92%, rgba(240,119,11,1) 99%);
 }
 
+.detail-name h2{
+    color: black;
+    font-size: 18px;
+}
 
+.detail-description{
+    height: 20%;
+    background-color: aqua;
+    padding: 0 10%;
 
+}
+.detail-description p{
+    width: 80%;
+    
+    
+}
 
+.detail-svg{
+    background-color: brown;
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    
+    font-size: 8px;
+}
+
+.detail-views-likes{
+    height: 10%;
+    display: flex;
+   justify-content: space-around;
+    padding-left: 20px;
+    
+
+}
+.detail-views{
+    display: flex;
+    align-items: center;
+    
+    
+
+}
+.detail-views svg{
+    height: 50%;
+    
+}
+.views,.love{
+    margin-left: 5px;
+}
+.views{
+    color: rgb(39, 25, 231);
+}
+.love{
+color: rgb(204, 23, 159);
+}

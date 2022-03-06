@@ -1,4 +1,4 @@
-const { products } = require("../../data/dataBase");
+// const { products } = require("../../data/dataBase");
 
 module.exports = (sequelize, dataTypes) => {
     const alias = "Stars";

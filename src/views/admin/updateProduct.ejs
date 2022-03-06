@@ -15,7 +15,7 @@
                 <form action="/products/store/<%= (locals.products) ? products.id : old.id %>?_method=PUT"  enctype="multipart/form-data" method="POST">
         
                     <label class="label-subtitle">Nombre del producto</label>
-                    <input class="input-productCreate" type="text" name="name" id="nombre" value="<%= (locals.old && old.name ? old.name : "")%>">
+                    <input  type="text" name="name" id="nombre" value="<%= (locals.old && old.name ? old.name : "")%>">
                    <% if (locals.errors && errors.name){   %> 
                     <span class="errorCreate">* <%= errors.name.msg%></span> <% } %>
                     <span class="errorCreate" id="nameError"></span>
@@ -37,16 +37,7 @@
                     <span class="errorCreate"> * <%= errors.gender.msg %>  </span> <% } %>  
                     <span class="errorCreate" id="genderError"></span>
                
-                    <p class="label-subtitle">Estrellas  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p> 
-                    <div class="div-box">
-                    <label for="estrellas1"><input type="radio" name="stars" id="estrellas1" value="1" <%= (locals.old && old.stars =="1") ?  "checked" : "" %> >1</label>
-                    <label for="estrellas2"><input type="radio" name="stars" id="estrellas2" value="2"<%= (locals.old && old.stars =="2") ?  "checked" : "" %>>2</label>
-                    <label for="estrellas3"><input type="radio" name="stars" id="estrellas3" value="3"<%= (locals.old && old.stars =="3") ?  "checked" : "" %>>3</label>
-                    <label for="estrellas4"><input type="radio" name="stars" id="estrellas4" value="4"<%= (locals.old && old.stars =="4") ?  "checked" : "" %>>4</label>
-                    <label for="estrellas5"><input type="radio" name="stars" id="estrellas5" value="5"<%= (locals.old && old.stars =="5") ?  "checked" : "" %>>5</label>
-                    </div>
-                    <% if (locals.errors && errors.stars){   %> 
-                        <span class="errorCreate">* <%= errors.stars.msg%></span> <% } %>
+                    
         
                     <label class="label-subtitle">Clasificación</label>
                     <select class="select" name="clasification" id="clasificacion">

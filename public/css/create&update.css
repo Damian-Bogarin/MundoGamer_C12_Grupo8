@@ -9,6 +9,7 @@
     
 }
 
+
 .main-productCreate .title-productCreate {
     font-size: 22px;
     margin: 40px 0; 
@@ -160,3 +161,14 @@
     }
 
 }
+.input-Error{
+    border: 1.5px solid red;
+   background-color: #F6A1F0;
+   
+}
+
+.input-Valid{
+    border: 1.5px solid green;
+    background-color: rgb(236, 229, 217);
+}
+

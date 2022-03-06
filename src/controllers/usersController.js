@@ -1,4 +1,4 @@
-//const { users, writeUsersJSON } = require('../data/dataBase'); 
+
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 
@@ -48,7 +48,7 @@ let controller = {
             
             res.locals.user = req.session.user;
             //res.send(res.locals.user)
-            if(req.session.user.rol = 'admin'){
+            if(req.session.user.rol == 'admin'){
                 res.redirect('/admin')
             }
             else{

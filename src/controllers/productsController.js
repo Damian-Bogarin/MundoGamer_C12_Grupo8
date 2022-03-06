@@ -11,10 +11,15 @@ const LanguageProduct = db.LanguageProduct
 const MultiplayerProduct = db.MultiplayerProduct
 const SubtitleProduct = db.SubtitleProduct
 const UserPreferences = db.UserPreferences
+
+
 const controller = {
 
     detail: (req, res) => {
-        Products.findByPk(req.params.id, { //Encuento el articulo a traves de su Prumary key e incluyo las asociasiones
+
+
+        Promise.all([
+            Products.findByPk(req.params.id, { //Encuento el articulo a traves de su Prumary key e incluyo las asociasiones
             include: [{ association: 'gender' },
             { association: 'clasification' },
             { association: 'compatibility' },
@@ -22,9 +27,57 @@ const controller = {
             { association: 'subtitle' },
             { association: 'multiplayer' }
             ]
-        })
-            .then((producto) => {
-                res.render('products/productDetail', { producto: producto, session: req.session })
+        }), UserPreferences.findAll({
+            where:[{productId: req.params.id}]
+        })])
+            .then(([producto,likes]) => {
+
+                // Calculo si la diferencia de fechas para saber cuantos transcurrieron desde que se creo hasta el dia de hoy
+                var day1 = new Date(producto.date); 
+                var day2 = new Date();
+
+                var difference= Math.abs(day2-day1);
+                let date = difference/(1000 * 3600 * 24)
+
+                //Proceso la clasification
+                let clasification
+                switch (true) {
+                    case producto.classificationId == 1:
+                        clasification = "Apta para todo público"
+                        break;
+                    case producto.classificationId == 2:
+                            clasification = "Contenido para mayores de 12 años"
+                        break;
+                        case producto.classificationId == 3:
+                            clasification = "Contenido para mayores de 16 años"
+                        break;
+                        case producto.classificationId == 4:
+                            clasification = "Contenido para mayores de 18 años"
+                        break;
+                
+                    default:
+                        clasification = 'error'
+                        break;
+                }
+                //Hago la sumatoria de vistas
+                let views = 0
+                let favorite = 0
+                let love = 0
+                likes.forEach(element => views += element.views)
+                likes.forEach(element => favorite += element.likes)
+
+                if(req.session.user && req.session.user.rol == "ROL_USER"){
+                    let productFilter = likes.filter( element => element.userId == req.session.user.id)
+                    love = productFilter[0].likes
+                    
+                    res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite})
+                }
+                else{
+                      res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite})
+                }
+                //console.log(views)
+                //res.send(producto)
+              
             })
 
     },

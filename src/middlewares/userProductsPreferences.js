@@ -37,7 +37,10 @@ function userProductsPreferences (req,res,next){
                     views: 1,
                     buy: 0,
                     likes: 0,
-                })
+                }).then((nose)=>{
+            
+            next()
+        })
             }else{
                 sumarviews = result.views + 1
                 UserPreferences.update({                 
@@ -48,14 +51,15 @@ function userProductsPreferences (req,res,next){
                         userId: req.session.user.id,
                         genderId: productResult.gender.id,
                         productId: product.id}
+                }).then((nose)=>{
+            
+                    next()
                 })
             }
         })
             
          })    
-        .then((nose)=>{
-            next()
-        })
+        
 
     }
     else{
