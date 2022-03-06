@@ -7,8 +7,9 @@ let uploadFile = require('../middlewares/uploadAvatar');
 let userLogMiddlewares = require('../middlewares/userLogMiddlewares')
 let guestMiddlewares = require('../middlewares/guestMiddlewares')
 
+
 /* login GET y POST */
-router.get('/login',guestMiddlewares, controller.login);
+router.get('/login', guestMiddlewares, controller.login);
 router.post('/login', loginValidator, controller.processLogin);
 
 /* register GET y POST */
@@ -19,8 +20,9 @@ router.post('/register', uploadFile.single('avatar'), registerValidator, control
 router.get('/logout',/* userLogMiddlewares,*/ controller.logout);
 
 /* myProfile GET y POST */
-router.get('/myProfile',/*  userLogMiddlewares */ controller.profile); /* ------------- */
-//router.post('/myProfile', controller.profile); /* multer */
+router.get('/myProfile',/*  userLogMiddlewares */ controller.profile); 
+//router.put('/myProfile', controller.updateProfile);                     /*--------------------------- multer */
+
 
 /* productCart GET y POST */
 router.get('/productCart',userLogMiddlewares, controller.cart);

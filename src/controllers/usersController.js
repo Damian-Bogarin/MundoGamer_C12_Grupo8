@@ -2,6 +2,7 @@
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 
+
 const db = require('../database/models');
 const Users = db.User;
 
@@ -84,7 +85,8 @@ let controller = {
                 pass: bcrypt.hashSync(pass1, 12), //hashSync recibe dos parametros, pass y la sal
                 rol_id: 2, 
                 //address, /* "", y los siguientes dos */  //ESTOS DATOS DEBERIAN LLENARSE EN EL EDITAR PROFILE QUE TENIA GRETA, pero que no paso :C
-                //city,
+                //province,
+                //locality,
                 //tel,
                 //age,
                 avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
@@ -111,7 +113,7 @@ let controller = {
         res.redirect('/')
     },
 
-    profile: (req, res) => { /* ---incluir las otras asociaciones de like, starts y cart ??------ */
+    profile: async (req, res) => { /* ---incluir las otras asociaciones de like, starts y cart ??------ */
 
         Users.findByPk(req.session.user.id, {
             include: [{association: 'rol'}] /* ---incluir las otras asociaciones de like, starts y cart ??------ */
@@ -123,6 +125,38 @@ let controller = {
             })
         })
     },
+
+   /*  updateProfile: async (req, res) => {
+
+        const errors = validationResult(req);
+        const { name, lastName, age, tel, address, province, locality, avatar } = req.body
+
+        Users.update({
+            name,
+            lastName,
+            age,
+            tel,
+            address,
+            province, 
+            locality,
+            avatar: 
+
+        })
+
+        if(req.file){
+            if(fs.existsSync("./public/images/avatars/", user.avatar) && (user.avatar != 'user_avatar_default.jpg')){
+                fs.unlinkSync(`./public/images/avatars/${user.avatar}`)
+
+                user.avatar = req.file.filename}
+                else{
+                    user.avatar = user.avatar
+                }
+            }
+        }
+
+        res.redirect('/')
+    }, */
+
     cart: (req, res) => {     
         res.render('users/productCart', {
             session: req.session      
@@ -133,3 +167,26 @@ let controller = {
 
 
 module.exports = controller;
+
+
+/* profile: (req, res) => { 
+
+    Users.findByPk(req.session.user.id, {
+        include: [{association: 'rols'}] 
+    })  -----------Tenia comentado el include--------------
+    .then((user) => {
+        res.render('users/myProfile', {
+            user,
+            session: req.session
+        })
+    })
+}, */
+
+
+/* apiProvince: (req, res) => {
+    fetch('https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre') 
+    .then(response => response.json())
+    .then(province => {
+        res.render('users/myProfile', {province})
+    })
+} */
