@@ -3,7 +3,8 @@
 
 
 function userLogMiddlewares (req,res,next){
-    if(req.session.user != undefined  && req.session.user.rol === "ROL_USER" ){
+    if(req.session.user){
+        console.log('paso por aqui')
         next()
     }
     else{
