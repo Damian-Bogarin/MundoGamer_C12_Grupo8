@@ -2,6 +2,7 @@
 <html lang="es">
 
 <%- include('../partials/headAdmin.ejs') %>
+<link rel="stylesheet" href="/css/separateCss/buttonCreate.css">
 
     <body>
 
@@ -10,7 +11,14 @@
             <main class="listOfAllProducts">
 
                 <h2 class="titleListProduct">Bienvenid@ al admin!!<br>Aquí está el listado de tus productos</h2>
-
+                <a href="/admin/create">
+                <button>
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front text"> Crear
+                    </span>
+                  </button>
+                </a>
                 <section class="listTable">
 
                     <table>

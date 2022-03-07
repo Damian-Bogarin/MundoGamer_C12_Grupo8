@@ -187,7 +187,7 @@ const controller = {
                 Products.findByPk(req.params.id)
                     .then((item) => {
                         fs.unlink(path.join(__dirname + '../../../public/img/products/' + item.photo), (error) => {
-                            if (error) { console.error(error) }
+                            if (error) { console.log(error) }
                         })
 
                     })

@@ -55,7 +55,8 @@
 .main-productCreate .errorCreate {
     border-radius: 5px;
     background-color: #F6A1F0 ;
-    color: rgb(228, 10, 10);
+    width: fit-content;
+    color: rgb(226, 37, 37);
     font-size: 12px;
     font-weight: bolder;
     margin: 1px;
@@ -135,7 +136,10 @@
     
 }
 .photoProductCreate img{
+    margin-top: 15px;
     border-radius: 15px;
+    width: 80%;
+    height: 250px;
 }
 
 /* Media-query - Tablet */
@@ -164,11 +168,13 @@
 .input-Error{
     border: 1.5px solid red;
    background-color: #F6A1F0;
+   border-radius: 5px;
    
 }
 
 .input-Valid{
     border: 1.5px solid rgb(43, 3, 223);
     background-color: rgb(236, 229, 217);
+    border-radius: 5px;
 }
 

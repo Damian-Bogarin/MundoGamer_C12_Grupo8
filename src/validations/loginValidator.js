@@ -20,22 +20,22 @@ module.exports = [
 
     body('custom')
     .custom((value, {req}) => { //Buscará ese usuario en la base de datos, y comparará la contraseña
-     return Users.findOne({
+        return Users.findOne({
             where: {
                 email: req.body.email
             }
         })
-        .then((user) => {
-        
-        if(!bcrypt.compareSync(req.body.pass , user.dataValues.pass )){ 
-         return Promise.reject()
-        } 
-       
+    
+    .then(user => {
+        if(!bcrypt.compareSync(req.body.pass, user.dataValues.pass)){
+            return Promise.reject()
+        }
     })
     .catch(() => {
         return Promise.reject("Credenciales inválidas")
     })
 })
+
 ]
 
 /* if(fs.existsSync("./public/images/products/", product.img) && (product.img != "default-image.jpg")){ 
