@@ -37,11 +37,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         tel: {
             type: dataTypes.STRING(50),/* agregué de nuevo algunos aloowNull */
-            allowNull: false,
+            //allowNull: false,
         },
         age: {
             type: dataTypes.STRING(2),
-            allowNull: false
+            //allowNull: false
         },
         avatar:{
             type: dataTypes.STRING(100),

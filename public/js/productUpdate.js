@@ -47,17 +47,19 @@ window.addEventListener('load', function(){
             case !$name.value.trim():
                 $nameError.innerHTML ='El campo nombre es obligatorio';
                 $name.classList.add('input-Error')
+                $name.classList.remove('input-Valid')
                 //validationsErrors = true
                 break;
                 case !regExAlphaNum.test($name.value): //si pasa el test dara true, y sera negado.
                     $nameError.innerHTML ='Ingrese un nombre valido';
                     $name.classList.add('input-Error')
+                    $name.classList.remove('input-Valid')
                     //validationsErrors = true
                 break
         
             default:
                 $name.classList.remove('input-Error');
-                
+                $name.classList.add ('input-Valid');
                 $nameError.innerHTML = ""
                 break;
         }
@@ -68,10 +70,14 @@ window.addEventListener('load', function(){
         switch(true){
             case $gender.value == 0:
                 $genderError.innerHTML = 'El genero es obligatorio';
+                $gender.classList.add('input-Error')
+                $gender.classList.remove('input-Valid')
                 break;
             
             default:
                 $genderError.innerHTML = '';
+                $gender.classList.remove('input-Error')
+                $gender.classList.add('input-Valid')
                 break;
         }
     })

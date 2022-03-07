@@ -58,10 +58,13 @@ let controller = {
            
             })
            
-        }else{
+        }else{ 
+            console.log(errors.mapped())
             res.render('users/login', {
+                
                 errors: errors.mapped(), //Envia a la vista los errores como un objeto
-                session: req.session 
+                session: req.session
+               
             })
         }
     },
