@@ -83,7 +83,7 @@ let controller = {
             const { name, lastName, email, pass1 } = req.body 
             Users.create({
                 name,
-                lastName, /* last_name */ 
+                lastName, 
                 email, 
                 pass: bcrypt.hashSync(pass1, 12), //hashSync recibe dos parametros, pass y la sal
                 rol_id: 2, 
@@ -97,7 +97,7 @@ let controller = {
             .then(() => {
                 res.redirect('/users/login')
             })
-            .catch(error => console.log(error))/* -------------------------catch??----------------------- */
+            .catch(error => console.log(error))
             
         }else{
             res.render('users/register', {
@@ -117,7 +117,6 @@ let controller = {
     },
 
     profile: async (req, res) => { /* ---incluir las otras asociaciones de like, starts y cart ??------ */
-         /* ---incluir las otras asociaciones de like, starts y cart ??------ */
 
         Users.findByPk(req.session.user.id/*,  {
             include: [{association: 'rol'}]
@@ -130,22 +129,22 @@ let controller = {
         })
     },
 
-    updateProfile: async (req, res) => {
+    updateProfile: async (req, res) => {  /* FALTA */
 
         Users.update({
-            age: req.body.age != "" ? req.body.age.trim() : null,
-            tel: req.body.tel != "" ? req.body.tel.trim() : null,
-            address: req.body.address != "" ? req.body.address.trim() : null,
-            province: req.body.province != "" && req.body.province != 0 ? req.body.province.trim() : null,         
-            locality: req.body.locality != "" && req.body.locality != 0 ?req.body.locality.trim():null,
-          /*   avatar: */
+            age: req.body.age,
+            tel: req.body.tel,
+            address: req.body.address,
+            province: req.body.province,         
+            locality: req.body.locality,
+          /* avatar: */
         },{
             where: {
                 id: req.session.user.id
             }
         })
         .then(() => {
-            res.redirect('/users/account')
+            res.redirect('/')
         })
 
        /*  if(req.file){
@@ -180,26 +179,3 @@ let controller = {
 
 
 module.exports = controller;
-
-
-/* profile: (req, res) => { 
-
-    Users.findByPk(req.session.user.id, {
-        include: [{association: 'rols'}] 
-    })  -----------Tenia comentado el include--------------
-    .then((user) => {
-        res.render('users/myProfile', {
-            user,
-            session: req.session
-        })
-    })
-}, */
-
-
-/* apiProvince: (req, res) => {
-    fetch('https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre') 
-    .then(response => response.json())
-    .then(province => {
-        res.render('users/myProfile', {province})
-    })
-} */
