@@ -10,15 +10,15 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         userId:{ 
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER(11),
             allowNull: false 
         },
         genderId: {  
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER(11),
             allowNull: false 
         },
         productId: {  
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER(11),
             allowNull: false 
         },
         views: {
