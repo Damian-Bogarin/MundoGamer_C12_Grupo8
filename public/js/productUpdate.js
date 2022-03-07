@@ -57,7 +57,7 @@ window.addEventListener('load', function(){
         
             default:
                 $name.classList.remove('input-Error');
-                $name.classList.add ('input-Valid');
+                
                 $nameError.innerHTML = ""
                 break;
         }

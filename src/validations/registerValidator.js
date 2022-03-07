@@ -1,5 +1,5 @@
 const { check, body } = require('express-validator');
-//const { users } = require('../data/dataBase');
+
 const db = require('../database/models');
 const Users = db.User;
 
