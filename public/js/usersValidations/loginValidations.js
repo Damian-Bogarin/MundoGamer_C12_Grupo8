@@ -1,6 +1,5 @@
-/* Validations front end - register and login */
+/* Validations front end - login */
 
-/* Se podria resumir mucho mas el código */
 
 function qs(element) {
     return document.querySelector(element)
@@ -22,7 +21,6 @@ window.addEventListener('load', function() {
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
     /* regExDNI = /^[0-9]{7,8}$/, */
     
-/* let validationsErrors = false;  */ 
 
     let errors = {} 
 
@@ -46,7 +44,8 @@ window.addEventListener('load', function() {
             default: 
                 emailErrors.innerHTML = "";
                 $inputEmail.classList.remove('error');
-                $inputEmail.classList.add('ok');       
+                $inputEmail.classList.add('ok'); 
+            break;      
         }
     })
 
@@ -71,10 +70,29 @@ window.addEventListener('load', function() {
                 passErrors.innerHTML = "";
                 $inputPass.classList.remove('error');
                 $inputPass.classList.add('ok');
+            break;
         }
     })
 
+    /* submit */
+    $form.addEventListener('submit', function(event){     
+        event.preventDefault();
+        let error = false;
+       
+        let formElements = this.elements;  
 
+        for (let i = 0; i < formElements.length - 1; i++){ 
+            if(formElements[i].value == ""){
+                formElements[i].classList.add('error');
+                submitErrors.innerHTML = 'Los campos señalados son obligatorios' 
+                error = true;  
+            }
+        }
+
+        if(!error) { 
+            $form.submit()
+        }
+    })
 
 
 

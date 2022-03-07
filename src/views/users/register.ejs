@@ -73,14 +73,14 @@
                             <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
                             <input type="checkbox" name="terms" id="inputTerms"><br>
                             <% if (locals.errors && errors.terms) { %>
-                                <span class="error-msj" id="termsErrors"><%= errors.terms.msg %></span>
+                                <span class="error-msj" id=""><%= errors.terms.msg %></span>
                             <% } %>
                             <span class="error-msj" id="termsErrors"></span>
                         </div><br>
 
                         <div class="button">
-                            <button type="submit">REGISTRARME</button><br>
-                            <!-- <span class="error-msj">Hubo errores en tu envio</span> -->
+                            <button type="submit">REGISTRARME</button><br>                  
+                            <span class="error-msj" id="submitErrors"></span>
                         </div>
 
                         <span><a href="login">Ya tengo mi cuenta</a></span>

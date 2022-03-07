@@ -1,4 +1,4 @@
-/* Validations front end - register and login */
+/* Validations front end - register */
 
 /* Se podria resumir mucho mas el código */
 
@@ -37,7 +37,6 @@ window.addEventListener('load', function() {
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
     /* regExDNI = /^[0-9]{7,8}$/, */
     
-/* let validationsErrors = false;  */ 
 
     let errors = {} 
 
@@ -61,7 +60,8 @@ window.addEventListener('load', function() {
             default: 
                 nameErrors.innerHTML = "";
                 $inputName.classList.remove('error');
-                $inputName.classList.add('ok');    
+                $inputName.classList.add('ok');   
+            break; 
         }
     })
 
@@ -85,7 +85,8 @@ window.addEventListener('load', function() {
             default: 
                 lastNameErrors.innerHTML = "";
                 $inputLastName.classList.remove('error');
-                $inputLastName.classList.add('ok');    
+                $inputLastName.classList.add('ok');  
+            break;  
         }
     })
 
@@ -109,7 +110,8 @@ window.addEventListener('load', function() {
             default: 
                 emailErrors.innerHTML = "";
                 $inputEmail.classList.remove('error');
-                $inputEmail.classList.add('ok');       
+                $inputEmail.classList.add('ok');    
+            break;   
         }
     })
 
@@ -134,6 +136,7 @@ window.addEventListener('load', function() {
                 passErrors.innerHTML = "";
                 $inputPass.classList.remove('error');
                 $inputPass.classList.add('ok');
+            break;
         }
     })
 
@@ -158,21 +161,60 @@ window.addEventListener('load', function() {
                 passErrors2.innerHTML = "";
                 $inputPass2.classList.remove('error');
                 $inputPass2.classList.add('ok');
+            break;
         }
     })
 
     /* terms */
-    $inputTerms.addEventListener('click', function (){
+    $inputTerms.addEventListener('click', function(){
         $inputTerms.value = "on"
         $inputTerms.classList.toggle('ok')
-        $inputTerms.classList.remove('error')
+        $inputTerms.classList.remove('error') 
         $termsErrors.innerHTML = ""
     })
 
-  /*   $inputTerms = qs('#inputTerms')   falta corregir aca
-    $termsErrors = qs('#termsErrors')
 
- */
+    /* submit */  //Usamos function porque usamos this
+    $form.addEventListener('submit', function(event){     
+        event.preventDefault(); /* impedirá que se envie el formulario si es que no se evaluaron todos los casos */
+        let error = false;
+       
+        let formElements = this.elements;
+        //console.log(formElements); -> capturamos todos los elementos del form
+
+        for (let i = 0; i < formElements.length - 1; i++){ //- 1 porque no queremos capturar el buttom
+            if(formElements[i].value == ""
+            && formElements[i].type !== 'file'
+            ){
+                formElements[i].classList.add('error');
+                submitErrors.innerHTML = 'Los campos señalados son obligatorios' 
+                error = true;  
+            }
+        }
+        /* Esto en el caso de querer obviar algunos input para que no sean obligatorios 
+        && formElements[i].type !== 'file' captura por el type y no es obligatorio
+        && formElements[i].name !== 'apellido' */
+
+        if(!$inputTerms.checked){ //Solo chekea si esta marcado
+            $inputTerms.classList.add('error');
+            $termsErrors.innerHTML = 'Debes aceptar los terminos y condiciones' 
+            error = true;
+        } 
+
+        if(!error) { //Si no hay errores ahi recien hace el submit
+            $form.submit()
+        }
+    })   
+
+    /* file */
+   
+    /*  */
+
+        
+  
+   
+
+
 
 
 

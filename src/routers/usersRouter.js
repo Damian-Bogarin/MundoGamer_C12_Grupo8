@@ -19,9 +19,9 @@ router.post('/register', uploadFile.single('avatar'), registerValidator, control
 /* logout GET */
 router.get('/logout',/* userLogMiddlewares,*/ controller.logout);
 
-/* myProfile GET y POST */
+/* myProfile GET y PUT */
 router.get('/myProfile',/*  userLogMiddlewares */ controller.profile); 
-//router.put('/myProfile/:id/', controller.updateProfile);   /*--------------------------- multer */
+router.put('/myProfile/:id', controller.updateProfile);   /*----------------------?----- multer */
 
 
 /* productCart GET y POST */

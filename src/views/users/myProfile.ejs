@@ -13,8 +13,8 @@
 
                 <!-- circle photo -->
                 <div class="avatar">
-                    <img class="img-avatar" src="/img/avatars/<%= locals.old ? old.avatar : user.avatar %>" alt="">
-                </div>  
+                    <img class="img-avatar" src="/img/avatars/<%= user.avatar %>" alt="">
+                </div> <!--  locals.old ? old.avatar : -->
 
                 <div class="fileButtom"> 
                     <i class="fas fa-pencil-alt"></i>
@@ -27,7 +27,7 @@
                 <!-- enctype="multipart/form-data" ???-->
                 <h2 class="titleProfile">Mi perfil</h2>
 
-                <div class="container-data">
+                    <div class="container-data">
 
                         <div class="profileContainer">
                             <label class="data" for="name">Nombre</label><br>
@@ -76,9 +76,11 @@
 
                         </div>
 
-                    </div><!-- div-buttom -->
+                    </div>
 
-                        <div class="buttom-myProfile">
+                    <!-- div-buttom -->
+                    <div class="buttom-myProfile">
+                        
                         <button type="submit">Guardar cambios</button>
 
                     </div>

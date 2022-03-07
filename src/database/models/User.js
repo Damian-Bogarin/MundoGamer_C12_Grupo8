@@ -36,21 +36,21 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
         },
         tel: {
-            type: dataTypes.STRING(50)
-            /* allowNull: false */
+            type: dataTypes.STRING(50),/* agregué de nuevo algunos aloowNull */
+            allowNull: false,
         },
         age: {
             type: dataTypes.STRING(2),
-            //allowNull: false
+            allowNull: false
         },
         avatar:{
-            type: dataTypes.STRING(100)
-           /*  allowNull: false */
+            type: dataTypes.STRING(100),
+            allowNull: false 
         },
         rol_id: {
             type: dataTypes.INTEGER(10).UNSIGNED, 
             foreignKey: true,
-           /*  allowNull: false */
+            allowNull: false 
         },
        
     }
