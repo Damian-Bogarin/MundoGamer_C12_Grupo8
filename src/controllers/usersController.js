@@ -114,10 +114,11 @@ let controller = {
     },
 
     profile: async (req, res) => { /* ---incluir las otras asociaciones de like, starts y cart ??------ */
+         /* ---incluir las otras asociaciones de like, starts y cart ??------ */
 
-        Users.findByPk(req.session.user.id, {
-            include: [{association: 'rol'}] /* ---incluir las otras asociaciones de like, starts y cart ??------ */
-        })
+        Users.findByPk(req.session.user.id/*,  {
+            include: [{association: 'rol'}]
+        }*/) 
         .then((user) => {
             res.render('users/myProfile', {
                 user,
@@ -126,24 +127,25 @@ let controller = {
         })
     },
 
-   /*  updateProfile: async (req, res) => {
-
-        const errors = validationResult(req);
-        const { name, lastName, age, tel, address, province, locality, avatar } = req.body
+    updateProfile: async (req, res) => {
 
         Users.update({
-            name,
-            lastName,
-            age,
-            tel,
-            address,
-            province, 
-            locality,
-            avatar: 
-
+            age: req.body.age != "" ? req.body.age.trim() : null,
+            tel: req.body.tel != "" ? req.body.tel.trim() : null,
+            address: req.body.address != "" ? req.body.address.trim() : null,
+            province: req.body.province != "" && req.body.province != 0 ? req.body.province.trim() : null,         
+            locality: req.body.locality != "" && req.body.locality != 0 ?req.body.locality.trim():null,
+          /*   avatar: */
+        },{
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(() => {
+            res.redirect('/users/account')
         })
 
-        if(req.file){
+       /*  if(req.file){
             if(fs.existsSync("./public/images/avatars/", user.avatar) && (user.avatar != 'user_avatar_default.jpg')){
                 fs.unlinkSync(`./public/images/avatars/${user.avatar}`)
 
@@ -152,10 +154,18 @@ let controller = {
                     user.avatar = user.avatar
                 }
             }
-        }
+        } -----------------------------------------*/
+
+       /*  if(req.session.user.avatar != user.avatar){
+                            
+            if(fs.existsSync('public/images/avatars/'+req.session.user.avatar)&&req.session.user.avatar != "default.png"){
+                fs.unlinkSync('public/images/avatars/'+req.session.user.avatar)
+            }
+                req.session.user.avatar = user.avatar
+        } */
 
         res.redirect('/')
-    }, */
+    }, 
 
     cart: (req, res) => {     
         res.render('users/productCart', {

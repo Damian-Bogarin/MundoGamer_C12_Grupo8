@@ -30,28 +30,31 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
 .header .logo {
      width: 70px; 
-     height: 70px;
+     height: 70px; 
      cursor: pointer;
      margin-right: 10px;
 }
 
-.header-top .form-search { 
-     margin-right: 8px;  
-}
+.header-top .form-search { /* ----------- */
+     margin-right: 2px; /* ---tenia 8px------
+      */
+     width: 60%; 
+}  /* queda bien con width 60% */
 
-.header-top .form-search .search-bar { 
-     width: 100%; 
+.header-top .form-search .search-bar { /* --------- */
+    /*  width: 85%; */ /* 100% */
      border-radius: 1rem;
      display: flex;
      align-items: center;
-     padding: 4px 8px; 
+     padding: 4px 8px;  
      background-color: white;
+     height: 22px;  /* -------agregue--- */
 }
 
-.search-bar input {
-     width: 100%; 
+.search-bar input.input-buscador {
+     /* width: 100px;  */
      border: none;
-     flex-grow: 1;
+     flex-grow: 1; /* ------------acomodar---------- */
 }
  
 .search-bar input:focus {
@@ -59,10 +62,10 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      outline: none;
 } 
 
-.search-bar i.fa-search {
+/* .search-bar i {
      color: black;
      cursor: pointer;
-}
+}  */
 
 
 /* inicio icono user */
@@ -167,7 +170,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      }  
 
      .header-top .form-search { 
-          width: 55%;  
+          width: 58%;  /* ------------ tenia width: 55%;   */
      }
 }
 
@@ -206,7 +209,8 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 
     .header-top .search-bar {
          order: 1;
-}
+         /*height: 25px; ------------ */
+     }
 
      .header .header-top i.fa-user { 
          order: 2;

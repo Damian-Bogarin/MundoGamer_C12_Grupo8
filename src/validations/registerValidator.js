@@ -36,10 +36,10 @@ module.exports = [
     check('pass1')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
-    .isLength({ //largo de carácteres
+   /*  .isLength({   //revisar aca
         min: 6,
         max: 10
-    })
+    })  */
     .withMessage('La contraseña debe tener entre 6 y 10 carácteres'),
 
     body('pass2').custom((value, {req}) => value !== req.body.pass1 ? false : true) //pass1 es comparado con pass2
