@@ -32,13 +32,13 @@ window.addEventListener('load', function() {
             case !value.trim(): 
                 errorMsg = 'El campo email es requerido';
                 $inputEmail.classList.add('error');
-                errors.inputEmailError = errorMsg; /* aunque ese input tenga otra clase, le agrega "otra clase" que ya esta definida en el css */
+                errors.inputEmailError = errorMsg; 
                 emailErrors.innerHTML = errorMsg;
                 break;
             case !regExpEmail.test(value): 
                 errorMsg = 'Email inválido';
                 $inputEmail.classList.add('error')
-                errors.inputEmailError = errorMsg; /* inputEmailError -> propiedad creada */
+                errors.inputEmailError = errorMsg;
                 emailErrors.innerHTML = errorMsg;
                 break;
             default: 

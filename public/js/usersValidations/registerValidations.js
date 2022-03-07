@@ -73,13 +73,13 @@ window.addEventListener('load', function() {
             case !value.trim(): 
                 errorMsg = 'El apellido es requerido';
                 $inputLastName.classList.add('error');
-                errors.inputLastNameError = errorMsg; /* aunque ese input tenga otra clase, le agrega "otra clase" que ya esta definida en el css */
+                errors.inputLastNameError = errorMsg; 
                 lastNameErrors.innerHTML = errorMsg;
                 break;
             case !regExAlpha.test(value): 
                 errorMsg = 'Apellido inválido';
                 $inputLastName.classList.add('error')
-                errors.inputLastNameError = errorMsg; /* inputLastName -> propiedad creada */
+                errors.inputLastNameError = errorMsg; 
                 lastNameErrors.innerHTML = errorMsg;
                 break;
             default: 
@@ -98,13 +98,13 @@ window.addEventListener('load', function() {
             case !value.trim(): 
                 errorMsg = 'El campo email es requerido';
                 $inputEmail.classList.add('error');
-                errors.inputEmailError = errorMsg; /* aunque ese input tenga otra clase, le agrega "otra clase" que ya esta definida en el css */
+                errors.inputEmailError = errorMsg;
                 emailErrors.innerHTML = errorMsg;
                 break;
             case !regExpEmail.test(value): 
                 errorMsg = 'Email inválido';
                 $inputEmail.classList.add('error')
-                errors.inputEmailError = errorMsg; /* inputEmailError -> propiedad creada */
+                errors.inputEmailError = errorMsg; 
                 emailErrors.innerHTML = errorMsg;
                 break;
             default: 
