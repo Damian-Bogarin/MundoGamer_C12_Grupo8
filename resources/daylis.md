@@ -42,3 +42,7 @@ En la semana libre del 27 de diciembre también se hicieron las daylis los tres 
 
 Las daylis se hicieron normalmente, desde el primer dia para repartir las tareas (excepto por un dia en que Daniela faltó por covid). Se hicieron daylis incluidos algunos sábados por la tarde. El lunes 24 de la primer semana de plazo del sprint nos juntamos con Jeanne para consultar dudas, corregir el diagrama y ver errores del sprint anterior. 
 Pero en este sprint no estuvieron todos los integrantes. Contamos con la ayuda de Greta antes del sprint para hacer el diagrama, ya después no (problemas familiares).
+
+# SPRINT n° 7 DAYLIS
+
+En este sprint se realizaron daylis cortas con normalidad excepto alguna que otra reunión que cambiamos de día o de horario. 
