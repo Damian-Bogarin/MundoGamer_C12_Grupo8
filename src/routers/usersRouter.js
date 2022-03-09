@@ -21,6 +21,7 @@ router.get('/logout',/* userLogMiddlewares,*/ controller.logout);
 
 /* myProfile GET y PUT */
 router.get('/myProfile',/*  userLogMiddlewares */ controller.profile); 
+router.post('/myProfile/:id', controller.storeProfile); 
 router.put('/myProfile/:id', controller.updateProfile);   /*----------------------?----- multer */
 
 

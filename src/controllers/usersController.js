@@ -129,6 +129,10 @@ let controller = {
         })
     },
 
+    storeProfile: async(req, res) => {
+
+    },
+
     updateProfile: async (req, res) => {  /* FALTA */
 
         Users.update({
