@@ -3,6 +3,13 @@
 background: -webkit-linear-gradient(to left, #3f4c6b, #606c88);  
 background: linear-gradient(to left, #3f4c6b, #606c88);  */
 
+/* background: rgb(182,221,237);
+    background: -moz-linear-gradient(127deg, rgba(182,221,237,1) 0%, rgba(170,246,238,1) 16%, rgba(240,245,245,1) 48%, rgba(103,217,238,1) 64%, rgba(12,28,237,1) 100%);
+    background: -webkit-linear-gradient(127deg, rgba(182,221,237,1) 0%, rgba(170,246,238,1) 16%, rgba(240,245,245,1) 48%, rgba(103,217,238,1) 64%, rgba(12,28,237,1) 100%);
+    background: linear-gradient(127deg, rgba(182,221,237,1) 0%, rgba(170,246,238,1) 16%, rgba(240,245,245,1) 48%, rgba(103,217,238,1) 64%, rgba(12,28,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6dded",endColorstr="#0c1ced",GradientType=1);
+*/
+
 main.myProfile {
     display: flex;
     flex-direction: column;
