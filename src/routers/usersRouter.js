@@ -17,10 +17,10 @@ router.get('/register', guestMiddlewares, controller.register);
 router.post('/register', uploadFile.single('avatar'), registerValidator, controller.processRegister); // Pasamos el middleware uploadFile, single, por que es un solo archivo y dentro el bombre q pusimos en el campo name
 
 /* logout GET */
-router.get('/logout',/* userLogMiddlewares,*/ controller.logout);
+router.get('/logout', userLogMiddlewares, controller.logout);
 
 /* myProfile GET y PUT */
-router.get('/myProfile',/*  userLogMiddlewares */ controller.profile); 
+router.get('/myProfile',  userLogMiddlewares, controller.profile); 
 router.put('/myProfile/:id', controller.updateProfile);   /*----------------------?----- multer */
 
 

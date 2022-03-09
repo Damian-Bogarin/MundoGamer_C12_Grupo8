@@ -32,6 +32,7 @@ const controller = {
         })])
             .then(([producto,likes]) => {
 
+                
                 // Calculo si la diferencia de fechas para saber cuantos transcurrieron desde que se creo hasta el dia de hoy
                 var day1 = new Date(producto.date); 
                 var day2 = new Date();
@@ -66,14 +67,32 @@ const controller = {
                 likes.forEach(element => views += element.views)
                 likes.forEach(element => favorite += element.likes)
 
+                //Saco el promedio de estrellas
+                
+                 let stars = []
+                 let starsPromedio ;
+                 let starsEmpty = 5;
+                 
+                likes.forEach(element =>{
+                    if(element.stars != null){
+                        stars.push(element.stars)
+                    }
+                    } 
+                    ) 
+                
+                if(stars.length == 0){  starsPromedio = 0 }
+                else{starsPromedio = (stars.reduce((a, b) => a + b, 0)) / stars.length;} 
+                starsPromedio = Math.ceil(starsPromedio)
+                starsEmpty = starsEmpty - starsPromedio;
+
                 if(req.session.user && req.session.user.rol == "ROL_USER"){
                     let productFilter = likes.filter( element => element.userId == req.session.user.id)
                     love = productFilter[0].likes
                     
-                    res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite})
+                    res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite,starsPromedio,starsEmpty})
                 }
                 else{
-                      res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite})
+                      res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite,starsPromedio,starsEmpty})
                 }
                 //console.log(views)
                 //res.send(producto)
