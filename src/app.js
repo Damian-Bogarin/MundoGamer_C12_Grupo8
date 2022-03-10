@@ -42,7 +42,7 @@ let apiProduct = require('./routers/api/product');
 app.use('/', rutasHome);  /* home */
 
 /* USERS ROUTER Y CONTROLLER */
-app.use('/users', usersRouter);  /* login, register, myProfile, productCart */
+app.use('/users', usersRouter);  /* register, login, myProfile, productCart */
 
 /* PRODUCTS ROUTER Y CONTROLLER */
 app.use('/products', productsRouter);  /* categories, productDetail */
@@ -60,5 +60,5 @@ app.use((req, res, next) => {
 
 
 app.listen(PORT, () => 
-console.log(`Servidor levantado en el puerto ${PORT} 
-http://localhost:${PORT}`))
+console.log(`Servidor levantado en el puerto ${PORT} :)
+->  http://localhost:${PORT}`))

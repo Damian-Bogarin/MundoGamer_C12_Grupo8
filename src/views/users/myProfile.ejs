@@ -26,7 +26,7 @@
 
                     <div class="fileButtom"> 
                         <i class="fas fa-pencil-alt"></i>
-                        <!-- solo esto estaba comentado <input type="file" name="avatar" accept=".jpg" id="archivo" multiple>  -->
+                        <input type="file" name="avatar" accept=".jpg" id="archivo" multiple>   
                     </div>  
                  
                     <h2 class="user">
@@ -71,14 +71,14 @@
 
                     <!-- API del gobierno que lista las provincias y localidades de Argentina(select) -->
                     <label class="label-select" for="">Provincia</label><br>
-                    <select id="select-provincias">
+                    <select name="province" id="select-provincias"> <!-- ingrese el name para el validator -->
                         <option value="" selected hidden>Seleccione...</option>
                     </select>
                     <br>
                     <br>
 
                     <label class="label-select" for="">Localidad</label><br>
-                    <select id="select-localidades">
+                    <select name="locality" id="select-localidades">
                         <option value="" selected hidden>Seleccione...</option>
                     </select> 
 

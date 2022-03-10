@@ -26,7 +26,7 @@ router.put('/myProfile/:id', controller.updateProfile);   /*--------------------
 
 
 /* productCart GET y POST */
-router.get('/productCart',userLogMiddlewares, controller.cart);
+router.get('/productCart', userLogMiddlewares, controller.cart);
 
 
 module.exports = router;

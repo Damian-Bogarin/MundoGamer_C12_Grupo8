@@ -3,13 +3,35 @@
 background: -webkit-linear-gradient(to left, #3f4c6b, #606c88);  
 background: linear-gradient(to left, #3f4c6b, #606c88);  */
 
-/* background: rgb(182,221,237);
-    background: -moz-linear-gradient(127deg, rgba(182,221,237,1) 0%, rgba(170,246,238,1) 16%, rgba(240,245,245,1) 48%, rgba(103,217,238,1) 64%, rgba(12,28,237,1) 100%);
-    background: -webkit-linear-gradient(127deg, rgba(182,221,237,1) 0%, rgba(170,246,238,1) 16%, rgba(240,245,245,1) 48%, rgba(103,217,238,1) 64%, rgba(12,28,237,1) 100%);
-    background: linear-gradient(127deg, rgba(182,221,237,1) 0%, rgba(170,246,238,1) 16%, rgba(240,245,245,1) 48%, rgba(103,217,238,1) 64%, rgba(12,28,237,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b6dded",endColorstr="#0c1ced",GradientType=1);
-*/
+/* gradient barra horizontal home */
+/* background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%); */
 
+/* gradiente beetween nigth and day */
+/* background: #2c3e50; 
+background: -webkit-linear-gradient(to right, #3498db, #2c3e50); 
+background: linear-gradient(to right, #3498db, #2c3e50);   */
+
+/* grandiente bonito */
+/* background: #525252; 
+background: -webkit-linear-gradient(to right, #3d72b4, #525252); 
+background: linear-gradient(to right, #3d72b4, #525252);  */
+
+/* azul bello */
+/* background: #4b6cb7;  
+background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  
+background: linear-gradient(to right, #182848, #4b6cb7);
+ */
+
+ /* azul con un toque de violeta */
+ /* background: #614385;  
+ background: -webkit-linear-gradient(to right, #516395, #614385); 
+ background: linear-gradient(to right, #516395, #614385); */
+ 
+ /* bellooo */
+ /* background: #a8c0ff;  
+background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff); 
+background: linear-gradient(to right, #3f2b96, #a8c0ff); */
+ 
 main.myProfile {
     display: flex;
     flex-direction: column;
@@ -25,7 +47,7 @@ main.myProfile {
     padding: 0 10px;
     background: #606c88;  
     background: -webkit-linear-gradient(to left, #3f4c6b, #606c88);  
-    background: linear-gradient(to left, #3f4c6b, #606c88);  
+    background: linear-gradient(to left, #3f4c6b, #606c88);   
 }
 
 .myProfile .headerMyProfile .titleProfile {
@@ -43,7 +65,7 @@ main.myProfile {
 form.form-profile {
     font-family: var(--font-quicksand);
     border-radius: 14px;
-    background-color: #ebebeb;
+    background-color: #ebebeb; 
     margin: 55px auto;
     display: flex;
     flex-direction: column;
@@ -51,6 +73,10 @@ form.form-profile {
     align-items: center;
     width: 80%; /*ancho del contenedor gris*/
     height: 700px; 
+   /*  background-image: radial-gradient( circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% );  */
+ 
+   /* background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%); */
+
 }
 
 .myProfile .form-profile .encabezado {
@@ -94,8 +120,8 @@ form.form-profile {
 
 .myProfile .form-profile .encabezado .fileButtom input {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 30px;  
+    height: 30px; 
     opacity: 0;
 }  
 
@@ -197,37 +223,26 @@ form.form-profile {
     color: white;
 }
 
-/* ----------------------------------------------------- */
+
 /* Media queries-tablet */
 
 @media (min-width: 768px) {
 
+    form.form-profile {
+        width: 70%; /*ancho del contenedor gris*/
+    }
+
     .myProfile .headerMyProfile {
-        height: 180px;
-    }
-    .myProfile .headerMyProfile img.fondo-header {
-        height: 180px;
+        height: 50px;
+        padding: 10px 15px;
     }
 
-    .myProfile .headerMyProfile .avatar {
-        width: 120px;
-        height: 120px;
+    .myProfile .headerMyProfile .titleProfile {
+        font-size: 20px;
     }
 
-    .fileButtom, i {
-        margin-top: 128px; 
-    }
-
-    .form-profile {
-        max-width: 80%; 
-    } 
- 
-    .buttom-myProfile button {
-       max-width: 180px;
-    }
-
-    .footerMyProfile .message {
-        font-size: 18px;
+    .myProfile .form-profile .avatar {
+        top: 60px;
     }
 
 } 
@@ -237,34 +252,12 @@ form.form-profile {
 
 @media(min-width: 1024px) {
 
-    .myProfile .headerMyProfile {
-        height: 210px;
+    form.form-profile {
+        width: 60%; /*ancho del contenedor gris*/
     }
 
-    .myProfile .headerMyProfile img.fondo-header {
-        height: 210px;
-    } 
-
-    .myProfile .headerMyProfile .avatar {
-        width: 155px;
-        height: 155px;
-    }
-
-    .fileButtom, i {
-        margin-top: 160px; 
-        margin-left: 120px; 
-    }
-
-    .form-profile {
-        max-width: 70%; 
-    } 
-
-    .form-profile .container-data {
-        width: 80%; 
-    }
-
-    .footerMyProfile .message {
-        font-size: 20px;
+    .myProfile .headerMyProfile { 
+        padding: 10px 25px;
     }
 
 }
