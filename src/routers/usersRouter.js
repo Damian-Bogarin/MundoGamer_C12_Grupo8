@@ -6,7 +6,7 @@ let registerValidator = require('../validations/registerValidator');
 let uploadFile = require('../middlewares/uploadAvatar');
 let userLogMiddlewares = require('../middlewares/userLogMiddlewares')
 let guestMiddlewares = require('../middlewares/guestMiddlewares')
-
+let cartShop = require('../middlewares/cartShop')
 
 /* login GET y POST */
 router.get('/login', guestMiddlewares, controller.login);
@@ -25,7 +25,7 @@ router.put('/myProfile/:id', controller.updateProfile);   /*--------------------
 
 
 /* productCart GET y POST */
-router.get('/productCart',userLogMiddlewares, controller.cart);
+router.get('/productCart/:product?',userLogMiddlewares, cartShop, controller.cart);
 
 
 module.exports = router;

@@ -122,6 +122,10 @@ justify-content: flex-end;
     justify-content: center;
     cursor: help;
 }
+.article-header div img{
+    height: 90%;
+    width: 90%;
+}
 
 .home-descount{
     background: rgb(245,99,129);
@@ -761,3 +765,5 @@ QUERYS
     
     
 }
+
+

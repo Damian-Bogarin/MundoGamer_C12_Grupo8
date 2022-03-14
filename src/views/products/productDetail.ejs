@@ -8,10 +8,13 @@
         <%- include('../partials/header.ejs') %>
 
 
-            <main id="detail-main">
+            <main class="detail-main">
 
                 <section class="detail-product">
-                    <div class="detail-top">
+                    <div <% if (starsPromedio == 5) { %>class="detail-top5"<% }else{ %> class = "detail-top-plate" <% } %> >
+                     
+                    
+                    
                         <% if(product.descount !=0){ %>
                             <div class="home-descount">
                                 <svg width="90%" height="90%" viewBox="0 0 66 79" fill="none"
@@ -225,7 +228,8 @@
                                                 </defs>
                                             </svg>
                                         </div>
-                                        <div class="home-stars">
+                                        <% if (starsPromedio == 5) { %>
+                                         <div class="home-stars">
                                             <svg width="90%" height="90%" viewBox="0 0 60 64" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g id="Group">
@@ -273,6 +277,8 @@
                                                     </radialGradient>
                                                 </defs>
                                             </svg>
+                                        <% } %>
+                                        
 
 
                                         </div>
@@ -280,7 +286,7 @@
                     <div class="detail-img">
                         <img src="/img/products/<%= product.photo%>" alt="">
                     </div>
-                    <div class="detail-name">
+                    <div <% if (starsPromedio == 5) { %>class="detail-name5"<% }else{ %> class = "detail-name-plate" <% } %> >
                         <h2>
                             <%= product.name %>
                         </h2>
@@ -290,7 +296,9 @@
                             <%=product.description%>
                         </p>
                     </div>
+                    <div class="detail-br"></div>
                     <div class="detail-svg">
+                        <h1>Caracteristicas:</h1>
                         <!-- Para otra ocasion le dare mas toque jeje -->
                         <h2>Clasificación:<%=clasification%>
                         </h2>
@@ -315,6 +323,7 @@
                                 </h2>
 
                     </div>
+                    <div class="detail-br"></div>
                     <div class="detail-views-likes">
                         <div class="detail-views">
                             <svg width="90%" height="90%" viewBox="0 0 311 219" fill="none"
@@ -377,7 +386,7 @@
                     </div>
                     <div class="detail-stars">
                         <% for( let i = 0; i < starsPromedio; i++ ) { %>
-                        <svg width="90%" height="90%" viewBox="0 0 481 447" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="90%" height="90%" viewBox="0 0 481 447" fill="none" id="estrellaFill" xmlns="http://www.w3.org/2000/svg">
                             <path d="M240.5 22.3501L312.65 156.45L456.95 173.213L357.864 276.47L384.8 424.65L240.5 357.6L96.1998 424.65L123.376 276.47L24.0498 173.213L168.35 156.45L240.5 22.3501Z" fill="url(#paint0_linear_941_4)"/>
                             <path d="M233 194C233 210.569 226.284 224 218 224C209.716 224 203 210.569 203 194C203 177.431 209.716 164 218 164C226.284 164 233 177.431 233 194Z" fill="#380E0E"/>
                             <ellipse cx="267" cy="194" rx="15" ry="30" fill="#380E0E"/>
@@ -410,13 +419,28 @@
                                             
                         
                     </div>
-                    <div class="detail-bottom"></div>
+                    <div <% if (starsPromedio == 5) { %>class="detail-bottom5"<% }else{ %> class = "detail-bottom-plate" <% } %>></div>
                 </section>
 
                 <section class="detail-interface">
                     <% if(!locals.session.user){ %>
                         <a href="http://localhost:3008/users/login">
-                            <button>Like</button>
+            
+                            <input type="checkbox" checked="checked" id="LikeNOT" name="favorite-checkbox" value="favorite-button" >
+                                    <label for="LikeNOT" class="container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-heart">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                            </path>
+                                        </svg>
+                                        <div class="action">
+                                            <span class="option-1">Me gusta!</span>
+                                            <span class="option-2">Quitar me gusta!</span>
+                                        </div>
+                                    </label>
                         </a>
                         <% } %>
                             <% if(locals.session.user){ %>
@@ -435,12 +459,35 @@
                                             </path>
                                         </svg>
                                         <div class="action">
-                                            <span class="option-1">Add to Favorites</span>
-                                            <span class="option-2">Added to Favorites</span>
+                                            <span class="option-1">Me gusta!</span>
+                                            <span class="option-2">Quitar me gusta!</span>
                                         </div>
                                     </label>
                                     <% } %>
+                                    <% if (locals.session.user) { %>
+                                      <div class="detail-valoracion">
+                                          <% for( let S = 0; S < valoration; S++ ) { %>
+                                            <div id="valoration<%=S + 1%>"> <img src="/vectores/StarFill.svg"  alt=""></div>
+                                          <% } %>
+                                          <% for( let S = valoration; S < valorationEmpty; S++ ) { %>
+                                            <div id="valoration<%=S + 1%>"> <img src="/vectores/StarEmpty.svg"  alt=""></div>
+                                          <% } %>
+                                        
 
+                                    </div>
+                                    <% } %>
+                                   <div class="detail-sold">
+                                        <h2 class="detail-stock">Stock: <%= product.stock  %> unidades</h2>
+                                        <h2 class="detail-price"><%= product.priceEnd %>$</h2>
+                                        <h2 class="detail-descount"><%= product.descount %>% OFF</h2>
+                                   </div>
+                                       <div id="aboton">
+                                       <button id="detail-boton"> 
+                                            Añadir al Carrito
+                                        </button>
+                                    </div>
+                                         
+                                   
 
                 </section>
 

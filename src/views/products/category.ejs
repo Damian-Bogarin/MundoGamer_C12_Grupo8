@@ -1,177 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
 
     <body>
 
         <%- include('../partials/header.ejs') %>
 
-            <h1 id="titulo-categoria">Categorias</h1>
-            <section class="category-container-all">
-                <article class="category-container">
+            <h1 id="titulo-categoria">Filtros</h1>
+            <section class="category-filter">
+                <div class="category-filter-product">
+                    <h2>Generos:</h2>
+                    <div class="category-genders">
+                        <div id="Cat-gender1"><img src="/vectores/category/rpg.svg" alt=""></div>
+                        <div id="Cat-gender2"><img src="/vectores/category/accion.svg" alt=""></div>
+                        <div id="Cat-gender3"><img src="/vectores/category/aventura.svg" alt=""></div>
+                        <div id="Cat-gender4"><img src="/vectores/category/rol.svg" alt=""></div>
+                        <div id="Cat-gender5"><img src="/vectores/category/deporte.svg" alt=""></div>
+                        <div id="Cat-gender6"><img src="/vectores/category/simulacion.svg" alt=""></div>
+                        <div id="Cat-gender7"><img src="/vectores/category/estrategia.svg" alt=""></div>
+                        <div id="Cat-gender8"><img src="/vectores/category/supervivencia.svg" alt=""></div>
+                    </div>
+                    <h2>Consolas</h2>
+                        <div class="category-consoles">
+                            <div id="Cat-console1"><img src="/vectores/category/pc.svg" alt=""></div>
+                            <div id="Cat-console2"><img src="/vectores/category/playstation1.svg"  alt=""></div>
+                            <div id="Cat-console3"><img src="/vectores/category/playstation2.svg" style="border-radius: 50%;"alt=""></div>
+                            <div id="Cat-console4"><img src="/vectores/category/playstation3.svg" alt=""></div>
+                            <div id="Cat-console5"><img src="/vectores/category/playstation4.svg" alt=""></div>
+                            <div id="Cat-console6"><img src="/vectores/category/playstation5.svg" alt=""></div>
+                            <div id="Cat-console7"><img src="/vectores/category/xbox.svg" style="border-radius: 50%;" alt=""></div>
+                            <div id="Cat-console8"><img src="/vectores/category/nintendo.svg" alt=""></div>
 
-                    <div><img src="/vectores/Oferta.png" alt=""></div>
-                    <h3>Ofertas</h3>
+                        </div>
+                    <h2>Idioma</h2>
+                    <div class="category-languages">
+                        <div id="Cat-language1"><img src="/vectores/category/spain.svg" alt=""></div>
+                        <div id="Cat-language2"><img src="/vectores/category/unitedkingdom.svg" alt=""></div>
+                        <div id="Cat-language3"><img src="/vectores/category/china.svg" alt=""></div>
+                        
+                    </div>
+                    <h2>Traducción</h2>
+                    <div class="category-subtitles">
+                        <div id="Cat-subtitle1"><img src="/vectores/category/spain.svg" alt=""></div>
+                        <div id="Cat-subtitle2"><img src="/vectores/category/france.svg" alt=""></div>
+                        <div id="Cat-subtitle3"><img src="/vectores/category/germany.svg" alt=""></div>
+                    
+                    </div>
+                    <h2>General</h2>
+                    <div><input type="number" name="" id="priceMin"></div>
+                    <div><input type="number" name="" id="priceMax"></div>
 
-                </article>
-                <article class="category-container">
-
-                    <div><img src="/vectores/carbon_game-console.png" alt=""></div>
-                    <h3>Consolas</h3>
-
-                </article>
-                
-                <article class="category-container">
-
-                    <div><img src="/vectores/carbon_cut-out.png" alt=""></div>
-                    <h3>Promos</h3>
-
-                </article>
-                <article class="category-container">
-
-                    <div><img src="/vectores/ei_like.png" alt=""></div>
-                    <h3>Me gustan</h3>
-
-                </article>
-                <article class="category-container">
-
-                    <div><img src="/vectores/mdi_tshirt-v-outline.png" alt=""></div>
-                    <h3>T-shirt</h3>
-
-                </article>
-                <article class="category-container">
-
-                    <div><img src="/vectores/grommet-icons_diamond.png" alt=""></div>
-                    <h3>Accesorios</h3>
-
-                </article>
-
-
-
-
-            </section>
-            <section class="choise">
-                <h3>Has elegido:</h3>
-                <div class=choise-selected>
-                    <img src="/vectores/carbon_game-console.png" alt="">
                 </div>
-                <h3>Consolas</h3>
-                <nav>
-                    <h3>Filtros</h3>
-                    <div><input type="checkbox" name="Consolas" id="nintendo" value="Nintendo">
-                        <label for="nintendo">Nintendo</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="Consolas" id="xbox" value="Xbox">
-                        <label for="xbox">Xbox</label>
-                    </div>
-                    <div><input type="checkbox" name="Consolas" id="sony" value="Sony"> <label for="sony">Sony</label>
-                    </div>
-                    <div><input type="checkbox" name="Consolas" id="20g" value="20G"> <label for="20g">20G</label></div>
-                    <div><input type="checkbox" name="Consolas" id="50g" value="50G"> <label for="50g">50G</label></div>
-                    <div>
-                        <input type="checkbox" name="Consolas" id="blanco" value="Blanco"> <label
-                            for="blanco">Blanco</label>
-                    </div>
-                    <div> <input type="checkbox" name="Consolas" id="negro" value="Negro"><label
-                            for="negro">Negro</label></div>
+                <div class="category-filter-general">
 
-
-
-
-
-                </nav>
-
-
-
-
-
-
-
-            </section>
-            <div class="titulo-decompra">
-                <p>Consolas</p>
-            </div>
-
-
-            <section class="articulos">
-                <article class="articulo-container">
-                    <div class="articulo-container-img"></div>
-
-                    <div class="articulo-container-description">
-                        <h3> Nombre del Producto</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
-                        <div>
-                            <div class="articulo-container-description-valor">
-                                <h4 id="precio">18.000$</h4>
-                                <h4>17%off</h4>
-                            </div>
-
-                            <div class="articulo-container-description-button">
-
-                                <input type="button" value="CARRITO">
-                            </div>
-
-
-                        </div>
-                    </div>
-
-
-                </article>
-                <article class="articulo-container">
-                    <div class="articulo-container-img"></div>
-
-                    <div class="articulo-container-description">
-                        <h3> Nombre del Producto</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
-                        <div>
-                            <div class="articulo-container-description-valor">
-                                <h4 id="precio">18.000$</h4>
-                                <h4>17%off</h4>
-                            </div>
-
-                            <div class="articulo-container-description-button">
-
-                                <input type="button" value="CARRITO">
-                            </div>
-
-
-                        </div>
-                    </div>
-
-
-                </article>
-                <article class="articulo-container">
-                    <div class="articulo-container-img"></div>
-
-                    <div class="articulo-container-description">
-                        <h3> Nombre del Producto</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, non?</p>
-                        <div>
-                            <div class="articulo-container-description-valor">
-                                <h4 id="precio">18.000$</h4>
-                                <h4>17%off</h4>
-                            </div>
-
-                            <div class="articulo-container-description-button">
-
-                                <input type="button" value="CARRITO">
-                            </div>
-
-
-                        </div>
-                </article>
+                </div>
 
 
 
             </section>
 
+                <section class="section-containers">
+                
+                </section>
+           
             <%- include('../partials/footer.ejs') %>
-            
-            <%- include('../partials/script.ejs') %> 
 
+                <%- include('../partials/script.ejs') %>
+           <script src="/js/category.js"></script>
     </body>
 
 </html>

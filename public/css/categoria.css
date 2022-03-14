@@ -1,3 +1,4 @@
+.category-
 *{
     padding: 0;
     margin: 0; 
@@ -16,108 +17,69 @@
     background-repeat: repeat; 
 }
 
-.category-container-all{
+.category-filter{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
-   
-    width: 90vw;
-   
-    margin-right: 5vw ;
-    margin-left: 5vw ;
-    margin-top: 30px ;
-
-}
-
-.category-container {
-    display: flex;
-    height: 150px;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 10px;
-    margin-right:10px ;
-
-
-}
-
-.category-container div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    background-image: url(../img/NocheDegrade.png);
-    box-shadow:5px 4px 20px;
-    margin-bottom: 8px;
-
-}
-.category-container h3{
-    font-size: 20px;
-   
-}
-
-
-.choise{
-    display: flex;
-    flex-direction: column;
     align-items: center;
     
-    width: 90vw;
-    
-    margin-right: 5vw ;
-    margin-left: 5vw ;
-    margin-top: 30px ;
-
+    width: 100%;
+    padding: 10px 5%;
+    background-color: brown;
 }
-.choise-selected{
-background-image: url('../img/NocheDegrade.png');
-width: 80px;
-height: 80px;
-border-radius: 8px;display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow:5px 4px 20px;
-    margin-bottom: 8px;
-}
-.choise h3{
-    margin-bottom: 15px;
+.category-filter-product{
+    background-color: azure;
+    height: 40%;
+    width: 100%;
 }
 
-.choise nav{
+.category-genders{
     display: flex;
-    flex-direction: column;
-   
-    align-self: flex-start;
+    justify-content: space-around;
 }
 
-.choise nav div{
-    margin-left: 5px;
-    margin-right: 5px;
+.category-genders div{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    border-radius: 25px;
 }
 
-
-
-/* MEDIA PARA TABLET */
-
-
-@media (min-width: 426px){
-
-    .choise nav{
-        flex-direction: row;
-        align-self: center;
-        justify-content: space-evenly;
-
-        
-        
-            
-
-    }
-
-
-
-
-
-
+.category-genders div img{
+    height: 100%;
+    width: 100%;
 }
 
+.category-consoles{
+    display: flex;
+    justify-content: space-around;
+}
+
+.category-consoles div{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    border-radius: 25px;
+}
+
+.category-consoles div img{
+    height: 100%;
+    width: 100%;
+}
+
+.category-languages, .category-subtitles{
+    display: flex;
+    justify-content: space-around;
+}
+
+.category-language div, .category-subtitle div{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    border-radius: 25px;
+}
+
+.category-language div img, .category-subtitle div img{
+    height: 100%;
+    width: 100%;
+}

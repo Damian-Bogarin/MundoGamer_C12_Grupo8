@@ -11,7 +11,7 @@ const LanguageProduct = db.LanguageProduct
 const MultiplayerProduct = db.MultiplayerProduct
 const SubtitleProduct = db.SubtitleProduct
 const UserPreferences = db.UserPreferences
-
+const CartShop = db.CartShop
 
 const controller = {
 
@@ -64,6 +64,8 @@ const controller = {
                 let views = 0
                 let favorite = 0
                 let love = 0
+                let valoration = 0
+                let valorationEmpty = 5
                 likes.forEach(element => views += element.views)
                 likes.forEach(element => favorite += element.likes)
 
@@ -82,17 +84,21 @@ const controller = {
                 
                 if(stars.length == 0){  starsPromedio = 0 }
                 else{starsPromedio = (stars.reduce((a, b) => a + b, 0)) / stars.length;} 
-                starsPromedio = Math.ceil(starsPromedio)
+                starsPromedio = Math.round(starsPromedio)
                 starsEmpty = starsEmpty - starsPromedio;
 
                 if(req.session.user && req.session.user.rol == "ROL_USER"){
+
                     let productFilter = likes.filter( element => element.userId == req.session.user.id)
-                    love = productFilter[0].likes
+                    love = productFilter[0].likes;
+                    (productFilter[0].stars)? valoration = productFilter[0].stars : valorationEmpty -= productFilter[0].stars;
                     
-                    res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite,starsPromedio,starsEmpty})
+
+                    
+                    res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite,starsPromedio,starsEmpty,valoration,valorationEmpty})
                 }
                 else{
-                      res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite,starsPromedio,starsEmpty})
+                      res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite,starsPromedio,starsEmpty,valoration})
                 }
                 //console.log(views)
                 //res.send(producto)

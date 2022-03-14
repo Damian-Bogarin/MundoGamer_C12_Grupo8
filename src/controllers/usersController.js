@@ -5,6 +5,14 @@ const bcrypt = require('bcryptjs');
 
 const db = require('../database/models');
 const Users = db.User;
+const Products = db.Product;
+const CompatibilityProduct = db.CompatibilityProduct
+const LanguageProduct = db.LanguageProduct
+const MultiplayerProduct = db.MultiplayerProduct
+const SubtitleProduct = db.SubtitleProduct
+const UserPreferences = db.UserPreferences
+const CartShop = db.CartShop
+
 
 let controller = {
 
@@ -170,10 +178,31 @@ let controller = {
         res.redirect('/')
     }, 
 
-    cart: (req, res) => {     
-        res.render('users/productCart', {
-            session: req.session      
+    cart: (req, res) => {  
+        
+        CartShop.findAll({
+            where:{
+                userId:req.session.user.id
+            },
+            include:[{association: 'product'}]
+            
         })
+        .then(product =>{
+            let empty = false
+            let total = 0
+            if(product.length == 0){
+                let empty = true
+            }
+            if(product.length > 0){
+                product.forEach(elem =>{ total += elem.product.priceEnd})
+            }
+            
+
+            //res.send(product)
+              res.render('users/productCart', {session: req.session,product, empty,total})
+        })
+    
+      
     }
 };
 

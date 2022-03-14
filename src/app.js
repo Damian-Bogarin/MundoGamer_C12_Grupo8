@@ -37,6 +37,7 @@ let usersRouter = require('./routers/usersRouter');
 let productsRouter = require('./routers/productsRouter');
 let adminRouter = require('./routers/adminRouter');
 let apiProduct = require('./routers/api/product');
+let apiCategory = require('./routers/api/category');
 
 /* HOME ROUTER Y CONTROLLER */
 app.use('/', rutasHome);  /* home */
@@ -52,6 +53,7 @@ app.use('/admin', adminRouter);  /* listProduct, productCreate, updateProduct */
 
 /*API*/
 app.use('/api/product', apiProduct);
+app.use('/api/category', apiCategory)
 
 /* Error 404 */
 app.use((req, res, next) => {
