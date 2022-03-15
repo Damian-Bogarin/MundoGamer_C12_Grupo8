@@ -14,16 +14,15 @@ router.post('/login', loginValidator, controller.processLogin);
 
 /* register GET y POST */
 router.get('/register', guestMiddlewares, controller.register);
-router.post('/register', uploadFile.single('avatar'), registerValidator, controller.processRegister); // Pasamos el middleware uploadFile, single, por que es un solo archivo y dentro el bombre q pusimos en el campo name
+router.post('/register', registerValidator, controller.processRegister); 
 
 /* logout GET */
 router.get('/logout',/* userLogMiddlewares,*/ controller.logout);
 
 /* myProfile GET y PUT */
-router.get('/myProfile',/*  userLogMiddlewares */ controller.profile); 
-router.post('/myProfile/:id', controller.storeProfile); 
-router.put('/myProfile/:id', controller.updateProfile);   /*----------------------?----- multer */
-
+router.get('/myProfile',/*  userLogMiddlewares */ controller.profile);   
+router.put('/myProfile/update/:id',  uploadFile.single('avatar'), controller.updateProfile); 
+// Pasamos el middleware uploadFile, single, por que es un solo archivo y dentro el nombre q pusimos en el campo name
 
 /* productCart GET y POST */
 router.get('/productCart', userLogMiddlewares, controller.cart);

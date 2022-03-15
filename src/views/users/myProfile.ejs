@@ -9,14 +9,13 @@
 
             <header class="headerMyProfile">
 
-                <!-- <img class="fondo-header" src="/img/background/myProfileHeader.png" alt="imgMyProfile"> --> 
                 <h2 class="titleProfile">Mi perfil</h2>
                 <a href="productCart"><i class="far fa-shopping-cart cartProfile"></i></a>
                 
             </header> 
-
-            <form class="form-profile" action="/users/myProfile/<%= session.user.id %>/edit?_method=PUT" method="POST" id="form" enctype="multipart/form-data">
-                
+           
+            <form class="form-profile" id="form" action="/users/myProfile/update/<%= session.user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+              
                 <div class="encabezado">
 
                     <!-- circle photo -->
@@ -41,45 +40,56 @@
 
                     <div class="profileContainer">
                         <label class="data" for="name">Nombre</label><br>
-                        <input class="input-style inputData" type="text" id="name" name="name" value="<%= locals.old ? old.name : user.name %>">
-                        <!-- <span class="error-msj" id="nameErrors"></span> -->
+                        <input class="input-style" type="text" id="name" name="name" value="<%= locals.old ? old.name : user.name %>">
+                        <% if (locals.errors && errors.name) { %> 
+                            <span class="error-msj" id="nameErrors"><%= errors.name.msg %></span>
+                        <% } %> 
                     </div>  
+                   
 
                     <div class="profileContainer">
                         <label class="data" for="lastName">Apellido</label><br>
-                        <input class="input-style inputData" type="text" id="lastName" name="lastName" value="<%= locals.old ? old.lastName : user.lastName %>">
-                        <span class="error-msj" id="lastNameErrors"></span>
+                        <input class="input-style" type="text" id="lastName" name="lastName" value="<%= locals.old ? old.lastName : user.lastName %>">
+                        <% if (locals.errors && errors.lastName) { %> 
+                            <span class="error-msj" id="lastNameErrors"><%= errors.lastName.msg %></span>
+                        <% } %> 
                     </div>
 
                     <div class="profileContainer">
-                        <label class="data" for="age">Edad</label><br>
-                        <input class="input-style inputData" type="number" id="age" name="age" value="<%= locals.old ? old.age : user.age %>">
-                        <span class="error-msj" id="ageErrors"></span>
+                        <label class="data" for="number">Edad</label><br>
+                        <input class="input-style" type="number" id="age" name="age" value="<%= locals.old ? old.age : user.age %>">
+                        <% if (locals.errors && errors.age) { %> 
+                            <span class="error-msj" id="ageErrors"><%= errors.age.msg %></span>
+                        <% } %> 
                     </div>
 
                     <div class="profileContainer">
                         <label class="data" for="address">Teléfono</label><br>
-                        <input class="input-style inputData" type="text" id="tel" name="tel" value="<%= locals.old ? old.tel : user.tel %>">
-                        <span class="error-msj" id="telErrors"></span>
+                        <input class="input-style" type="text" id="tel" name="tel" value="<%= locals.old ? old.tel : user.tel %>">
+                        <% if (locals.errors && errors.tel) { %> 
+                            <span class="error-msj" id="telErrors"><%= errors.tel.msg %></span>
+                        <% } %> 
                     </div> 
 
                     <div class="profileContainer">
                         <label class="data" for="address">Dirección</label><br>
-                        <input class="input-style inputData" type="text" id="address" name="address" value="<%= locals.old ? old.address : user.address %>">
-                        <span class="error-msj" id="addressErrors"></span>
+                        <input class="input-style" type="text" id="address" name="address" value="<%= locals.old ? old.address : user.address %>">
+                        <% if (locals.errors && errors.address) { %> 
+                            <span class="error-msj" id="addressErrors"><%= errors.address.msg %></span>
+                        <% } %> 
                     </div>
 
                     <!-- API del gobierno que lista las provincias y localidades de Argentina(select) -->
                     <label class="label-select" for="">Provincia</label><br>
-                    <select name="province" id="select-provincias"> <!-- ingrese el name para el validator -->
-                        <option value="" selected hidden>Seleccione...</option>
+                    <select name="province" id="select-provincias"> 
+                        <option value="<%= locals.old ? old.province : user.province %>" selected hidden>Seleccione...</option>
                     </select>
                     <br>
-                    <br>
+                    <br> 
 
                     <label class="label-select" for="">Localidad</label><br>
-                    <select name="locality" id="select-localidades">
-                        <option value="" selected hidden>Seleccione...</option>
+                    <select name="locality" id="select-localidades">  
+                        <option value="<%= locals.old ? old.locality : user.locality %>" selected hidden>Seleccione...</option>
                     </select> 
 
                 </div>

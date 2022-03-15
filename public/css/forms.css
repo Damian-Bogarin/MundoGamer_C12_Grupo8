@@ -1,24 +1,32 @@
 .form-main .formulario {
     font-family: var(--font-quicksand);
     border-radius: 14px;
-    background-color: #ebebeb;
     margin: 55px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 85%; /*ancho del contenedor*/
-    height: 600px;   /*altura del cuadro gris originalmente 470*/
+    height: 550px;   /*altura del cuadro gris originalmente 470*/
+    background: #000428; 
+    background: -webkit-linear-gradient(to bottom, #636FA4, #000428);  
+    background: linear-gradient(to bottom, #636FA4, #000428);  
 }
 
 .form-main .titulo {
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
+    color: white;
+    margin-bottom: 5px;
 }
 
 .formulario .input-datos { /* --------box-container-------- */
-    margin: 8px 0;
-    width: 90%;
+    margin-bottom: 8px;/* 8px 0 */
+    width: 80%;
+}
+
+.formulario .input-datos .style-label {
+    color: white;
 }
 
 .input-datos input:focus {
@@ -28,7 +36,7 @@
 .formulario .input-datos .input-estilo {
     border-radius: 8px;
     width: 100%;
-    height: 25px; 
+    height: 22px; 
     border: none;
     padding: 0 6px; 
     font-size: 16px; 
@@ -41,25 +49,30 @@
     margin: 2px 0 15px 0;
 }
 
+.formulario .check .check-style {
+    color: white;
+}
+
 .formulario .check-1 label {
     /*clase check-1: solo en register*/
     font-size: 12px;
+    color: white;
 }
 
-.formulario .check-1 a {
+/* .formulario .check-1 a {
     color: blue;
     text-decoration: none;
-}
+} */
 
 .formulario span a {
-    color: blue;
+    color: rgb(100, 100, 255);
     font-size: 12px;
     text-decoration: none;
 }
 
 .formulario .error-msj {
     font-size: 12px;
-    color: rgb(255, 51, 51);
+    color: tomato; /*  rgb(255, 51, 51) */
     /* display: none;   */
 }
 
@@ -67,53 +80,51 @@
 /* validations front end (icono de color rojo o verde, dentro del input) */
 
 input.error { /* esta clase la creamos solo aca, no en el html */
-    border: 1px solid tomato;
-    box-shadow: 3px 3px 10px tomato; /* de px tenia 5 */
+    border: 1px solid rgb(255, 0, 0);
+    box-shadow: 3px 3px 10px rgb(255, 0, 0); /* de px tenia 5 */
 }
 
 input.ok {
-    border: 1px solid green;
-    box-shadow: 3px 3px 10px green;
+    border: 1px solid rgb(95, 230, 95);
+    box-shadow: 3px 3px 10px rgb(95, 230, 95);
 }
 
 .errors {
-    color: tomato;
+    color: rgb(255, 0, 0);
 }
 
 /* end validations front end */
 
 
-/* input file */
+/* input file 
 .formulario .file-avatar {
     margin: 10px 0;
 }
-
 .formulario .file-avatar .input-avatar {
     display: none; 
 }
-
 .formulario .file-avatar .label-avatar {
     cursor: pointer;
     border: solid 2px var(--ligth_violet);
     border-radius: 4px;
     padding: 4px;
-}
-/* end input file */
+}end input file */
 
 .formulario .button {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
 .formulario .button button {
     font-weight: bold; /*grosor de letra*/
-    font-size: 23px;
+    font-size: 20px;
     border: none;
-    border-radius: 25px;
-    background:  linear-gradient(200deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
+    border-radius: 8px;
+    background: rgb(128, 175, 219);
     color: rgb(44, 44, 44);
     cursor: pointer; /*manito*/
-    width: 180px;
-    height: 40px;
+    width: 125px;
+    height: 35px;
 }
 
 
@@ -122,23 +133,23 @@ input.ok {
 @media (min-width: 768px) {
 
     .form-main .formulario {
-        max-width: 600px; 
+       max-width: 40%;
     }
 
     .formulario .input-datos {
-        width: 75%;
+        width: 80%;
     }
 }
 
 
 /*Media queries-desktop*/
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
 
     .button button:hover {
         color: rgb(78, 78, 78);
         background:  linear-gradient(100deg, rgba(255,255,255,1) 0%, var(--ligth_violet) 60%);
         transition: all 0.4ms ease-in-out;
-        /*buttom tendra transition (segundos) para cambiar el color que le asignamos*/
+        buttom tendra transition (segundos) para cambiar el color que le asignamos
     }
-}
+} */

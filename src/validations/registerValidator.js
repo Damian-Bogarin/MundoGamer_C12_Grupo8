@@ -29,6 +29,8 @@ module.exports = [
         .then((user) => {
             if(user){
             return Promise.reject('Este email ya está registrado')
+            } else { 
+                return true
             }
         })
     }),
@@ -36,11 +38,17 @@ module.exports = [
     check('pass1')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
-   /*  .isLength({   //revisar aca
+    /* .bail()
+    .isLength({   revisar aca
         min: 6,
         max: 10
-    })  */
+    })   */
     .withMessage('La contraseña debe tener entre 6 y 10 carácteres'),
+
+    check('pass2')
+    .notEmpty()
+    .withMessage('Repita la contraseña.')
+    .bail(),
 
     body('pass2').custom((value, {req}) => value !== req.body.pass1 ? false : true) //pass1 es comparado con pass2
     .withMessage('Las contraseñas no coinciden'),

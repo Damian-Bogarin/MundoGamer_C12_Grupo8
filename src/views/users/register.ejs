@@ -9,14 +9,14 @@
 
             <main class="form-main">
 
-                <form action="/users/register" method="POST" enctype="multipart/form-data" id="form">
-
+                <form action="/users/register" method="POST" id="form">
+                   <!--  enctype="multipart/form-data" (saque esto porq lleve la foto a myProfile)-->
                     <div class="formulario">
 
                         <h2 class="titulo">Registro</h2>
 
                         <div class="input-datos">
-                            <label for="nombre">Nombre</label><br>
+                            <label class="style-label" for="nombre">Nombre</label><br>
                             <input class="input-estilo" type="text" name="name" id="inputName" value="<%= locals.old && old.name %>"> <!-- old para que al rellenar los datos no se vuelvan a borrar todos y tener que comenzar de vuelta-->
                             <% if (locals.errors && errors.name) { %> 
                                 <span class="error-msj"><%= errors.name.msg %></span>
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="input-datos">
-                            <label for="last_name">Apellido</label><br>
+                            <label class="style-label" for="last_name">Apellido</label><br>
                             <input class="input-estilo" type="text" name="lastName" id="inputLastName" value="<%= locals.old && old.lastName %>">
                             <% if (locals.errors && errors.lastName) { %> 
                                 <span class="error-msj"><%= errors.lastName.msg %></span>
@@ -34,7 +34,7 @@
                         </div> 
 
                         <div class="input-datos">
-                            <label for="email">E-mail</label><br>
+                            <label class="style-label" for="email">E-mail</label><br>
                             <!--Tambien dentro del input podemos agregar un required (saldra un aviso standar) pero mejor hacer un span-->
                             <input class="input-estilo" type="email" name="email" id="inputEmail"> 
                             <% if (locals.errors && errors.email) { %> 
@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="input-datos">
-                            <label for="pass">Contraseña</label><br>
+                            <label class="style-label" for="pass">Contraseña</label><br>
                             <input class="input-estilo" type="password" name="pass1" id="inputPass">
                             <% if (locals.errors && errors.pass1) { %> 
                                 <span class="error-msj" id="passErrors"><%= errors.pass1.msg %></span>
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="input-datos">
-                            <label for="pass">Repetir contraseña</label><br>
+                            <label class="style-label" for="pass">Repetir contraseña</label><br>
                             <input class="input-estilo" type="password" name="pass2" id="inputPass2">
                             <% if (locals.errors && errors.pass2) { %> 
                                 <span class="error-msj" id="pass2Errors"><%= errors.pass2.msg %></span>
@@ -61,16 +61,10 @@
                             <span class="error-msj" id="passErrors2"></span>
                         </div>
 
-                        <div class="file-avatar"><!-- Campo no obligatorio -->
-                            <label class="label-avatar" for="avatar">Ingrese una foto</label>
-                            <input class="input-avatar" type="file" name="avatar" id="avatar">
-                            <% if (locals.errors && errors.image) { %> <!-- image o avatar?? -->
-                                <span class="text-danger" id="avatarErrors"><%= errors.image.msg %></span>
-                            <% } %>
-                        </div>
+                       <!-- file -->
 
                         <div class="check-1">
-                            <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
+                            <label for="terms">Acepto los términos y condiciones</label>
                             <input type="checkbox" name="terms" id="inputTerms"><br>
                             <% if (locals.errors && errors.terms) { %>
                                 <span class="error-msj" id=""><%= errors.terms.msg %></span>
@@ -79,7 +73,7 @@
                         </div><br>
 
                         <div class="button">
-                            <button type="submit">REGISTRARME</button><br>                  
+                            <button type="submit">Registrarme</button><br>                  
                             <span class="error-msj" id="submitErrors"></span>
                         </div>
 

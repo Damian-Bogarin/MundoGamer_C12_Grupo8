@@ -16,7 +16,7 @@ window.addEventListener('load', function() {
     $inputAge = qs('#age')
     $ageErrors = qs('#ageErrors')
 
-    $inputTel = qs('#tel') 
+    $inputTel = qs('#tel')  /* /^09[0-9]{7}$/gm */
     $telErrors = qs('#telErrors')
 
     $inputAddress = qs('#address')
@@ -25,6 +25,7 @@ window.addEventListener('load', function() {
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+    regExPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
     
     let errors = {} 
@@ -79,4 +80,52 @@ window.addEventListener('load', function() {
         }
     })
 
+    /* age */
+    $inputAge.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
+        switch (true) {
+            case !value.trim(): 
+                errorMsg = 'La edad es requerida';
+                $inputAge.classList.add('error');
+                errors.inputLastNameError = errorMsg; 
+                lastNameErrors.innerHTML = errorMsg;
+                break;
+            case !regExAlpha.test(value): 
+                errorMsg = '';
+                $inputAge.classList.add('error')
+                errors.inputLastNameError = errorMsg; 
+                lastNameErrors.innerHTML = errorMsg;
+                break;
+            default: 
+                lastNameErrors.innerHTML = "";
+                $inputAge.classList.remove('error');
+                $inputAge.classList.add('ok');  
+            break;  
+        }
+    })
+
+
+    regExImage = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+
+
 })
+
+ /*  if(req.file){
+            if(fs.existsSync("./public/images/avatars/", user.avatar) && (user.avatar != 'user_avatar_default.jpg')){
+                fs.unlinkSync(`./public/images/avatars/${user.avatar}`)
+
+                user.avatar = req.file.filename}
+                else{
+                    user.avatar = user.avatar
+                }
+            }
+        } -----------------------------------------*/
+
+       /*  if(req.session.user.avatar != user.avatar){
+                            
+            if(fs.existsSync('public/images/avatars/'+req.session.user.avatar)&&req.session.user.avatar != "default.png"){
+                fs.unlinkSync('public/images/avatars/'+req.session.user.avatar)
+            }
+                req.session.user.avatar = user.avatar
+        } */

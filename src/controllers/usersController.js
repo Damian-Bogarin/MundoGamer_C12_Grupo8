@@ -1,6 +1,6 @@
-
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const fs = require('fs');
 
 
 const db = require('../database/models');
@@ -87,12 +87,12 @@ let controller = {
                 email, 
                 pass: bcrypt.hashSync(pass1, 12), //hashSync recibe dos parametros, pass y la sal
                 rol_id: 2, 
-                //address, /* "", y los siguientes dos */  //ESTOS DATOS DEBERIAN LLENARSE EN EL EDITAR PROFILE QUE TENIA GRETA, pero que no paso :C
+                //address, /* Datos que recien se pedirán en myProfile */  
                 //province,
                 //locality,
                 //tel,
                 //age,
-                avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
+                //avatar
             })
             .then(() => {
                 res.redirect('/users/login')
@@ -116,7 +116,7 @@ let controller = {
         res.redirect('/')
     },
 
-    profile: async (req, res) => { /* ---incluir las otras asociaciones de like, starts y cart ??------ */
+    profile: (req, res) => { /* ---async---incluir las otras asociaciones de like, starts y cart ??------ */
 
         Users.findByPk(req.session.user.id/*,  {
             include: [{association: 'rol'}]
@@ -127,50 +127,42 @@ let controller = {
                 session: req.session
             })
         })
+        .catch(error => console.log(error))
     },
 
-    storeProfile: async(req, res) => {
+    updateProfile: (req, res) => { /*  async  */
 
-    },
-
-    updateProfile: async (req, res) => {  /* FALTA */
+        const { name, lastName, age, tel, address, province, locality } = req.body  /* await */
 
         Users.update({
-            age: req.body.age,
-            tel: req.body.tel,
-            address: req.body.address,
-            province: req.body.province,         
-            locality: req.body.locality,
-          /* avatar: */
+            name,
+            lastName,
+            age,
+            tel,
+            address,
+            province,         
+            locality,
+            avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
         },{
             where: {
                 id: req.session.user.id
             }
         })
-        .then(() => {
-            res.redirect('/')
-        })
-
-       /*  if(req.file){
-            if(fs.existsSync("./public/images/avatars/", user.avatar) && (user.avatar != 'user_avatar_default.jpg')){
-                fs.unlinkSync(`./public/images/avatars/${user.avatar}`)
-
-                user.avatar = req.file.filename}
-                else{
-                    user.avatar = user.avatar
+        .then(result => {
+            Users.findByPk(req.session.user.id)
+            .then(user => {
+                if(req.session.user.avatar != user.avatar){
+                    
+                    if(fs.existsSync('public/img/avatars/' + req.session.user.avatar) && req.session.user.avatar != "default-img.png"){
+                        fs.unlinkSync('public/img/avatars/' + req.session.user.avatar)
+                    }
+                    req.session.user.avatar = user.avatar
                 }
-            }
-        } -----------------------------------------*/
-
-       /*  if(req.session.user.avatar != user.avatar){
-                            
-            if(fs.existsSync('public/images/avatars/'+req.session.user.avatar)&&req.session.user.avatar != "default.png"){
-                fs.unlinkSync('public/images/avatars/'+req.session.user.avatar)
-            }
-                req.session.user.avatar = user.avatar
-        } */
-
-        res.redirect('/')
+                res.redirect('/')
+            })
+            .catch(error => console.log(error))
+        })
+        .catch(error => console.log(error))
     }, 
 
     cart: (req, res) => {     
