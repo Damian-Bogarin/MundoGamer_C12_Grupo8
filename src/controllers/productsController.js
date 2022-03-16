@@ -2,7 +2,8 @@
 let { validationResult } = require('express-validator')
 const fs = require('fs')
 const db = require('../database/models');
-const path = require('path')
+const path = require('path');
+
 
 // Llamo a los modelos
 const Products = db.Product;
@@ -12,7 +13,7 @@ const MultiplayerProduct = db.MultiplayerProduct
 const SubtitleProduct = db.SubtitleProduct
 const UserPreferences = db.UserPreferences
 const CartShop = db.CartShop
-
+const Notification = db.Notification
 const controller = {
 
     detail: (req, res) => {
@@ -224,7 +225,119 @@ const controller = {
                         }))
 
             }
-            Products.update({
+
+            Products.findByPk(req.params.id)
+            .then(data =>{
+                // SI DESCOUNT VARIA A UN VALOR MAYOR A 0, CREARA LAS NOTIFICACIONES!
+                if (descount && data.descount != descount && descount > 0){
+                    UserPreferences.findAll({
+                        where:{
+                            productId:req.params.id,
+                            likes: 1
+                        }
+                    })
+                    .then(result =>{
+                        if(result.length > 0){
+
+                        let notificationPromise = []
+
+                        result.forEach(elem =>{
+                            notificationPromise.push(
+                                Notification.create({
+                                userId: elem.userId,
+                                see:0,
+                                message:`psst! un articulo que te gusto, acaba de estar en rebaja al ${descount}%!!, pincha aqui para ver cual es!`,
+                                link:`/products/detail/${req.params.id}`
+                            }))
+                            
+                        })
+
+                            Promise.all(notificationPromise)
+                            .then(finish => {
+                                Products.update({
+                                    name,
+                                    description,
+                                    conexion: conexiontrue,
+                                    integratedShop: integratedShop,
+                                    price,
+                                    descount,
+                                    priceEnd: priceEndtrue,
+                                    stock,
+                                    genderId: gendertrue,
+                                    classificationId: clasificationtrue,
+                    
+                                },
+                                    {
+                                        where: { id: req.params.id }
+                                    })
+                                    .then((productEdit) => {
+                    
+                                        // BORRO TODAS LAS ASOCIACIONES
+                                        CompatibilityProduct.destroy({
+                                            where: {
+                                                productId: req.params.id
+                                            }
+                                        })
+                                        LanguageProduct.destroy({
+                                            where: {
+                                                productId: req.params.id
+                                            }
+                                        })
+                                        MultiplayerProduct.destroy({
+                                            where: {
+                                                productId: req.params.id
+                                            }
+                                        })
+                                        SubtitleProduct.destroy({
+                                            where: {
+                                                productId: req.params.id
+                                            }
+                                        })
+                                        //Vuelvo a crear las asociaciones
+                                        for (let i = 0; i < console.length; i++) {
+                                            CompatibilityProduct.create({
+                                                compatibilityId: +console[i],
+                                                productId: req.params.id
+                                            });
+                    
+                                        }
+                                        for (let i = 0; i < language.length; i++) {
+                                            LanguageProduct.create({
+                                                languageId: +language[i],
+                                                productId: req.params.id
+                                            });
+                    
+                                        }
+                                        for (let i = 0; i < multiplayer.length; i++) {
+                                            MultiplayerProduct.create({
+                                                multiplayerId: +multiplayer[i],
+                                                productId: req.params.id
+                                            });
+                    
+                                        }
+                                        if (subtitle) { //evaluar
+                                            for (let i = 0; i < subtitle.length; i++) {
+                                                SubtitleProduct.create({
+                                                    subtitleId: +subtitle[i],
+                                                    productId: req.params.id
+                                                });
+                    
+                                            }
+                                        }
+                    
+                    
+                    
+                    
+                                    }).then((result) => {
+                                        res.redirect("/admin")
+                                    }) 
+                            })
+                        }
+                       
+                    })
+                }
+                else{ // SI DESCOUNT NO VARIA PASARA POR ACA
+                     Products.update({
                 name,
                 description,
                 conexion: conexiontrue,
@@ -241,6 +354,7 @@ const controller = {
                     where: { id: req.params.id }
                 })
                 .then((productEdit) => {
+
                     // BORRO TODAS LAS ASOCIACIONES
                     CompatibilityProduct.destroy({
                         where: {
@@ -301,6 +415,10 @@ const controller = {
                     res.redirect("/admin")
                 })
 
+                }
+            })
+            
+           
 
         } else {
 

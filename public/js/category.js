@@ -6,7 +6,9 @@ function qsAll(element) {
     return document.querySelectorAll(element)
 }
 
+
 window.addEventListener('load', function () {
+
 
     // URL pal Fecht
     let url = new URL(`${window.location.origin}/api/category/filter${window.location.search}`);// ?g=7&g=3
@@ -46,6 +48,9 @@ window.addEventListener('load', function () {
     let $priceMax = qs('#priceMax')
     //variable de la seccion de los productos!
     let $sectionContainer = qs('.section-containers')
+
+    //variable para el buton audio
+    let $audio = qs('#audiobuton')
 
 
      /***************************
@@ -106,12 +111,70 @@ window.addEventListener('load', function () {
     })}
     )
 
+
+    /*****
+     * Pulsacion de botones
+     */
+
+
+    if(params.has('g')){
+        let value = params.getAll('g')
+        for (let i = 0; i < value.length; i++) {
+
+            if(value[i] == 1){
+                $genderRpg.classList.add('pulsado')}
+
+            if(value[i] == 2){
+                    $genderAccion.classList.add('pulsado')}
+            if(value[i] == 3){
+                        $genderAventura.classList.add('pulsado')}
+            if(value[i] == 4){
+                            $genderRol.classList.add('pulsado')}
+            if(value[i] == 5){
+                                $genderDeporte.classList.add('pulsado')}
+            if(value[i] == 6){
+                $genderSimulacion.classList.add('pulsado')}
+            if(value[i] == 7){
+            $genderEstrategia.classList.add('pulsado')}
+            if(value[i] == 8){
+                $genderSupervivencia.classList.add('pulsado')
+                }
+
+   }
+
+}
+
+if(params.has('c')){
+    let value = params.getAll('c')
+    for (let i = 0; i < value.length; i++) {
+        if(value[i] == 1){
+            $consolePc.classList.add('pulsado')}
+            if(value[i] == 2){
+                $consolePlay1.classList.add('pulsado')}
+                if(value[i] == 3){
+                    $consolePlay2.classList.add('pulsado')}
+                    if(value[i] == 4){
+                        $consolePlay3.classList.add('pulsado')}
+                        if(value[i] == 5){
+                            $consolePlay4.classList.add('pulsado')}
+                            if(value[i] == 6){
+                                $consolePlay5.classList.add('pulsado')}
+                                if(value[i] == 7){
+                                    $consoleXbox.classList.add('pulsado')}
+                                    if(value[i] == 8){
+                                        $consoleNintendo.classList.add('pulsado')}
+    }
+}
+
+
+
     /************************** 
      * GENDER
     *****************************/
 
     $genderRpg.addEventListener('click', function () {
-
+        $genderRpg.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let g = params.getAll(`g`)
 
@@ -194,7 +257,8 @@ window.addEventListener('load', function () {
 
     })
     $genderAccion.addEventListener('click', function () {
-
+        $genderAccion.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let g = params.getAll(`g`)
 
@@ -277,7 +341,8 @@ window.addEventListener('load', function () {
 
     })
     $genderAventura.addEventListener('click', function () {
-
+        $genderAventura.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let g = params.getAll(`g`)
 
@@ -360,7 +425,9 @@ window.addEventListener('load', function () {
 
     })
     $genderRol.addEventListener('click', function () {
-
+        $genderRol.classList.toggle('pulsado')
+        $audio.play()
+        $audio.play()
         //extraigo todos los valores de g
         let g = params.getAll(`g`)
 
@@ -443,6 +510,9 @@ window.addEventListener('load', function () {
 
     })
     $genderDeporte.addEventListener('click', function () {
+        $genderDeporte.classList.toggle('pulsado')
+        $audio.play()
+        
 
         //extraigo todos los valores de g
         let g = params.getAll(`g`)
@@ -523,7 +593,8 @@ window.addEventListener('load', function () {
     })
 
     $genderSimulacion.addEventListener('click', function () {
-
+        $genderSimulacion.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let g = params.getAll(`g`)
 
@@ -606,7 +677,8 @@ window.addEventListener('load', function () {
 
     })
     $genderEstrategia.addEventListener('click', function () {
-
+        $genderEstrategia.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let g = params.getAll(`g`)
 
@@ -689,7 +761,8 @@ window.addEventListener('load', function () {
 
     })
     $genderSupervivencia.addEventListener('click', function () {
-
+        $genderSupervivencia.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let g = params.getAll(`g`)
 
@@ -780,7 +853,8 @@ window.addEventListener('load', function () {
      ***********************************/
 
      $consolePc.addEventListener('click', function () {
-
+        $consolePc.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let c = params.getAll(`c`)
 
@@ -863,7 +937,8 @@ window.addEventListener('load', function () {
 
     })
     $consolePlay1.addEventListener('click', function () {
-
+        $consolePlay1.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let c = params.getAll(`c`)
 
@@ -946,7 +1021,8 @@ window.addEventListener('load', function () {
 
     })
     $consolePlay2.addEventListener('click', function () {
-
+        $consolePlay2.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let c = params.getAll(`c`)
 
@@ -1029,7 +1105,8 @@ window.addEventListener('load', function () {
 
     })
     $consolePlay3.addEventListener('click', function () {
-
+        $consolePlay3.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let c = params.getAll(`c`)
 
@@ -1112,7 +1189,8 @@ window.addEventListener('load', function () {
 
     })
     $consolePlay4.addEventListener('click', function () {
-
+        $consolePlay4.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let c = params.getAll(`c`)
 
@@ -1195,7 +1273,8 @@ window.addEventListener('load', function () {
 
     })
     $consolePlay5.addEventListener('click', function () {
-
+        $consolePlay5.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let c = params.getAll(`c`)
 
@@ -1278,7 +1357,8 @@ window.addEventListener('load', function () {
 
     })
     $consoleXbox.addEventListener('click', function () {
-
+        $consoleXbox.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let c = params.getAll(`c`)
 
@@ -1361,7 +1441,8 @@ window.addEventListener('load', function () {
 
     })
     $consoleNintendo.addEventListener('click', function () {
-
+        $consoleNintendo.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let c = params.getAll(`c`)
 
@@ -1451,7 +1532,8 @@ window.addEventListener('load', function () {
      ***********************************/
 
      $languageSpain.addEventListener('click', function () {
-
+        $languageSpain.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let l = params.getAll(`l`)
 
@@ -1534,7 +1616,8 @@ window.addEventListener('load', function () {
 
     })
     $languageIngles.addEventListener('click', function () {
-
+        $languageIngles.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let l = params.getAll(`l`)
 
@@ -1617,7 +1700,8 @@ window.addEventListener('load', function () {
 
     })
     $languageChino.addEventListener('click', function () {
-
+        $languageChino.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let l = params.getAll(`l`)
 
@@ -1701,7 +1785,8 @@ window.addEventListener('load', function () {
     })
 
     $subtitleSpain.addEventListener('click', function () {
-
+        $subtitleSpain.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let s = params.getAll(`s`)
 
@@ -1784,7 +1869,8 @@ window.addEventListener('load', function () {
 
     })
     $subtitleFrench.addEventListener('click', function () {
-
+        $subtitleFrench.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let s = params.getAll(`s`)
 
@@ -1867,7 +1953,8 @@ window.addEventListener('load', function () {
 
     })
     $subtitleGerman.addEventListener('click', function () {
-
+        $subtitleGerman.classList.toggle('pulsado')
+        $audio.play()
         //extraigo todos los valores de g
         let s = params.getAll(`s`)
 
@@ -2018,7 +2105,63 @@ window.addEventListener('load', function () {
             )
         } else {
             params.delete('min')
+            fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
+            .then(response => response.json())
+            .then(data =>{
+                
+                $sectionContainer.innerHTML = ""
+                data.forEach(element => {
+                $sectionContainer.insertAdjacentHTML('beforeend',
+               ` <article class="container-new">
+                     <a id="homeLink" href="/products/detail/${element.id}">
+                     <div class="article-header">
+                        <div class="home-descount">
+                            <img src="/vectores/category/descount.svg" alt="">
+                        </div>
+                        <div class="home-new">
+                            <img src="/vectores/category/new.svg" alt="">
+                        </div>
+                        <div class="home-sold">
+                            <img src="/vectores/category/pan.svg" alt="">
+                        </div>
+                        <div class="home-stars">
+                            <img src="/vectores/category/stars.svg" alt="">
+                        </div>
+                     </div>
+                     
+                     <div class="article-container-new">
+                     <div class="img-container-new"> <img src="/img/products/${element.photo}"
+                             alt=""> 
+                             </div>
+                     <h3 class="product-name">
+                     ${element.name}
+                             </h3>
+                             <p class="product-description">
+                             ${element.description.slice(0,100) + "..."}
+                             </p>
+                             <div class="product-value">
+                                 <h3 class="product-price">
+                                 ${element.priceEnd}$
+                                 </h3>
+                                 <h3 class="descount">
+                                 ${element.descount} off
+                                 </h3>
+                             </div>
+
+
+                 </div>
+                 
+                 <div class="article-footer"></div>
+
+                     </a>
+                </article>` 
+            )
+       
+            })}
+            )
         }
+
+       
     })
 
     $priceMax.addEventListener('change', function(){
@@ -2086,6 +2229,60 @@ window.addEventListener('load', function () {
             )
         } else {
             params.delete('max')
+            fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
+            .then(response => response.json())
+            .then(data =>{
+                
+                $sectionContainer.innerHTML = ""
+                data.forEach(element => {
+                $sectionContainer.insertAdjacentHTML('beforeend',
+               ` <article class="container-new">
+                     <a id="homeLink" href="/products/detail/${element.id}">
+                     <div class="article-header">
+                        <div class="home-descount">
+                            <img src="/vectores/category/descount.svg" alt="">
+                        </div>
+                        <div class="home-new">
+                            <img src="/vectores/category/new.svg" alt="">
+                        </div>
+                        <div class="home-sold">
+                            <img src="/vectores/category/pan.svg" alt="">
+                        </div>
+                        <div class="home-stars">
+                            <img src="/vectores/category/stars.svg" alt="">
+                        </div>
+                     </div>
+                     
+                     <div class="article-container-new">
+                     <div class="img-container-new"> <img src="/img/products/${element.photo}"
+                             alt=""> 
+                             </div>
+                     <h3 class="product-name">
+                     ${element.name}
+                             </h3>
+                             <p class="product-description">
+                             ${element.description.slice(0,100) + "..."}
+                             </p>
+                             <div class="product-value">
+                                 <h3 class="product-price">
+                                 ${element.priceEnd}$
+                                 </h3>
+                                 <h3 class="descount">
+                                 ${element.descount} off
+                                 </h3>
+                             </div>
+
+
+                 </div>
+                 
+                 <div class="article-footer"></div>
+
+                     </a>
+                </article>` 
+            )
+       
+            })}
+            )
         }
     })
 
@@ -2099,12 +2296,12 @@ window.addEventListener('load', function () {
 
 
 
-
-
-
-
-
+/********************
+ * 
+ * 
+ */
 
 
 
 })
+

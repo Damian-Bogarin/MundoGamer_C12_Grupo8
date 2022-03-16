@@ -25,12 +25,15 @@
     
     width: 100%;
     padding: 10px 5%;
-    background-color: brown;
+    
 }
 .category-filter-product{
-    background-color: azure;
+    background-color: rgba(109, 101, 101, 0.25);  
+ backdrop-filter: blur(5px);
     height: 40%;
     width: 100%;
+    padding: 3px;
+    border-radius: 5px;
 }
 
 .category-genders{
@@ -41,8 +44,29 @@
 .category-genders div{
     height: 50px;
     width: 50px;
-    background-color: blue;
+    background-color: rgb(221, 221, 236);
     border-radius: 25px;
+    
+}
+.category-genders div:hover{
+    height: 50px;
+    width: 50px;
+    transform: scale(0.90);
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+}
+.pulsado{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+    border-top: 1px solid green;
+    border-left: 3px solid green;
+    border-right: 3px solid green;
+    border-bottom: 5px solid green;
+    -webkit-box-shadow: 1px 1px 18px 7px rgba(83,214,101,1);
+    -moz-box-shadow: 1px 1px 18px 7px rgba(83,214,101,1);
+    box-shadow: 1px 1px 18px 7px rgba(83,214,101,1);
 }
 
 .category-genders div img{
@@ -58,7 +82,14 @@
 .category-consoles div{
     height: 50px;
     width: 50px;
-    background-color: blue;
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+}
+.category-consoles div:hover{
+    height: 50px;
+    width: 50px;
+    transform: scale(0.90);
+    background-color: rgb(221, 221, 236);
     border-radius: 25px;
 }
 
@@ -72,14 +103,32 @@
     justify-content: space-around;
 }
 
-.category-language div, .category-subtitle div{
+.category-languages div, .category-subtitles div{
     height: 50px;
     width: 50px;
-    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+}
+.category-languages div:hover{
+    height: 50px;
+    width: 50px;
+    transform: scale(0.90);
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+}
+.category-subtitles div:hover{
+    height: 50px;
+    width: 50px;
+    transform: scale(0.90);
+    background-color: rgb(221, 221, 236);
     border-radius: 25px;
 }
 
-.category-language div img, .category-subtitle div img{
-    height: 100%;
-    width: 100%;
+.category-languages div img, .category-subtitles div img{
+    height: 90%;
+    width: 90%;
 }
+

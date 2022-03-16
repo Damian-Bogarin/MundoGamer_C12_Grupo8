@@ -12,7 +12,7 @@ const MultiplayerProduct = db.MultiplayerProduct
 const SubtitleProduct = db.SubtitleProduct
 const UserPreferences = db.UserPreferences
 const CartShop = db.CartShop
-
+const Notification = db.Notification
 
 let controller = {
 
@@ -102,7 +102,14 @@ let controller = {
                 //age,
                 avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
             })
-            .then(() => {
+            .then((data) => {
+                Notification.create({
+                    userId: data.id,
+                    see: 0,
+                    message: `Bienvenido ${data.name}!`,
+                    link: '#'
+                })
+
                 res.redirect('/users/login')
             })
             .catch(error => console.log(error))/* -------------------------catch??----------------------- */

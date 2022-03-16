@@ -7,6 +7,8 @@
     <body>
 
         <%- include('../partials/header.ejs') %>
+        <audio id="audiobuton" src="/sound/click.wav"   >
+        </audio>
 
             <h1 id="titulo-categoria">Filtros</h1>
             <section class="category-filter">
@@ -49,8 +51,8 @@
                     
                     </div>
                     <h2>General</h2>
-                    <div><input type="number" name="" id="priceMin"></div>
-                    <div><input type="number" name="" id="priceMax"></div>
+                    <div>Precio min:<input type="number" name="" id="priceMin"></div>
+                    <div>Precio Max:<input type="number" name="" id="priceMax"></div>
 
                 </div>
                 <div class="category-filter-general">
