@@ -1,6 +1,5 @@
 /* Validations front end - login */
 
-
 function qs(element) {
     return document.querySelector(element)
 }
@@ -19,7 +18,6 @@ window.addEventListener('load', function() {
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExpEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;  /* estaba mal ahora ok */
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
-    /* regExDNI = /^[0-9]{7,8}$/, */
     
 
     let errors = {} 
@@ -95,5 +93,6 @@ window.addEventListener('load', function() {
     })
 
 
+    
 
 })

@@ -14,6 +14,12 @@ const Op = db.Sequelize.Op
 
 const controller = {
 
+    about: (req, res) => {
+        res.render('about', {
+            session: req.session
+        })
+    },
+   
 
     home: (req,res) => {
 

@@ -37,9 +37,13 @@ let usersRouter = require('./routers/usersRouter');
 let productsRouter = require('./routers/productsRouter');
 let adminRouter = require('./routers/adminRouter');
 let apiProduct = require('./routers/api/product');
+let aboutRouter = require('./routers/home');
 
 /* HOME ROUTER Y CONTROLLER */
 app.use('/', rutasHome);  /* home */
+
+/* SOBRE NOSOTROS */
+app.use('/about', aboutRouter); /* about us */
 
 /* USERS ROUTER Y CONTROLLER */
 app.use('/users', usersRouter);  /* register, login, myProfile, productCart */

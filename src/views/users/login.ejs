@@ -19,19 +19,20 @@
                             <label class="style-label" for="email">E-mail</label><br>
                             <!--como propiedad de input podemos agregar un required (por defecto saldra un aviso) o mejor podemos hacer un span-->
                             <input class="input-estilo inputData" type="email" name="email" id="inputEmail">
-                            <!-- <i class="fas fa-check-circle"></i> 
-                            <i class="fas fa-exclamation-circle"></i> -->
                             <% if (locals.errors && errors.email) { %>
                                 <span class="error-msj" id="emailErrors"><%= errors.email.msg %></span>
                             <% } %>
                             <span class="error-msj" id="emailErrors"></span>
                         </div>
 
+                        <!-- icons errors
+                            <i class="fas fa-check-circle"></i> 
+                            <i class="fas fa-exclamation-circle"></i> 
+                        -->
+
                         <div class="input-datos">
                             <label class="style-label" for="pass">Contraseña</label><br>
-                            <input class="input-estilo inputData" type="password" name="pass" id="inputPass">
-                            <!-- <i class="fas fa-check-circle"></i> 
-                            <i class="fas fa-exclamation-circle"></i> -->
+                            <input class="input-estilo inputData" type="password" name="pass" id="inputPass">                         
                             <% if (locals.errors && errors.pass) { %>
                                 <span class="error-msj" id="passErrors"><%= errors.pass.msg %></span>
                             <% } %>
@@ -49,6 +50,7 @@
 
                         <div class="button">
                             <button type="submit">Iniciar sesión</button><br>
+                            <span class="error-msj" id="submitErrors"></span>
                             <!-- onclick="alert('Estamos trabajando en ello')" -->
                         </div>
 

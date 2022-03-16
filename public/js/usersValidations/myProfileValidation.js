@@ -1,11 +1,15 @@
+/* Validations front end - myProfile */
+
 function qs(element) {
     return document.querySelector(element)
 }
 
-
 window.addEventListener('load', function() {
 
     $form = qs('form')
+
+    $avatar = qs('#avatar')
+    $avatarErrors = qs('#avatarErrors')
 
     $inputName = qs('#name')
     $nameErrors = qs('#nameErrors')
@@ -111,21 +115,3 @@ window.addEventListener('load', function() {
 
 })
 
- /*  if(req.file){
-            if(fs.existsSync("./public/images/avatars/", user.avatar) && (user.avatar != 'user_avatar_default.jpg')){
-                fs.unlinkSync(`./public/images/avatars/${user.avatar}`)
-
-                user.avatar = req.file.filename}
-                else{
-                    user.avatar = user.avatar
-                }
-            }
-        } -----------------------------------------*/
-
-       /*  if(req.session.user.avatar != user.avatar){
-                            
-            if(fs.existsSync('public/images/avatars/'+req.session.user.avatar)&&req.session.user.avatar != "default.png"){
-                fs.unlinkSync('public/images/avatars/'+req.session.user.avatar)
-            }
-                req.session.user.avatar = user.avatar
-        } */

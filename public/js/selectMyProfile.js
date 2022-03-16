@@ -1,4 +1,4 @@
-/* Api-Provincias - SELECT */
+/* Api - Provinces and locations - SELECT */
 
 const urlProvincias = 'https://apis.datos.gob.ar/georef/api/provincias';
 const urlLocalidades = 'https://apis.datos.gob.ar/georef/api/localidades?max=1000&provincia='
@@ -87,14 +87,3 @@ selectProvincias.addEventListener('change', async (e) => {
     })
 } 
 document.addEventListener('DOMContentLoaded', loadProvince())  */
-
-
-
-
-/* apiProvince: (req, res) => {
-    fetch('https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre') 
-    .then(response => response.json())
-    .then(province => {
-        res.render('users/myProfile', {province})
-    })
-} */

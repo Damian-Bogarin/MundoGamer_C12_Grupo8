@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     width: 85%; /*ancho del contenedor*/
-    height: 550px;   /*altura del cuadro gris originalmente 470*/
+    height: 540px;   /*altura del cuadro gris originalmente 470*/
     background: #000428; 
     background: -webkit-linear-gradient(to bottom, #636FA4, #000428);  
     background: linear-gradient(to bottom, #636FA4, #000428);  
