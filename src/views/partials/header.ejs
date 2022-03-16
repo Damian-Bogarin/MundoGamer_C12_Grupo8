@@ -18,7 +18,17 @@
                     <!-- <i class="fas fa-search"></i>   -->
                 </div>
             </form>
-
+             <div class="header-panel">
+            <% if (session.user) { %>
+                <div class="dropdown">
+                <button onclick="NotificationFuntion()" class="dropbtn">Notificación</button>
+                <div id="myDropdown" class="dropdown-content">
+                 
+                </div>
+              </div>
+            <% } %>
+           
+            
             <!-- icon user -->
             <div class="session-user">
                 <% if (typeof session.user != "undefined") { %>
@@ -33,7 +43,9 @@
                 <% } else { %>
                     <a href="/users/login"><i class="fas fa-user"></i></a>
                 <% } %> 
+            </div>   
             </div>
+
             
             <!-- menu hamburguer | desplegable -->
 
@@ -47,7 +59,11 @@
 
                     <a href="/products/category"><li class="dropdown-menu">Categorias</li></a><hr>
                     <a href="/users/productCart"><li class="dropdown-menu">Carrito</li></a><hr>
+<<<<<<< HEAD
                     <a href="/users/myProfile"><li class="dropdown-menu">Mi cuenta</li></a><hr>
+=======
+                    <a href="/users/login"><li class="dropdown-menu">Ingresar</li></a><hr>
+>>>>>>> Damian
                     <a href="/users/register"><li class="dropdown-menu">Creá tu cuenta</li></a><hr>
                     <a href="#"><li class="dropdown-menu">Ayuda</li></a><hr>
 
@@ -61,7 +77,11 @@
             <ul>
                 <li><a href="/products/category">Categorias</a></li>
                 <li><a href="/users/productCart">Carrito</a></li>
+<<<<<<< HEAD
                 <li><a href="/users/myProfile">Mi cuenta</a></li>
+=======
+                <li><a href="/users/login">Ingresar</a></li>
+>>>>>>> Damian
                 <li><a href="/users/register">Creá tu cuenta</a></li>
                 <li><a href="#">Ayuda</a></li><!-- o puede ser 'nosotros' -->
             </ul>

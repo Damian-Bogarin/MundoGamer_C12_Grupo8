@@ -3,8 +3,12 @@
 
 
 function userLogMiddlewares (req,res,next){
+<<<<<<< HEAD
     if(req.session.user){
         console.log('paso por aqui')
+=======
+    if(req.session.user != undefined ){
+>>>>>>> Damian
         next()
     }
     else{

@@ -10,110 +10,46 @@
             <main class="cart">
                 <div class="title-cart">
                     <h2 class="h2title">Carrito</h2>
-                    <p class="titleP">4 elementos en tu carrito</p> 
+                    <p class="titleP">
+                        <%= product.length %> elementos en tu carrito
+                    </p>
                 </div>
                 <hr>
 
                 <div class="div-products">
+                    <% for( let i=0; i < product.length; i++ ) { %>
 
-                    <div class="product-1">
-                        <img src="/img/futbolCarrito.png" alt="">
+                        <div class="product-1">
+                            <img src="/img/products/<%= product[i].product.photo %>" alt="">
 
-                        <div class="product-container">
-                            <p>FIFA 22 Edition Electronic Arts PS5 <br>
-                                $9.900
-                            </p>
-                            
-                            <div class="counter">
-                                <button type="button" class="btn-subtract" onclick="subtract();">
-                                    -
-                                </button>
-        
-                                            <div id="count">1</div>
-        
-                                <button type="button" id="btn-add" onclick="add();">
-                                    +
-                                </button>
+                            <div class="product-container">
+                                <p><%= product[i].product.name %> <br>
+                                    $<%= product[i].product.priceEnd %>
+                                </p>
+
+                                <div class="counter">
+                                    <button type="button" class="btn-subtract" onclick="subtract();">
+                                        -
+                                    </button>
+
+                                    <div id="count">1</div>
+
+                                    <button type="button" id="btn-add" onclick="add();">
+                                        +
+                                    </button>
+                                </div>
+
                             </div>
+                        </div><br>
+                        <hr>
 
-                        </div>
-                    </div><br>
-                    <hr>
-                    <div class="product-2">
-                        <img src="/img/tennis.png" alt="">
-
-                        <div class="product-container">
-                            <p>Ao Tennis 2 Fisico Ps4 Soy Gamer <br>
-                                $7.800
-                            </p>
-
-                            <div class="counter">
-                                <button type="button" class="btn-subtract" onclick="subtract();">
-                                    -
-                                </button>
-        
-                                            <div id="count">1</div>
-        
-                                <button type="button" id="btn-add" onclick="add();">
-                                    +
-                                </button>
-                            </div>
-
-                        </div>
-                    </div><br>
-                    <hr>
-                    <div class="product-3">
-                        <img src="/img/aventura.png" alt="">
-
-                        <div class="product-container">
-                            <p>Lego Jurassic World Ps4 Fisico <br>
-                                $4.500
-                            </p>
-                           
-                            <div class="counter">
-                                <button type="button" class="btn-subtract" onclick="subtract();">
-                                    -
-                                </button>
-        
-                                            <div id="count">1</div>
-        
-                                <button type="button" id="btn-add" onclick="add();">
-                                    +
-                                </button>
-                            </div>
-
-                        </div>
-                    </div><br>
-                    <hr>
-                    <div class="product-4">
-                        <img src="/img/aventura-2.png" alt="">
-
-                        <div class="product-container">
-                            <p>Ghost Of Tsushima Ps4 Soy Gamer <br>
-                                $5.000
-                            </p>
-                            
-                            <div class="counter">
-                                <button type="button" class="btn-subtract" onclick="subtract();">
-                                    -
-                                </button>
-        
-                                            <div id="count">1</div>
-        
-                                <button type="button" id="btn-add" onclick="add();">
-                                    +
-                                </button>
-                            </div>
-
-                        </div>
-                    </div><br>
-                    <hr>
+                        <% } %>
 
                 </div>
 
                 <div class="total-and-buttom">
-                    <p class="p-totales">Subtotal $20.298</p><br>
-                    <p class="p-totales">TOTAL $20.298</p><br>
+                    
+                    <p class="p-totales">TOTAL $<%=total%></p><br>
                     <button type="submit">Realizar pedido</button> <br>
                     <button type="submit">Seguir comprando</button>
                 </div>
@@ -121,9 +57,9 @@
             </main>
 
             <%- include('../partials/footer.ejs') %>
-            <%- include('../partials/script.ejs') %> 
-            <script src="/js/productCart.js"></script>
-            <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+                <%- include('../partials/script.ejs') %>
+                    <script src="/js/productCart.js"></script>
+                    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     </body>
 
 </html>

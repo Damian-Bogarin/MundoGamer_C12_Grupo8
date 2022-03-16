@@ -68,20 +68,23 @@ window.addEventListener('load', function () {
                         }
                     })
                     .then(result => {
-                        result.forEach(element => {
-                            if (element.name === $name.value) {
-                                $nameError.innerHTML = 'Ese producto ya existe!';
-                                $name.classList.add('input-Error')
-                                $name.classList.remove('input-Valid')
-                            }
-                            else {
-                                $name.classList.remove('input-Error');
-                                $name.classList.add('input-Valid');
-                                $nameError.innerHTML = ""
-                            }
+                        for (let i = 0; i < result.length; i++) {
 
+                         
 
-                        })
+                               if (result[i].name === $name.value) {
+                                   $nameError.innerHTML = 'Ese producto ya existe!';
+                                   $name.classList.add('input-Error')
+                                   $name.classList.remove('input-Valid')
+                                   break
+                               }
+                               else {
+                                   $name.classList.remove('input-Error');
+                                   $name.classList.add('input-Valid');
+                                   $nameError.innerHTML = ""
+                               }
+                       }
+                       
                     })
 
                 break;

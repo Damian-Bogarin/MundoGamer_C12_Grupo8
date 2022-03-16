@@ -1,3 +1,4 @@
+.category-
 *{
     padding: 0;
     margin: 0; 
@@ -16,108 +17,118 @@
     background-repeat: repeat; 
 }
 
-.category-container-all{
+.category-filter{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
-   
-    width: 90vw;
-   
-    margin-right: 5vw ;
-    margin-left: 5vw ;
-    margin-top: 30px ;
-
-}
-
-.category-container {
-    display: flex;
-    height: 150px;
-    flex-direction: column;
     align-items: center;
-    margin-left: 10px;
-    margin-right:10px ;
-
-
+    
+    width: 100%;
+    padding: 10px 5%;
+    
+}
+.category-filter-product{
+    background-color: rgba(109, 101, 101, 0.25);  
+ backdrop-filter: blur(5px);
+    height: 40%;
+    width: 100%;
+    padding: 3px;
+    border-radius: 5px;
 }
 
-.category-container div{
+.category-genders{
+    display: flex;
+    justify-content: space-around;
+}
+
+.category-genders div{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+    
+}
+.category-genders div:hover{
+    height: 50px;
+    width: 50px;
+    transform: scale(0.90);
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+}
+.pulsado{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+    border-top: 1px solid green;
+    border-left: 3px solid green;
+    border-right: 3px solid green;
+    border-bottom: 5px solid green;
+    -webkit-box-shadow: 1px 1px 18px 7px rgba(83,214,101,1);
+    -moz-box-shadow: 1px 1px 18px 7px rgba(83,214,101,1);
+    box-shadow: 1px 1px 18px 7px rgba(83,214,101,1);
+}
+
+.category-genders div img{
+    height: 100%;
+    width: 100%;
+}
+
+.category-consoles{
+    display: flex;
+    justify-content: space-around;
+}
+
+.category-consoles div{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+}
+.category-consoles div:hover{
+    height: 50px;
+    width: 50px;
+    transform: scale(0.90);
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
+}
+
+.category-consoles div img{
+    height: 100%;
+    width: 100%;
+}
+
+.category-languages, .category-subtitles{
+    display: flex;
+    justify-content: space-around;
+}
+
+.category-languages div, .category-subtitles div{
+    height: 50px;
+    width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    background-image: url(../img/NocheDegrade.png);
-    box-shadow:5px 4px 20px;
-    margin-bottom: 8px;
-
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
 }
-.category-container h3{
-    font-size: 20px;
-   
+.category-languages div:hover{
+    height: 50px;
+    width: 50px;
+    transform: scale(0.90);
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
 }
-
-
-.choise{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    width: 90vw;
-    
-    margin-right: 5vw ;
-    margin-left: 5vw ;
-    margin-top: 30px ;
-
-}
-.choise-selected{
-background-image: url('../img/NocheDegrade.png');
-width: 80px;
-height: 80px;
-border-radius: 8px;display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow:5px 4px 20px;
-    margin-bottom: 8px;
-}
-.choise h3{
-    margin-bottom: 15px;
+.category-subtitles div:hover{
+    height: 50px;
+    width: 50px;
+    transform: scale(0.90);
+    background-color: rgb(221, 221, 236);
+    border-radius: 25px;
 }
 
-.choise nav{
-    display: flex;
-    flex-direction: column;
-   
-    align-self: flex-start;
-}
-
-.choise nav div{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-
-
-/* MEDIA PARA TABLET */
-
-
-@media (min-width: 426px){
-
-    .choise nav{
-        flex-direction: row;
-        align-self: center;
-        justify-content: space-evenly;
-
-        
-        
-            
-
-    }
-
-
-
-
-
-
+.category-languages div img, .category-subtitles div img{
+    height: 90%;
+    width: 90%;
 }
 
