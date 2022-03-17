@@ -33,3 +33,7 @@ acomodarse a un nuevo ambiente de trabajo es difícil, tuvimos la buena fortuna 
 
 Antes de que se largara el sprint, ya veniamos haciendo daylis por eso teniamos armado el diagrama de entidades y sus relaciones al comenzar. 
 Costó manejar el Dbeaver y armar la base de datos pero después se pudo lograr. Y el CRUD nos llevó mas tiempo. Las daylis se hicieron normalmente, pero no fueron de 15 minutos sino para codear e ir resolviendo los errores que iban surgiendo. Incluso nos juntamos el fin de semana. No pudimos entregar a tiempo tratando de resolver los errores. 
+
+# Sprint 7 - Validaciones Back + Front
+
+Este sprint fue más sencillo, ya teníamos echas las validaciones del back end así que solo quedaban las del front end… además de avanzar con esto también se avanzó con la maquetación de varias vistas, más dinamismo de las mismas y la reparación de algunos errores del CRUD seguiremos avanzando en las cosas que nos quedan. 
