@@ -15,7 +15,7 @@ window.addEventListener('load', async () => { //Como estamos trabajando desde el
 
         let provincias = result.provincias;
        
-        provincias = provincias.sort((a, b) => a.nombre > b.nombre)  /* No se ordenan las provincias */
+        provincias = provincias.sort((a, b) => a.nombre < b.nombre ? -1 : a.nombre > b.nombre ? 1:0)  /* en cada vuelta se comparan las propiedades del objeto */
         
         provincias.forEach(provincia => {
             selectProvincias.innerHTML += `<option value="${provincia.nombre}">${provincia.nombre}</option>`
@@ -42,6 +42,16 @@ selectProvincias.addEventListener('change', async (e) => {
         });      
 })
 
+/* provinces.provincias.sort(function (a, b) {
+    if (a.nombre > b.nombre) {
+    return 1;
+    }
+    if (a.nombre < b.nombre) {
+    return -1;
+    }
+     a must be equal to b
+    return 0;
+}); */
 
 
 

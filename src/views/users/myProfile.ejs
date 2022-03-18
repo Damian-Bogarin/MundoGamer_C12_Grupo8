@@ -20,12 +20,12 @@
 
                     <!-- circle photo -->
                     <div class="avatar">
-                        <img class="img-avatar" src="/img/avatars/<%= user.avatar %>" alt="">
+                        <img class="img-avatar" id="idAvatar" src="/img/avatars/<%= user.avatar %>" alt="">
                     </div> <!--  locals.old ? old.avatar : -->
 
                     <div class="fileButtom"> 
                         <i class="fas fa-pencil-alt"></i>
-                        <input type="file" name="avatar" accept=".jpg" id="archivo" multiple>   
+                        <input type="file" name="avatar" accept=".jpg" id="archivo" multiple> <!-- --------- -->
                     </div>  
                  
                     <h2 class="user">
@@ -55,9 +55,9 @@
                         <% } %> 
                     </div>
 
-                    <div class="profileContainer">
+                    <div class="profileContainer"> <!-- date -------------------------------------------->
                         <label class="data" for="number">Edad</label><br>
-                        <input class="input-style" type="number" id="age" name="age" value="<%= locals.old ? old.age : user.age %>">
+                        <input class="input-style" type="date" id="age" name="age" value="<%= locals.old ? old.age : user.age %>">
                         <% if (locals.errors && errors.age) { %> 
                             <span class="error-msj" id="ageErrors"><%= errors.age.msg %></span>
                         <% } %> 
@@ -114,6 +114,22 @@
 
         <!-- script front end validations-->
         <script src="/js/usersValidations/myProfileValidation.js" defer></script> 
+
+        <!-- previsualización del avatar -->
+        <script>
+            let inputChangeImage = document.getElementById('archivo');
+            let vistaPrevia = document.getElementById('idAvatar')
+            inputChangeImage.addEventListener('change', (e) => {
+                let reader = new FileReader();
+                reader.readAsDataURL(e.target.files[0])
+                reader.onload = () => {
+                    vistaPrevia.src = reader.result,
+                    vistaPrevia.class="img-avatar", 
+                    vistaPrevia.id="idAvatar"
+                }
+            })
+        </script>
+
 
     </body>
 

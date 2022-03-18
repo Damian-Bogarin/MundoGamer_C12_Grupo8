@@ -31,8 +31,8 @@ let controller = {
                     name: user.name,
                     lastName: user.lastName,
                     email: user.email,
-                    rol: user.rol.nameRol, /* --------- */
-                   avatar: user.avatar
+                    rol: user.rol.nameRol, 
+                    avatar: user.avatar
                 } 
                 //res.send(req.session.user)
             })
@@ -54,8 +54,7 @@ let controller = {
             }
             else{
                  res.redirect('/') //Recien al haber pasado todo, ahi recien lo enviará al home, y estaria en su session 
-            }
-           
+            }       
             })
            
         }else{ 
@@ -86,13 +85,13 @@ let controller = {
                 lastName, 
                 email, 
                 pass: bcrypt.hashSync(pass1, 12), //hashSync recibe dos parametros, pass y la sal
-                rol_id: 2, 
-                //address, /* Datos que recien se pedirán en myProfile */  
+                rol_id: 2,              /* false */
+                //address, /* en myProfile */  
                 //province,
                 //locality,
                 //tel,
                 //age,
-                //avatar
+                avatar: "default-img.png"
             })
             .then(() => {
                 res.redirect('/users/login')
@@ -142,25 +141,22 @@ let controller = {
             address,
             province,         
             locality,
-            avatar: req.file ? req.file.filename: "default-img.png", // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
-        },{
+            avatar: req.file ? req.file.filename : req.session.user.avatar, // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
+        },{ 
             where: {
                 id: req.session.user.id
             }
         })
         .then(result => {
-            Users.findByPk(req.session.user.id)
-            .then(user => {
-                if(req.session.user.avatar != user.avatar){
+         
+                if(req.file){
                     
                     if(fs.existsSync('public/img/avatars/' + req.session.user.avatar) && req.session.user.avatar != "default-img.png"){
                         fs.unlinkSync('public/img/avatars/' + req.session.user.avatar)
                     }
-                    req.session.user.avatar = user.avatar
+                    req.session.user.avatar = req.file.filename
                 }
-                res.redirect('/')
-            })
-            .catch(error => console.log(error))
+                res.redirect('/')              
         })
         .catch(error => console.log(error))
     }, 

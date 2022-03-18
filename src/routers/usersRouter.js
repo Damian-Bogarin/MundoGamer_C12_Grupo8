@@ -20,8 +20,8 @@ router.post('/register', registerValidator, controller.processRegister);
 router.get('/logout',/* userLogMiddlewares,*/ controller.logout);
 
 /* myProfile GET y PUT */
-router.get('/myProfile',/*  userLogMiddlewares */ controller.profile);   
-router.put('/myProfile/update/:id',  uploadFile.single('avatar'), controller.updateProfile); 
+router.get('/myProfile',/* userLogMiddlewares */ controller.profile);   
+router.put('/myProfile/update/:id', uploadFile.single('avatar'), controller.updateProfile); 
 // Pasamos el middleware uploadFile, single, por que es un solo archivo y dentro el nombre q pusimos en el campo name
 
 /* productCart GET y POST */
