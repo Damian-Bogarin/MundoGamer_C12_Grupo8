@@ -8,6 +8,8 @@
     margin-left: 5vw;
     border-radius: 8px;
     background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%);
+    overflow: hidden;
+    
 }
 .userPreferencesDiv{
     display: flex;
@@ -88,3 +90,4 @@ align-self: center;
     } */
     
 }
+

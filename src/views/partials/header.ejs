@@ -18,7 +18,17 @@
                     <!-- <i class="fas fa-search"></i>   -->
                 </div>
             </form>
-
+             <div class="header-panel">
+            <% if (session.user) { %>
+                <div class="dropdown">
+                <button onclick="NotificationFuntion()" class="dropbtn">Notificación</button>
+                <div id="myDropdown" class="dropdown-content">
+                 
+                </div>
+              </div>
+            <% } %>
+           
+            
             <!-- icon user -->
             <div class="session-user">
                 <% if (typeof session.user != "undefined") { %>
@@ -33,7 +43,9 @@
                 <% } else { %>
                     <a href="/users/login"><i class="fas fa-user"></i></a>
                 <% } %> 
+            </div>   
             </div>
+
             
             <!-- menu hamburguer | desplegable -->
 

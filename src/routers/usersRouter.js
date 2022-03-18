@@ -6,7 +6,7 @@ let registerValidator = require('../validations/registerValidator');
 let uploadFile = require('../middlewares/uploadAvatar');
 let userLogMiddlewares = require('../middlewares/userLogMiddlewares')
 let guestMiddlewares = require('../middlewares/guestMiddlewares')
-
+let cartShop = require('../middlewares/cartShop')
 
 /* login GET y POST */
 router.get('/login', guestMiddlewares, controller.login);
@@ -17,15 +17,15 @@ router.get('/register', guestMiddlewares, controller.register);
 router.post('/register', registerValidator, controller.processRegister); 
 
 /* logout GET */
-router.get('/logout',/* userLogMiddlewares,*/ controller.logout);
+router.get('/logout', userLogMiddlewares, controller.logout);
 
 /* myProfile GET y PUT */
-router.get('/myProfile',/* userLogMiddlewares */ controller.profile);   
-router.put('/myProfile/update/:id', uploadFile.single('avatar'), controller.updateProfile); 
-// Pasamos el middleware uploadFile, single, por que es un solo archivo y dentro el nombre q pusimos en el campo name
+router.get('/myProfile',  userLogMiddlewares, controller.profile); 
+router.put('/myProfile/:id', controller.updateProfile);   
+
 
 /* productCart GET y POST */
-router.get('/productCart', userLogMiddlewares, controller.cart);
+router.get('/productCart/:product?',userLogMiddlewares, cartShop, controller.cart);
 
 
 module.exports = router;

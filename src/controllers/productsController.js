@@ -2,7 +2,8 @@
 let { validationResult } = require('express-validator')
 const fs = require('fs')
 const db = require('../database/models');
-const path = require('path')
+const path = require('path');
+
 
 // Llamo a los modelos
 const Products = db.Product;
@@ -11,8 +12,8 @@ const LanguageProduct = db.LanguageProduct
 const MultiplayerProduct = db.MultiplayerProduct
 const SubtitleProduct = db.SubtitleProduct
 const UserPreferences = db.UserPreferences
-
-
+const CartShop = db.CartShop
+const Notification = db.Notification
 const controller = {
 
     detail: (req, res) => {
@@ -32,6 +33,7 @@ const controller = {
         })])
             .then(([producto,likes]) => {
 
+                
                 // Calculo si la diferencia de fechas para saber cuantos transcurrieron desde que se creo hasta el dia de hoy
                 var day1 = new Date(producto.date); 
                 var day2 = new Date();
@@ -63,17 +65,41 @@ const controller = {
                 let views = 0
                 let favorite = 0
                 let love = 0
+                let valoration = 0
+                let valorationEmpty = 5
                 likes.forEach(element => views += element.views)
                 likes.forEach(element => favorite += element.likes)
 
+                //Saco el promedio de estrellas
+                
+                 let stars = []
+                 let starsPromedio ;
+                 let starsEmpty = 5;
+                 
+                likes.forEach(element =>{
+                    if(element.stars != null){
+                        stars.push(element.stars)
+                    }
+                    } 
+                    ) 
+                
+                if(stars.length == 0){  starsPromedio = 0 }
+                else{starsPromedio = (stars.reduce((a, b) => a + b, 0)) / stars.length;} 
+                starsPromedio = Math.round(starsPromedio)
+                starsEmpty = starsEmpty - starsPromedio;
+
                 if(req.session.user && req.session.user.rol == "ROL_USER"){
+
                     let productFilter = likes.filter( element => element.userId == req.session.user.id)
-                    love = productFilter[0].likes
+                    love = productFilter[0].likes;
+                    (productFilter[0].stars)? valoration = productFilter[0].stars : valorationEmpty -= productFilter[0].stars;
                     
-                    res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite})
+
+                    
+                    res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite,starsPromedio,starsEmpty,valoration,valorationEmpty})
                 }
                 else{
-                      res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite})
+                      res.render('products/productDetail', { product: producto, session: req.session, date,clasification,views,love,favorite,starsPromedio,starsEmpty,valoration})
                 }
                 //console.log(views)
                 //res.send(producto)
@@ -199,7 +225,119 @@ const controller = {
                         }))
 
             }
-            Products.update({
+
+            Products.findByPk(req.params.id)
+            .then(data =>{
+                // SI DESCOUNT VARIA A UN VALOR MAYOR A 0, CREARA LAS NOTIFICACIONES!
+                if (descount && data.descount != descount && descount > 0){
+                    UserPreferences.findAll({
+                        where:{
+                            productId:req.params.id,
+                            likes: 1
+                        }
+                    })
+                    .then(result =>{
+                        if(result.length > 0){
+
+                        let notificationPromise = []
+
+                        result.forEach(elem =>{
+                            notificationPromise.push(
+                                Notification.create({
+                                userId: elem.userId,
+                                see:0,
+                                message:`psst! un articulo que te gusto, acaba de estar en rebaja al ${descount}%!!, pincha aqui para ver cual es!`,
+                                link:`/products/detail/${req.params.id}`
+                            }))
+                            
+                        })
+
+                            Promise.all(notificationPromise)
+                            .then(finish => {
+                                Products.update({
+                                    name,
+                                    description,
+                                    conexion: conexiontrue,
+                                    integratedShop: integratedShop,
+                                    price,
+                                    descount,
+                                    priceEnd: priceEndtrue,
+                                    stock,
+                                    genderId: gendertrue,
+                                    classificationId: clasificationtrue,
+                    
+                                },
+                                    {
+                                        where: { id: req.params.id }
+                                    })
+                                    .then((productEdit) => {
+                    
+                                        // BORRO TODAS LAS ASOCIACIONES
+                                        CompatibilityProduct.destroy({
+                                            where: {
+                                                productId: req.params.id
+                                            }
+                                        })
+                                        LanguageProduct.destroy({
+                                            where: {
+                                                productId: req.params.id
+                                            }
+                                        })
+                                        MultiplayerProduct.destroy({
+                                            where: {
+                                                productId: req.params.id
+                                            }
+                                        })
+                                        SubtitleProduct.destroy({
+                                            where: {
+                                                productId: req.params.id
+                                            }
+                                        })
+                                        //Vuelvo a crear las asociaciones
+                                        for (let i = 0; i < console.length; i++) {
+                                            CompatibilityProduct.create({
+                                                compatibilityId: +console[i],
+                                                productId: req.params.id
+                                            });
+                    
+                                        }
+                                        for (let i = 0; i < language.length; i++) {
+                                            LanguageProduct.create({
+                                                languageId: +language[i],
+                                                productId: req.params.id
+                                            });
+                    
+                                        }
+                                        for (let i = 0; i < multiplayer.length; i++) {
+                                            MultiplayerProduct.create({
+                                                multiplayerId: +multiplayer[i],
+                                                productId: req.params.id
+                                            });
+                    
+                                        }
+                                        if (subtitle) { //evaluar
+                                            for (let i = 0; i < subtitle.length; i++) {
+                                                SubtitleProduct.create({
+                                                    subtitleId: +subtitle[i],
+                                                    productId: req.params.id
+                                                });
+                    
+                                            }
+                                        }
+                    
+                    
+                    
+                    
+                                    }).then((result) => {
+                                        res.redirect("/admin")
+                                    }) 
+                            })
+                        }
+                       
+                    })
+                }
+                else{ // SI DESCOUNT NO VARIA PASARA POR ACA
+                     Products.update({
                 name,
                 description,
                 conexion: conexiontrue,
@@ -216,6 +354,7 @@ const controller = {
                     where: { id: req.params.id }
                 })
                 .then((productEdit) => {
+
                     // BORRO TODAS LAS ASOCIACIONES
                     CompatibilityProduct.destroy({
                         where: {
@@ -276,6 +415,10 @@ const controller = {
                     res.redirect("/admin")
                 })
 
+                }
+            })
+            
+           
 
         } else {
 
