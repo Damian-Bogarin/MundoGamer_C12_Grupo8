@@ -19,7 +19,12 @@ const controller = {
             session: req.session
         })
     },
-   
+
+    terms: (req, res) => {
+        res.render('terms', {
+            session: req.session
+        })
+    }, 
 
     home: (req,res) => {
 

@@ -8,5 +8,8 @@ router.get("/", controller.home)
 /* SOBRE NOSOTROS */
 router.get("/about", controller.about)
 
+/* TERMINOS Y CONDICIONES */
+router.get("/terms", controller.terms)
+
 
 module.exports = router;

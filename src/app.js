@@ -42,14 +42,18 @@ let productsRouter = require('./routers/productsRouter');
 let adminRouter = require('./routers/adminRouter');
 let apiProduct = require('./routers/api/product');
 let aboutRouter = require('./routers/home');
-
+let termsRouter = require('./routers/home');
 let apiCategory = require('./routers/api/category');
 let apiUsers = require('./routers/api/users')
+
 /* HOME ROUTER Y CONTROLLER */
 app.use('/', rutasHome);  /* home */
 
 /* SOBRE NOSOTROS */
 app.use('/about', aboutRouter); /* about us */
+
+/* Términos y condiciones */
+app.use('/terms', termsRouter);  
 
 /* USERS ROUTER Y CONTROLLER */
 app.use('/users', usersRouter);  /* register, login, myProfile, productCart */
@@ -64,6 +68,7 @@ app.use('/admin', adminRouter);  /* listProduct, productCreate, updateProduct */
 app.use('/api/product', apiProduct);
 app.use('/api/category', apiCategory)
 app.use('/api/users', apiUsers)
+
 /* Error 404 */
 app.use((req, res, next) => {
     res.status(404).render('404-page')

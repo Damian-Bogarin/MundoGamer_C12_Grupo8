@@ -40,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
             //allowNull: false,
         },
         age: {
-            type: dataTypes.STRING(2),
+            type: dataTypes.DATE,
             //allowNull: false
         },
         avatar:{

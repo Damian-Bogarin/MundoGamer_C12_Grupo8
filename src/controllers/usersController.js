@@ -163,7 +163,7 @@ let controller = {
             }
         })
         .then(result => {
-         
+            
                 if(req.file){
                     
                     if(fs.existsSync('public/img/avatars/' + req.session.user.avatar) && req.session.user.avatar != "default-img.png"){
