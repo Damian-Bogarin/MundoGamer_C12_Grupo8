@@ -183,7 +183,7 @@ input.ok {
     border-radius: 8px;
     background: #606c88;
     color: white;
-    cursor: pointer; /*manito*/
+    cursor: pointer; 
     width: 160px;
     height: 40px;
 }
@@ -197,9 +197,9 @@ input.ok {
     justify-content: center;
     align-items: center;
     bottom: 0;
-    background: #606c88;  
-    background: -webkit-linear-gradient(to left, #3f4c6b, #606c88);  
-    background: linear-gradient(to left, #3f4c6b, #606c88);  
+    background: #000428;  
+    /* background: -webkit-linear-gradient(to left, #3f4c6b, #606c88);  
+    background: linear-gradient(to left, #3f4c6b, #606c88);   */
 }
 
 .footerMyProfile .message {
@@ -244,6 +244,10 @@ input.ok {
 
     .myProfile .headerMyProfile { 
         padding: 10px 25px;
+    }
+
+    .footerMyProfile .message {
+        font-size: 20px;
     }
 
 }

@@ -14,7 +14,7 @@
                 
             </header> 
            
-            <form class="form-profile" id="form" action="/users/myProfile/update/<%= session.user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="form-profile" id="form" action="/users/myProfile/<%= session.user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
               
                 <div class="encabezado">
 
@@ -25,7 +25,7 @@
 
                     <div class="fileButtom"> 
                         <i class="fas fa-pencil-alt"></i>
-                        <input type="file" name="avatar" accept=".jpg" id="archivo" multiple> <!-- --------- -->
+                        <input type="file" name="avatar" accept=".jpg" id="archivo" multiple>
                     </div>  
                  
                     <h2 class="user">
@@ -55,7 +55,7 @@
                         <% } %> 
                     </div>
 
-                    <div class="profileContainer"> <!-- date -------------------------------------------->
+                    <div class="profileContainer"> 
                         <label class="data" for="number">Edad</label><br>
                         <input class="input-style" type="date" id="age" name="age" value="<%= locals.old ? old.age : user.age %>">
                         <% if (locals.errors && errors.age) { %> 

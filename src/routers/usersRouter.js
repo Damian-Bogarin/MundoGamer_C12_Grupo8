@@ -29,3 +29,16 @@ router.get('/productCart/:product?',userLogMiddlewares, cartShop, controller.car
 
 
 module.exports = router;
+
+
+/* errors = errors.mapped()
+            if(req.fileValidationError) {
+                //console.log(req.fileValidationError)
+                errors = {
+                    ...errors,
+                    image : {
+                        msg: req.fileValidationError
+                    }
+                }
+            }
+ */

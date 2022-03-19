@@ -147,7 +147,7 @@ let controller = {
     updateProfile: (req, res) => { /*  async  */
 
         const { name, lastName, age, tel, address, province, locality } = req.body  /* await */
-
+        
         Users.update({
             name,
             lastName,

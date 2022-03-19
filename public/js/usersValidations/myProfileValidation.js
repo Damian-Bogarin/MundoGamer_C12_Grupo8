@@ -1,4 +1,4 @@
-/* Validations front end - myProfile */
+/* Validations frontend - myProfile */
 
 function qs(element) {
     return document.querySelector(element)
@@ -25,13 +25,20 @@ window.addEventListener('load', function() {
 
     $inputAddress = qs('#address')
     $addressErrors = qs('#addressErrors')
+
+    /* $selectProvince = qs('#select-provincias')
+    $selectProvinceErrors = qs('#select-provincias')
+
+    $selectLocality = qs('#select-localidades')
+    $selectLocalityErrors = qs('#select-localidades') Que solo el select se ponga de color rojo, sin spam*/
     
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
     regExPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
-    
+    regExImage = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+
     let errors = {} 
 
     /* name */
@@ -109,8 +116,17 @@ window.addEventListener('load', function() {
         }
     })
 
+    /* tel */
 
-    regExImage = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+    /* address */
+
+    /* province */
+
+    /* locality */
+
+    /* avatar */
+
+    
 
 
 })
