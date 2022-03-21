@@ -14,18 +14,19 @@
                 
             </header> 
            
-            <form class="form-profile" id="form" action="/users/myProfile/update/<%= session.user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="form-profile" id="form" action="/users/myProfile/<%= session.user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
               
                 <div class="encabezado">
 
                     <!-- circle photo -->
-                    <div class="avatar">
+                    <div class="avatar" id="avatarPreview">
                         <img class="img-avatar" id="idAvatar" src="/img/avatars/<%= user.avatar %>" alt="">
                     </div> <!--  locals.old ? old.avatar : -->
 
                     <div class="fileButtom"> 
                         <i class="fas fa-pencil-alt"></i>
-                        <input type="file" name="avatar" accept=".jpg" id="archivo" multiple> <!-- --------- -->
+                        <input type="file" name="avatar" id="archivo"> 
+                        <span id="archivoErrors"></span>
                     </div>  
                  
                     <h2 class="user">
@@ -44,6 +45,7 @@
                         <% if (locals.errors && errors.name) { %> 
                             <span class="error-msj" id="nameErrors"><%= errors.name.msg %></span>
                         <% } %> 
+                        <span class="error-msj" id="nameErrors"></span>
                     </div>  
                    
 
@@ -53,14 +55,16 @@
                         <% if (locals.errors && errors.lastName) { %> 
                             <span class="error-msj" id="lastNameErrors"><%= errors.lastName.msg %></span>
                         <% } %> 
+                        <span class="error-msj" id="lastNameErrors"></span>
                     </div>
 
-                    <div class="profileContainer"> <!-- date -------------------------------------------->
+                    <div class="profileContainer"> 
                         <label class="data" for="number">Edad</label><br>
                         <input class="input-style" type="date" id="age" name="age" value="<%= locals.old ? old.age : user.age %>">
                         <% if (locals.errors && errors.age) { %> 
                             <span class="error-msj" id="ageErrors"><%= errors.age.msg %></span>
                         <% } %> 
+                        <span class="error-msj" id="ageErrors"></span>
                     </div>
 
                     <div class="profileContainer">
@@ -82,14 +86,14 @@
                     <!-- API del gobierno que lista las provincias y localidades de Argentina(select) -->
                     <label class="label-select" for="">Provincia</label><br>
                     <select name="province" id="select-provincias"> 
-                        <option value="<%= locals.old ? old.province : user.province %>" selected hidden>Seleccione...</option>
+                        <option value="<%= locals.old ? old.province : user.province %>" selected hidden><%= user.province %></option><!-- Seleccione... -->
                     </select>
                     <br>
                     <br> 
 
                     <label class="label-select" for="">Localidad</label><br>
                     <select name="locality" id="select-localidades">  
-                        <option value="<%= locals.old ? old.locality : user.locality %>" selected hidden>Seleccione...</option>
+                        <option value="<%= locals.old ? old.locality : user.locality %>" selected hidden><%= user.locality %></option><!-- Seleccione... -->
                     </select> 
 
                 </div>

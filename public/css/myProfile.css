@@ -148,23 +148,25 @@ form.form-profile {
 }
 
 /* span errors - validations backend */
-.errors-msj {
+.errors-msj {   /* ----------los marcados de esta manera todavia no los use----------- */
     font-size: 12px;
     color: rgb(255, 51, 51);
 }
 
 /* input validations front end */
-input.error {
-    border: 1px solid tomato;
-    box-shadow: 3px 3px 10px tomato; 
+span.error { 
+    color: red; 
+    font-size: 12px;
+    margin-left: 15px;
 }
 
-input.ok {
-    border: 1px solid green;
-    box-shadow: 3px 3px 10px green;
+span.ok {
+    color: rgb(163, 248, 163);
+    font-size: 12px;
+    margin-left: 15px;
 }
 
-.errors {
+.errors {  /* -------------- */
     color: tomato;
 }
 
@@ -183,7 +185,7 @@ input.ok {
     border-radius: 8px;
     background: #606c88;
     color: white;
-    cursor: pointer; /*manito*/
+    cursor: pointer; 
     width: 160px;
     height: 40px;
 }
@@ -197,9 +199,9 @@ input.ok {
     justify-content: center;
     align-items: center;
     bottom: 0;
-    background: #606c88;  
-    background: -webkit-linear-gradient(to left, #3f4c6b, #606c88);  
-    background: linear-gradient(to left, #3f4c6b, #606c88);  
+    background: #000428;  
+    /* background: -webkit-linear-gradient(to left, #3f4c6b, #606c88);  
+    background: linear-gradient(to left, #3f4c6b, #606c88);   */
 }
 
 .footerMyProfile .message {
@@ -244,6 +246,10 @@ input.ok {
 
     .myProfile .headerMyProfile { 
         padding: 10px 25px;
+    }
+
+    .footerMyProfile .message {
+        font-size: 20px;
     }
 
 }

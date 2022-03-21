@@ -130,7 +130,7 @@ let controller = {
         res.redirect('/')
     },
 
-    profile: (req, res) => { /* ---async---incluir las otras asociaciones de like, starts y cart ??------ */
+    profile: (req, res) => { 
 
         Users.findByPk(req.session.user.id/*,  {
             include: [{association: 'rol'}]
@@ -144,10 +144,10 @@ let controller = {
         .catch(error => console.log(error))
     },
 
-    updateProfile: (req, res) => { /*  async  */
+    updateProfile: (req, res) => {
 
-        const { name, lastName, age, tel, address, province, locality } = req.body  /* await */
-
+        const { name, lastName, age, tel, address, province, locality } = req.body 
+        
         Users.update({
             name,
             lastName,
@@ -156,14 +156,14 @@ let controller = {
             address,
             province,         
             locality,
-            avatar: req.file ? req.file.filename : req.session.user.avatar, // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
+            avatar: req.file ? req.file.filename : req.session.user.avatar,
         },{ 
             where: {
                 id: req.session.user.id
             }
         })
         .then(result => {
-         
+            
                 if(req.file){
                     
                     if(fs.existsSync('public/img/avatars/' + req.session.user.avatar) && req.session.user.avatar != "default-img.png"){
@@ -172,6 +172,18 @@ let controller = {
                     req.session.user.avatar = req.file.filename
                 }
                 res.redirect('/')              
+        })
+        .then(errors => {
+            errors.mapped()
+            if(req.fileValidationError) {
+
+                errors = {
+                    ...errors,
+                    avatar : {
+                        msg: req.fileValidationError
+                    }
+                }
+            }
         })
         .catch(error => console.log(error))
     }, 

@@ -1,0 +1,62 @@
+.terminosCondiciones {
+    border-radius: 14px;
+    margin: 40px 40px auto; 
+    margin-bottom: 40px; 
+    flex-direction: column; 
+    justify-content: center; 
+    padding: 15px; 
+    background: #000428; 
+    background: -webkit-linear-gradient(to bottom, #636FA4, #000428);  
+    background: linear-gradient(to bottom, #636FA4, #000428);  
+}
+
+.titleTerms {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.terms {
+    text-align: center;
+    color: white;
+}
+
+/* media query - tablet */
+
+@media (min-width: 425px) {
+
+    .terminosCondiciones {
+        margin: 60px 60px auto; 
+        margin-bottom: 60px; 
+        padding: 20px; 
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .terminosCondiciones {
+        margin: 100px 100px auto; 
+        margin-bottom: 100px; 
+        padding: 20px; 
+    }
+
+}
+
+/* media query - desktop */
+@media (min-width: 1024px) { 
+
+    .terminosCondiciones {
+        margin: 100px auto;
+        padding: 25px; 
+        width: 900px;
+        flex-direction: column; 
+        justify-content: center;
+    }
+
+    .titleTerms {
+        margin-bottom: 10px;
+    }
+    
+}

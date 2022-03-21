@@ -33,6 +33,8 @@ selectProvincias.addEventListener('change', async (e) => {
 
         let localidades = result.localidades;
 
+        localidades = localidades.sort((a, b) => a.nombre < b.nombre ? -1 : a.nombre > b.nombre ? 1:0)
+
         selectLocalidades.innerHTML = null;  //Vacia y después volver a cargar con una nueva provincia
 
         localidades.forEach(localidad => {
@@ -42,29 +44,6 @@ selectProvincias.addEventListener('change', async (e) => {
         });      
 })
 
-/* provinces.provincias.sort(function (a, b) {
-    if (a.nombre > b.nombre) {
-    return 1;
-    }
-    if (a.nombre < b.nombre) {
-    return -1;
-    }
-     a must be equal to b
-    return 0;
-}); */
-
-
-
-
-
-
-
-/* fetch('https://apis.datos.gob.ar/georef/api/provincias') 
-.then(response => response.json())
-.then(provinces => {
-    return res.render('users/myProfile', {provinces: provinces.provincias}) 
-})
-.catch(error => console.log(error))  */
 
 
 /* Si agrego etiquetas ejs en el html quiere decir que mando cosas del back al front, quizas consultas puedo hacer, pero mejor manejarlo desde public */
