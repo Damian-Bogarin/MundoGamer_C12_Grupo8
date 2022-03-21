@@ -3,45 +3,46 @@
 .main-header {
      display: flex;
      width: 100%;
-}
-
-/* => donde esta la foto tiene que tener una position relative
-y el resto de cosas que queremos que vayan sobre la foto tiene que tener position absolute*/
-
-.main-header .fondo-header {
+     /* background-color: #636FA4; */
+ }
+ 
+ /* => donde esta la foto tiene que tener una position relative
+ y el resto de cosas que queremos que vayan sobre la foto tiene que tener position absolute*/
+ 
+ .main-header .fondo-header {
      object-fit: cover;
      position: relative; 
      width: 100%; 
      height: 90px; 
-}
-
-.main-header .header {
+ }
+ 
+ .main-header .header {
      position: absolute;
      width: 100%; 
      flex-direction: row; 
-}
-
-.header .header-top {
+ }
+ 
+ .header .header-top {
      display: flex; 
      align-items: center; 
      height: 90px; 
      padding: 2px;
-}
-
-.header .logo {
+ }
+ 
+ .header .logo {
      width: 70px; 
      height: 70px; 
      cursor: pointer;
      margin-right: 10px;
-}
-
-.header-top .form-search { /* ----------- */
+ }
+ 
+ .header-top .form-search { /* ----------- */
      margin-right: 2px; /* ---tenia 8px------
       */
      width: 60%; 
-}  /* queda bien con width 60% */
-
-.header-top .form-search .search-bar { /* --------- */
+ }  /* queda bien con width 60% */
+ 
+ .header-top .form-search .search-bar { /* --------- */
     /*  width: 85%; */ /* 100% */
      border-radius: 1rem;
      display: flex;
@@ -49,39 +50,39 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      padding: 4px 8px;  
      background-color: white;
      height: 22px;  /* -------agregue--- */
-}
-
-.search-bar input.input-buscador {
+ }
+ 
+ .search-bar input.input-buscador {
      /* width: 100px;  */
      border: none;
      flex-grow: 1; /* ------------acomodar---------- */
-}
+ }
  
-.search-bar input:focus {
-/*sacamos el borde que hace al hacer click*/
+ .search-bar input:focus {
+ /*sacamos el borde que hace al hacer click*/
      outline: none;
-} 
-
-/* .search-bar i {
+ } 
+ 
+ /* .search-bar i {
      color: black;
      cursor: pointer;
-}  */
-
-
-/* inicio icono user */
-.header-top .session-user {
+ }  */
+ 
+ 
+ /* inicio icono user */
+ .header-top .session-user {
      display: flex;
      font-size: 18px;
      order: 3;
      position: relative;
-} 
-
-.header-top .session-user i.fa-user { 
+ } 
+ 
+ .header-top .session-user i.fa-user { 
      color: white;
      margin: 0px 4px;
-}   
-
-.header-top .session-user .user-menu {
+ }   
+ 
+ .header-top .session-user .user-menu {
      display: none;
      position: absolute;
      font-size: 1rem;
@@ -92,19 +93,19 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      margin-left: -5rem;
      top: 21px;
      right: -10px;
-}
-
-.session-user:hover .user-menu {
+ }
+ 
+ .session-user:hover .user-menu {
      display: block;
      text-align: center;
-}
-
-.session-user:hover .user-menu a {
+ }
+ 
+ .session-user:hover .user-menu a {
      text-decoration-line: none;  
      color: black;
-}
-
-.session-user .open-session {
+ }
+ 
+ .session-user .open-session {
      display: inline-block;
      width: 8px;
      height: 8px;
@@ -113,20 +114,20 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      position: relative;
      top: -6px; /* -10 */
      right: 5px; /* 0px */
-}
-/* fin icon-user */
-
-/* inicio de burguer-menu desplegable en version mobile(320, 375, 425) */
-.header-top .burguer-menu { /* i */
+ }
+ /* fin icon-user */
+ 
+ /* inicio de burguer-menu desplegable en version mobile(320, 375, 425) */
+ .header-top .burguer-menu { /* i */
      font-size: 18px;
      cursor: pointer;
      margin-right: 4px;
      order: 3;
      color: white;
      margin: 0px 4px;
-}
-
-.header-top .navigation-bar {
+ }
+ 
+ .header-top .navigation-bar {
      font-size: 18px;
      background-color: #ebebeb;
      margin-top: 180px;
@@ -136,110 +137,110 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
      order: 4;
      width: 100%;
      margin-left: 0;
-}
-
-.navigation-bar ul.menu a {
+ }
+ 
+ .navigation-bar ul.menu a {
      text-align: center;
      text-decoration-line: none; 
      font-weight: 700;
      color: black;
      order: 4;  
-}
-
-.navigation-bar ul.menu a li {
+ }
+ 
+ .navigation-bar ul.menu a li {
      padding: 2px;
-}
-/* fin de burguer-menu */
-
-.header nav.header-bottom {
+ }
+ /* fin de burguer-menu */
+ 
+ .header nav.header-bottom {
     display: none;
-}
-
-
-/*Media queries-mobile*/
-
-@media (min-width: 375px) {
-
+ }
+ 
+ 
+ /*Media queries-mobile*/
+ 
+ @media (min-width: 375px) {
+ 
      .header .logo {
           width: 90px;
           height: 90px;
      } 
-
+ 
      .header .header-top i.fa-user { 
          font-size: 18px; 
      }  
-
+ 
      .header-top .form-search { 
           width: 58%;  /* ------------ tenia width: 55%;   */
      }
-}
-
-@media (min-width: 425px) {
-
+ }
+ 
+ @media (min-width: 425px) {
+ 
      .header .header-top {
           justify-content: space-between;
      } 
-
+ 
      .header-top .burguer-menu { 
           margin: 0px 6px;
           font-size: 20px;
           margin-right: 10px;
      }
-}
-
-
-/*Media queries-tablet*/
-
-@media (min-width: 768px) {
+ }
+ 
+ 
+ /*Media queries-tablet*/
+ 
+ @media (min-width: 768px) {
     /*header-top*/
-
+ 
     .main-header .fondo-header {
          height: 120px; 
     }
-
+ 
     .main-header .header {
          padding: 0 10px 0 4px;
     }
-
+ 
     .header .header-top .logo {
          width: 100px; 
          height: 100px;
          order: 0;
     }
-
+ 
     .header-top .search-bar {
          order: 1;
          /*height: 25px; ------------ */
      }
-
+ 
      .header .header-top i.fa-user { 
          order: 2;
          margin-right: 25px;
          font-size: 20px;
     }  
-
+ 
     .header .header-top .burguer-menu { 
          display: none;
     }
-
+ 
     .session-user .open-session {
      top: -6px; 
      right: -30px; 
-}
-
+ }
+ 
     /*header-bottom*/ 
-
+ 
     .header nav.header-bottom {
          display: block; 
          align-items: center;
     }
-
+ 
     .main-header nav.header-bottom ul {
          display: flex;
          justify-content: space-evenly;  
          width: 100%; 
      }
-
+ 
     .header-bottom ul li a {
          color: white;
          text-decoration: none;
@@ -247,37 +248,37 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
          font-weight: 800; 
          font-size: 18px;
     }
-}
-
-
-/*Media queries-desktop*/
-
-@media (min-width: 1200px) {
+ }
+ 
+ 
+ /*Media queries-desktop*/
+ 
+ @media (min-width: 1200px) {
     /*header-top*/
     .main-header .header {
           padding: 0 10px 0 6px;
      }
-
+ 
      .header-top .form-search { 
           width: 40%;  
      }
-
+ 
     /*header-bottom*/
-
+ 
      .header-bottom ul li a {
           font-size: 20px;
      } 
-}
-
-.header-panel{
+ }
+ /* ------------------------------------------------- */
+ .header-panel{
      display: flex;
      align-items: center;
      justify-content: space-evenly;
-}
-
-
-/* Dropdown Button */
-.dropbtn {
+ }
+ 
+ 
+ /* Dropdown Button */
+ .dropbtn {
      background-color: #3498DB;
      color: white;
      padding: 16px;

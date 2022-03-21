@@ -1,4 +1,4 @@
-/* Api-Provincias - SELECT */
+/* Api - Provinces and locations - SELECT */
 
 const urlProvincias = 'https://apis.datos.gob.ar/georef/api/provincias';
 const urlLocalidades = 'https://apis.datos.gob.ar/georef/api/localidades?max=1000&provincia='
@@ -15,7 +15,7 @@ window.addEventListener('load', async () => { //Como estamos trabajando desde el
 
         let provincias = result.provincias;
        
-        provincias = provincias.sort((a, b) => a.nombre > b.nombre)  /* No se ordenan las provincias */
+        provincias = provincias.sort((a, b) => a.nombre < b.nombre ? -1 : a.nombre > b.nombre ? 1:0)  /* en cada vuelta se comparan las propiedades del objeto */
         
         provincias.forEach(provincia => {
             selectProvincias.innerHTML += `<option value="${provincia.nombre}">${provincia.nombre}</option>`
@@ -33,6 +33,8 @@ selectProvincias.addEventListener('change', async (e) => {
 
         let localidades = result.localidades;
 
+        localidades = localidades.sort((a, b) => a.nombre < b.nombre ? -1 : a.nombre > b.nombre ? 1:0)
+
         selectLocalidades.innerHTML = null;  //Vacia y después volver a cargar con una nueva provincia
 
         localidades.forEach(localidad => {
@@ -42,19 +44,6 @@ selectProvincias.addEventListener('change', async (e) => {
         });      
 })
 
-
-
-
-
-
-
-
-/* fetch('https://apis.datos.gob.ar/georef/api/provincias') 
-.then(response => response.json())
-.then(provinces => {
-    return res.render('users/myProfile', {provinces: provinces.provincias}) 
-})
-.catch(error => console.log(error))  */
 
 
 /* Si agrego etiquetas ejs en el html quiere decir que mando cosas del back al front, quizas consultas puedo hacer, pero mejor manejarlo desde public */
@@ -87,14 +76,3 @@ selectProvincias.addEventListener('change', async (e) => {
     })
 } 
 document.addEventListener('DOMContentLoaded', loadProvince())  */
-
-
-
-
-/* apiProvince: (req, res) => {
-    fetch('https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre') 
-    .then(response => response.json())
-    .then(province => {
-        res.render('users/myProfile', {province})
-    })
-} */

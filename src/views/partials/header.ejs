@@ -1,11 +1,11 @@
 <header class="main-header">
 
-    <img class="fondo-header" src="/img//background/imagen-header.png" alt="background-header">
+    <img class="fondo-header" src="/img//background/imagen-header.png" alt="background-header"> 
 
     <div class="header">
-
+        
         <div class="header-top">
-            
+            <!-- <i class="fas fa-comment-alt"></i> -->
             <div class="logo">
                 <a href="/">
                     <img src="/img/background/logo.png" alt="logo" width="100%">
@@ -18,16 +18,17 @@
                     <!-- <i class="fas fa-search"></i>   -->
                 </div>
             </form>
-             <div class="header-panel">
-            <% if (session.user) { %>
+<!-- ----------------------------------------- -->
+            <div class="header-panel">
+                <% if (session.user) { %>
                 <div class="dropdown">
-                <button onclick="NotificationFuntion()" class="dropbtn">Notificación</button>
+                    <button onclick="NotificationFuntion()" class="dropbtn">Notificación</button>
                 <div id="myDropdown" class="dropdown-content">
                  
                 </div>
-              </div>
+            </div>
             <% } %>
-           
+<!-- ---------------------------------------------- -->
             
             <!-- icon user -->
             <div class="session-user">
@@ -65,7 +66,7 @@
                     <a href="/users/login"><li class="dropdown-menu">Ingresar</li></a><hr>
 >>>>>>> Damian
                     <a href="/users/register"><li class="dropdown-menu">Creá tu cuenta</li></a><hr>
-                    <a href="#"><li class="dropdown-menu">Ayuda</li></a><hr>
+                    <a href="/about"><li class="dropdown-menu">Nosotros</li></a><hr>
 
                 </ul>
 
@@ -83,7 +84,7 @@
                 <li><a href="/users/login">Ingresar</a></li>
 >>>>>>> Damian
                 <li><a href="/users/register">Creá tu cuenta</a></li>
-                <li><a href="#">Ayuda</a></li><!-- o puede ser 'nosotros' -->
+                <li><a href="/about">Nosotros</a></li>
             </ul>
         </nav>
     </div>

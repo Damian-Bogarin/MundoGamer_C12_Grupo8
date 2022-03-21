@@ -51,14 +51,39 @@ window.addEventListener('load', function () {
 
     //variable para el buton audio
     let $audio = qs('#audiobuton')
+    let $audioCoin = qs('#audioCoin')
 
 
+    //variable para el cartel
+    let $cartel = qs('.category-cartel-section')
+    let $box = qs('#Coin-Block1')
+    let $coin1 = qs('#Coin1')
+    let powerup1 = qs('#Power-Ups1')
+    let powerup2 = qs('#Power-Ups2')
+    let $box2 = qs('#Coin-Block2')
+ 
+
+
+    
+        $box.addEventListener('click', function(){
+            powerup1.setAttribute("style", "animation: powerup 1s")
+            $audioCoin.play()
+            setTimeout(function(){powerup1.removeAttribute("style", 'animation' )}, 2000)
+        })
+        $box2.addEventListener('click', function(){
+            powerup2.setAttribute("style", "animation: powerup 1s")
+            $audioCoin.play()
+            setTimeout(function(){powerup2.removeAttribute("style", 'animation' )}, 2000)
+        })
      /***************************
       * Este fetch se ejecuta apenas cargas toda la pagina, para que traiga todos los productos, o solo los que llegaron con la Query
       */
     fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
     .then(response => response.json())
     .then(data =>{
+        if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
         
         $sectionContainer.innerHTML = ""
         data.forEach(element => {
@@ -196,13 +221,17 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
+                if(data.length == 0){
+                    $cartel.setAttribute("style", "visibility: visible")
+                }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -280,14 +309,12 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
-
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
-                
+                if(data.length == 0){
+                    $cartel.setAttribute("style", "visibility: visible")
+                }else{$cartel.setAttribute("style", "visibility: hidden")}
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
                 $sectionContainer.insertAdjacentHTML('beforeend',
@@ -364,14 +391,12 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
-
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
-                
+                if(data.length == 0){
+                    $cartel.setAttribute("style", "visibility: visible")
+                }else{$cartel.setAttribute("style", "visibility: hidden")}
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
                 $sectionContainer.insertAdjacentHTML('beforeend',
@@ -449,14 +474,13 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
-                
+                if(data.length == 0){
+                    $cartel.setAttribute("style", "visibility: visible")
+                }else{$cartel.setAttribute("style", "visibility: hidden")}
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
                 $sectionContainer.insertAdjacentHTML('beforeend',
@@ -533,12 +557,14 @@ if(params.has('c')){
         } else params.append(`g`, `5`);
 
 
-        console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
+        
 
         fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
-                
+                if(data.length == 0){
+                    $cartel.setAttribute("style", "visibility: visible")
+                }else{$cartel.setAttribute("style", "visibility: hidden")}
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
                 $sectionContainer.insertAdjacentHTML('beforeend',
@@ -616,14 +642,13 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
-
+       
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
-                
+                if(data.length == 0){
+                    $cartel.setAttribute("style", "visibility: visible")
+                }else{$cartel.setAttribute("style", "visibility: hidden")}
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
                 $sectionContainer.insertAdjacentHTML('beforeend',
@@ -700,13 +725,14 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -784,13 +810,14 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -876,13 +903,14 @@ if(params.has('c')){
 
         console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -960,13 +988,14 @@ if(params.has('c')){
 
         console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1044,13 +1073,14 @@ if(params.has('c')){
 
         console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1128,13 +1158,14 @@ if(params.has('c')){
 
         console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1212,13 +1243,14 @@ if(params.has('c')){
 
         console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1296,13 +1328,14 @@ if(params.has('c')){
 
         console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1380,13 +1413,14 @@ if(params.has('c')){
 
         console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1464,13 +1498,14 @@ if(params.has('c')){
 
         console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1555,13 +1590,14 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1639,13 +1675,14 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1723,13 +1760,14 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1808,13 +1846,14 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1892,13 +1931,14 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -1976,13 +2016,14 @@ if(params.has('c')){
 
      //   console.log(`${window.location.origin}/api/category/filter?${params.toString()}`)
 
-        fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        
 
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -2052,6 +2093,9 @@ if(params.has('c')){
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -2108,6 +2152,9 @@ if(params.has('c')){
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -2176,6 +2223,9 @@ if(params.has('c')){
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {
@@ -2232,6 +2282,9 @@ if(params.has('c')){
             fetch(`${window.location.origin}/api/category/filter?${params.toString()}`)
             .then(response => response.json())
             .then(data =>{
+                if(data.length == 0){
+            $cartel.setAttribute("style", "visibility: visible")
+        }else{$cartel.setAttribute("style", "visibility: hidden")}
                 
                 $sectionContainer.innerHTML = ""
                 data.forEach(element => {

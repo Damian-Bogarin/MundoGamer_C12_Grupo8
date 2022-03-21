@@ -25,6 +25,9 @@
 @import url('myProfile.css'); 
 @import url('productCart.css');
 
+/* about and terms */
+@import url('about.css');
+@import url('terms.css');
 
 /* 404 error page*/
 @import url('404error.css');

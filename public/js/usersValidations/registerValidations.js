@@ -25,9 +25,6 @@ window.addEventListener('load', function() {
     $inputPass2 = qs('#inputPass2')
     $passErrors2 = qs('#passErrors2')
 
-    $avatar = qs('#avatar')
-    $avatarErrors = qs('#avatarErrors')
-
     $inputTerms = qs('#inputTerms')
     $termsErrors = qs('#termsErrors')
 
@@ -184,7 +181,7 @@ window.addEventListener('load', function() {
 
         for (let i = 0; i < formElements.length - 1; i++){ //- 1 porque no queremos capturar el buttom
             if(formElements[i].value == ""
-            && formElements[i].type !== 'file'
+          /*   && formElements[i].type !== 'file' (el input de file lo lleve a myProfile)*/
             ){
                 formElements[i].classList.add('error');
                 submitErrors.innerHTML = 'Los campos señalados son obligatorios' 
@@ -205,10 +202,6 @@ window.addEventListener('load', function() {
             $form.submit()
         }
     })   
-
-    /* file */
-   
-    /*  */
 
         
   

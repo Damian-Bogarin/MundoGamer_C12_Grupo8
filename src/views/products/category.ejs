@@ -9,6 +9,7 @@
         <%- include('../partials/header.ejs') %>
         <audio id="audiobuton" src="/sound/click.wav"   >
         </audio>
+        <audio id="audioCoin" src="/sound/coin.wav"></audio>
 
             <h1 id="titulo-categoria">Filtros</h1>
             <section class="category-filter">
@@ -24,7 +25,7 @@
                         <div id="Cat-gender7"><img src="/vectores/category/estrategia.svg" alt=""></div>
                         <div id="Cat-gender8"><img src="/vectores/category/supervivencia.svg" alt=""></div>
                     </div>
-                    <h2>Consolas</h2>
+                    <h2>Consolas:</h2>
                         <div class="category-consoles">
                             <div id="Cat-console1"><img src="/vectores/category/pc.svg" alt=""></div>
                             <div id="Cat-console2"><img src="/vectores/category/playstation1.svg"  alt=""></div>
@@ -36,22 +37,22 @@
                             <div id="Cat-console8"><img src="/vectores/category/nintendo.svg" alt=""></div>
 
                         </div>
-                    <h2>Idioma</h2>
+                    <h2>Idioma:</h2>
                     <div class="category-languages">
                         <div id="Cat-language1"><img src="/vectores/category/spain.svg" alt=""></div>
                         <div id="Cat-language2"><img src="/vectores/category/unitedkingdom.svg" alt=""></div>
                         <div id="Cat-language3"><img src="/vectores/category/china.svg" alt=""></div>
                         
                     </div>
-                    <h2>Traducción</h2>
+                    <h2>Traducción:</h2>
                     <div class="category-subtitles">
                         <div id="Cat-subtitle1"><img src="/vectores/category/spain.svg" alt=""></div>
                         <div id="Cat-subtitle2"><img src="/vectores/category/france.svg" alt=""></div>
                         <div id="Cat-subtitle3"><img src="/vectores/category/germany.svg" alt=""></div>
                     
                     </div>
-                    <h2>General</h2>
-                    <div>Precio min:<input type="number" name="" id="priceMin"></div>
+                    <h2>General:</h2>
+                    <div>Precio Min:<input type="number" name="" id="priceMin"></div>
                     <div>Precio Max:<input type="number" name="" id="priceMax"></div>
 
                 </div>
@@ -66,6 +67,89 @@
                 <section class="section-containers">
                 
                 </section>
+
+                <div class="category-cartel-section">
+                    <div class="category-cartel">
+                            <svg width="100" height="100" viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Coin-Block1">
+<g id="Power-Ups1">
+<g id="Coin1">
+<path id="Union" d="M114.028 379.959L113.407 380H91.0247V220H113.407L114.028 220.041C123.348 220.657 132.91 228.454 140.376 243.155C147.724 257.625 152.383 277.663 152.383 300C152.383 322.337 147.724 342.375 140.376 356.845C132.91 371.546 123.348 379.343 114.028 379.959Z" fill="#EDB00F" stroke="black" stroke-width="10"/>
+<path id="Ellipse 18" d="M127.198 300C127.198 322.83 122.332 343.25 114.707 357.781C106.96 372.547 97.1264 380 87.5988 380C78.0711 380 68.2376 372.547 60.4902 357.781C52.866 343.25 48 322.83 48 300C48 277.17 52.866 256.75 60.4902 242.219C68.2376 227.453 78.0711 220 87.5988 220C97.1264 220 106.96 227.453 114.707 242.219C122.332 256.75 127.198 277.17 127.198 300Z" fill="#EDB00F" stroke="black" stroke-width="10"/>
+</g>
+<path id="Star 1" d="M81.5149 256.156C81.8026 253.815 85.1974 253.815 85.4851 256.156L88.3358 279.357C88.459 280.36 89.3106 281.113 90.3209 281.113H101.603C103.104 281.113 104.07 282.705 103.377 284.037L91.9603 305.972C91.7736 306.331 91.7 306.738 91.7493 307.139L95.3758 336.654C95.6475 338.865 92.6452 339.798 91.6166 337.821L85.2741 325.636C84.5269 324.2 82.4731 324.2 81.7259 325.636L75.3834 337.821C74.3548 339.798 71.3525 338.865 71.6242 336.654L75.2507 307.139C75.3 306.738 75.2264 306.331 75.0397 305.972L63.6228 284.037C62.9298 282.705 63.8959 281.113 65.3969 281.113H76.6791C77.6894 281.113 78.541 280.36 78.6642 279.357L81.5149 256.156Z" fill="#D07F1F"/>
+</g>
+<rect id="Block" x="5" y="205" width="190" height="190" rx="15" fill="#EDB00F" stroke="black" stroke-width="10"/>
+<rect id="Shine" x="15" y="215" width="170" height="170" rx="5" stroke="url(#paint0_linear_2_230)" stroke-width="10"/>
+<g id="Bolts">
+<circle id="Bolt" cx="30" cy="230" r="7.5" fill="#EDB00F" stroke="black" stroke-width="5"/>
+<circle id="Bolt_2" cx="30" cy="370" r="7.5" fill="#EDB00F" stroke="black" stroke-width="5"/>
+<circle id="Bolt_3" cx="170" cy="230" r="7.5" fill="#EDB00F" stroke="black" stroke-width="5"/>
+<circle id="Bolt_4" cx="170" cy="370" r="7.5" fill="#EDB00F" stroke="black" stroke-width="5"/>
+</g>
+<g id="Question Mark" filter="url(#filter0_d_2_230)">
+<path id="Vector 6" d="M74.0394 288.166H51C49.8954 288.166 49 287.271 49 286.166V258.882C49 258.353 49.2093 257.846 49.5822 257.471L61.4031 245.589C61.7785 245.212 62.2887 245 62.8209 245H132.203C132.735 245 133.245 245.212 133.621 245.589L149.418 261.468C149.791 261.843 150 262.35 150 262.879V292.936C150 293.465 149.791 293.972 149.418 294.347L133.621 310.226C133.245 310.603 132.735 310.815 132.203 310.815H116.104C115.572 310.815 115.062 311.027 114.687 311.404L112.409 313.694C112.036 314.069 111.827 314.576 111.827 315.104V328C111.827 329.105 110.931 330 109.827 330H86.2572C85.1526 330 84.2572 329.105 84.2572 328V308.976C84.2572 308.447 84.4665 307.94 84.8394 307.565L97.9858 294.351C98.3611 293.974 98.8714 293.762 99.4036 293.762H114.442C114.974 293.762 115.484 293.55 115.859 293.172L120.258 288.751C120.631 288.377 120.84 287.869 120.84 287.341V271.938C120.84 271.41 120.631 270.902 120.258 270.528L115.859 266.107C115.484 265.729 114.974 265.517 114.442 265.517H82.4377C81.9055 265.517 81.3953 265.729 81.0199 266.107L76.6215 270.528C76.2487 270.902 76.0394 271.41 76.0394 271.938V286.166C76.0394 287.271 75.1439 288.166 74.0394 288.166Z" fill="white" stroke="black" stroke-width="5"/>
+<rect id="Rectangle 659" x="85" y="341" width="28" height="14" rx="2" fill="white" stroke="black" stroke-width="5"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_2_230" x="46.5" y="242.5" width="106" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_230"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_230" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_2_230" x1="13.5" y1="215.5" x2="157.5" y2="359.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.58"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+                            </svg>
+                            <h2>No se ha encontrado el producto que buscabas!</h2>
+                            <svg width="100" height="100" viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Coin-Block2">
+<g id="Power-Ups2">
+<g id="Coin2">
+<path id="Union" d="M114.028 379.959L113.407 380H91.0247V220H113.407L114.028 220.041C123.348 220.657 132.91 228.454 140.376 243.155C147.724 257.625 152.383 277.663 152.383 300C152.383 322.337 147.724 342.375 140.376 356.845C132.91 371.546 123.348 379.343 114.028 379.959Z" fill="#EDB00F" stroke="black" stroke-width="10"/>
+<path id="Ellipse 18" d="M127.198 300C127.198 322.83 122.332 343.25 114.707 357.781C106.96 372.547 97.1264 380 87.5988 380C78.0711 380 68.2376 372.547 60.4902 357.781C52.866 343.25 48 322.83 48 300C48 277.17 52.866 256.75 60.4902 242.219C68.2376 227.453 78.0711 220 87.5988 220C97.1264 220 106.96 227.453 114.707 242.219C122.332 256.75 127.198 277.17 127.198 300Z" fill="#EDB00F" stroke="black" stroke-width="10"/>
+</g>
+<path id="Star 1" d="M81.5149 256.156C81.8026 253.815 85.1974 253.815 85.4851 256.156L88.3358 279.357C88.459 280.36 89.3106 281.113 90.3209 281.113H101.603C103.104 281.113 104.07 282.705 103.377 284.037L91.9603 305.972C91.7736 306.331 91.7 306.738 91.7493 307.139L95.3758 336.654C95.6475 338.865 92.6452 339.798 91.6166 337.821L85.2741 325.636C84.5269 324.2 82.4731 324.2 81.7259 325.636L75.3834 337.821C74.3548 339.798 71.3525 338.865 71.6242 336.654L75.2507 307.139C75.3 306.738 75.2264 306.331 75.0397 305.972L63.6228 284.037C62.9298 282.705 63.8959 281.113 65.3969 281.113H76.6791C77.6894 281.113 78.541 280.36 78.6642 279.357L81.5149 256.156Z" fill="#D07F1F"/>
+</g>
+<rect id="Block" x="5" y="205" width="190" height="190" rx="15" fill="#EDB00F" stroke="black" stroke-width="10"/>
+<rect id="Shine" x="15" y="215" width="170" height="170" rx="5" stroke="url(#paint0_linear_2_230)" stroke-width="10"/>
+<g id="Bolts">
+<circle id="Bolt" cx="30" cy="230" r="7.5" fill="#EDB00F" stroke="black" stroke-width="5"/>
+<circle id="Bolt_2" cx="30" cy="370" r="7.5" fill="#EDB00F" stroke="black" stroke-width="5"/>
+<circle id="Bolt_3" cx="170" cy="230" r="7.5" fill="#EDB00F" stroke="black" stroke-width="5"/>
+<circle id="Bolt_4" cx="170" cy="370" r="7.5" fill="#EDB00F" stroke="black" stroke-width="5"/>
+</g>
+<g id="Question Mark" filter="url(#filter0_d_2_230)">
+<path id="Vector 6" d="M74.0394 288.166H51C49.8954 288.166 49 287.271 49 286.166V258.882C49 258.353 49.2093 257.846 49.5822 257.471L61.4031 245.589C61.7785 245.212 62.2887 245 62.8209 245H132.203C132.735 245 133.245 245.212 133.621 245.589L149.418 261.468C149.791 261.843 150 262.35 150 262.879V292.936C150 293.465 149.791 293.972 149.418 294.347L133.621 310.226C133.245 310.603 132.735 310.815 132.203 310.815H116.104C115.572 310.815 115.062 311.027 114.687 311.404L112.409 313.694C112.036 314.069 111.827 314.576 111.827 315.104V328C111.827 329.105 110.931 330 109.827 330H86.2572C85.1526 330 84.2572 329.105 84.2572 328V308.976C84.2572 308.447 84.4665 307.94 84.8394 307.565L97.9858 294.351C98.3611 293.974 98.8714 293.762 99.4036 293.762H114.442C114.974 293.762 115.484 293.55 115.859 293.172L120.258 288.751C120.631 288.377 120.84 287.869 120.84 287.341V271.938C120.84 271.41 120.631 270.902 120.258 270.528L115.859 266.107C115.484 265.729 114.974 265.517 114.442 265.517H82.4377C81.9055 265.517 81.3953 265.729 81.0199 266.107L76.6215 270.528C76.2487 270.902 76.0394 271.41 76.0394 271.938V286.166C76.0394 287.271 75.1439 288.166 74.0394 288.166Z" fill="white" stroke="black" stroke-width="5"/>
+<rect id="Rectangle 659" x="85" y="341" width="28" height="14" rx="2" fill="white" stroke="black" stroke-width="5"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_2_230" x="46.5" y="242.5" width="106" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_230"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_230" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_2_230" x1="13.5" y1="215.5" x2="157.5" y2="359.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.58"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+                            </svg>
+
+                    </div>
+                </div>
            
             <%- include('../partials/footer.ejs') %>
 
