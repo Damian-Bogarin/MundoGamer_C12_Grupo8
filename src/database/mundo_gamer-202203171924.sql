@@ -40,8 +40,37 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (1,1,1),(2,2,2),(3,3,3),(4,4,4),(5,5,5);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cartshop`
+--
+
+DROP TABLE IF EXISTS `cartshop`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cartshop` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cartShop_FK` (`userId`),
+  KEY `cartShop_FK_1` (`productId`),
+  CONSTRAINT `cartShop_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
+  CONSTRAINT `cartShop_FK_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cartshop`
+--
+
+LOCK TABLES `cartshop` WRITE;
+/*!40000 ALTER TABLE `cartshop` DISABLE KEYS */;
+INSERT INTO `cartshop` VALUES (1,21,10,5),(2,21,8,2),(3,24,10,1),(4,24,8,1),(5,24,16,1),(6,21,16,1),(7,28,21,1);
+/*!40000 ALTER TABLE `cartshop` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -108,7 +137,7 @@ CREATE TABLE `compatibility_product` (
   KEY `compatibility_product_FK_1` (`compatibilityId`),
   CONSTRAINT `compatibility_product_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
   CONSTRAINT `compatibility_product_FK_1` FOREIGN KEY (`compatibilityId`) REFERENCES `compatibility` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +146,7 @@ CREATE TABLE `compatibility_product` (
 
 LOCK TABLES `compatibility_product` WRITE;
 /*!40000 ALTER TABLE `compatibility_product` DISABLE KEYS */;
-INSERT INTO `compatibility_product` VALUES (6,6,6),(7,7,6),(8,2,7),(9,3,7),(73,1,8),(74,2,8),(75,3,8),(76,4,8),(77,3,10),(78,2,10),(79,4,10);
+INSERT INTO `compatibility_product` VALUES (8,2,7),(9,3,7),(73,1,8),(74,2,8),(75,3,8),(76,4,8),(77,3,10),(78,2,10),(79,4,10),(83,1,16),(84,7,16),(85,4,16),(86,6,16),(99,2,17),(100,4,17),(101,6,17),(112,2,19),(113,3,19),(114,5,19),(127,1,21),(128,2,21),(129,5,21);
 /*!40000 ALTER TABLE `compatibility_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,7 +218,7 @@ CREATE TABLE `language_product` (
   KEY `language_product_FK_1` (`languageId`),
   CONSTRAINT `language_product_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
   CONSTRAINT `language_product_FK_1` FOREIGN KEY (`languageId`) REFERENCES `languages` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +227,7 @@ CREATE TABLE `language_product` (
 
 LOCK TABLES `language_product` WRITE;
 /*!40000 ALTER TABLE `language_product` DISABLE KEYS */;
-INSERT INTO `language_product` VALUES (6,6,1),(7,6,2),(8,6,3),(9,7,1),(10,7,2),(46,8,2),(47,10,2),(48,10,3);
+INSERT INTO `language_product` VALUES (9,7,1),(10,7,2),(46,8,2),(47,10,2),(48,10,3),(51,16,2),(52,16,3),(61,17,2),(62,17,3),(69,19,2),(70,19,3),(79,21,2),(80,21,3);
 /*!40000 ALTER TABLE `language_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,7 +300,7 @@ CREATE TABLE `multiplayer_product` (
   KEY `multiplayer_product_FK_1` (`multiplayerId`),
   CONSTRAINT `multiplayer_product_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
   CONSTRAINT `multiplayer_product_FK_1` FOREIGN KEY (`multiplayerId`) REFERENCES `multiplayers` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +309,7 @@ CREATE TABLE `multiplayer_product` (
 
 LOCK TABLES `multiplayer_product` WRITE;
 /*!40000 ALTER TABLE `multiplayer_product` DISABLE KEYS */;
-INSERT INTO `multiplayer_product` VALUES (6,6,1),(7,6,2),(8,7,1),(63,8,1),(64,10,2),(65,10,3),(66,10,4);
+INSERT INTO `multiplayer_product` VALUES (8,7,1),(63,8,1),(64,10,2),(65,10,3),(66,10,4),(70,16,4),(71,16,3),(72,16,5),(81,17,3),(82,17,4),(92,19,3),(93,19,4),(94,19,5),(105,21,3),(106,21,4);
 /*!40000 ALTER TABLE `multiplayer_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -306,6 +335,35 @@ LOCK TABLES `multiplayers` WRITE;
 /*!40000 ALTER TABLE `multiplayers` DISABLE KEYS */;
 INSERT INTO `multiplayers` VALUES (1,'1 Player'),(2,'2 Player'),(3,'3 Player'),(4,'4 Player'),(5,'5 o Mas');
 /*!40000 ALTER TABLE `multiplayers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `notification`
+--
+
+DROP TABLE IF EXISTS `notification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `notification` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) NOT NULL,
+  `see` tinyint(4) DEFAULT NULL,
+  `message` varchar(300) DEFAULT NULL,
+  `link` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `notification_FK` (`userId`),
+  CONSTRAINT `notification_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notification`
+--
+
+LOCK TABLES `notification` WRITE;
+/*!40000 ALTER TABLE `notification` DISABLE KEYS */;
+INSERT INTO `notification` VALUES (3,27,0,'Bienvenido NICOLAS!','#'),(4,27,0,'psst! un articulo que te gusto, acaba de estar en rebaja al 50%!!, pincha aqui para ver cual es!','/products/detail/17'),(5,27,0,'psst! un articulo que te gusto, acaba de estar en rebaja al 75%!!, pincha aqui para ver cual es!','/products/detail/17'),(6,21,0,'psst! un articulo que te gusto, acaba de estar en rebaja al 10%!!, pincha aqui para ver cual es!','/products/detail/19'),(7,28,0,'Bienvenido NICOLAS!','#'),(8,28,0,'psst! un articulo que te gusto, acaba de estar en rebaja al 15%!!, pincha aqui para ver cual es!','/products/detail/21');
+/*!40000 ALTER TABLE `notification` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -394,7 +452,7 @@ CREATE TABLE `products` (
   KEY `products_FK_1` (`classificationId`),
   CONSTRAINT `products_FK` FOREIGN KEY (`genderId`) REFERENCES `genders` (`id`),
   CONSTRAINT `products_FK_1` FOREIGN KEY (`classificationId`) REFERENCES `classifications` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -403,7 +461,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (6,'Super Mario 64','Super Mario 64 comienza con una carta de la Princesa Peach en la que invita a Mario a su castillo pa','2022-02-10 00:00:00',0,0,10000,15,8500,0,15,3,1,'2022-02-10 17:04:40','2022-02-10 17:04:40','1644512680686_img_.jpg'),(7,'Resident Evil 1','El juego original transcurre en la noche del 24 de julio de 1998 en las afueras de Raccoon City, con','2022-02-10 00:00:00',0,0,25000,20,20000,0,20,8,3,'2022-03-07 02:11:32','2022-03-07 02:11:32','1646619092843_img_.jpg'),(8,'Resident Evil 2','La trama del juego tiene lugar dos meses despuÃ©s de los sucesos de Resident Evil,14â€‹ en Raccoon City','2022-02-10 00:00:00',0,0,25000,5,23750,0,10,8,2,'2022-03-07 02:11:21','2022-03-07 02:11:21','1646619081897_img_.jpg'),(9,'Croc 2','Establecido varios meses después de Croc: Legend of the Gobbos, los Dantinis traman el regreso de Ba','2022-02-10 00:00:00',0,1,7500,5,7125,0,10,3,1,'2022-02-23 19:22:34','2022-02-10 17:12:09','1644513129478_img_.jpg'),(10,'Pes 2022','eFootball 20221â€‹ (anteriormente llamado eFootball PES 2022)2â€‹ es un videojuego de simulaciÃ³n de fÃºtb','2022-02-10 00:00:00',1,1,35000,10,31500,0,25,5,2,'2022-03-07 03:38:41','2022-03-07 03:38:41','1646618867334_img_.png');
+INSERT INTO `products` VALUES (7,'Resident Evil 1','El juego original transcurre en la noche del 24 de julio de 1998 en las afueras de Raccoon City, con','2022-02-10 00:00:00',0,0,25000,20,20000,0,20,8,3,'2022-03-07 02:11:32','2022-03-07 02:11:32','1646619092843_img_.jpg'),(8,'Resident Evil 2','La trama del juego tiene lugar dos meses despuÃ©s de los sucesos de Resident Evil,14â€‹ en Raccoon City','2022-02-10 00:00:00',0,0,25000,5,23750,0,10,8,2,'2022-03-07 02:11:21','2022-03-07 02:11:21','1646619081897_img_.jpg'),(9,'Croc 2','Establecido varios meses después de Croc: Legend of the Gobbos, los Dantinis traman el regreso de Ba','2022-02-10 00:00:00',0,1,7500,5,7125,0,10,3,1,'2022-02-23 19:22:34','2022-02-10 17:12:09','1644513129478_img_.jpg'),(10,'Pes 2022','eFootball 20221â€‹ (anteriormente llamado eFootball PES 2022)2â€‹ es un videojuego de simulaciÃ³n de fÃºtb','2022-02-10 00:00:00',1,1,35000,10,31500,0,25,5,2,'2022-03-07 03:38:41','2022-03-07 03:38:41','1646618867334_img_.png'),(16,'Age of Empires II','Age of Empires II: The Age of Kings es un videojuego de estrategia en tiempo real para computadoras personales y fue desarrollado por Ensemble Studios, y distribuido por Microsoft Game Studios para los sistemas operativos Windows y Mac OS X, y Konami para PlayStation 2.','2022-03-11 00:00:00',0,0,15000,10,13500,0,15,7,1,'2022-03-12 20:30:02','2022-03-12 20:30:02','1646975923758_img_.jpg'),(17,'Super Mario Bros 3','Super Mario Bros. 3 es el tercer videojuego de plataformas de la franquicia Mario para la consola Nintendo Entertainment System. Salió a la venta el 23 de octubre de 1988 en Japón y el 12 de febrero de 1990 en Estados Unidos.','2022-03-14 00:00:00',1,0,15000,75,3750,0,25,3,1,'2022-03-15 15:14:45','2022-03-15 15:14:45','1647310549287_img_.jpg'),(19,'los sims 2','An incredible¡Por primera vez, los jugadores controlan a sus Sims durante toda su vida! Ahora con Los Sims 2, cualquier elección que se haga tendrá un efecto relevante y dramático en la vida de un Sim. Descubre cómo Los Sims se llenan de vida, y como el juego consta de una jugabilidad totalmente nueva, por no hablar de la impresionante novedad que te dejará boquiabierto: la genética. Los Sims tienen su propio ADN que pasa de generación en generac','2022-03-16 00:00:00',0,1,14000,10,12600,0,18,6,2,'2022-03-16 18:43:29','2022-03-16 18:43:29','1647456131714_img_.jpg'),(21,'GTA vice city','La historia comienza cuando en una reunión en el Marco\'s Bistró de Liberty City en 1986, al líder de la familia criminal Forelli, Sonny, se le ocurre la idea de expandir sus negocios al sur, ya que está viendo cómo los traficantes mexicanos y colombianos, e incluso los refugiados cubanos, se están llevando los beneficios y él también quiere su parte. Uno de sus hombres le advierte que todo es dinero procedente de drogas y que eso le podría traer ','2022-03-16 00:00:00',0,0,15000,15,12750,0,15,2,4,'2022-03-16 21:48:08','2022-03-16 21:48:08','1647461313805_img_.jpg');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -476,7 +534,7 @@ CREATE TABLE `subtitle_product` (
   KEY `subtitle_product_FK_1` (`productId`),
   CONSTRAINT `subtitle_product_FK` FOREIGN KEY (`subtitleId`) REFERENCES `subtitles` (`id`),
   CONSTRAINT `subtitle_product_FK_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -485,7 +543,7 @@ CREATE TABLE `subtitle_product` (
 
 LOCK TABLES `subtitle_product` WRITE;
 /*!40000 ALTER TABLE `subtitle_product` DISABLE KEYS */;
-INSERT INTO `subtitle_product` VALUES (1,6,2),(2,6,3),(3,7,3),(4,7,2),(17,8,2),(18,8,3);
+INSERT INTO `subtitle_product` VALUES (3,7,3),(4,7,2),(17,8,2),(18,8,3),(20,16,3),(29,17,2),(30,17,3),(33,19,2),(38,21,2);
 /*!40000 ALTER TABLE `subtitle_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -522,20 +580,21 @@ DROP TABLE IF EXISTS `user_preferences`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_preferences` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `views` int(11) DEFAULT NULL,
-  `stars` int(11) DEFAULT NULL,
-  `likes` int(11) DEFAULT NULL,
-  `buy` int(11) DEFAULT NULL,
-  `userId` int(11) NOT NULL,
   `genderId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
   `productId` int(11) NOT NULL,
+  `views` int(11) DEFAULT NULL,
+  `likes` tinyint(4) DEFAULT NULL,
+  `buy` tinyint(4) DEFAULT NULL,
+  `stars` tinyint(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_preferences_FK` (`userId`),
+  KEY `user_preferences_FK` (`genderId`),
+  KEY `user_preferences_FK_1` (`userId`),
   KEY `user_preferences_FK_2` (`productId`),
-  CONSTRAINT `user_preferences_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
-  CONSTRAINT `user_preferences_FK_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
-  CONSTRAINT `user_preferences_FK_2` FOREIGN KEY (`productId`) REFERENCES `genders` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `user_preferences_FK` FOREIGN KEY (`genderId`) REFERENCES `genders` (`id`),
+  CONSTRAINT `user_preferences_FK_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
+  CONSTRAINT `user_preferences_FK_2` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -544,7 +603,7 @@ CREATE TABLE `user_preferences` (
 
 LOCK TABLES `user_preferences` WRITE;
 /*!40000 ALTER TABLE `user_preferences` DISABLE KEYS */;
-INSERT INTO `user_preferences` VALUES (1,1,NULL,0,0,21,3,6),(2,2,NULL,0,0,21,8,7);
+INSERT INTO `user_preferences` VALUES (2,3,9,9,1,0,0,1),(3,5,9,10,1,0,0,5),(4,8,9,7,1,0,0,NULL),(5,3,23,9,9,1,0,5),(7,5,23,10,9,1,0,1),(8,8,23,7,1,0,0,NULL),(10,3,21,9,145,1,0,4),(11,8,21,7,35,0,0,2),(12,8,21,8,47,1,0,5),(13,5,21,10,28,1,0,2),(14,7,21,16,6,1,0,5),(15,8,23,8,3,1,0,1),(16,5,24,10,1,0,0,NULL),(17,8,24,8,2,1,0,NULL),(18,7,24,16,1,1,0,NULL),(19,7,27,16,2,1,0,NULL),(20,3,27,17,4,1,0,NULL),(21,6,21,19,3,1,0,NULL),(22,5,28,10,3,1,0,1),(23,8,28,7,2,0,0,NULL),(24,7,28,16,8,0,0,NULL),(25,3,28,9,8,0,0,NULL),(26,2,28,21,8,1,0,NULL),(27,8,28,8,5,0,0,NULL);
 /*!40000 ALTER TABLE `user_preferences` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -561,7 +620,7 @@ CREATE TABLE `users` (
   `lastName` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `pass` varchar(100) NOT NULL,
-  `age` varchar(2) DEFAULT NULL,
+  `age` date DEFAULT NULL,
   `tel` varchar(50) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `province` varchar(100) DEFAULT NULL,
@@ -574,7 +633,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `user_un` (`email`),
   KEY `users_FK` (`rol_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `rols` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -583,7 +642,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Daniela','Cali','dani@gmail.com','123','20','4480249','Calle falsa','Confluencia',NULL,'','2022-01-23 06:00:00','2022-02-01 06:00:00',1),(2,'Thomas','Edison','tom@gmail.com','321','22','4412356','Calle verdadera','Zapala',NULL,'','2022-01-01 06:00:00','2022-01-02 06:00:00',1),(3,'Galy','Lee','g@gmail.com','456','24','4412356','Belgrano','Plottier',NULL,'','2022-01-02 06:00:00','2022-01-31 06:00:00',1),(4,'Newt','Lee','ne@gmail.com','654','24','4445454','Avenida 123','Senillosa',NULL,'','2022-01-03 06:00:00','2022-01-30 06:00:00',1),(5,'Ana','Paez','ani@gmail.com','789','25','44020474','Avenida argentina 123','Catriel',NULL,'','2022-01-04 06:00:00','2022-01-28 06:00:00',1),(9,'Dami','Bogarin','asd@gmail.com','$2a$12$lS/y3fR.boqFdKcFoLb4wO.YfEZeW5bQMLgE5i9F1Tij.8HTyGNQC',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-10 20:30:38','2022-02-10 20:30:38',2),(10,'admin','admin','admin@gmail.com','$2a$12$hoVrfVXaOOPPg5Vqcf9N4u37dWw3Kmqk8reEhsdsE4I0kGEMG4E1q',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-11 17:58:42','2022-02-11 17:58:42',1),(11,'aaaaaaaaaaaaaaaa','bbbbbbbbbbbbbbbb','abccccccc@gmail.com','$2a$12$5Emdf0XZSfdsC5ehkBCxwuuLLhSnFmzwv8IlGhAKus0N.fyqUMHPW',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-11 21:29:16','2022-02-11 21:29:16',2),(12,'prueba','prueba','pruebaaac@gmail.com','$2a$12$GV9ZhjyWCE0eJldLQiEP2OiL38ozX.g4a5kKnsPRAY2YW5ZstnH76',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-11 21:38:16','2022-02-11 21:38:16',2),(13,'comision12','nerviosos','comision@gmail.com','$2a$12$rKx.P3L/nMpnzuQ8pGzJXOQFJZMrwWYh0hczRrgw1INj7iSQMnCMW',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-12 00:03:46','2022-02-12 00:03:46',2),(14,'dani','dani','mundogamer@gmail.com','$2a$12$8nM21oXSL2/.soBEWRvnG.OzdteU9cyf42ETr0UkfnmUD9mUKI50q',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-17 06:41:30','2022-02-17 06:41:30',1),(15,'hola','hola 2','danidani@gmail.com','$2a$12$TX2lNJaYdoSapPLidXcOFOKfe/ML3wr3vcg9yHzqp6xvpND.zvuQm',NULL,NULL,NULL,NULL,NULL,'1646159650263_img_.png','2022-03-01 18:34:10','2022-03-01 18:34:10',2),(16,'dani','cali','mundo@gmail.com','$2a$12$lrqbzO.TsuV0fbuyyfef2uWPPpQmGhrv5QSm4dstigcOC91iJYwdG',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-03 18:19:34','2022-03-03 18:19:34',2),(17,'karen','cali','karen@gmail.com','$2a$12$W7RSe1EwFRrglvmYgLueF.wGjhzc5Khsx.JbC9r7f2jYmGMlO5fpW',NULL,NULL,NULL,NULL,NULL,'1646536919935_img_.png','2022-03-06 03:22:00','2022-03-06 03:22:00',2),(18,'chingu','chingus','chingu12@gmail.com','$2a$12$LK.rSpkKbXiPEf.ZX5c6geHEn/frlRQF3RgPBl9i2mr3quJxbVm36',NULL,NULL,NULL,NULL,NULL,'1646537210525_img_.jpg','2022-03-06 03:26:51','2022-03-06 03:26:51',2),(19,'lalala','prueba','prueba@gmail.com','$2a$12$bFynBuQUYKd.SxTidl0iDuDcvye/UBw5w4DZLmlULprgLc3DRTLlS',NULL,NULL,NULL,NULL,NULL,'1646537947285_img_.png','2022-03-06 03:39:07','2022-03-06 03:39:07',2),(20,'jdkdkdkd','kskssjsjss','qwer@gmail.com','$2a$12$5PhTX3gF6qG933Lf5Izjg.1IgRnoPp3cIct6OWLl6vv5mF42kXhOK',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-06 03:52:37','2022-03-06 03:52:37',2),(21,'NICOLAS','BOGARIN','1000@gmail.com','$2a$12$c3y9Dtmw4xbFFR1v.UuSB.eWsP3HbsI.JJhgU0M.SdVVBW3mlu7Pq',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-07 01:33:09','2022-03-07 01:33:09',2),(22,'NICOLAS','BOGARIN','administrador@gmail.com','$2a$12$t6ye2UZ61Wn1Q.Jaz.FdiuOjfSjhDeNBAuge/ekQU8Uwxd7FmYqwq',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-07 01:39:30','2022-03-07 01:39:30',1);
+INSERT INTO `users` VALUES (9,'Dami','Bogarin','asd@gmail.com','$2a$12$lS/y3fR.boqFdKcFoLb4wO.YfEZeW5bQMLgE5i9F1Tij.8HTyGNQC',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-10 20:30:38','2022-02-10 20:30:38',2),(10,'admin','admin','admin@gmail.com','$2a$12$hoVrfVXaOOPPg5Vqcf9N4u37dWw3Kmqk8reEhsdsE4I0kGEMG4E1q',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-11 17:58:42','2022-02-11 17:58:42',1),(11,'aaaaaaaaaaaaaaaa','bbbbbbbbbbbbbbbb','abccccccc@gmail.com','$2a$12$5Emdf0XZSfdsC5ehkBCxwuuLLhSnFmzwv8IlGhAKus0N.fyqUMHPW',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-11 21:29:16','2022-02-11 21:29:16',2),(12,'prueba','prueba','pruebaaac@gmail.com','$2a$12$GV9ZhjyWCE0eJldLQiEP2OiL38ozX.g4a5kKnsPRAY2YW5ZstnH76',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-11 21:38:16','2022-02-11 21:38:16',2),(13,'comision12','nerviosos','comision@gmail.com','$2a$12$rKx.P3L/nMpnzuQ8pGzJXOQFJZMrwWYh0hczRrgw1INj7iSQMnCMW',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-12 00:03:46','2022-02-12 00:03:46',2),(14,'dani','dani','mundogamer@gmail.com','$2a$12$8nM21oXSL2/.soBEWRvnG.OzdteU9cyf42ETr0UkfnmUD9mUKI50q',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-02-17 06:41:30','2022-02-17 06:41:30',1),(15,'hola','hola 2','danidani@gmail.com','$2a$12$TX2lNJaYdoSapPLidXcOFOKfe/ML3wr3vcg9yHzqp6xvpND.zvuQm',NULL,NULL,NULL,NULL,NULL,'1646159650263_img_.png','2022-03-01 18:34:10','2022-03-01 18:34:10',2),(16,'dani','cali','mundo@gmail.com','$2a$12$lrqbzO.TsuV0fbuyyfef2uWPPpQmGhrv5QSm4dstigcOC91iJYwdG',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-03 18:19:34','2022-03-03 18:19:34',2),(17,'karen','cali','karen@gmail.com','$2a$12$W7RSe1EwFRrglvmYgLueF.wGjhzc5Khsx.JbC9r7f2jYmGMlO5fpW',NULL,NULL,NULL,NULL,NULL,'1646536919935_img_.png','2022-03-06 03:22:00','2022-03-06 03:22:00',2),(18,'chingu','chingus','chingu12@gmail.com','$2a$12$LK.rSpkKbXiPEf.ZX5c6geHEn/frlRQF3RgPBl9i2mr3quJxbVm36',NULL,NULL,NULL,NULL,NULL,'1646537210525_img_.jpg','2022-03-06 03:26:51','2022-03-06 03:26:51',2),(19,'lalala','prueba','prueba@gmail.com','$2a$12$bFynBuQUYKd.SxTidl0iDuDcvye/UBw5w4DZLmlULprgLc3DRTLlS',NULL,NULL,NULL,NULL,NULL,'1646537947285_img_.png','2022-03-06 03:39:07','2022-03-06 03:39:07',2),(20,'jdkdkdkd','kskssjsjss','qwer@gmail.com','$2a$12$5PhTX3gF6qG933Lf5Izjg.1IgRnoPp3cIct6OWLl6vv5mF42kXhOK',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-06 03:52:37','2022-03-06 03:52:37',2),(21,'NICOLAS','BOGARIN','1000@gmail.com','$2a$12$c3y9Dtmw4xbFFR1v.UuSB.eWsP3HbsI.JJhgU0M.SdVVBW3mlu7Pq',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-07 01:33:09','2022-03-07 01:33:09',2),(22,'NICOLAS','BOGARIN','administrador@gmail.com','$2a$12$t6ye2UZ61Wn1Q.Jaz.FdiuOjfSjhDeNBAuge/ekQU8Uwxd7FmYqwq',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-07 01:39:30','2022-03-07 01:39:30',1),(23,'asd','asd','222@gmail.com','$2a$12$17znM0XySpgrHACtmuQIU.S7VvZS9z41vABUyOypSeuGdok/QoMR.',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-09 07:02:00','2022-03-09 07:02:00',2),(24,'Rodolgo','Azul','626@gmail.com','$2a$12$TIuQCjUy2d90dy3eeqk21OzY0RHhz279mZmBe5Y3cG0SfvodOl3vG',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-14 03:21:49','2022-03-14 03:21:49',2),(25,'NICOLAS','BOGARIN','noti@gmail.com','$2a$12$kgExrD9AVEJ9uK3dzerGfONTZgI65ph8PHnB/HwYEeh7WcPyr1oyS',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-14 06:10:49','2022-03-14 06:10:49',2),(26,'sdadasd','sdasdasdqw','33@gmail.com','$2a$12$E5vsCpeXj.PBNgsdkG.2ve7r1eH.R1sjgyjm2.F7xEurn/B1rFR8K',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-14 21:44:03','2022-03-14 21:44:03',2),(27,'NICOLAS','BOGARIN','1230@gmail.com','$2a$12$tcEebVLKE.qhwXDBjXnNhud8bNFZRED7FJfoTZ37H/kZ6VkdUVFqG',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-15 01:38:14','2022-03-15 01:38:14',2),(28,'NICOLAS','BOGARIN','nuevacuenta@gmail.com','$2a$12$K4Hjw4X0EGWliGIckUp0EOwNufZM0saWJB3TO2ohBmn8VUXW6Iv/S',NULL,NULL,NULL,NULL,NULL,'default-img.png','2022-03-16 20:00:27','2022-03-16 20:00:27',2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -600,4 +659,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-07 18:20:12
+-- Dump completed on 2022-03-17 19:24:19
