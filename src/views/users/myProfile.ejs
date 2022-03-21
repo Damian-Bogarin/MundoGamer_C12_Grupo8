@@ -25,7 +25,7 @@
 
                     <div class="fileButtom"> 
                         <i class="fas fa-pencil-alt"></i>
-                        <input type="file" name="avatar" id="archivo"> <!-- saque el multiple y el accept=".jpg" -->
+                        <input type="file" name="avatar" id="archivo"> 
                         <span id="archivoErrors"></span>
                     </div>  
                  
@@ -86,14 +86,14 @@
                     <!-- API del gobierno que lista las provincias y localidades de Argentina(select) -->
                     <label class="label-select" for="">Provincia</label><br>
                     <select name="province" id="select-provincias"> 
-                        <option value="<%= locals.old ? old.province : user.province %>" selected hidden>Seleccione...</option>
+                        <option value="<%= locals.old ? old.province : user.province %>" selected hidden><%= user.province %></option><!-- Seleccione... -->
                     </select>
                     <br>
                     <br> 
 
                     <label class="label-select" for="">Localidad</label><br>
                     <select name="locality" id="select-localidades">  
-                        <option value="<%= locals.old ? old.locality : user.locality %>" selected hidden>Seleccione...</option>
+                        <option value="<%= locals.old ? old.locality : user.locality %>" selected hidden><%= user.locality %></option><!-- Seleccione... -->
                     </select> 
 
                 </div>

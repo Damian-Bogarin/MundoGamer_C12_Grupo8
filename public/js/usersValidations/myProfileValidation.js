@@ -37,6 +37,7 @@ window.addEventListener('load', function() {
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
     regExPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
+    let regExDate = /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
 
     /* regExImage = /(.jpg|.jpeg|.png|.gif|.web)$/i; */
 
@@ -92,32 +93,6 @@ window.addEventListener('load', function() {
         }
     })
 
-    /* age */
-    $inputAge.addEventListener('blur', (event) => {
-        let value = event.target.value;
-        let errorMsg;
-        let moment;
-        switch(true) {
-            case !value.trim():
-                $ageErrors.classList.add('error');
-                errors.ageErrors = errorMsg;  
-                break;
-            case moment($inputAge.value) > moment():
-                $ageErrors.innerHTML = 'Fecha inválida';
-                $inputAge.classList.add('error');
-                errors.ageErrors = errorMsg;  
-                break;
-        }
-    })
-
-    /* tel */
-
-    /* address */
-
-    /* province */
-
-    /* locality */
-
     /* avatar */
     $avatar.addEventListener('change', function fileValidation(){
         let filePath = $avatar.value; //captura el valor del input 
@@ -135,7 +110,109 @@ window.addEventListener('load', function() {
         }
     })
 
-   /* CODE-PEN
+    /* age -------------probando*/
+   /*  $inputAge.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
+        switch(true) {
+            case !value.trim():
+                $ageErrors.classList.add('error');
+                errors.ageErrors = errorMsg;  
+                break;
+            case moment($inputAge.value) > moment():
+                $ageErrors.innerHTML = 'Fecha inválida';
+                $inputAge.classList.add('error');
+                errors.ageErrors = errorMsg;  
+                break;
+        }
+    }) 
+
+    $date.addEventListener('blur', function(){
+        let dateUser = new Date($date.value);
+        let yearUser = dateUser.getFullYear();
+        switch (true) {
+            case !regExDate.test($date.value):
+                $dateErrors.innerHTML = 'Esta fecha no es válida';
+                $date.style.color = 'red';
+                validationErrors = true;
+                break;
+            case yearUser > actualYear:
+                $dateErrors.innerHTML = 'La fecha seleccionada no puede ser mayor a la fecha actual';
+                $date.style.color = 'red';
+                validationErrors = true;
+                break;    
+            default:
+                $dateErrors.innerHTML = '';
+                $date.style.color = '#2940D3';
+                $date.style.backgroundColor = '#d8c371';
+                $date.style.border = 'none';
+                validationErrors = false;
+                break;
+        }
+    })
+
+  
+   $inputAge.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
+        console.log($inputAge);
+        switch (true) {
+            case !value.trim(): 
+                errorMsg = 'La edad es requerida';
+                $inputAge.classList.add('error');
+                errors.inputAgeError = errorMsg; 
+                $ageErrors.innerHTML = errorMsg;
+                break;
+            case moment($inputAge.value) > moment():
+                errorMsg = 'Es un fecha inválida';
+                $inputAge.classList.add('error');
+                $ageErrors.innerHTML = errorMsg
+                break;
+            default: 
+                $ageErrors.innerHTML = "";
+                $inputAge.classList.remove('error');
+                $inputAge.classList.add('ok');  
+            break;  
+        }
+    })  
+
+         ------este es el q tenia antes------- 
+    $inputAge.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
+        switch (true) {
+            case !value.trim(): 
+                errorMsg = 'La edad es requerida';
+                $inputAge.classList.add('error');
+                errors.inputLastNameError = errorMsg; 
+                lastNameErrors.innerHTML = errorMsg;
+                break;
+            case !regExAlpha.test(value): 
+                errorMsg = '';
+                $inputAge.classList.add('error')
+                errors.inputLastNameError = errorMsg; 
+                lastNameErrors.innerHTML = errorMsg;
+                break;
+            default: 
+                lastNameErrors.innerHTML = "";
+                $inputAge.classList.remove('error');
+                $inputAge.classList.add('ok');  
+            break;  
+        }
+    })  */
+
+ 
+
+
+
+
+
+
+})
+
+
+
+  /* CODE-PEN
    function validateImage() {
         let image = form.photo.files[0];
         let fileValidationMsg = document.getElementById('fileValidationMsg');
@@ -166,13 +243,4 @@ window.addEventListener('load', function() {
         <input type="file" onchange="validateImage()" id="photo" name="img" required>
         <small id="fileValidationMsg" class="form-text text-danger"></small>
     </div>
-
- */
-
-
-
-
-
-
-})
-
+    */

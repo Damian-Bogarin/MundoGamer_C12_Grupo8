@@ -31,7 +31,15 @@ router.get('/productCart/:product?',userLogMiddlewares, cartShop, controller.car
 module.exports = router;
 
 
-/* errors = errors.mapped()
+
+
+
+
+
+
+
+/* NO BORRAR
+errors = errors.mapped()
             if(req.fileValidationError) {
                 //console.log(req.fileValidationError)
                 errors = {
@@ -42,7 +50,6 @@ module.exports = router;
                 }
             }
  */
-
 
             /* 
             

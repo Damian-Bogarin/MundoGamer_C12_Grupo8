@@ -130,7 +130,7 @@ let controller = {
         res.redirect('/')
     },
 
-    profile: (req, res) => { /* ---async---incluir las otras asociaciones de like, starts y cart ??------ */
+    profile: (req, res) => { 
 
         Users.findByPk(req.session.user.id/*,  {
             include: [{association: 'rol'}]
@@ -187,15 +187,6 @@ let controller = {
         })
         .catch(error => console.log(error))
     }, 
-  /*   errors = errors.mapped()
-            if(req.fileValidationError) {
-                errors = {
-                    ...errors,
-                    image : {
-                        msg: req.fileValidationError
-                    }
-                }
-            } */
 
     cart: (req, res) => {  
         
