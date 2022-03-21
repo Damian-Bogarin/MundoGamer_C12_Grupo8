@@ -29,7 +29,7 @@ window.addEventListener('load', function () {
         $photo = qs('#photo'),
         $photoError = qs('#photoError'),
         $imgPreview = qs('#img-preview'),
-
+        
 
 
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
@@ -281,7 +281,8 @@ window.addEventListener('load', function () {
         if (!allowedExtensions.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $photoError.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)'
             $photo.value = '';
-            $imgPreview.innerHTML = '';
+            //$imgPreview.innerHTML = '';
+
             return false;
         } else {
             //Image preview

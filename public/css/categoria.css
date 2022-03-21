@@ -28,17 +28,34 @@
     
 }
 .category-filter-product{
-    background-color: rgba(109, 101, 101, 0.25);  
+    color: rgb(46, 117, 117);
+    background: rgb(140,141,143);
+    background: -moz-linear-gradient(30deg, rgba(140,141,143,0.7) 0%, rgba(247,247,247,0.7) 8%, rgba(201,201,201,0.7) 17%, rgba(245,245,245,0.7) 26%, rgba(172,171,172,0.7) 48%, rgba(233,233,237,0.7) 93%, rgba(137,137,148,0.7) 100%);
+    background: -webkit-linear-gradient(30deg, rgba(140,141,143,0.7) 0%, rgba(247,247,247,0.7) 8%, rgba(201,201,201,0.7) 17%, rgba(245,245,245,0.7) 26%, rgba(172,171,172,0.7) 48%, rgba(233,233,237,0.7) 93%, rgba(137,137,148,0.7) 100%);
+    background: linear-gradient(30deg, rgba(140,141,143,0.7) 0%, rgba(247,247,247,0.7) 8%, rgba(201,201,201,0.7) 17%, rgba(245,245,245,0.7) 26%, rgba(172,171,172,0.7) 48%, rgba(233,233,237,0.7) 93%, rgba(137,137,148,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8c8d8f",endColorstr="#898994",GradientType=1);   
  backdrop-filter: blur(5px);
     height: 40%;
     width: 100%;
     padding: 3px;
     border-radius: 5px;
+    -webkit-box-shadow: 10px 10px 42px 0px rgba(166,158,166,1);
+-moz-box-shadow: 10px 10px 42px 0px rgba(166,158,166,1);
+box-shadow: 10px 10px 42px 0px rgba(166,158,166,1);
+border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 3px inset #70cfc9;
 }
-
+.category-filter-product h2{
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
 .category-genders{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    
 }
 
 .category-genders div{
@@ -77,6 +94,8 @@
 .category-consoles{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    
 }
 
 .category-consoles div{
@@ -111,6 +130,7 @@
     align-items: center;
     background-color: rgb(221, 221, 236);
     border-radius: 25px;
+    
 }
 .category-languages div:hover{
     height: 50px;
@@ -132,3 +152,46 @@
     width: 90%;
 }
 
+
+.category-cartel-section{
+    display: flex;
+    width: 100vw;
+    height: 20%;
+    justify-content: center;
+    margin-bottom: 15px;
+    
+}
+
+
+.category-cartel{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+     border-radius: 10px;
+   
+}
+
+
+@keyframes powerup {
+    0%{
+
+    }
+    50%{
+        transform: translateY(-200px);
+
+    }
+    100%{
+        transform: translateY(0px);
+        transform: rotateY(5turn);
+    }
+}
+@media (min-width: 550px){
+
+.category-genders{
+    display: flex;
+    justify-content: space-around;
+}
+   
+
+
+}

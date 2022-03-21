@@ -464,7 +464,8 @@ grid-row: 1/4;
     justify-self:center ;
 }
 .product-description{
-    background-color: aqua;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
     grid-column: 2/3;
     grid-row: 2/3;
     font-size: 10px;
@@ -590,7 +591,7 @@ QUERYS
         justify-self:center ;
     }
     .product-description{
-        background-color: aqua;
+        
         grid-column: 2/3;
         grid-row: 2/3;
         font-size: 25px;
@@ -725,7 +726,7 @@ QUERYS
         justify-self:center ;
     }
     .product-description{
-        background-color: aqua;
+       
         height: inherit;
         font-size: 18px;
         height: auto;
