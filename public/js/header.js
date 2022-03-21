@@ -1,7 +1,7 @@
 /* <script src='/js/header.js'></script>  -> ESTA ETIQUETA ESTA AL FINAL EN REGISTER */
 /* let logo = document.querySelector(".logo") Capturo por medio de su clase(.) */
 
-
+/* icon hamburger */
 let navBar = document.querySelector("#navigation-burguer-menu"); // Capturo el elemento por el ID
 
 function dropMenu() {
@@ -15,6 +15,8 @@ function dropMenu() {
     }
 }
 
+
+/* icon message */
 function NotificationFuntion() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -44,7 +46,4 @@ function NotificationFuntion() {
         }
         
     })
-   
-
-
   })

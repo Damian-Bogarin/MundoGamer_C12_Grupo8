@@ -42,3 +42,40 @@ module.exports = router;
                 }
             }
  */
+
+
+            /* 
+            
+            updateProfile: (req, res) => {
+
+            const { name, lastName, age, tel, address, province, locality } = req.body 
+            
+            Users.update({
+                name,
+                lastName,
+                age,
+                tel,
+                address,
+                province,         
+                locality,
+                avatar: req.file ? req.file.filename : req.session.user.avatar,
+            },{ 
+                where: {
+                    id: req.session.user.id
+                }
+            })
+            .then(result => {
+                
+                    if(req.file){
+                        
+                        if(fs.existsSync('public/img/avatars/' + req.session.user.avatar) && req.session.user.avatar != "default-img.png"){
+                            fs.unlinkSync('public/img/avatars/' + req.session.user.avatar)
+                        }
+                        req.session.user.avatar = req.file.filename
+                    }
+                    res.redirect('/')              
+            })
+            .catch(error => console.log(error))
+        }, 
+        
+        */

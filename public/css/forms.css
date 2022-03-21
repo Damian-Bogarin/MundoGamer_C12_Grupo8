@@ -212,6 +212,7 @@ button:focus:not(:focus-visible) {
     outline: none;
 }
 /* ------------------------------------------------------------------------------------------- */
+
 /*Media queries-tablet*/
 
 @media (min-width: 768px) {
@@ -224,7 +225,6 @@ button:focus:not(:focus-visible) {
         width: 80%;
     }
 }
-
 
 /*Media queries-desktop*/
 

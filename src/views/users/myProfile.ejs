@@ -19,13 +19,14 @@
                 <div class="encabezado">
 
                     <!-- circle photo -->
-                    <div class="avatar">
+                    <div class="avatar" id="avatarPreview">
                         <img class="img-avatar" id="idAvatar" src="/img/avatars/<%= user.avatar %>" alt="">
                     </div> <!--  locals.old ? old.avatar : -->
 
                     <div class="fileButtom"> 
                         <i class="fas fa-pencil-alt"></i>
-                        <input type="file" name="avatar" accept=".jpg" id="archivo" multiple>
+                        <input type="file" name="avatar" id="archivo"> <!-- saque el multiple y el accept=".jpg" -->
+                        <span id="archivoErrors"></span>
                     </div>  
                  
                     <h2 class="user">
@@ -44,6 +45,7 @@
                         <% if (locals.errors && errors.name) { %> 
                             <span class="error-msj" id="nameErrors"><%= errors.name.msg %></span>
                         <% } %> 
+                        <span class="error-msj" id="nameErrors"></span>
                     </div>  
                    
 
@@ -53,6 +55,7 @@
                         <% if (locals.errors && errors.lastName) { %> 
                             <span class="error-msj" id="lastNameErrors"><%= errors.lastName.msg %></span>
                         <% } %> 
+                        <span class="error-msj" id="lastNameErrors"></span>
                     </div>
 
                     <div class="profileContainer"> 
@@ -61,6 +64,7 @@
                         <% if (locals.errors && errors.age) { %> 
                             <span class="error-msj" id="ageErrors"><%= errors.age.msg %></span>
                         <% } %> 
+                        <span class="error-msj" id="ageErrors"></span>
                     </div>
 
                     <div class="profileContainer">

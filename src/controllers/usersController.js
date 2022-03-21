@@ -144,9 +144,9 @@ let controller = {
         .catch(error => console.log(error))
     },
 
-    updateProfile: (req, res) => { /*  async  */
+    updateProfile: (req, res) => {
 
-        const { name, lastName, age, tel, address, province, locality } = req.body  /* await */
+        const { name, lastName, age, tel, address, province, locality } = req.body 
         
         Users.update({
             name,
@@ -156,7 +156,7 @@ let controller = {
             address,
             province,         
             locality,
-            avatar: req.file ? req.file.filename : req.session.user.avatar, // Si no tiene nada lo toma como false y ejecuta la ultima parte, y coloca la imagen por default
+            avatar: req.file ? req.file.filename : req.session.user.avatar,
         },{ 
             where: {
                 id: req.session.user.id
@@ -173,8 +173,29 @@ let controller = {
                 }
                 res.redirect('/')              
         })
+        .then(errors => {
+            errors.mapped()
+            if(req.fileValidationError) {
+
+                errors = {
+                    ...errors,
+                    avatar : {
+                        msg: req.fileValidationError
+                    }
+                }
+            }
+        })
         .catch(error => console.log(error))
     }, 
+  /*   errors = errors.mapped()
+            if(req.fileValidationError) {
+                errors = {
+                    ...errors,
+                    image : {
+                        msg: req.fileValidationError
+                    }
+                }
+            } */
 
     cart: (req, res) => {  
         
