@@ -91,7 +91,7 @@ input.ok {
 /* end validations front end */
 
 
-/* input file 
+/* input file (paso a myProfile)
 .formulario .file-avatar {
     margin: 10px 0;
 }
@@ -103,27 +103,9 @@ input.ok {
     border: solid 2px var(--ligth_violet);
     border-radius: 4px;
     padding: 4px;
-}end input file */
+} */
 
-/* BOTON ------------------------------------------------------------------------------ */
-/* .formulario .button {
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.formulario .button button { 
-     font-weight: bold;  
-     font-size: 20px; 
-     border: none; 
-     border-radius: 8px; 
-     background: rgb(128, 175, 219); 
-     color: rgb(44, 44, 44); 
-     cursor: pointer;  
-     width: 125px; 
-     height: 35px; 
-}   */
-/* BOTON */
-
+/* Button ------------------------------------------------------------------------------ */
 .button button {
     position: relative;
     border: none;
@@ -211,7 +193,7 @@ button:active .shadow {
 button:focus:not(:focus-visible) {
     outline: none;
 }
-/* ------------------------------------------------------------------------------------------- */
+/* end button---------------------------------------------------------------------------- */
 
 /*Media queries-tablet*/
 

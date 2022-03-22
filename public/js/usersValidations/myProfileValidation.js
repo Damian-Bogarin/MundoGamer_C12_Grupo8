@@ -1,5 +1,6 @@
 /* Validations frontend - myProfile */
-let moment = require('moment');
+/* Solo tendrá mensaje de span el teléfono */
+/* Falta validar la edad(que no sea una fecha futura) */
 
 function qs(element) {
     return document.querySelector(element)
@@ -22,7 +23,7 @@ window.addEventListener('load', function() {
     $inputAge = qs('#age')
     $ageErrors = qs('#ageErrors')
 
-    $inputTel = qs('#tel')  /* /^09[0-9]{7}$/gm */
+    $inputTel = qs('#tel')  
     $telErrors = qs('#telErrors')
 
     $inputAddress = qs('#address')
@@ -32,70 +33,22 @@ window.addEventListener('load', function() {
     $selectProvinceErrors = qs('#select-provincias')
 
     $selectLocality = qs('#select-localidades')
-    $selectLocalityErrors = qs('#select-localidades') Que solo el select se ponga de color rojo, sin spam*/
+    $selectLocalityErrors = qs('#select-localidades') */
     
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
     regExPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
     regExDate = /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
+    regExAddress = /^\D+\s\D?\s?\d{1,5}$/gim;
 
     /* regExImage = /(.jpg|.jpeg|.png|.gif|.web)$/i; */
+    /*phone /^09[0-9]{7}$/gm */
 
     let errors = {} 
 
-    /* name */
-    $inputName.addEventListener('blur', (event) => {
-        let value = event.target.value;
-        let errorMsg;
-        switch (true) {
-            case !value.trim(): 
-                errorMsg = 'El nombre es requerido'; 
-                $inputName.classList.add('error');
-                errors.inputNameError = errorMsg; 
-               /*  nameErrors.innerHTML = errorMsg;  */
-                break;
-            case !regExAlpha.test(value): 
-                errorMsg = 'Nombre inválido'; 
-                $inputName.classList.add('error')
-                errors.inputNameError = errorMsg; 
-               /*  nameErrors.innerHTML = errorMsg;  */
-                break;
-            default: 
-               /*  nameErrors.innerHTML = "";  */
-                $inputName.classList.remove('error');
-                $inputName.classList.add('ok');   
-            break; 
-        }
-    })
-
-    /* lastName */
-    $inputLastName.addEventListener('blur', (event) => {
-        let value = event.target.value;
-        let errorMsg;
-        switch (true) {
-            case !value.trim(): 
-                errorMsg = 'El apellido es requerido';
-                $inputLastName.classList.add('error');
-                errors.inputLastNameError = errorMsg; 
-               /*  lastNameErrors.innerHTML = errorMsg; */
-                break;
-            case !regExAlpha.test(value): 
-                errorMsg = 'Apellido inválido';
-                $inputLastName.classList.add('error')
-                errors.inputLastNameError = errorMsg; 
-               /*  lastNameErrors.innerHTML = errorMsg; */
-                break;
-            default: 
-        /*         lastNameErrors.innerHTML = ""; */
-                $inputLastName.classList.remove('error');
-                $inputLastName.classList.add('ok');  
-            break;  
-        }
-    })
-
-    /* avatar */
-    $avatar.addEventListener('change', function fileValidation(){
+     /* avatar */
+     $avatar.addEventListener('change', function fileValidation(){
         let filePath = $avatar.value; //captura el valor del input 
         let fileAccepted = /(.jpg|.jpeg|.png|.gif)$/i;
         if(!fileAccepted.exec(filePath)){  //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
@@ -111,48 +64,121 @@ window.addEventListener('load', function() {
         }
     })
 
-    /* age */ /*  $inputAge = qs('#age')
-    $ageErrors = qs('#ageErrors') */
-  
-   $inputAge.addEventListener('blur', function() {
-        switch (true) {
-            case moment($inputAge.value) > moment(): //Evalua si la fecha que le paso es mayor a la fecha de hoy, en ese caso tirará el error
-                errorMsg = 'Fecha inválida';
-                $inputAge.classList.add('error');
-                $ageErrors.innerHTML = errorMsg;
-                break;
-            default: 
-                $ageErrors.innerHTML = "";
-                $inputAge.classList.remove('error');
-                $inputAge.classList.add('ok');  
-            break;  
-        }
-    })
-
-    /*     ------este es el q tenia antes------- 
-    $inputAge.addEventListener('blur', (event) => {
+    /* name */
+    $inputName.addEventListener('blur', (event) => {
         let value = event.target.value;
         let errorMsg;
         switch (true) {
             case !value.trim(): 
-                errorMsg = 'La edad es requerida';
-                $inputAge.classList.add('error');
-                errors.inputLastNameError = errorMsg; 
-                lastNameErrors.innerHTML = errorMsg;
+                errorMsg = 'El nombre es requerido'; 
+                $inputName.classList.add('error');
+                errors.inputNameError = errorMsg; 
+               /*nameErrors.innerHTML = errorMsg;  */
                 break;
             case !regExAlpha.test(value): 
-                errorMsg = '';
-                $inputAge.classList.add('error')
-                errors.inputLastNameError = errorMsg; 
-                lastNameErrors.innerHTML = errorMsg;
+                errorMsg = 'Nombre inválido'; 
+                $inputName.classList.add('error')
+                errors.inputNameError = errorMsg; 
+               /*nameErrors.innerHTML = errorMsg;  */
                 break;
             default: 
-                lastNameErrors.innerHTML = "";
-                $inputAge.classList.remove('error');
-                $inputAge.classList.add('ok');  
+               /*nameErrors.innerHTML = "";  */
+                $inputName.classList.remove('error');
+                $inputName.classList.add('ok');   
+            break; 
+        }
+    })
+
+    /* lastName */
+    $inputLastName.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
+        switch (true) {
+            case !value.trim(): 
+                errorMsg = 'El apellido es requerido';
+                $inputLastName.classList.add('error');
+                errors.inputLastNameError = errorMsg; 
+               /*lastNameErrors.innerHTML = errorMsg; */
+                break;
+            case !regExAlpha.test(value): 
+                errorMsg = 'Apellido inválido';
+                $inputLastName.classList.add('error')
+                errors.inputLastNameError = errorMsg; 
+               /*lastNameErrors.innerHTML = errorMsg; */
+                break;
+            default: 
+              /*lastNameErrors.innerHTML = ""; */
+                $inputLastName.classList.remove('error');
+                $inputLastName.classList.add('ok');  
             break;  
         }
-    })  */
+    })
+
+    /* tel */
+    $inputTel.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
+        switch (true) {
+            case !regExPhone.test(value): /* Me permite guardar solo con la caracteristica del lugar */
+                errorMsg = 'Teléfono inválido, ingresa un número válido incluyendo su caracteristica';
+                $inputTel.classList.add('error')
+                errors.inputTelError = errorMsg; /*  inputLastNameError */
+                telErrors.innerHTML = errorMsg; 
+                break;
+            default: 
+                telErrors.innerHTML = ""; 
+                $inputTel.classList.remove('error');
+                $inputTel.classList.add('ok');  
+            break;  
+        }
+    })
+  
+    /* address */
+    $inputAddress.addEventListener('blur', (event) => {
+        let value = event.target.value;
+        let errorMsg;
+        switch (true) {
+            case !regExAddress.test(value): 
+              //  errorMsg = 'Teléfono inválido';
+                $inputAddress.classList.add('error')
+                errors.inputAddressError = errorMsg; 
+                //addressErrors.innerHTML = errorMsg; 
+                break;
+            default: 
+              //  addressErrors.innerHTML = ""; 
+                $inputAddress.classList.remove('error');
+                $inputAddress.classList.add('ok');  
+            break;  
+        }
+    })
+
+    /* submit */  
+    $form.addEventListener('submit', function(event){     
+    event.preventDefault(); 
+    let error = false;
+       
+    let formElements = this.elements;
+
+    for (let i = 0; i < formElements.length - 1; i++){ 
+        if(formElements[i].value == ""
+        && formElements[i].type !== 'file'
+        && formElements[i].type !== 'date'
+        && formElements[i].name !== 'tel' 
+        && formElements[i].name !== 'address'
+        && formElements[i].name !== 'province'
+        && formElements[i].name !== 'locality'
+        ){
+            formElements[i].classList.add('error');
+            submitErrors.innerHTML = 'Los campos señalados son obligatorios' 
+            error = true;  
+        }
+    }
+
+        if(!error) { //Si no hay errores ahi recien hace el submit
+            $form.submit()
+        }
+    })   
+   
 
  
 

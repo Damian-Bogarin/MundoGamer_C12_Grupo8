@@ -73,6 +73,7 @@
                         <% if (locals.errors && errors.tel) { %> 
                             <span class="error-msj" id="telErrors"><%= errors.tel.msg %></span>
                         <% } %> 
+                        <span class="error-msj" style="font-size: 12px; color: tomato;" id="telErrors"></span>
                     </div> 
 
                     <div class="profileContainer">
@@ -98,10 +99,19 @@
 
                 </div>
 
-                <!-- div-buttom -->
-                <div class="buttom-myProfile">
+                <!--  <div class="buttom-myProfile">
                     <button type="submit">Guardar cambios</button>
-                </div>
+                </div> -->
+                
+                <!-- div-buttom -->
+                <div class="button">
+                    <button type="submit">
+                        <span class="shadow"></span>
+                        <span class="edge"></span>
+                        <span class="front text">Guardar cambios</span>
+                    </button> 
+                </div> 
+                <span class="error-msj errors" id="submitErrors" ></span>
 
             </form>
 
@@ -133,7 +143,6 @@
                 }
             })
         </script>
-
 
     </body>
 
