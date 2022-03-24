@@ -26,6 +26,12 @@ const controller = {
         })
     }, 
 
+    offices: (req, res) => {
+        res.render('offices', {
+            session: req.session
+        })
+    }, 
+
     home: (req,res) => {
 
         if (req.session.user && req.session.user.rol == "ROL_USER" ) {

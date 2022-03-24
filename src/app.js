@@ -43,6 +43,7 @@ let adminRouter = require('./routers/adminRouter');
 let apiProduct = require('./routers/api/product');
 let aboutRouter = require('./routers/home');
 let termsRouter = require('./routers/home');
+let officesRouter = require('./routers/home');
 let apiCategory = require('./routers/api/category');
 let apiUsers = require('./routers/api/users')
 
@@ -53,7 +54,10 @@ app.use('/', rutasHome);  /* home */
 app.use('/about', aboutRouter); /* about us */
 
 /* Términos y condiciones */
-app.use('/terms', termsRouter);  
+app.use('/terms', termsRouter); /* terms */
+
+/* Nuestras sucursales */
+app.use('/offices', officesRouter); /* our offices */
 
 /* USERS ROUTER Y CONTROLLER */
 app.use('/users', usersRouter);  /* register, login, myProfile, productCart */

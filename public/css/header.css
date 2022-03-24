@@ -1,61 +1,45 @@
 /*Header (min-width: 320px)*/
 
-.main-header {
-    display: flex;
-    width: 100%;
-    /* background-color: #636FA4; */
-}
-
 /* => donde esta la foto tiene que tener una position relative
 y el resto de cosas que queremos que vayan sobre la foto tiene que tener position absolute*/
 
-.main-header .fondo-header {
-    object-fit: cover;
-    position: relative; 
-    width: 100%; 
-    height: 90px; 
-}
-
-.main-header .header {
-    position: absolute;
-    width: 100%; 
+.main-header {
+    width: 100%;
+    height: 90px;
+    background-color: #636FA4; 
     flex-direction: row; 
 }
 
-.header .header-top {
-    display: flex; 
+.header-top {
+    display: flex;   
     align-items: center; 
+    padding-left: 2px;
     height: 90px; 
-    padding: 2px;
+    width: 100%;
 }
 
-.header .logo {
+.logo {
     width: 70px; 
     height: 70px; 
     cursor: pointer;
-    margin-right: 10px;
 }
 
-.header-top .form-search { /* ----------- */
-    margin-right: 2px; /* ---tenia 8px------
-     */
-    width: 60%; 
-}  /* queda bien con width 60% */
+.header-top .form-search { 
+    width: 48%;  
+}  
 
-.header-top .form-search .search-bar { /* --------- */
-   /*  width: 85%; */ /* 100% */
+.header-top .form-search .search-bar { 
     border-radius: 1rem;
     display: flex;
     align-items: center;
     padding: 4px 8px;  
     background-color: white;
-    height: 22px;  /* -------agregue--- */
+    height: 22px;  
 }
 
 .search-bar input.input-buscador {
-    /* width: 100px;  */
     border: none;
-    flex-grow: 1; /* ------------acomodar---------- */
+    flex-grow: 1; 
 }
 
 .search-bar input:focus {
@@ -63,57 +47,64 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     outline: none;
 } 
 
-/* .search-bar i {
+/* .search-bar i {  lupa
     color: black;
     cursor: pointer;
 }  */
 
-
-/* inicio icono user */
-.header-top .session-user {
+/* icon user */
+.header-top .session-user { 
     display: flex;
     font-size: 18px;
     order: 3;
     position: relative;
+    margin-left: 40px;
+    margin-top: -28px;
 } 
 
 .header-top .session-user i.fa-user { 
-    color: white;
-    margin: 0px 4px;
+    color: white; 
+    margin: 0px ;  
 }   
 
+.header-top .session-user .avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.header-top .session-user .avatar .img-avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: -4px;
+}
+
 .header-top .session-user .user-menu {
-    display: none;
-    position: absolute;
+    display: none; 
+    position: absolute; 
+    cursor: pointer;
     font-size: 1rem;
-    width: 110px;
+    width: 120px;
     background-color: #ebebeb;
-    padding: 5px;
+    padding: 10px;
     border-radius: 4px;
     margin-left: -5rem;
-    top: 21px;
-    right: -10px;
+    top: 45px; 
+    right: -8px;
+    z-index: 1;
 }
 
 .session-user:hover .user-menu {
-    display: block;
+    display: block; 
     text-align: center;
 }
 
 .session-user:hover .user-menu a {
     text-decoration-line: none;  
     color: black;
-}
-
-.session-user .open-session {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: chartreuse;
-    border-radius: 50px;
-    position: relative;
-    top: -6px; /* -10 */
-    right: 5px; /* 0px */
+    font-weight: bold;
 }
 /* fin icon-user */
 
@@ -121,10 +112,8 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 .header-top .burguer-menu { /* i */
     font-size: 18px;
     cursor: pointer;
-    margin-right: 4px;
-    order: 3;
     color: white;
-    margin: 0px 4px;
+    margin: 0 0 0 37px; 
 }
 
 .header-top .navigation-bar {
@@ -137,6 +126,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     order: 4;
     width: 100%;
     margin-left: 0;
+    z-index: 1;
 }
 
 .navigation-bar ul.menu a {
@@ -152,85 +142,148 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
 }
 /* fin de burguer-menu */
 
-.header nav.header-bottom {
+.main-header nav.header-bottom {
    display: none;
 }
 
+/* ---------------------notificación--------------------------------- */
+.header-panel{
+    /* display: flex;
+    align-items: center;
+    justify-content: space-evenly; */
+    width: 32px;
+    height: 32px;
+    border: solid 2px red;
+    margin-left: 2px;
+}
+
+ /* The container <div> - needed to position the dropdown content */
+ .dropdown {
+    border: solid 1px black;
+    margin-left: 2px;
+    color: #636FA4;
+   } 
+
+/* Dropdown Button */
+.dropbtn {
+   /*  background-color: #3498DB; */
+    /* color: white; */
+    border: solid 2px red;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+   /*  position: absolute; */
+  }
+
+  .header-panel .dropdown .dropbtn i.msj { /* icono del msj */
+    position: absolute; 
+    background-color: white;
+    margin-left: -10px;
+    margin-top: -10px;
+    font-size: 22px;
+  } 
+  
+  /* Dropdown button on hover & focus */
+  /* .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  } */
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content { /* contenido de notificacion */
+    display: none;
+    position: absolute;
+    background-color:#fdf7f7 ;
+    width: 30px;
+    z-index: 1; 
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: rgb(12, 12, 14);
+    padding: 12px 16px; 
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {
+    display:block;
+  }
+/* -------------------------notificación----------------------------- */
 
 /*Media queries-mobile*/
 
 @media (min-width: 375px) {
 
-    .header .logo {
-         width: 90px;
-         height: 90px;
+    .main-header .header-top .logo {
+         width: 75px;
+         height: 75px;
     } 
 
-    .header .header-top i.fa-user { 
-        font-size: 18px; 
-    }  
-
-    .header-top .form-search { 
-         width: 58%;  /* ------------ tenia width: 55%;   */
+    .main-header .header-top .form-search { 
+         width: 54%;  
     }
+
 }
 
 @media (min-width: 425px) {
 
-    .header .header-top {
-         justify-content: space-between;
+    .main-header .header-top .logo {
+        margin-right: 5px;
     } 
 
-    .header-top .burguer-menu { 
-         margin: 0px 6px;
-         font-size: 20px;
-         margin-right: 10px;
-    }
+    .main-header .header-top .form-search { 
+        width: 58%;  
+    } 
+ 
 }
 
 
 /*Media queries-tablet*/
 
 @media (min-width: 768px) {
+
    /*header-top*/
-
-   .main-header .fondo-header {
+   .main-header {
         height: 120px; 
-   }
+    }
 
-   .main-header .header {
-        padding: 0 10px 0 4px;
-   }
-
-   .header .header-top .logo {
+   .main-header .header-top .logo {
         width: 100px; 
         height: 100px;
         order: 0;
-   }
-
-   .header-top .search-bar {
-        order: 1;
-        /*height: 25px; ------------ */
+        margin-right: 40px;
     }
 
-    .header .header-top i.fa-user { 
-        order: 2;
-        margin-right: 25px;
-        font-size: 20px;
-   }  
+    .main-header .header-top .form-search { 
+        width: 60%; 
+        margin-right: 50px; 
+    } 
 
-   .header .header-top .burguer-menu { 
+   .header-top .session-user i.fa-user { 
+        margin-left: 30px ; 
+    }   
+
+   .main-header .header-top .session-user .avatar {
+        margin-left: 20px; 
+    }
+
+    .header-top .session-user .user-menu {
+        top: 45px; 
+        right: -10px;
+    }
+
+    .main-header .header-top .burguer-menu { 
         display: none;
-   }
-
-   .session-user .open-session {
-    top: -6px; 
-    right: -30px; 
-}
+    }
 
    /*header-bottom*/ 
-
-   .header nav.header-bottom {
+   .main-header nav.header-bottom {
         display: block; 
         align-items: center;
    }
@@ -239,45 +292,70 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
         display: flex;
         justify-content: space-evenly;  
         width: 100%; 
+        list-style: none;
+        /* saca los puntos por defecto */
     }
 
-   .header-bottom ul li a {
+    .main-header .header-bottom ul li a {
         color: white;
         text-decoration: none;
         font-family: var(--font-quicksand);
-        font-weight: 800; 
         font-size: 18px;
-   }
+        font-weight: 600;  
+    }
+
 }
 
 
 /*Media queries-desktop*/
 
-@media (min-width: 1200px) {
-   /*header-top*/
-   .main-header .header {
-         padding: 0 10px 0 6px;
+@media (min-width: 1024px) {
+
+    /*header-top*/
+    .main-header .header-top .logo {
+        margin-right: 50px;
     }
 
-    .header-top .form-search { 
-         width: 40%;  
+    .main-header .header-top .form-search { 
+        width: 65%;  
+        margin-right: 80px; 
     }
 
-   /*header-bottom*/
-
+    .header-top .session-user i.fa-user { 
+        margin-left: 15px ; 
+    }  
+ 
+    /*header-bottom*/
     .header-bottom ul li a {
-         font-size: 20px;
+        font-size: 20px;
     } 
+
 }
-/* ------------------ORIGINAL------------------------------- */
+
+@media (min-width: 1200px) {
+
+   /*header-top*/
+   .main-header .header-top .logo {
+        margin-left: 15px;
+        margin-right: 90px;
+    }
+
+    .main-header .header-top .form-search { 
+        width: 55%;  
+        margin-right: 100px;
+    }
+
+}
+
+
 .header-panel{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-
-/* Dropdown Button */
+/* --------------------------------------------boton original notificacion------------------------------------------------------ */
+ /* Dropdown Button 
 .dropbtn {
     background-color: #3498DB;
     color: white;
@@ -287,18 +365,18 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     cursor: pointer;
   }
   
-  /* Dropdown button on hover & focus */
+   Dropdown button on hover & focus 
   .dropbtn:hover, .dropbtn:focus {
     background-color: #2980B9;
   }
   
-  /* The container <div> - needed to position the dropdown content */
+   The container <div> - needed to position the dropdown content 
   .dropdown {
     position: relative;
     display: inline-block;
   }
   
-  /* Dropdown Content (Hidden by Default) */
+   Dropdown Content (Hidden by Default) 
   .dropdown-content {
     display: none;
     position: absolute;
@@ -308,7 +386,7 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     z-index: 1;
   }
   
-  /* Links inside the dropdown */
+   Links inside the dropdown 
   .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -316,8 +394,8 @@ y el resto de cosas que queremos que vayan sobre la foto tiene que tener positio
     display: block;
   }
   
-  /* Change color of dropdown links on hover */
+   Change color of dropdown links on hover 
   .dropdown-content a:hover {background-color: #ddd}
   
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;}
+   Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) 
+  .show {display:block;} */
