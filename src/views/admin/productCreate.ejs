@@ -16,10 +16,12 @@
         
                     <label class="label-subtitle">Nombre del producto</label>
                     <input class="input-productCreate" type="text" name="name" id="nombre" value="<%= (locals.old && old.name ? old.name : "")%>">
+                <div class="backError-name">
                    <% if (locals.errors && errors.name){   %> 
                     <span class="errorCreate">* <%= errors.name.msg%></span> <% } %>
+                </div>
                     <span class="errorCreate" id="nameError"></span>
-                     
+                       
                     
                   
                     <label class="label-subtitle">Género</label>
@@ -34,8 +36,11 @@
                             <option value="7" <%= (locals.old && old.gender =="7") ?  "selected" : "" %>>ESTRATEGIA</option>
                             <option value="8"<%= (locals.old && old.gender =="8") ?  "selected" : "" %>>SUPERVIVENCIA</option>
                     </select>
-                    <% if ( locals.errors && errors.gender){ %> 
+                    <div class="backError-gender">
+                        <% if ( locals.errors && errors.gender){ %> 
                     <span class="errorCreate"> * <%= errors.gender.msg %>  </span> <% } %>  
+                    </div>
+                    
                     <span class="errorCreate" id="genderError"></span>
                
                  
@@ -48,8 +53,11 @@
                         <option value="3"<%= (locals.old && old.clasification =="3") ?  "selected" : "" %>>Contenido para mayores de 15 años</option>
                         <option value="4"<%= (locals.old && old.clasification =="4") ?  "selected" : "" %>>Contenido no apto para menores de 18 años</option>
                     </select>
-                    <% if (locals.errors && errors.clasification){   %> 
+                    <div class="backError-clasification">
+                        <% if (locals.errors && errors.clasification){   %> 
                         <span class="errorCreate">* <%= errors.clasification.msg%></span> <% } %>
+                    </div>
+                    
                         <span class="errorCreate" id="clasificationError"></span>
 
                     <!--CONSOLAS COMPATIBLES: -PC -PLAYSTATION 1 - PLAYSTATION 2 - PLAY 3 -PLAY4 -PLAY 5 -XBOX -NINTENDO *CHECKBOX*-->
@@ -63,8 +71,11 @@
                     <label for="consola6"><input type="checkbox" name="console" id="consola6" class="consola" value="6"<% if(locals.old && old.console){ if (old.console.includes("6")){ %> checked <% } } %>>Playstation 5</label>
                     <label for="consola7"><input type="checkbox" name="console" id="consola7" class="consola" value="7" <% if(locals.old && old.console){ if (old.console.includes("7")){ %> checked <% } } %>>XBOX</label>
                     <label for="consola8"><input type="checkbox" name="console" id="consola8" class="consola" value="8"<% if(locals.old && old.console){ if (old.console.includes("8")){ %> checked <% } } %> >Nintendo</label>
-                    <% if (locals.errors && errors.console){   %> 
+                    <div class="backError-console">
+                        <% if (locals.errors && errors.console){   %> 
                         <span class="errorCreate">* <%= errors.console.msg%></span> <% } %>
+                    </div>
+                    
                         <span class="errorCreate" id="consoleError"></span>
         
                     <label class="label-subtitle">Idiomas</label>
@@ -73,8 +84,11 @@
                     <label for="idioma2"><input type="checkbox" name="language" id="idioma2" class="language" value="2" <% if(locals.old && old.language){ if (old.language.includes("2")){ %> checked <% } } %>>Inglés</label> 
                     <label for="idioma3"><input type="checkbox" name="language" id="idioma3" class="language" value="3" <% if(locals.old && old.language){ if (old.language.includes("3")){ %> checked <% } } %>>Chino</label>
                     </div>
-                    <% if (locals.errors && errors.language){   %> 
+                    <div class="backError-language">
+                        <% if (locals.errors && errors.language){   %> 
                         <span class="errorCreate">* <%= errors.language.msg%></span> <% } %>
+                    </div>
+                    
                         <span  class="errorCreate" id="languageError" ></span>
 
                     <label class="label-subtitle">Traduccion</label>
@@ -87,19 +101,26 @@
 
                     <label class="label-subtitle">Conexión a internet</label>
                     <div class="div-box">
-                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="1" <%= (locals.old && old.conexion == 1 )? "checked" : ""  %> >SI</label>
+                    <label for="conexion1"><input type="radio" name="conexion" id="conexion1" value="1"  <%= (locals.old && old.conexion == 1 )? "checked" : ""  %> >SI</label>
                     <label for="conexion2"><input type="radio" name="conexion" id="conexion2" value="0" <%= (locals.old && old.conexion == 0 )? "checked" : ""  %>>NO</label>
                     </div><br>
-                    <% if (locals.errors && errors.conexion){   %> 
+                    <div class="backError-conexion">
+                        <% if (locals.errors && errors.conexion){   %> 
                         <span class="errorCreate">* <%= errors.conexion.msg%></span> <% } %>
+                    </div>
+                    
 
                     <label class="label-subtitle">Compras integradas</label>
                     <div class="div-box">
                     <label for="comprasIntegradas1"><input type="radio" name="integratedShopping" id="comprasIntegradas1" value="1" <%= (locals.old && old.integratedShopping == 1 )? "checked" : ""  %>>SI</label>
                     <label for="comprasIntegradas2"><input type="radio" name="integratedShopping" id="comprasIntegradas2" value="0" <%= (locals.old && old.integratedShopping == 0 )? "checked" : ""  %>>NO</label>
                     </div><br>
-                    <% if (locals.errors && errors.integratedShopping){   %> 
+
+                    <div class="backError-shop">
+                        <% if (locals.errors && errors.integratedShopping){   %> 
                         <span class="errorCreate">* <%= errors.integratedShopping.msg%></span> <% } %>
+                    </div>
+                    
 
 
                     <label class="label-subtitle">Multijugador</label>
@@ -110,34 +131,54 @@
                     <label for="multijugador4"><input type="checkbox" name="multiplayer" id="multijugador4" class="multi" value="4"<% if(locals.old && old.multiplayer){ if (old.multiplayer.includes("4")){ %> checked <% } } %>>4</label>
                     <label for="multijugador5"><input type="checkbox" name="multiplayer" id="multijugador5" class="multi" value="5"<% if(locals.old && old.multiplayer){ if (old.multiplayer.includes("5")){ %> checked <% } } %>>5</label>
                     </div><br>
-                    <% if (locals.errors && errors.multiplayer){   %> 
+
+                    <div class="backError-multiplayer">
+                        <% if (locals.errors && errors.multiplayer){   %> 
                         <span class="errorCreate">* <%= errors.multiplayer.msg%></span> <% } %>
+                    </div>
+                    
                         <span class="errorCreate" id="multiError" ></span>
 
 
                     <label class="label-subtitle" for="message">Descripción del producto</label>
                     <textarea name="description" id="message" cols="30" rows="10" placeholder="Escribe la descripción aquí.." ><%= (locals.old && old.description) ? old.description : "" %></textarea>
-                    <% if (locals.errors && errors.description){   %> 
+                    
+                    <div class="backError-description">
+                        <% if (locals.errors && errors.description){   %> 
                         <span class="errorCreate">* <%= errors.description.msg%></span> <% } %>
+                    </div>
+                    
                         <span class="errorCreate" id="descriptionError" ></span>
                         
         
                     <label class="label-subtitle" for="precio">Precio</label>
                     <input class="input-productCreate" type="number" name="price" id="precio" value="<%= (locals.old && old.price) ? old.price : "" %>">
-                    <% if (locals.errors && errors.price){   %> 
+
+                    <div class="backError-price">
+                         <% if (locals.errors && errors.price){   %> 
                         <span class="errorCreate">* <%= errors.price.msg%></span> <% } %>
+                    </div>
+                   
                         <span class="errorCreate" id="priceError" ></span>
 
                     <label class="label-subtitle" for="descount">Descuento</label>
                     <input class="input-productCreate" type="number" name="descount" id="descount" value="<%= (locals.old && old.descount) ? old.descount : "" %>">
-                    <% if (locals.errors && errors.descount){   %> 
+
+                    <div class="backError-descount">
+                         <% if (locals.errors && errors.descount){   %> 
                         <span class="errorCreate">* <%= errors.descount.msg%></span> <% } %>
+                    </div>
+                   
                         <span class="errorCreate" id="descountError" ></span>
         
                     <label class="label-subtitle" for="almacenamiento">Almacenamiento</label>
                     <input class="input-productCreate" type="number" name="stock" id="almacenamiento"  value="<%= (locals.old && old.stock) ? old.stock : "" %>">
-                    <% if (locals.errors && errors.stock){   %> 
+
+                    <div class="backError-stock">
+                        <% if (locals.errors && errors.stock){   %> 
                         <span class="errorCreate">* <%= errors.stock.msg%></span> <% } %>
+                    </div>
+                    
                         <span class="errorCreate" id="stockError" ></span>
                         
         
