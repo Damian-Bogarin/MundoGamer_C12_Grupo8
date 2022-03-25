@@ -29,7 +29,27 @@ window.addEventListener('load', function () {
         $photo = qs('#photo'),
         $photoError = qs('#photoError'),
         $imgPreview = qs('#img-preview'),
+        $backErrorName = qs('.backError-name'),
+        $backErrorGender = qs('.backError-gender'),
+        $backErrorClasification = qs('.backError-clasification'),
+        $backErrorConsole = qs('.backError-console'),
+        $backErrorShop = qs('.backError-shop')
+        $backErrorLanguage = qs('.backError-language'),
+        $backErrorSubtitle = qs('.backError-subtitle'),
 
+        $backErrorMultiplayer = qs('.backError-multiplayer'),
+        $backErrorDescription = qs('.backError-description'),
+        $backErrorPrice = qs('.backError-price'),
+        $backErrorDescount = qs('.backError-descount'),
+        $backErrorStock = qs('.backError-stock'),
+
+        $backErrorConexion = qs('.backError-conexion'),
+        $conexionOne = qs('#conexion1'),
+        $conexionTwo = qs('#conexion2'),
+
+        $backErrorShop = qs('.backError-shop'),
+        $comprasIntegradasOne = qs('#comprasIntegradas1'),
+        $comprasIntegradasTwo = qs('#comprasIntegradas2'),
 
 
 
@@ -44,7 +64,7 @@ window.addEventListener('load', function () {
 
 
     $name.addEventListener('blur', function () {
-
+        $backErrorName.innerHTML = ""
         switch (true) {
             case !$name.value.trim():
                 $nameError.innerHTML = 'El campo nombre es obligatorio';
@@ -58,6 +78,7 @@ window.addEventListener('load', function () {
                 break
 
             default:
+                
                 
                 fetch(`${window.location.origin}/api/product/create`)
                     .then(result => {
@@ -103,6 +124,7 @@ window.addEventListener('load', function () {
                 break;
 
             default:
+                $backErrorGender.innerHTML = ""
                 $genderError.innerHTML = '';
                 $gender.classList.remove('input-Error')
                 $gender.classList.add('input-Valid')
@@ -119,6 +141,7 @@ window.addEventListener('load', function () {
                 break;
 
             default:
+                $backErrorClasification.innerHTML = ""
                 $clasificationError.innerHTML = '';
                 $clasification.classList.add('input-Valid')
                 $clasification.classList.remove('input-Error')
@@ -130,6 +153,7 @@ window.addEventListener('load', function () {
 
     $console.forEach(element => {
         element.addEventListener('change', function () {
+            $backErrorConsole.innerHTML = ""
             let array = false
             for (let i = 0; i < $console.length; i++) {
                 if ($console[i].checked == true) {
@@ -142,15 +166,31 @@ window.addEventListener('load', function () {
                 $consoleError.innerHTML = 'Debes seleccionar almenos una consola compatible'
             }
             else {
+                $backErrorConsole.innerHTML = ""
                 $consoleError.innerHTML = ''
             }
         })
+    })
+
+    $conexionOne.addEventListener('click', function(){
+        $backErrorConexion.innerHTML = ""
+    })
+    $conexionTwo.addEventListener('click', function(){
+        $backErrorConexion.innerHTML = ""
+    })
+
+    $comprasIntegradasOne.addEventListener('click', function(){
+        $backErrorShop.innerHTML = ""
+    })
+    $comprasIntegradasTwo.addEventListener('click', function(){
+        $backErrorShop.innerHTML = ""
     })
 
 
     $language.forEach(element => {
 
         element.addEventListener('change', function () {
+            $backErrorLanguage.innerHTML = ""
             let array = false
             for (let i = 0; i < $language.length; i++) {
                 if ($language[i].checked == true) {
@@ -171,6 +211,7 @@ window.addEventListener('load', function () {
     $multiplayer.forEach(element => {
 
         element.addEventListener('change', function () {
+            $backErrorMultiplayer.innerHTML = ""
             let array = false
             for (let i = 0; i < $multiplayer.length; i++) {
                 if ($multiplayer[i].checked == true) {
@@ -189,6 +230,7 @@ window.addEventListener('load', function () {
     })
 
     $description.addEventListener('blur', function () {
+        $backErrorDescription.innerHTML = ""
         switch (true) {
             case !$description.value.trim():
                 $descriptionError.innerHTML = 'La descripción es obligatoria';
@@ -202,6 +244,7 @@ window.addEventListener('load', function () {
             break */
 
             default:
+                
                 //$inputdescription.classList.remove('is-invalid');
                 //$inputLastdescription.classList.add ('is-valid');
                 $descriptionError.innerHTML = ""
@@ -210,6 +253,7 @@ window.addEventListener('load', function () {
     })
 
     $price.addEventListener('blur', function () {
+        $backErrorPrice.innerHTML = ""
         switch (true) {
             case $price.value == 0:
                 $priceError.innerHTML = 'Recuerda poner un valor al producto'
@@ -218,7 +262,7 @@ window.addEventListener('load', function () {
                 break;
 
             default:
-
+                
                 $priceError.innerHTML = ""
                 $price.classList.remove('input-Error');
                 $price.classList.add('input-Valid');
@@ -228,6 +272,7 @@ window.addEventListener('load', function () {
     })
 
     $descount.addEventListener('blur', function () {
+        $backErrorDescount.innerHTML = ""
         switch (true) {
             case $descount.value > 100:
                 $descountError.innerHTML = 'El valor de descuento no puede ser mayor al 100%'
@@ -245,6 +290,7 @@ window.addEventListener('load', function () {
         }
     })
     $stock.addEventListener('blur', function () {
+        $backErrorStock.innerHTML = ""
         switch (true) {
             case $stock.value == 0:
                 $stockError.innerHTML = 'Recuerda que almenos debes poner 1 stock'

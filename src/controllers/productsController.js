@@ -479,11 +479,6 @@ const controller = {
                         productId: req.params.id
                     }
                 }),
-                Notification.destroy({
-                    where:{
-                        productId: req.params.id
-                    }
-                }),
                 CartShop.destroy({
                     where:{
                         productId: req.params.id
