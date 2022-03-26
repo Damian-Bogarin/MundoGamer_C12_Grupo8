@@ -1,84 +1,82 @@
 <header class="main-header">
-
-    <img class="fondo-header" src="/img//background/imagen-header.png" alt="background-header"> 
-
-    <div class="header">
         
-        <div class="header-top">
-            
-            <div class="logo">
-                <a href="/">
-                    <img src="/img/background/logo.png" alt="logo" width="100%">
-                </a>
-            </div>
-
-            <form action="" class="form-search">
-                <div class="search-bar">
-                    <input class="input-buscador" type="search" placeholder="¿Qué estás buscando?">
-                    <!-- <i class="fas fa-search"></i>   -->
-                </div>
-            </form>
-<!-- ----------------------------------------- -->
-            <div class="header-panel">
-                <% if (session.user) { %>
-                <div class="dropdown">
-                    <button onclick="NotificationFuntion()" class="dropbtn">Notificación</button>
-                <div id="myDropdown" class="dropdown-content">
-                 
-                </div>
-            </div>
-            <% } %>  <!-- <i class="fas fa-comment-alt"></i> -->
-<!-- ---------------------------------------------- -->
-            
-            <!-- icon user -->
-            <div class="session-user">
-                <% if (typeof session.user != "undefined") { %>
-                    <i class="fas fa-user"></i><span class="open-session"></span>
-                    <div class="user-menu">
-                        <a href="/users/myProfile">Mi perfil</a><br><hr>
-                        <a href="/users/logout">Cerrar sesión</a>
-                        <% if (session.user.rol === "ROL_ADMIN") { %>
-                            <a href="/admin/list">ADMIN</a>
-                        <% } %>
-                    </div>
-                <% } else { %>
-                    <a href="/users/login"><i class="fas fa-user"></i></a>
-                <% } %> 
-            </div>   
-            </div>
-
-            
-            <!-- menu hamburguer | desplegable -->
-
-            <i class="fas fa-bars burguer-menu" onclick="dropMenu()"></i>
-
-            <!-- nav que tendra display none o block-->
-            <nav class="navigation-bar" id="navigation-burguer-menu">
-
-                <!-- Menu de navegacion mobile desplegable -->
-                <ul class="menu">
-
-                    <a href="/products/category"><li class="dropdown-menu">Categorias</li></a><hr>
-                    <a href="/users/productCart"><li class="dropdown-menu">Carrito</li></a><hr>
-                    <a href="/users/login"><li class="dropdown-menu">Ingresar</li></a><hr>
-                    <a href="/users/register"><li class="dropdown-menu">Creá tu cuenta</li></a><hr>
-                    <a href="/about"><li class="dropdown-menu">Nosotros</li></a><hr>
-
-                </ul>
-
-            </nav>
-
+    <div class="header-top">
+        
+        <div class="logo">
+            <a href="/">
+                <img src="/img/background/logo.png" alt="logo" width="100%">
+            </a>
         </div>
-        <!-- nab-var recien aparece a partir de 768px en tablet -->
-        <nav class="header-bottom">
-            <ul>
-                <li><a href="/products/category">Categorias</a></li>
-                <li><a href="/users/productCart">Carrito</a></li>
-                <li><a href="/users/login">Ingresar</a></li>
-                <li><a href="/users/register">Creá tu cuenta</a></li>
-                <li><a href="/about">Nosotros</a></li>
-            </ul>
+
+        <form class="form-search" action="">
+            <div class="search-bar">
+                <input class="input-buscador" type="search" placeholder="¿Qué estás buscando?">
+                <!-- <i class="fas fa-search"></i>   -->
+            </div>
+        </form>
+
+        <!-- ----------------------------------------- -->
+        <div class="header-panel">
+            <% if (session.user) { %>
+            <div class="dropdown">
+                <button onclick="NotificationFuntion()" class="dropbtn"><i class="fas fa-comment-alt msj" ></i></button>
+            <div id="myDropdown" class="dropdown-content">
+             <!-- contenido de la notificacion -->
+            </div>
+        </div>
+        <% } %> 
+        <!-- ----------------------------------------- -->
+        
+        <!-- icon user -->
+        <div class="session-user">
+            <% if (typeof session.user != "undefined") { %>
+                <div class="avatar" id="avatarPreview">
+                    <img class="img-avatar" id="idAvatar" src="/img/avatars/<%= session.user.avatar %>" alt="">
+                </div> 
+                <div class="user-menu">
+                    <a href="/users/myProfile">Mi perfil</a><br><hr>
+                    <a href="/users/logout">Cerrar sesión</a>
+                    <% if (session.user.rol === "ROL_ADMIN") { %>
+                        <a href="/admin/list">ADMIN</a>
+                    <% } %>
+                </div>
+            <% } else { %>
+                <a href="/users/login"><i class="fas fa-user" style="margin-top: 32px;"></i></a>
+            <% } %> 
+        </div>   
+        </div>
+
+        
+        <!-- menu hamburguer | desplegable -->
+        <i class="fas fa-bars burguer-menu" onclick="dropMenu()"></i>
+
+        <!-- nav que tendra display none o block-->
+        <nav class="navigation-bar" id="navigation-burguer-menu">
+
+            <!-- Menu de navegacion mobile desplegable -->
+            <ul class="menu">
+
+                <a href="/products/category"><li class="dropdown-menu">Categorias</li></a><hr>
+                <a href="/users/productCart"><li class="dropdown-menu">Carrito</li></a><hr>
+                <a href="/users/login"><li class="dropdown-menu">Ingresar</li></a><hr>
+                <a href="/users/register"><li class="dropdown-menu">Creá tu cuenta</li></a><hr>
+                <a href="/about"><li class="dropdown-menu">Nosotros</li></a><hr>
+
+            </ul> 
+
         </nav>
+
     </div>
+
+    <!-- nab-var recien aparece a partir de 768px en tablet -->
+    <nav class="header-bottom">
+        <ul>
+            <li><a href="/products/category">Categorias</a></li>
+            <li><a href="/users/productCart">Carrito</a></li>
+            <li><a href="/users/login">Ingresar</a></li>
+            <li><a href="/users/register">Creá tu cuenta</a></li>
+            <li><a href="/about">Nosotros</a></li>
+        </ul>
+    </nav>
 
 </header>
