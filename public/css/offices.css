@@ -61,11 +61,8 @@
 
 @media (min-width: 1024) {
 
-    .offices {
-        display: flex;
+    body {
+        margin: 0 50px;
     }
-    .offices .location {
-        flex-direction: row;
-    }
-   
+   /* no se reduce el ancho de los mapas */
 }
