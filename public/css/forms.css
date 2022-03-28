@@ -76,12 +76,14 @@
 
 input.error { /* esta clase la creamos solo aca, no en el html */
     border: 1px solid rgb(255, 0, 0);
-    box-shadow: 3px 3px 10px rgb(255, 0, 0); /* de px tenia 5 */
+    box-shadow: 3px 3px 10px rgb(255, 0, 0);
+    background-color: rgb(226, 101, 101)
 }
 
 input.ok {
     border: 1px solid rgb(95, 230, 95);
     box-shadow: 3px 3px 10px rgb(95, 230, 95);
+    background-color: rgb(179, 228, 179);
 }
 
 .errors {

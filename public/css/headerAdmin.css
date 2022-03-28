@@ -85,9 +85,9 @@
 @media (min-width: 425px) {
     
     .adminNavigationBar {
-        width: 40%; 
+        width: 30%; 
         right: 0;
-        top: 48px;
+        top: 55px;
     }
 
     .adminNavigationBar .menu-admin {
@@ -114,18 +114,7 @@
     } 
 
     .adminNavigationBar {
-        top: 52px;  
+        width: 20%; 
+        top: 55px;  
     }
-}
-
-
-
-/* Media-query - desktop */
-
-@media (min-width: 1024px) {
-
-    .adminNavigationBar {
-        top: 52px;
-        width: 30%;
-    }    
 }

@@ -1,0 +1,68 @@
+/* background-image: url(https://387442.smushcdn.com/757762/wp-content/uploads/2020/03/1.png?lossy=1&strip=1&webp=1); */
+
+.offices .title-offices {
+    font-size: 18px;
+    text-align: center;
+    margin: 15px 0 10px 0;
+}
+
+.offices .location {
+    margin-bottom: 20px; 
+}
+
+.offices .location .direction {
+    text-align: center;
+}
+
+.offices .location .icon-map {
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 6px;
+}
+
+.offices .location .address {
+    font-size: 16px;
+}
+
+.icon-map, .address {
+    display: inline;
+}
+
+.offices .location .map {
+    margin: 15px 0;
+}
+
+
+@media (min-width: 425px) {
+
+    .offices .location .direction {
+        margin: 0 10px;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+
+    .offices .title-offices {
+        margin: 25px 0 20px 0;
+    }
+
+    .offices .location .direction {
+        margin: 0 50px;
+    }
+
+    .offices .location .map {
+        margin: 25px 0;
+    }
+    
+}
+
+
+@media (min-width: 1024) {
+
+    body {
+        margin: 0 50px;
+    }
+   /* no se reduce el ancho de los mapas */
+}

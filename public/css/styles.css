@@ -25,9 +25,10 @@
 @import url('myProfile.css'); 
 @import url('productCart.css');
 
-/* about and terms */
+/* about, terms and offices */
 @import url('about.css');
 @import url('terms.css');
+@import url('offices.css');
 
 /* 404 error page*/
 @import url('404error.css');
