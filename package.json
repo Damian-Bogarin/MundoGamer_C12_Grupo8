@@ -1,5 +1,5 @@
 {
-  "name": "grupo_8_mundo_gamer_c12",
+  "name": "mundogamer_c12_grupo8",
   "version": "1.0.0",
   "description": "![logotipo](design/logo.png)\r ## Integrantes:",
   "main": "src/app.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NeD2020/grupo_8_mundo_gamer_C12.git"
+    "url": "git+https://github.com/Damian-Bogarin/MundoGamer_C12_Grupo8.git"
   },
   "author": "mundoGamer",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NeD2020/grupo_8_mundo_gamer_C12/issues"
+    "url": "https://github.com/Damian-Bogarin/MundoGamer_C12_Grupo8/issues"
   },
-  "homepage": "https://github.com/NeD2020/grupo_8_mundo_gamer_C12#readme",
+  "homepage": "https://github.com/Damian-Bogarin/MundoGamer_C12_Grupo8#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",

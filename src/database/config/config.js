@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "mundo_gamer",
-    "host": "127.0.0.1",
+    "username": "utebybcjnshksx2j",
+    "password": '7INZ0lAq9WK0fXW5MzH5',
+    "database": "bkpelvpnxpdqloypgwtp",
+    "host": "bkpelvpnxpdqloypgwtp-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "utebybcjnshksx2j",
+    "password": '7INZ0lAq9WK0fXW5MzH5',
+    "database": "bkpelvpnxpdqloypgwtp",
+    "host": "bkpelvpnxpdqloypgwtp-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   }
 }
