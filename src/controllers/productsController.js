@@ -107,8 +107,6 @@ const controller = {
             })
 
     },
-
-
     store: (req, res) => {
         let errors = validationResult(req);
 
@@ -193,7 +191,8 @@ const controller = {
 
         }
 
-    },
+    }
+    ,
     update: (req, res) => {
 
         let errors = validationResult(req);
